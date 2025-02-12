@@ -1,5 +1,5 @@
 NAME = minishell
-CFLAGS = -Wall -Werror -Wextra -MMD -MP -g
+CFLAGS = -Wall -Werror -Wextra -MMD -MP -g 
 
 SRCS_DIR = srcs
 INC_DIR = includes
@@ -15,7 +15,7 @@ DEPS = $(OBJS:.o=.d)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	cc $(CFLAGS) $(OBJS) -o $(NAME)
+	cc $(CFLAGS) -L$(LIBFT_DIR) -lft -lreadline -lncurses $(OBJS) -o $(NAME) 
 
 $(LIBFT): 
 	make -C $(LIBFT_DIR)
@@ -24,7 +24,7 @@ $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
-	cc $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	cc $(CFLAGS) -I $(LIBFT_DIR) -I $(INC_DIR) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS_DIR)
