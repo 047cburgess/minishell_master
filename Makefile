@@ -7,7 +7,8 @@ OBJS_DIR = objs
 LIBFT_DIR = libft
 LIBFT = libft/libft.a
 
-SRCS = $(SRCS_DIR)/main.c
+SRCS = $(SRCS_DIR)/main.c \
+       $(SRCS_DIR)/signals.c \
 
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)
@@ -15,7 +16,7 @@ DEPS = $(OBJS:.o=.d)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	cc $(CFLAGS) -L$(LIBFT_DIR) -lft -lreadline -lncurses $(OBJS) -o $(NAME) 
+	cc $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -lreadline -lncurses  -o $(NAME) 
 
 $(LIBFT): 
 	make -C $(LIBFT_DIR)
@@ -24,7 +25,7 @@ $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
-	cc $(CFLAGS) -I $(LIBFT_DIR) -I $(INC_DIR) -c $< -o $@
+	cc $(CFLAGS) -I$(LIBFT_DIR) -I$(INC_DIR) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS_DIR)
