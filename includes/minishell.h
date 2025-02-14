@@ -10,10 +10,20 @@
 # include <readline/history.h>
 # include <stdlib.h>
 # include <signal.h>
+# include <stdbool.h>
 # include "libft.h"
 
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
+
+
+// ------ BUILT IN ----- //
+int	ft_echo(char **args);
+int    print_pwd(void);
+int	ft_cd(char **args);
+
+// ------ BUILT IN HELPERS ----- //
+int 	count_ac(char **args);
 
 #endif

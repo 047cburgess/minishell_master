@@ -9,6 +9,9 @@ LIBFT = libft/libft.a
 
 SRCS = $(SRCS_DIR)/main.c \
        $(SRCS_DIR)/signals.c \
+       $(SRCS_DIR)/echo.c \
+	   $(SRCS_DIR)/pwd.c \
+	   $(SRCS_DIR)/cd.c \
 
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)
