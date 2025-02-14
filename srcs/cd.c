@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-// ALL BUILT INS NOT TO BE PUT IN FORKS, MUST BE IN CURRENT MAIN THREAD
 // Behaviour: Only changes directory for the lifetime of the current process ->
 // Many change to represent a mock program --> ft_cd(int ac, char **av) ??
 // Then the 'program' is responsible for cleaning up it's own args??
@@ -21,18 +20,23 @@
 
 int	ft_cd(char **args)
 {
+	int	ac;
+
+	ac = count_ac(args);
 	// If more than one argument is given, return false
-	if (count_ac(args) > 1)
+	if (ac > 1)
 	{
 		ft_putendl_fd("cd: too many arguments", 2);
 		return (0);
 	}
 
-	// TODO If no args are given, send home : getenv() ?
+	// TODO If no args are given, send home -> need to pass in our env
+	if (ac == 0)
+		chdir(getenv("HOME")); // temporary using getenv but need to traverse our own path
 	// if getenv returns null, perror?
 
 	// If the chdir fails
-	if (chdir(args[0]) == -1)
+	else if (chdir(args[0]) == -1)
 	{
 		perror("minishell: cd : %s"); // Change for strerror?
 		return (0);
