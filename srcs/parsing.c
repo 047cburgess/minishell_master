@@ -3,7 +3,6 @@
 int	execute_builtin(t_command *cmd);
 
 // just for testing basic input for builtins, no quotes, no pipes, no redirections
-// Haven't managed any memory protections etc. 
 int	handle_input(char *line, t_data *data)
 {
 	t_command	*cmd;
@@ -13,6 +12,8 @@ int	handle_input(char *line, t_data *data)
 	cmd->cmd = cmd->argv[0];
 	cmd->env = data->env;
 	data->command = cmd;
+	print_str_array(cmd->argv);
+	print_str_array(cmd->env);
 	execute_builtin(data->command);
 	// Clean up the memory
 	return (SUCCESS);
@@ -27,6 +28,7 @@ int	execute_builtin(t_command *cmd)
 	else if (ft_strcmp(cmd->cmd, "pwd") == 0)
 		ft_pwd();
 	else
-		printf("Not a built in command\n");
+		execve("/usr/bin/ls", cmd->argv, cmd->env);
+	printf("Not a built in command\n");
 	return (SUCCESS);
 }

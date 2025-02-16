@@ -6,6 +6,19 @@
 int	count_strings(char **array);
 char	**duplicate_str_array(char **start_env);
 void	free_str_array(char **array, int size);
+void	print_str_array(char **array);
+
+void	print_str_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		printf("%s\n", array[i]);
+		i++;
+	}
+}
 
 int	set_environment(char **start_env, t_data *data)
 {

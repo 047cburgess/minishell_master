@@ -24,12 +24,11 @@ int 	count_ac(char **args)
 	return (ac);
 }
 
-bool	option(int ac, char **args)
+bool	option(char **args)
 {
 
 	if (args[0] == NULL)
 		return (false);
-	ac = 6;
 	if (ft_strcmp(args[0], "-n") == 0)
 		return (true);
 	else
@@ -39,11 +38,9 @@ bool	option(int ac, char **args)
 int	ft_echo(char **args)
 {
 	int	i;
-	int ac;
 
 	i = 0;
-	ac = count_ac(args);
-	if (option(ac, args) == true)
+	if (option(args) == true)
 		i++;
 	while (args[i] != NULL)
 	{
@@ -52,7 +49,7 @@ int	ft_echo(char **args)
 			printf(" ");
 		i++;
 	}
-	if (option(ac, args) == false)
+	if (option(args) == false)
 		printf("\n");
 	return (1);
 }
