@@ -30,7 +30,6 @@ int	set_environment(char **start_env, t_data *data)
 		return (SUCCESS);
 }
 
-
 void	free_str_array(char **array, int size)
 {
 	int	i;
@@ -43,6 +42,7 @@ void	free_str_array(char **array, int size)
 	}
 	free(array);
 }
+
 
 // This function duplicate a NULL-terminated an array of strings
 char	**duplicate_str_array(char **start_env)

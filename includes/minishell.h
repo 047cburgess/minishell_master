@@ -32,6 +32,14 @@ typedef struct s_data
 	char	**env;
 } t_data;
 
+typedef struct s_token
+{
+	char 		*content;
+	int			type;
+
+	struct s_token *next;
+} t_token;
+
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
@@ -40,6 +48,7 @@ void	init_signals(struct sigaction *act);
 // ------ PARSING ----- //
 // parsing.c
 int	handle_input(char *line, t_data *data);
+t_token *extract_tokens(char *line);
 int	set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
 int	unclosed_quote_detected(char *input);

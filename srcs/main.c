@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/17 12:30:19 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:47:46 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
+	t_token *head;
 	char *line;
 	struct sigaction act[2];
 
+	
 	// Check args
 	if (ac != 1)
 	{
@@ -36,7 +38,13 @@ int	main(int ac, char **av, char **envp)
 		}
 		//printf("You entered: %s\n", line);
 		add_history(line);
-		handle_input(line, &data);
+		//handle_input(line, &data);
+		head = extract_tokens(line);
+		while (head)
+		{
+			printf("[%s] ", head->content);
+			head = head->next;
+		}
 		free(line);
 	}	
 }
