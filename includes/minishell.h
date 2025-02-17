@@ -18,6 +18,14 @@
 # include <stdbool.h>
 # include "libft.h"
 
+
+typedef struct s_env
+{
+	char	*key;
+	char	*value;
+	struct s_env	*next;
+} t_env;
+
 typedef struct s_command
 {
 	char	**argv;
@@ -29,13 +37,13 @@ typedef struct s_command
 typedef struct s_data 
 {
 	t_command *command;
-	char	**env;
+	char **bash_env;
+	t_env	*env;
 } t_data;
 
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
-
 
 // ------ PARSING ----- //
 // parsing.c
@@ -45,7 +53,6 @@ void	print_str_array(char **array);
 int	unclosed_quote_detected(char *input);
 int	is_quote(char c);
 
-
 // ------ BUILT IN ----- //
 int	ft_echo(char **args);
 int    ft_pwd(void);
@@ -53,5 +60,23 @@ int	ft_cd(char **args);
 
 // ------ BUILT IN HELPERS ----- //
 int 	count_ac(char **args);
+int	count_strings(char **array);
+void	free_str_array(char **array, int size);
+
+// ----- ENV SET UP ----- //
+void	print_env_list(t_env *env_head);
+int	set_environment(char **bash_env, t_data *data);
+t_env	*env_node_new(char *key, char *value);
+char	*get_key(char *str);
+char	*get_value(char *str);
+void	env_delone(t_env *node);
+void	env_list_clear(t_env **env_list);
+t_env	*env_last(t_env *env_head);
+void	env_add_back(t_env **env_head, t_env *new_node);
+t_env	*env_to_list(char **bash_env);
+char	**env_to_array(t_env *env_head);
+
+// ----- MINISHELL SHUT DOWN ----- //
+void	shut_down_minishell(t_data *data);
 
 #endif

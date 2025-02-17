@@ -10,12 +10,14 @@ int	handle_input(char *line, t_data *data)
 	cmd = ft_calloc(1, sizeof(t_command));
 	cmd->argv = ft_split(line, ' ');
 	cmd->cmd = cmd->argv[0];
-	cmd->env = data->env;
+	cmd->env = data->bash_env;
 	data->command = cmd;
-	print_str_array(cmd->argv);
-	print_str_array(cmd->env);
+	//print_str_array(cmd->argv);
+	//print_str_array(cmd->env);
 	execute_builtin(data->command);
 	// Clean up the memory
+	free_str_array(cmd->argv, count_strings(cmd->argv));
+	free(cmd);
 	return (SUCCESS);
 }
 
