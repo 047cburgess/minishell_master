@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/13 14:11:11 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:30:19 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,29 @@
 
 int	main(int ac, char **av, char **envp)
 {
-	(void)ac;
 	(void)av;
-	(void)envp;
-	
-
+	t_data data;
 	char *line;
 	struct sigaction act[2];
 
+	// Check args
+	if (ac != 1)
+	{
+		ft_putendl_fd("Minishell doesn't take any arguments", 2);
+		return (1);
+	}
 	init_signals(act);
+	set_environment(envp, &data);
 	while(1)
 	{
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 		{
-			exit(1); // Temporary
+			exit(1); // Temporary exit -> will be builtin
 		}
-		printf("You entered: %s\n", line);
+		//printf("You entered: %s\n", line);
 		add_history(line);
+		handle_input(line, &data);
 		free(line);
 	}	
 }
