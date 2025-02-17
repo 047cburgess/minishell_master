@@ -14,6 +14,7 @@ SRCS = $(SRCS_DIR)/main.c \
 	   $(SRCS_DIR)/cd.c \
 	   $(SRCS_DIR)/parsing.c \
 	   $(SRCS_DIR)/set_up.c \
+	   $(SRCS_DIR)/handle_quotes.c \
 
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

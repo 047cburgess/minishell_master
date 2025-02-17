@@ -22,10 +22,7 @@ void	print_str_array(char **array)
 
 int	set_environment(char **start_env, t_data *data)
 {
-	// Initialise the data struct
 	ft_bzero(data, sizeof(*data));
-
-	// create a copy of the start_env and store it in data->env
 	data->env = duplicate_str_array(start_env);
 	if (data->env == NULL)
 		return (FAILURE);

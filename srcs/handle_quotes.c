@@ -1,17 +1,16 @@
-#include <stdio.h>
-#define TRUE 1
-#define FALSE 0
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_quotes.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/17 12:27:45 by caburges          #+#    #+#             */
+/*   Updated: 2025/02/17 12:27:49 by caburges         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strchr(char *str, char c)
-{
-	while (*str)
-	{
-		if (*str == c)
-			return (str);
-		str++;
-	}
-	return (NULL);
-}
+#include "minishell.h"
 
 int	is_quote(char c)
 {
@@ -33,38 +32,38 @@ int	unclosed_quote_detected(char *input)
 	return (FALSE);
 }
 
-void	TEST(char *input, int expected)
-{
-	int	result = unclosed_quote_detected(input);
-	if (result != expected)
-		printf("!! KO: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
-	else
-		printf(":) OK: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
-}
-
-// TEST //
-int	main(void)
-{
-	// no unclosed quotes should be found
-	TEST("echo hello world", FALSE);
-	TEST("echo \"hello\" \"world\"", FALSE);
-	TEST("echo \"hello world\"", FALSE);
-	TEST("echo helloworld", FALSE);
-	TEST("echo \'hello world\'", FALSE);
-	TEST("echo 'hello' 'world'", FALSE);
-	TEST("echo hello 'world'", FALSE);
-	TEST("     echo hello world", FALSE);
-	TEST("echo "" hello "" world", FALSE);
-	TEST("echo hello'$HOME'world", FALSE);
-	TEST("echo hello\"$HOME\"world", FALSE);
-	TEST("echo hello \"'$HOME'\" world", FALSE);
-	TEST("echo hello '\"$HOME\"'world", FALSE);
-
-	// should detect unclosed quotes
-	TEST("echo hello''wo'rld", TRUE);
-	TEST("echo \"hello\"world\"", TRUE);
-	TEST("echo 'hello world", TRUE);
-	TEST("echo '' hello \"world", TRUE);
-	TEST("echo \"hello' world'", TRUE);
-	TEST("'echo'' helo\"world", TRUE);
-}
+//void	TEST(char *input, int expected)
+//{
+//	int	result = unclosed_quote_detected(input);
+//	if (result != expected)
+//		printf("!! KO: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
+//	else
+//		printf(":) OK: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
+//}
+//
+//// TEST //
+//int	main(void)
+//{
+//	// no unclosed quotes should be found
+//	TEST("echo hello world", FALSE);
+//	TEST("echo \"hello\" \"world\"", FALSE);
+//	TEST("echo \"hello world\"", FALSE);
+//	TEST("echo helloworld", FALSE);
+//	TEST("echo \'hello world\'", FALSE);
+//	TEST("echo 'hello' 'world'", FALSE);
+//	TEST("echo hello 'world'", FALSE);
+//	TEST("     echo hello world", FALSE);
+//	TEST("echo "" hello "" world", FALSE);
+//	TEST("echo hello'$HOME'world", FALSE);
+//	TEST("echo hello\"$HOME\"world", FALSE);
+//	TEST("echo hello \"'$HOME'\" world", FALSE);
+//	TEST("echo hello '\"$HOME\"'world", FALSE);
+//
+//	// should detect unclosed quotes
+//	TEST("echo hello''wo'rld", TRUE);
+//	TEST("echo \"hello\"world\"", TRUE);
+//	TEST("echo 'hello world", TRUE);
+//	TEST("echo '' hello \"world", TRUE);
+//	TEST("echo \"hello' world'", TRUE);
+//	TEST("'echo'' helo\"world", TRUE);
+//}

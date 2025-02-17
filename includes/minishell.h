@@ -7,6 +7,8 @@
 
 # define SUCCESS 1
 # define FAILURE 0
+# define TRUE 1
+# define FALSE 0
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -15,27 +17,6 @@
 # include <signal.h>
 # include <stdbool.h>
 # include "libft.h"
-
-// ----- STRUCTURES NEEDED ----- //
-// PARSING TOKENS
-// 	-> str
-// 	-> type
-// 	-> next 
-//
-// COMMANDS
-// 	-> argv
-//	-> infile
-//	-> outfile
-
-typedef enum e_type
-{
-	command,
-	pipe,
-	rd_in,
-	rd_out,
-	heredoc,
-	append,
-} e_type;
 
 typedef struct s_command
 {
@@ -61,6 +42,8 @@ void	init_signals(struct sigaction *act);
 int	handle_input(char *line, t_data *data);
 int	set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
+int	unclosed_quote_detected(char *input);
+int	is_quote(char c);
 
 
 // ------ BUILT IN ----- //

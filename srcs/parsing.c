@@ -28,7 +28,6 @@ int	execute_builtin(t_command *cmd)
 	else if (ft_strcmp(cmd->cmd, "pwd") == 0)
 		ft_pwd();
 	else
-		execve("/usr/bin/ls", cmd->argv, cmd->env);
-	printf("Not a built in command\n");
+		printf("Not a built in command\n");
 	return (SUCCESS);
 }
