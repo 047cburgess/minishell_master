@@ -52,6 +52,7 @@ int	set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
 int	unclosed_quote_detected(char *input);
 int	is_quote(char c);
+int	parse_and_execute(char *line, t_data *data);
 
 // ------ BUILT IN ----- //
 int	ft_echo(char **args);
@@ -75,6 +76,7 @@ t_env	*env_last(t_env *env_head);
 void	env_add_back(t_env **env_head, t_env *new_node);
 t_env	*env_to_list(char **bash_env);
 char	**env_to_array(t_env *env_head);
+char	*ft_getenv(t_env *env, char *key);
 
 // ----- MINISHELL SHUT DOWN ----- //
 void	shut_down_minishell(t_data *data);

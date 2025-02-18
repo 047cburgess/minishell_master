@@ -32,9 +32,9 @@ int	main(int ac, char **av, char **envp)
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
-		//printf("You entered: %s\n", line);
 		add_history(line);
-		handle_input(line, &data);
+		parse_and_execute(line, &data);
+		//handle_input(line, &data);
 		free(line);
 	}	
 	shut_down_minishell(&data);

@@ -196,3 +196,18 @@ int	set_environment(char **bash_env, t_data *data)
 	else
 		return (SUCCESS);
 }
+
+// This function returns a pointer to the env value, or NULL if it doesn't exist
+char	*ft_getenv(t_env *env, char *key)
+{
+	while (env != NULL)
+	{
+		if (ft_strcmp(env->key, key) == 0)
+		{
+			return (env->value);
+
+		}
+		env = env->next;
+	}
+	return (NULL);
+}
