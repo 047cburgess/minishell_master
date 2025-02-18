@@ -68,22 +68,40 @@ t_list	*get_operator(char *start)
 	token = ft_lstnew(content);
 	return (token);
 }
-
-char	*get_expanded_content(char *old_content)
+// get key = delimited by: $, spaces, quotes, end of string
+// get value = ft_getenv
+int	expansion_needed(char *content)
 {
-	char	*new_content = NULL;
-	char	*expanded_var = NULL;
-	char	*ptr = old_content;
+	char	*new_line = NULL;
+	char	*var = NULL;
+	char	*ptr = content;
 
-	while (*ptr)
+	if  (ft_strchr(content, '$') == NULL)
+		return (FALSE);
+	if (ft_strcmp(content, "$") == 0)
+		return (FALSE);
+	while(*ptr)
 	{
 		if (*ptr == '\'')
-		       ptr = ft_strchr(ptr + 1, '\'') + 1;
+			ptr = ft_strchr(ptr + 1, '\'') + 1;
 		else if (*ptr == '\"')
 		{
 			ptr++;
-
-				
+			while (*ptr && *ptr != '\"')
+			{
+				if (*ptr == '$' && *(ptr + 1) != '\"')
+					key = ft_getkey
+					var = ft_getenv(key)
+					ft_strjoin(line, var);		
+				ptr++;
+			}
+		}
+		else if (*ptr == '$' && *(ptr + 1))
+			return (TRUE);
+		ptr++;
+	}
+	return (FALSE);
+}
 
 int	expansion_needed(char *content)
 {
@@ -102,7 +120,7 @@ int	expansion_needed(char *content)
 			ptr++;
 			while (*ptr && *ptr != '\"')
 			{
-				if (*ptr == '$' && *(ptr + 1) && *(ptr + 2))
+				if (*ptr == '$' && *(ptr + 1) != '\"')
 					return (TRUE);
 				ptr++;
 			}
@@ -114,6 +132,24 @@ int	expansion_needed(char *content)
 	return (FALSE);
 }
 
+char	*first_expand_outside_quotes(char *line)
+{
+	char	*new_line = NULL;
+	i = 0;
+
+	while (line[i] != '\0')
+	{
+		if (is_quote(line[i]))
+		{
+			while (
+
+
+
+}
+
+
+
+
 /*
 void	ft_expand(t_list *tokens)
 {
@@ -122,7 +158,7 @@ void	ft_expand(t_list *tokens)
 
 	while (tokens)
 	{
-		if (ft_strchr(tokens->content, '$') && expansion_needed(tokens->content))
+		if (expansion_needed(tokens->content))
 		{
 			new_content = get_expanded_content(tokens->content);
 			free(tokens->content);
