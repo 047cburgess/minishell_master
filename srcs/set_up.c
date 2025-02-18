@@ -20,10 +20,10 @@ void	print_str_array(char **array)
 	}
 }
 
-int	set_environment(char **start_env, t_data *data)
+int	set_environment_old(char **start_env, t_data *data)
 {
 	ft_bzero(data, sizeof(*data));
-	data->env = duplicate_str_array(start_env);
+	data->bash_env = duplicate_str_array(start_env);
 	if (data->env == NULL)
 		return (FAILURE);
 	else
