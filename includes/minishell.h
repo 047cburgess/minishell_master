@@ -18,7 +18,6 @@
 # include <stdbool.h>
 # include "libft.h"
 
-
 typedef struct s_env
 {
 	char	*key;
@@ -34,12 +33,22 @@ typedef struct s_command
 	char	**env;
 } t_command;
 
+typedef struct s_token
+{
+	char 		*content;
+	int			type;
+	struct s_token *next;
+} t_token;
+
 typedef struct s_data 
 {
-	t_command *command;
-	char **bash_env;
-	t_env	*env;
+	t_command 	*command;
+	t_token		*tokens_list;
+	char 		**bash_env;
+	t_env		*env;
 } t_data;
+
+
 
 // ------ SIGNALS ----- //
 //signals.c
@@ -47,26 +56,34 @@ void	init_signals(struct sigaction *act);
 
 // ------ PARSING ----- //
 // parsing.c
-int	handle_input(char *line, t_data *data);
-int	set_environment(char **envp, t_data *data);
+char	*expansion_line(t_env *env, char *line);
+//int	handle_input(char *line, t_data *data);
+int		set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
-int	unclosed_quote_detected(char *input);
-int	is_quote(char c);
-int	parse_and_execute(char *line, t_data *data);
+int		unclosed_quote_detected(char *input);
+int		is_quote(char c);
+int		parse_and_execute(char *line, t_data *data);
+
+// ------ TOKENS ----- //
+t_token *new_token_node(char *content);
+void	token_add_back(t_token **tokens, t_token *new);
+void	token_del_node(t_token *tokens_list, void (*del)(void *));
+void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
+int		is_operator(char c);
 
 // ------ BUILT IN ----- //
-int	ft_echo(char **args);
-int    ft_pwd(void);
-int	ft_cd(char **args);
+int		ft_echo(char **args);
+int		ft_pwd(void);
+int		ft_cd(char **args);
 
 // ------ BUILT IN HELPERS ----- //
 int 	count_ac(char **args);
-int	count_strings(char **array);
+int		count_strings(char **array);
 void	free_str_array(char **array, int size);
 
 // ----- ENV SET UP ----- //
 void	print_env_list(t_env *env_head);
-int	set_environment(char **bash_env, t_data *data);
+int		set_environment(char **bash_env, t_data *data);
 t_env	*env_node_new(char *key, char *value);
 char	*get_key(char *str);
 char	*get_value(char *str);
