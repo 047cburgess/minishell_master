@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_quotes.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 12:27:45 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/17 12:27:49 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:18:13 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ int	unclosed_quote_detected(char *input)
 	return (FALSE);
 }
 
-//void	TEST(char *input, int expected)
-//{
-//	int	result = unclosed_quote_detected(input);
-//	if (result != expected)
-//		printf("!! KO: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
-//	else
-//		printf(":) OK: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
-//}
-//
+// void	TEST(char *input, int expected)
+// {
+// 	int	result = unclosed_quote_detected(input);
+// 	if (result != expected)
+// 		printf("!! KO: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
+// 	else
+// 		printf(":) OK: [%s]\n\tResult: %i\n\tExpected: %i\n\n", input, result, expected);
+// }
+
 //// TEST //
 //int	main(void)
 //{

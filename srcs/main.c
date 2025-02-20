@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/18 15:24:58 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:16:47 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 #include <sys/types.h>
 #include <sys/wait.h>	
 	
-	
-
 int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
 	char *line;
+	char *new_line = NULL;
 	struct sigaction act[2];
 
 	if (ac != 1)
@@ -31,15 +30,18 @@ int	main(int ac, char **av, char **envp)
 	init_signals(act);
 	if (!set_environment(envp, &data))
 		return (1);
+	
 	while(1)
 	{
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
-		parse_and_execute(line, &data);
-		//handle_input(line, &data);
+		new_line = expansion_line(data.env, line);
+		printf("new_line = %s\n", new_line);
+		parse_and_execute(new_line, &data);
 		free(line);
+		free(new_line);
 	}	
 	shut_down_minishell(&data);
 	exit(5);

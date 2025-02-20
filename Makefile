@@ -17,7 +17,10 @@ SRCS = $(SRCS_DIR)/main.c \
 	   $(SRCS_DIR)/copy_env.c \
 	   $(SRCS_DIR)/set_up.c \
 	   $(SRCS_DIR)/clean_up.c \
-
+	   $(SRCS_DIR)/extract_expansion.c \
+	   $(SRCS_DIR)/token_utils.c \
+	   $(SRCS_DIR)/get_tokens.c 
+	   
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)
 
@@ -27,21 +30,21 @@ $(NAME): $(LIBFT) $(OBJS)
 	cc $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -lreadline -lncurses  -o $(NAME) 
 
 $(LIBFT): 
-	make -C $(LIBFT_DIR)
+	@make -C $(LIBFT_DIR)
 
 $(OBJS_DIR):
-	mkdir -p $(OBJS_DIR)
+	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
 	cc $(CFLAGS) -I$(LIBFT_DIR) -I$(INC_DIR) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_DIR)
-	make clean -C $(LIBFT_DIR)
+	@rm -rf $(OBJS_DIR)
+	@make clean -C $(LIBFT_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
-	make fclean -C $(LIBFT_DIR)
+	@rm -rf $(NAME)
+	@make fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

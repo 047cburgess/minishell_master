@@ -3,7 +3,7 @@
 // This function creates a copy of the starting environment strings array,
 // and saves it into the program data for minishell new env
 
-int	count_strings(char **array);
+int		count_strings(char **array);
 char	**duplicate_str_array(char **start_env);
 void	free_str_array(char **array, int size);
 void	print_str_array(char **array);
@@ -29,7 +29,6 @@ int	set_environment_old(char **start_env, t_data *data)
 	else
 		return (SUCCESS);
 }
-
 
 void	free_str_array(char **array, int size)
 {
