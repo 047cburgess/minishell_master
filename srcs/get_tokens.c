@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:30:22 by alize             #+#    #+#             */
-/*   Updated: 2025/02/19 19:11:42 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/20 13:53:15 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_token	*get_unquoted_token(char *start)
 	{
 		if (is_quote(*ptr))
 		{
-			ptr = ft_strchr(ptr, *ptr) + 1;
+			ptr = ft_strchr(ptr + 1, *ptr) + 1;
 		}
 		else 
 			ptr++;
@@ -70,14 +70,13 @@ t_token	*get_operator(char *start)
 	return (token);
 }
 
+// WILL NEED TO ADAPT THIS FUNCTION ACCORDING TO NEW CUTTING/EXPANSION RULES
 int	parse_and_execute(char *line, t_data *data)
 {
 	data->tokens_list = NULL;
 	t_token	*new_token = NULL;
 
-	if (unclosed_quote_detected(line))
-		return (FAILURE);
-
+	printf("--TOKENS--\n");
 	// GET TOKEN LIST
 	int i = 0;
 	while (line[i] != '\0')
@@ -87,7 +86,7 @@ int	parse_and_execute(char *line, t_data *data)
 		if (is_operator(line[i]))
 		{
 			new_token = get_operator(&line[i]);
-			printf("[%s]\n", (char *)new_token->content);
+			printf("\t[%s]\n", (char *)new_token->content);
 			token_add_back(&(data->tokens_list), new_token);
 			i += ft_strlen(new_token->content);
 		}
@@ -95,14 +94,14 @@ int	parse_and_execute(char *line, t_data *data)
 		{
 			new_token = get_quoted_token(&line[i], line[i]);
 			token_add_back(&(data->tokens_list), new_token);
-			printf("[%s]\n", (char *)new_token->content);
+			printf("\t[%s]\n", (char *)new_token->content);
 			i += ft_strlen(new_token->content);
 		}
 		else if (!is_quote(line[i]))
 		{
 			new_token = get_unquoted_token(&line[i]);
 			token_add_back(&(data->tokens_list), new_token);
-			printf("[%s]\n", (char *)new_token->content);
+			printf("\t[%s]\n", (char *)new_token->content);
 			i += ft_strlen(new_token->content);
 		}
 	}

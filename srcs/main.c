@@ -37,6 +37,8 @@ int	main(int ac, char **av, char **envp)
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
+		if (unclosed_quote_detected(line))
+			return (FAILURE);
 		new_line = expansion_line(data.env, line);
 		printf("new_line = %s\n", new_line);
 		parse_and_execute(new_line, &data);

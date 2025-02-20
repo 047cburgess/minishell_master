@@ -115,7 +115,16 @@ static char	*join_list(t_list *lst)
 	char	*temp;
 	int		len;
 	t_list	*current;
+	t_list	*print;
 
+	print = lst;
+	printf("CUTTINGS: ");
+	while (print)
+	{	
+		printf("[%s]->", (char*)print->content);
+		print = print->next;
+	}
+	printf("\n");
 	len = 0;
 	current = lst;
 	while (current)
