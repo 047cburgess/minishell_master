@@ -76,6 +76,8 @@ int	parse_and_execute(char *line, t_data *data)
 	data->tokens_list = NULL;
 	t_token	*new_token = NULL;
 
+	if (unclosed_quote_detected(line))
+		return (FAILURE);
 	printf("--TOKENS--\n");
 	// GET TOKEN LIST
 	int i = 0;
@@ -105,5 +107,5 @@ int	parse_and_execute(char *line, t_data *data)
 			i += ft_strlen(new_token->content);
 		}
 	}
-	return (0);
+	return (SUCCESS);
 }

@@ -1,6 +1,73 @@
 
 #include "minishell.h"
 
+int	expansion_needed(char *content)
+{
+	char	*ptr = content;
+
+	if  (ft_strchr(content, '$') == NULL)
+		return (FALSE);
+	if (ft_strcmp(content, "$") == 0)
+		return (FALSE);
+	while(*ptr)
+	{
+		if (*ptr == '\'')
+			ptr = ft_strchr(ptr + 1, '\'') + 1;
+		else if (*ptr == '\"')
+		{
+			ptr++;
+			while (*ptr && *ptr != '\"')
+			{
+				if (*ptr == '$' && *(ptr + 1) != '\"')
+					return (TRUE);
+				ptr++;
+			}
+		}
+		else if (*ptr == '$' && *(ptr + 1))
+			return (TRUE);
+		ptr++;
+	}
+	return (FALSE);
+}
+
+
+
+// []
+char	*expand_token(char *content)
+{
+	char	*content_map
+
+		
+	
+		
+	if (expansion_needed(content))
+	{
+		// 
+	}
+	else
+		return (ft_strdup(content));
+}
+
+
+
+
+
+
+int	handle_expansions(t_data *data)
+{
+	t_token *expanded_tokens = NULL;
+
+	expanded_tokens = ft_lstmap(&data->token_list, expand_token, free);
+	if (!expanded_tokens)
+		return (FAILURE);
+	token_list_clear(data->tokens);
+	data->tokens = expanded_tokens;
+	return (SUCCESS);
+}
+
+
+
+
 // get key = delimited by: $, spaces, quotes, end of string
 // get value = ft_getenv
 
