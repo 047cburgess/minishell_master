@@ -2,13 +2,21 @@
 # define MINISHELL_H
 
 # define BOLD "\033[1m"
+# define PINK "\e[35m"
 # define RESET "\033[0m"
-# define PROMPT BOLD"Welcome 🌊🦦 >$ "RESET
+# define PROMPT BOLD PINK"Welcome 🌊🦦 >$ "RESET
 
 # define SUCCESS 1
 # define FAILURE 0
 # define TRUE 1
 # define FALSE 0
+
+# define WORD 0
+# define RD_HEREDOC 1
+# define RD_APPEND 2
+# define RD_IN 3
+# define RD_OUT 4
+# define PIPE 5
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -44,11 +52,17 @@ typedef struct s_data
 {
 	t_command 	*command;
 	t_token		*tokens_list;
+	int	command_count;
 	char 		**bash_env;
 	t_env		*env;
 } t_data;
 
 
+// ------ EXECUTION ----- //
+
+char	*get_command(t_token *list);
+int	launch_solo_command(t_data *data);
+int	type_is_redirection(int type);
 
 // ------ SIGNALS ----- //
 //signals.c
@@ -57,18 +71,27 @@ void	init_signals(struct sigaction *act);
 // ------ PARSING ----- //
 // parsing.c
 char	*expansion_line(t_env *env, char *line);
-//int	handle_input(char *line, t_data *data);
+int	handle_input(char *line, t_data *data);
 int		set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
 int		is_quote(char c);
-int		parse_and_execute(char *line, t_data *data);
+int		tokenise(char *line, t_data *data);
+int	get_command_count(t_token *list);
+
+// ----- TOKEN_SYNTAX ----- //
+int	type_is_redirection(int type);
+int	check_pipe_syntax(t_token *tokens);
+int	check_valid_redirections(t_token *head);
+int	check_token_syntax(t_token *tokens);
+
 
 // ------ TOKENS ----- //
 t_token *new_token_node(char *content);
 void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
+t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 
 // ------ BUILT IN ----- //

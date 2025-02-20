@@ -19,7 +19,6 @@ int	main(int ac, char **av, char **envp)
 	(void)av;
 	t_data data;
 	char *line;
-	char *new_line = NULL;
 	struct sigaction act[2];
 
 	if (ac != 1)
@@ -37,11 +36,9 @@ int	main(int ac, char **av, char **envp)
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
-		printf("new_line = %s\n", new_line);
-		parse_and_execute(line, &data);
-
+		printf("line = %s\n", line);
+		handle_input(line, &data);
 		free(line);
-		free(new_line);
 	}	
 	shut_down_minishell(&data);
 	exit(5);
