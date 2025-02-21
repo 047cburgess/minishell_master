@@ -2988,3 +2988,30 @@ Executable found: /usr/bin/ls
 PARENT: resetting std[0] std[1]
 PARENT: closing std[0],std[1]
 PARENT: leaving execute solo command function
+[35m[18:08:05] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
