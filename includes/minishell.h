@@ -33,14 +33,6 @@ typedef struct s_env
 	struct s_env	*next;
 } t_env;
 
-typedef struct s_command
-{
-	char	**argv;
-	char	*cmd;
-	char	*exec_path;
-	char	**env;
-} t_command;
-
 typedef struct s_token
 {
 	char 		*content;
@@ -50,13 +42,12 @@ typedef struct s_token
 
 typedef struct s_data 
 {
-	t_command 	*command;
 	t_token		*tokens_list;
 	int	command_count;
 	char 		**bash_env;
 	t_env		*env;
+	int	log;
 } t_data;
-
 
 // ------ EXECUTION ----- //
 
@@ -100,6 +91,7 @@ int		ft_pwd(void);
 int		ft_cd(char **args);
 
 // ------ BUILT IN HELPERS ----- //
+int	execute_builtin(char **av, t_data *data);
 int 	count_ac(char **args);
 int		count_strings(char **array);
 void	free_str_array(char **array, int size);

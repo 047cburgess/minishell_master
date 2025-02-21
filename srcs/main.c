@@ -13,13 +13,19 @@
 #include "minishell.h"
 #include <sys/types.h>
 #include <sys/wait.h>	
-	
+#include <fcntl.h>
+
+void	new_log_timestamp(int fd, char *message);
+
 int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
 	char *line;
 	struct sigaction act[2];
+
+	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
+	new_log_timestamp(data.log, "Testing append to the log file");
 
 	if (ac != 1)
 	{
@@ -36,10 +42,20 @@ int	main(int ac, char **av, char **envp)
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
-		printf("line = %s\n", line);
 		handle_input(line, &data);
 		free(line);
-	}	
+	}
+	close(data.log);	
 	shut_down_minishell(&data);
 	exit(5);
 }
+
+void	new_log_timestamp(int fd, char *message)
+{
+	time_t now = time(NULL);
+	struct tm *tm_info = localtime(&now);
+	char buffer[100];
+	strftime(buffer, sizeof(buffer), "%H:%M:%S", tm_info);
+	dprintf(fd, "[%s] TEST: %s\n", buffer, message);
+}
+

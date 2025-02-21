@@ -1,0 +1,991 @@
+[35m[03:28:44] TEST: First log entry!
+PARENT: waiting for echo...
+ENTERED CHILD: echo
+attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:34:51] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'ls'
+Closed 'ls'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'ls'
+Closing 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'ls'
+Closing 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'ls'
+Closing 'ls'
+Closed 'ls'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:36:59] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'outy'
+Closing 'outy'
+Closed 'outy'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:37:27] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'fil'
+Closing 'fil'
+Closed 'fil'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:39:50] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+[-l] entering handle redirection
+[>>] entering handle redirection
+[>>] identified as redirection
+[>>] identified as RD_OUT
+Redirecting output to 'new'
+Closing 'new'
+Closed 'new'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[04:08:33] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[file.c] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+[file.c] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+[file.c] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:12:25] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:13:09] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+[world] entering handle redirection
+[how] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'file'
+Closed 'file'
+[file] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'file'
+Closed 'file'
+[file] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:26:59] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+		CHILD: attempting to exec hello
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:34:12] TEST: Testing append to the log file
+[0m[35m[04:34:29] TEST: Testing append to the log file
+[0m[35m[04:35:44] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hey'...
+	ENTERED CHILD
+		CHILD: attempting to exec hey
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[-la] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:37:25] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:41:22] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:42:28] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:43:15] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[which] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'which'...
+	ENTERED CHILD
+		CHILD: attempting to exec which
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[Makefile] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'out'
+Closing 'out'
+Closed 'out'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'her'
+Closed 'her'
+[her] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'o'
+Closing 'o'
+Closed 'o'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'baby'
+Closed 'baby'
+[baby] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'o'
+Closing 'o'
+Closed 'o'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'baby'
+Closed 'baby'
+[baby] entering handle redirection
+[>>] entering handle redirection
+[>>] identified as redirection
+[>>] identified as RD_OUT
+Redirecting output to 'baby'
+Closing 'baby'
+Closed 'baby'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:49:32] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:52:48] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[touch] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'touch'...
+	ENTERED CHILD
+		CHILD: attempting to exec touch
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:53:43] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'log_file.txt'
+Closed 'log_file.txt'
+[log_file.txt] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command cd
+[cd] entering handle redirection
+PARENT: attempting to executed cd
+PARENT: command is not built in, will attempt to find command
+[cd] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cd'...
+	ENTERED CHILD
+		CHILD: attempting to exec cd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command cd
+PARENT: attempting to executed cd
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+	ENTERED CHILD
+		CHILD: attempting to exec cd
+PARENT: waiting for child 'cd'...
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'make'...
+	ENTERED CHILD
+		CHILD: attempting to exec make
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child './minishell'...
+	ENTERED CHILD
+		CHILD: attempting to exec ./minishell
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[05:13:09] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[05:14:57] TEST: Testing append to the log file
+[0mPARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[05:22:28] TEST: Testing append to the log file
+PARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
