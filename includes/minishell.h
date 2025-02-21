@@ -18,12 +18,17 @@
 # define RD_OUT 4
 # define PIPE 5
 
+# define MAX_OPERATOR_LEN 2
+
 # include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <stdlib.h>
 # include <signal.h>
 # include <stdbool.h>
+#include <sys/types.h>
+#include <sys/wait.h>	
+#include <fcntl.h>
 # include "libft.h"
 
 typedef struct s_env
@@ -46,6 +51,7 @@ typedef struct s_data
 	int	command_count;
 	char 		**bash_env;
 	t_env		*env;
+	char	**paths;
 	int	log;
 } t_data;
 
@@ -63,11 +69,9 @@ void	init_signals(struct sigaction *act);
 // parsing.c
 char	*expansion_line(t_env *env, char *line);
 int	handle_input(char *line, t_data *data);
-int		set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
 int		is_quote(char c);
-int		tokenise(char *line, t_data *data);
 int	get_command_count(t_token *list);
 
 // ----- TOKEN_SYNTAX ----- //
@@ -76,8 +80,8 @@ int	check_pipe_syntax(t_token *tokens);
 int	check_valid_redirections(t_token *head);
 int	check_token_syntax(t_token *tokens);
 
-
 // ------ TOKENS ----- //
+int		tokenise(char *line, t_data *data);
 t_token *new_token_node(char *content);
 void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
@@ -94,9 +98,9 @@ int		ft_cd(char **args);
 int	execute_builtin(char **av, t_data *data);
 int 	count_ac(char **args);
 int		count_strings(char **array);
-void	free_str_array(char **array, int size);
 
 // ----- ENV SET UP ----- //
+int		set_environment(char **envp, t_data *data);
 void	print_env_list(t_env *env_head);
 int		set_environment(char **bash_env, t_data *data);
 t_env	*env_node_new(char *key, char *value);
@@ -109,8 +113,15 @@ void	env_add_back(t_env **env_head, t_env *new_node);
 t_env	*env_to_list(char **bash_env);
 char	**env_to_array(t_env *env_head);
 char	*ft_getenv(t_env *env, char *key);
+char	**get_split_paths(t_data *data);
 
 // ----- MINISHELL SHUT DOWN ----- //
 void	shut_down_minishell(t_data *data);
+
+// ----- MISC UTILS ----- //
+void print_tokens_list(t_data *data);
+char	**duplicate_str_array(char **start_env);
+void	free_str_array(char **array, int size);
+void	new_log_timestamp(int fd, char *message);
 
 #endif

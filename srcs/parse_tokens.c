@@ -1,6 +1,5 @@
 #include "minishell.h"
 
-
 int	type_is_redirection(int type)
 {
 	return (type == RD_APPEND || type == RD_IN || type == RD_OUT || type == RD_HEREDOC);
@@ -11,11 +10,11 @@ int	check_pipe_syntax(t_token *tokens)
 	t_token	*current = tokens;
 	t_token	*last = token_lst_last(tokens);
 
-	// IF 1st or last is pipedd
+	// IF 1st or last token is a pipe
 	if (current->type == PIPE || last->type == PIPE)
 		return (FAILURE);
 	
-	// if two pipes in a row
+	// If two pipes in a row
 	while (current && current->next)
 	{
 		if (current->type == PIPE && current->next->type == PIPE)
@@ -30,7 +29,7 @@ int	check_valid_redirections(t_token *head)
 	t_token *current = head;
 	t_token *last = token_lst_last(head);
 
-	// If there's just a redirecton token in the list
+	// If there's just a redirecton token in the list and nothing else
 	if (current->next == NULL && type_is_redirection(current->type))
 	{
 		printf("Invalid syntax near '%s'.\n", current->content);
@@ -53,6 +52,7 @@ int	check_valid_redirections(t_token *head)
 		}
 		current = current->next;
 	}
+	// TODO: Check to see that a redirection file doesn't contain spaces (i.e. resulting from a split)
 	return (SUCCESS);
 }
 

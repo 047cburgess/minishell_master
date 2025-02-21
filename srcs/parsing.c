@@ -2,15 +2,20 @@
 
 int	execute_builtin(char **av, t_data *data);
 
-// just for testing basic input for builtins, no quotes, no pipes, no redirections
-
 int	handle_input(char *line, t_data *data)
 {
+	if (unclosed_quote_detected(line))
+		return (FAILURE);
 	// 1: GET FIRST TOKENS
-	tokenise(line, data);
-
+	if (tokenise(line, data) == FAILURE)
+		return (FAILURE);
 	// 2: CHECK THE SYNTAX
-	check_token_syntax(data->tokens_list);
+	if (check_token_syntax(data->tokens_list) == FAILURE)
+	{
+		token_lst_clear(&data->tokens_list, free);
+		return (FAILURE);
+	}
+	// 2A: GET THE NUMBER OF COMMANDS
 	data->command_count = get_command_count(data->tokens_list);
 
 	// 3: EXPAND && REMOVE QUOTES
@@ -18,11 +23,12 @@ int	handle_input(char *line, t_data *data)
 	// 4: launch if solo command
 	if (data->command_count == 1)
 		launch_solo_command(data);
-//	else
+	else
+		printf("Pipeline of commands detected\n");
 //		launch_pipeline(data, data->command_count);
 	// 5: else launch Pipeline
 
-
+	token_lst_clear(&data->tokens_list, free);	
 	return (SUCCESS);
 }
 

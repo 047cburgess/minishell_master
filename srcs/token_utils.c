@@ -19,7 +19,7 @@ t_token *new_token_node(char *content)
 	if (!new)
 		return (NULL);
 	new->content = content;
-	new->type = 0;
+	new->type = WORD;
 	new->next = NULL;
 	return (new);
 }
