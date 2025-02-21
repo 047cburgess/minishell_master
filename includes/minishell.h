@@ -48,15 +48,15 @@ typedef struct s_data
 	t_env		*env;
 } t_data;
 
-
-
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
 
 // ------ PARSING ----- //
 // parsing.c
-char	*expansion_line(t_env *env, char *line);
+int		expansion_needed(char *content);
+int		handle_expansions(t_data *data, t_env *env);
+char 	*expand_token(t_env *env, char *content);
 //int	handle_input(char *line, t_data *data);
 int		set_environment(char **envp, t_data *data);
 void	print_str_array(char **array);
@@ -69,6 +69,8 @@ t_token *new_token_node(char *content);
 void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
+t_token	*token_map(t_token *tokens_list, char *(*f)(char *, t_env *), void (*del)(void *), t_env *env);
+void 	print_tokens_list(t_token *tokens_list);
 int		is_operator(char c);
 
 // ------ BUILT IN ----- //

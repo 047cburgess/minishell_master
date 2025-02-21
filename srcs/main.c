@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/19 16:16:47 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/21 12:42:37 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av, char **envp)
 	(void)av;
 	t_data data;
 	char *line;
-	char *new_line = NULL;
+	//char *new_line = NULL;
 	struct sigaction act[2];
 
 	if (ac != 1)
@@ -37,11 +37,11 @@ int	main(int ac, char **av, char **envp)
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
-		printf("new_line = %s\n", new_line);
+		//printf("new_line = %s\n", new_line);
 		parse_and_execute(line, &data);
-
+		handle_expansions(&data, &(*data.env));
 		free(line);
-		free(new_line);
+		//free(new_line);
 	}	
 	shut_down_minishell(&data);
 	exit(5);
