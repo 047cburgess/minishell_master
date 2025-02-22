@@ -88,6 +88,7 @@ void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
+int	expansion_needed(char *content);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);

@@ -3015,3 +3015,556 @@ Executable found: /usr/bin/ls
 PARENT: resetting std[0] std[1]
 PARENT: closing std[0],std[1]
 PARENT: leaving execute solo command function
+[35m[00:55:00] TEST: Testing append to the log file
+[0m[hello] entering handle redirection
+PARENT: command [hello] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/hello
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hello
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hello
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hello
+Checking directory: /usr/bin
+Checking path: /usr/bin/hello
+Checking directory: /sbin
+Checking path: /sbin/hello
+Checking directory: /bin
+Checking path: /bin/hello
+Checking directory: /usr/games
+Checking path: /usr/games/hello
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hello
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/hello
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/hello
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/hello
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/hello
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//hello
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//hello
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//hello
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//hello
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/hello
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/hello
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/hello
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/hello
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/hello
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//hello
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//hello
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//hello
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/hello
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/hello
+Checking directory: /snap/bin
+Checking path: /snap/bin/hello
+		CHILD: attempting to exec hello
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command ['$HOME'$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''$HOME'$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/'$HOME'$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/'$HOME'$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/'$HOME'$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/'$HOME'$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/'$HOME'$USER
+Checking directory: /sbin
+Checking path: /sbin/'$HOME'$USER
+Checking directory: /bin
+Checking path: /bin/'$HOME'$USER
+Checking directory: /usr/games
+Checking path: /usr/games/'$HOME'$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/'$HOME'$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/'$HOME'$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/'$HOME'$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//'$HOME'$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/'$HOME'$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//'$HOME'$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/'$HOME'$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/'$HOME'$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/'$HOME'$USER
+		CHILD: attempting to exec '$HOME'$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:56:00] TEST: Testing append to the log file
+[0mPARENT: command ['$HOME'$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''$HOME'$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/'$HOME'$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/'$HOME'$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/'$HOME'$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/'$HOME'$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/'$HOME'$USER
+Checking directory: /sbin
+Checking path: /sbin/'$HOME'$USER
+Checking directory: /bin
+Checking path: /bin/'$HOME'$USER
+Checking directory: /usr/games
+Checking path: /usr/games/'$HOME'$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/'$HOME'$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/'$HOME'$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/'$HOME'$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//'$HOME'$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/'$HOME'$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//'$HOME'$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/'$HOME'$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/'$HOME'$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/'$HOME'$USER
+		CHILD: attempting to exec '$HOME'$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+['$HOME'] entering handle redirection
+PARENT: command ['$HOME'] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''$HOME''...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/'$HOME'
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/'$HOME'
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/'$HOME'
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/'$HOME'
+Checking directory: /usr/bin
+Checking path: /usr/bin/'$HOME'
+Checking directory: /sbin
+Checking path: /sbin/'$HOME'
+Checking directory: /bin
+Checking path: /bin/'$HOME'
+Checking directory: /usr/games
+Checking path: /usr/games/'$HOME'
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/'$HOME'
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/'$HOME'
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/'$HOME'
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/'$HOME'
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/'$HOME'
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//'$HOME'
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//'$HOME'
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//'$HOME'
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//'$HOME'
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/'$HOME'
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/'$HOME'
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/'$HOME'
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/'$HOME'
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/'$HOME'
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//'$HOME'
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//'$HOME'
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//'$HOME'
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/'$HOME'
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/'$HOME'
+Checking directory: /snap/bin
+Checking path: /snap/bin/'$HOME'
+		CHILD: attempting to exec '$HOME'
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:57:11] TEST: Testing append to the log file
+[0mPARENT: command [elo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'elo'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/elo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/elo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/elo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/elo
+Checking directory: /usr/bin
+Checking path: /usr/bin/elo
+Checking directory: /sbin
+Checking path: /sbin/elo
+Checking directory: /bin
+Checking path: /bin/elo
+Checking directory: /usr/games
+Checking path: /usr/games/elo
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/elo
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/elo
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/elo
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/elo
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/elo
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//elo
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//elo
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//elo
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//elo
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/elo
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/elo
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/elo
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/elo
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/elo
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//elo
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//elo
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//elo
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/elo
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/elo
+Checking directory: /snap/bin
+Checking path: /snap/bin/elo
+		CHILD: attempting to exec elo
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [heyy] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'heyy'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/heyy
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/heyy
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/heyy
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/heyy
+Checking directory: /usr/bin
+Checking path: /usr/bin/heyy
+Checking directory: /sbin
+Checking path: /sbin/heyy
+Checking directory: /bin
+Checking path: /bin/heyy
+Checking directory: /usr/games
+Checking path: /usr/games/heyy
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/heyy
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/heyy
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/heyy
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/heyy
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/heyy
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//heyy
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//heyy
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//heyy
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//heyy
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/heyy
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/heyy
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/heyy
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/heyy
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/heyy
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//heyy
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//heyy
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//heyy
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/heyy
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/heyy
+Checking directory: /snap/bin
+Checking path: /snap/bin/heyy
+		CHILD: attempting to exec heyy
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [$HOME$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child '$HOME$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/$HOME$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$HOME$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$HOME$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$HOME$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/$HOME$USER
+Checking directory: /sbin
+Checking path: /sbin/$HOME$USER
+Checking directory: /bin
+Checking path: /bin/$HOME$USER
+Checking directory: /usr/games
+Checking path: /usr/games/$HOME$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$HOME$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/$HOME$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/$HOME$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/$HOME$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/$HOME$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//$HOME$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//$HOME$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//$HOME$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//$HOME$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/$HOME$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/$HOME$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/$HOME$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/$HOME$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/$HOME$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//$HOME$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//$HOME$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//$HOME$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/$HOME$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/$HOME$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/$HOME$USER
+		CHILD: attempting to exec $HOME$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command ["HOME"$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child '"HOME"$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/"HOME"$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/"HOME"$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/"HOME"$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/"HOME"$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/"HOME"$USER
+Checking directory: /sbin
+Checking path: /sbin/"HOME"$USER
+Checking directory: /bin
+Checking path: /bin/"HOME"$USER
+Checking directory: /usr/games
+Checking path: /usr/games/"HOME"$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/"HOME"$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/"HOME"$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/"HOME"$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/"HOME"$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/"HOME"$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//"HOME"$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//"HOME"$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//"HOME"$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//"HOME"$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"HOME"$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//"HOME"$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//"HOME"$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/"HOME"$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/"HOME"$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/"HOME"$USER
+		CHILD: attempting to exec "HOME"$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:58:03] TEST: Testing append to the log file
+[0mPARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function

@@ -25,7 +25,9 @@ int	expansion_needed(char *content)
 		}
 		else if (*ptr == '$' && *(ptr + 1))
 			return (TRUE);
-		ptr++;
+		// WAS MISSING THIS ELSE SORRY
+		else
+			ptr++;
 	}
 	return (FALSE);
 }

@@ -9,6 +9,20 @@ int	handle_input(char *line, t_data *data)
 	// 1: GET FIRST TOKENS
 	if (tokenise(line, data) == FAILURE)
 		return (FAILURE);
+	
+	t_token *tokens = data->tokens_list;
+	while (tokens)
+	{
+		if (expansion_needed(tokens->content))
+		{
+			printf("EXPANSION NEEDED ");
+			printf("content: %s\n", tokens->content);
+		}
+		else
+			printf("not needed -> %s\n", tokens->content);
+		tokens = tokens->next;
+	}
+
 	// 2: CHECK THE SYNTAX
 	if (check_token_syntax(data->tokens_list) == FAILURE)
 	{
