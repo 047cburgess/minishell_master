@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   copy_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:01:26 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/17 17:28:07 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:46:32 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,10 @@ t_env	*env_to_list(char **bash_env)
 		new_node = env_node_new(key, value);
 		if (!new_node)
 		{
-			free(key);
-			free(value);
+			// free(key);
+			// free(value);
 			env_list_clear(&minishell_env);
+			return (NULL);
 
 		}
 		env_add_back(&minishell_env, new_node);
