@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 11:45:05 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/13 12:04:16 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:14:33 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int 	count_ac(char **args)
 
 bool	option(char **args)
 {
-
 	if (args[0] == NULL)
 		return (false);
 	if (ft_strcmp(args[0], "-n") == 0)

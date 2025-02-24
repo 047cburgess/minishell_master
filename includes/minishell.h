@@ -33,35 +33,34 @@
 
 typedef struct s_env
 {
-	char	*key;
-	char	*value;
+	char			*key;
+	char			*value;
 	struct s_env	*next;
 } t_env;
 
 typedef struct s_token
 {
-	char 		*content;
-	int			type;
+	char 			*content;
+	int				type;
 	struct s_token *next;
 } t_token;
 
 typedef struct s_data 
 {
 	t_token		*tokens_list;
-	t_list	*map_list;
-	int	command_count;
+	t_list		*map_list;
+	int			command_count;
 	char 		**bash_env;
 	t_env		*env;
-	char	**paths;
-	int	log;
+	char		**paths;
+	int			log;
 } t_data;
-
 
 // ------ EXECUTION ----- //
 
 char	*get_command(t_token *list);
-int	launch_solo_command(t_data *data);
-int	type_is_redirection(int type);
+int		launch_solo_command(t_data *data);
+int		type_is_redirection(int type);
 
 // ------ SIGNALS ----- //
 //signals.c
@@ -69,45 +68,57 @@ void	init_signals(struct sigaction *act);
 
 // ------ PARSING ----- //
 // parsing.c
-
-int		handle_expansions(t_data *data, t_env *env);
 int		set_environment(char **envp, t_data *data);
-int	handle_input(char *line, t_data *data);
+int		handle_input(char *line, t_data *data);
 void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
 int		is_quote(char c);
-int	get_command_count(t_token *list);
+int		get_command_count(t_token *list);
 
 // ----- TOKEN_SYNTAX ----- //
-int	type_is_redirection(int type);
-int	check_pipe_syntax(t_token *tokens);
-int	check_valid_redirections(t_token *head);
-int	check_token_syntax(t_token *tokens);
+int		type_is_redirection(int type);
+int		check_pipe_syntax(t_token *tokens);
+int		check_valid_redirections(t_token *head);
+int		check_token_syntax(t_token *tokens);
 
 // ------ TOKENS ----- //
+
 int		tokenise(char *line, t_data *data);
 t_token *new_token_node(char *content);
 void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
-t_list	*ft_lst_map(t_list *lst, char *(*f)(char *), void (*del)(void *));
 void 	print_tokens_list(t_token *tokens_list);
 int		is_operator(char c);
-int 	ft_mapping(t_data *data, t_list *cutting);
 void 	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
-char 	*expand_token(t_env *env, char *content);
-int	expansion_needed(char *content);
 
+// ------ EXPANSIONS ----- //
+
+char	*find_key(char *line, int i);
+int 	dollar_count(char *line, int *i);
+char	*variable_content(t_env *env, char *line, int *i);
+char	*convert_expansion(t_env *env, char *line, int *i);
+void	handle_simple_quotes(t_list **cutting, char *line, int *i);
+void	handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i);
+void	handle_simple_text(t_list **cutting, char *line, int *i);
+char	*expansion_line(t_env *env, char *line);
+char	*expand_token(t_env *env, char *content);
+int		handle_expansions(t_data *data, t_env *env);
 
 // ------ BUILT IN ----- //
+
 int		ft_echo(char **args);
 int		ft_pwd(void);
 int		ft_cd(char **args);
+void 	ft_export(char **av, t_data *data);
+void	ft_env(t_data *data);
+void 	ft_unset(char **av, t_data *data);
 
 // ------ BUILT IN HELPERS ----- //
-int	execute_builtin(char **av, t_data *data);
+
+int		execute_builtin(char **av, t_data *data);
 int 	count_ac(char **args);
 int		count_strings(char **array);
 
@@ -122,6 +133,7 @@ void	env_delone(t_env *node);
 void	env_list_clear(t_env **env_list);
 t_env	*env_last(t_env *env_head);
 void	env_add_back(t_env **env_head, t_env *new_node);
+int		env_lst_size(t_env *env);
 t_env	*env_to_list(char **bash_env);
 char	**env_to_array(t_env *env_head);
 char	*ft_getenv(t_env *env, char *key);

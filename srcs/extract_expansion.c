@@ -1,148 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   extract_expansion.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/24 12:48:11 by alize             #+#    #+#             */
+/*   Updated: 2025/02/24 13:30:15 by alize            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "minishell.h"
 
-
-static char *find_key(char *line, int i)
-{
-    int		start;
-    char	*key;
-
-
-	start = i;
-    while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
-        i++;
-    key = ft_substr(line, start, i - start);
-	//printf("KEY = %s\n", key);
-    return (key);
-}
-
-// Remplace par expension
-char *convert_expansion(t_env *env, char *line, int *i)
-{
-    char	*expansion;
-    char	*var_content;
-    char	*key;
-
-	if (line[*i] == '$')
-	{
-		if (line[*i + 1] == '$')
-		{
-			expansion = ft_strdup("$$");
-			*i += 2;
-			return (expansion);
-		}
-	}
-    key = find_key(line, *i + 1);
-	if (!key)
-		return (ft_strdup(""));
-    var_content = ft_getenv(env, key);
-	//printf("var content = %s\n", var_content);
-	if (var_content != NULL)
-		expansion = ft_strdup(var_content);
-	else
-		expansion = ft_strdup("");
-    *i += ft_strlen(key) + 1;
-    free(key);
-	return (expansion);
-}
-
-static void handle_simple_quotes(t_list **cutting, char *line, int *i)
-{
-    int     start;
-    char    *new_line;
-    t_list  *new_node;
-
-    (*i)++;
-    start = *i;
-    while (line[*i] && line[*i] != '\'')
-        (*i)++;
-    if (line[*i] == '\'')
-    {
-        new_line = ft_substr(line, start, *i - start);
-        new_node = ft_lstnew(new_line);
-        ft_lstadd_back(cutting, new_node);
-		(*i)++;
-    }
-}
-
-static void handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i)
-{
-	char *expansion;
-	char *new_line;
-    char *temp;
-    char *result;
-	int start;
-
-    (*i)++;
-    result =ft_strdup("");
-    start = *i;
-    while (line[*i] && line[*i] != '\"')
-    {
-        if (line[*i] == '$' && line[*i + 1] && line[*i + 1] != '\"')
-        {
-            if (*i > start)
-            {
-                temp = ft_substr(line, start, *i - start);
-                new_line = ft_strjoin(result, temp);
-                free(result);
-				free(temp);
-                result = new_line;
-			}
-            expansion = convert_expansion(env, line, i);
-			temp = ft_strjoin(result, expansion);
-			free(result);
-			free(expansion);
-			result = temp;
-            start = *i;
-        }
-        else
-            (*i)++;
-    }
-    if (*i > start)
-    {
-        temp = ft_substr(line, start, *i - start);
-        new_line = ft_strjoin(result, temp);
-		free(result);
-		free(temp);
-        result = new_line;
-    }
-	ft_lstadd_back(cutting, ft_lstnew(result));
-    if (line[*i] == '\"')
-        (*i)++;
-}
-
-// Texte simple
-static void handle_simple_text(t_list **cutting, char *line, int *i)
-{
-	char 	*new_line;
-	t_list	*new_node;
-    int 	start;
-
-	start = *i;
-    while (line[*i] && line[*i] != '$' && line[*i] != '\"' && line[*i] != '\'')
-	{
-        (*i)++;
-	}
-	new_line = ft_substr(line, start, *i - start);
-	new_node = ft_lstnew(new_line);
-	ft_lstadd_back(cutting, new_node);
-}
-
-static char *join_list(t_list *lst)
+static char	*join_list(t_list *lst)
 {
     char	*new_line;
 	char 	*temp;
     t_list	*current;
-	// t_list	*print;
 
-	// print = lst;
-	// printf("CUTTINGS: ");
-	// while (print)
-	// {	
-	// 	printf("[%s]->", (char*)print->content);
-	// 	print = print->next;
-	// }
-	// printf("\n");
 	current = lst;
 	new_line = ft_strdup("");
     while (current)
@@ -156,7 +31,7 @@ static char *join_list(t_list *lst)
 }
 
 // Fonction principale qui gère l'expansion dans la ligne
-char *expansion_line(t_env *env, char *line)
+char	*expansion_line(t_env *env, char *line)
 {
     t_list *cutting = NULL;
 	t_list	*new_node;
@@ -186,19 +61,16 @@ char *expansion_line(t_env *env, char *line)
 }
 
 // Applique l'expansion sur un token 
-char *expand_token(t_env *env, char *content)
+char	*expand_token(t_env *env, char *content)
 {
     if (!content)
         return (NULL);
 	else
 		return (expansion_line(env, content));
-    // if (expansion_needed(content))
-    //     return (expansion_line(env, content));
-    //return (ft_strdup(content));
 }
 
 // Fonction principale pour gérer les expansions dans la liste t_token
-int handle_expansions(t_data *data, t_env *env)
+int	handle_expansions(t_data *data, t_env *env)
 {
 	t_token *current;
     char    *expanded_content;

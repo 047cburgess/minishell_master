@@ -23,18 +23,21 @@ char	*get_command(t_token *list)
 // DISABLED THIS SO CAN TEST WITH REAL COMMANDS FIRST
 int	is_builtin(char *command)
 {
-	if (ft_strcmp(command, "cd") == 0)
-		return (TRUE);
-	else
-		return (FALSE);
 	if (command == NULL)
 		return (FALSE);
+	if (ft_strcmp(command, "cd") == 0)
+		return (TRUE);
 	if (ft_strcmp(command, "echo") == 0)
 		return (TRUE);
 	if (ft_strcmp(command, "pwd") == 0)
 		return (TRUE);
-	else
-		return (FALSE);
+	if (ft_strcmp(command, "export") == 0)
+		return (TRUE);
+	if (ft_strcmp(command, "unset") == 0)
+		return (TRUE);
+	if (ft_strcmp(command, "env") == 0)
+		return (TRUE);
+	return (FALSE);
 }
 
 // TODO

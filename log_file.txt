@@ -3965,3 +3965,3119 @@ Executable found: /usr/bin/echo
 PARENT: resetting std[0] std[1]
 PARENT: closing std[0],std[1]
 PARENT: leaving execute solo command function
+[35m[11:52:48] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[/home/alize] entering handle redirection
+[] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[12:00:46] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[12:03:16] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: waiting for child 'echo'...
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[ hello ] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+[world] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+[world"] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[] entering handle redirection
+[hello] entering handle redirection
+[] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[ hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello/home/alize] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+[/home/alize] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+[ /home/alize] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+['/home/alize'] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+["$HOME"] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[12:20:07] TEST: Testing append to the log file
+[0m[35m[12:20:56] TEST: Testing append to the log file
+[0m[35m[12:46:41] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[12:57:38] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[12:59:02] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[13:12:12] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[13:31:58] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[13:42:32] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[13:44:57] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[13:48:10] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[13:49:27] TEST: Testing append to the log file
+[0m[35m[13:58:52] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[14:50:20] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[14:53:37] TEST: Testing append to the log file
+[0mPARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[14:54:05] TEST: Testing append to the log file
+[0m[35m[14:54:16] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[14:55:16] TEST: Testing append to the log file
+[0m[35m[14:57:36] TEST: Testing append to the log file
+[0m[35m[15:19:18] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[15:23:11] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[15:24:54] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[16:00:08] TEST: Testing append to the log file
+[0mPARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[20:15:08] TEST: Testing append to the log file
+[0mPARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+[35m[20:17:50] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[22:39:38] TEST: Testing append to the log file
+[0mPARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[22:47:01] TEST: Testing append to the log file
+[0m[35m[22:49:02] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+[35m[22:49:41] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ENV] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ENV'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/ENV
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ENV
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ENV
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ENV
+Checking directory: /usr/bin
+Checking path: /usr/bin/ENV
+Checking directory: /sbin
+Checking path: /sbin/ENV
+Checking directory: /bin
+Checking path: /bin/ENV
+Checking directory: /usr/games
+Checking path: /usr/games/ENV
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ENV
+Checking directory: /snap/bin
+Checking path: /snap/bin/ENV
+		CHILD: attempting to exec ENV
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[unset] entering handle redirection
+PARENT: identified builtin command [unset]
+PARENT: attempting to execute [unset]
+PARENT: command [unset] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'unset'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/unset
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/unset
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/unset
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/unset
+Checking directory: /usr/bin
+Checking path: /usr/bin/unset
+Checking directory: /sbin
+Checking path: /sbin/unset
+Checking directory: /bin
+Checking path: /bin/unset
+Checking directory: /usr/games
+Checking path: /usr/games/unset
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/unset
+Checking directory: /snap/bin
+Checking path: /snap/bin/unset
+		CHILD: attempting to exec unset
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ENV] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ENV'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/ENV
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ENV
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ENV
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ENV
+Checking directory: /usr/bin
+Checking path: /usr/bin/ENV
+Checking directory: /sbin
+Checking path: /sbin/ENV
+Checking directory: /bin
+Checking path: /bin/ENV
+Checking directory: /usr/games
+Checking path: /usr/games/ENV
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ENV
+Checking directory: /snap/bin
+Checking path: /snap/bin/ENV
+		CHILD: attempting to exec ENV
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[unset] entering handle redirection
+PARENT: identified builtin command [unset]
+PARENT: attempting to execute [unset]
+PARENT: command [unset] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'unset'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/unset
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/unset
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/unset
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/unset
+Checking directory: /usr/bin
+Checking path: /usr/bin/unset
+Checking directory: /sbin
+Checking path: /sbin/unset
+Checking directory: /bin
+Checking path: /bin/unset
+Checking directory: /usr/games
+Checking path: /usr/games/unset
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/unset
+Checking directory: /snap/bin
+Checking path: /snap/bin/unset
+		CHILD: attempting to exec unset
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ENV] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ENV'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/ENV
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ENV
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ENV
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ENV
+Checking directory: /usr/bin
+Checking path: /usr/bin/ENV
+Checking directory: /sbin
+Checking path: /sbin/ENV
+Checking directory: /bin
+Checking path: /bin/ENV
+Checking directory: /usr/games
+Checking path: /usr/games/ENV
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ENV
+Checking directory: /snap/bin
+Checking path: /snap/bin/ENV
+		CHILD: attempting to exec ENV
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[unset] entering handle redirection
+PARENT: identified builtin command [unset]
+PARENT: attempting to execute [unset]
+PARENT: command [unset] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'unset'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/unset
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/unset
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/unset
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/unset
+Checking directory: /usr/bin
+Checking path: /usr/bin/unset
+Checking directory: /sbin
+Checking path: /sbin/unset
+Checking directory: /bin
+Checking path: /bin/unset
+Checking directory: /usr/games
+Checking path: /usr/games/unset
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/unset
+Checking directory: /snap/bin
+Checking path: /snap/bin/unset
+		CHILD: attempting to exec unset
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[22:58:06] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:01:37] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:05:22] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:11:51] TEST: Testing append to the log file
+[0mPARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:15:19] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+[35m[23:16:26] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+[35m[23:17:02] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+[35m[23:20:29] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+[35m[23:20:45] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:27:12] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:27:55] TEST: Testing append to the log file
+[0m[35m[23:28:06] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:33:33] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:34:53] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[23:37:58] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[unset] entering handle redirection
+PARENT: identified builtin command [unset]
+PARENT: attempting to execute [unset]
+PARENT: command [unset] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'unset'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/unset
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/unset
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/unset
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/unset
+Checking directory: /usr/bin
+Checking path: /usr/bin/unset
+Checking directory: /sbin
+Checking path: /sbin/unset
+Checking directory: /bin
+Checking path: /bin/unset
+Checking directory: /usr/games
+Checking path: /usr/games/unset
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/unset
+Checking directory: /snap/bin
+Checking path: /snap/bin/unset
+		CHILD: attempting to exec unset
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ENV] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ENV'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/ENV
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ENV
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ENV
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ENV
+Checking directory: /usr/bin
+Checking path: /usr/bin/ENV
+Checking directory: /sbin
+Checking path: /sbin/ENV
+Checking directory: /bin
+Checking path: /bin/ENV
+Checking directory: /usr/games
+Checking path: /usr/games/ENV
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ENV
+Checking directory: /snap/bin
+Checking path: /snap/bin/ENV
+		CHILD: attempting to exec ENV
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+[VAR1=hello] entering handle redirection
+[VAR2=world] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[unset] entering handle redirection
+[VAR1] entering handle redirection
+[VAR2] entering handle redirection
+PARENT: identified builtin command [unset]
+PARENT: attempting to execute [unset]
+PARENT: command [unset] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'unset'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/unset
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/unset
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/unset
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/unset
+Checking directory: /usr/bin
+Checking path: /usr/bin/unset
+Checking directory: /sbin
+Checking path: /sbin/unset
+Checking directory: /bin
+Checking path: /bin/unset
+Checking directory: /usr/games
+Checking path: /usr/games/unset
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/unset
+Checking directory: /snap/bin
+Checking path: /snap/bin/unset
+		CHILD: attempting to exec unset
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alize/.local/bin
+Checking path: /home/alize/.local/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]

@@ -6,15 +6,16 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:31:36 by alize             #+#    #+#             */
-/*   Updated: 2025/02/24 11:25:58 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:56:53 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-t_token *new_token_node(char *content)
+t_token	*new_token_node(char *content)
 {
-	t_token *new;
+	t_token	*new;
+	
 	new = malloc(sizeof(t_token));
 	if (!new)
 		return (NULL);
@@ -71,7 +72,7 @@ t_token	*token_lst_last(t_token *head)
 	return (head);
 }
 
-void print_tokens_list(t_token *tokens_list)
+void	print_tokens_list(t_token *tokens_list)
 {
 	t_token *current;
 	

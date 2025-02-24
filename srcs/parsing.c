@@ -59,6 +59,12 @@ int	execute_builtin(char **av, t_data *data)
 		ft_cd(&av[1]);
 	else if (ft_strcmp(av[0], "pwd") == 0)
 		ft_pwd();
+	else if (ft_strcmp(av[0], "export") == 0)
+		ft_export(av, data);
+	else if (ft_strcmp(av[0], "unset") == 0)
+		ft_unset(av, data);
+	else if (ft_strcmp(av[0], "env") == 0)
+		ft_env(data);
 	else
 		printf("Not a built in command\n");
 	return (SUCCESS);
