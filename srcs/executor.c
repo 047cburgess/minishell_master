@@ -38,8 +38,7 @@ int	is_builtin(char *command)
 }
 
 // TODO
-// Redirection protocol for solo command
-// if not built in, everything done in child
+
 // redirections done in parent, need to check about how to manage heredoc
 
 #include <fcntl.h>
@@ -47,6 +46,7 @@ int	is_builtin(char *command)
 #include <sys/wait.h>
 
 // This function goes through the tokens and processes redirections from left to right
+// TODO: Handle errors in file opening
 int	handle_redirections(t_data *data, int *in_out)
 {
 	int log_file = data->log;
@@ -213,14 +213,17 @@ char	*get_command_path(t_data *data, char **directories, char *command)
 
 // Function to process a simple command
 // BUILTIN, CHILD, TBD how to incorporate heredoc in the handle redirections
-// Very ugly for now, just manages commands from /usr/bin just to test functionality with redirections
-int	launch_solo_command(t_data *data)
+int	launch_solo_command1(t_data *data)
 {
 	int	log_file = data->log;
-	char *command = get_command(data->tokens_list);
-	int	ac = get_ac(data->tokens_list, data);
-	char **av = get_av(data->tokens_list, ac);
+	char	*command;
+	int	ac;
+	char	**av;
 
+	command = get_command(data->tokens_list);
+	ac = get_ac(data->tokens_list, data);
+	av = get_av(data->tokens_list, ac);
+	
 
 	int	std[2];
 	int	in_out[2];

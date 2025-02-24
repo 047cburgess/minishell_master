@@ -22,6 +22,7 @@ SRCS = $(SRCS_DIR)/main.c \
 	   $(SRCS_DIR)/token_utils.c \
 	   $(SRCS_DIR)/get_tokens.c \
 	   $(SRCS_DIR)/executor.c \
+	   $(SRCS_DIR)/executor2.c \
 	   $(SRCS_DIR)/parse_tokens.c 
 
 	   

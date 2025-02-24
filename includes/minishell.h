@@ -62,6 +62,11 @@ typedef struct s_data
 char	*get_command(t_token *list);
 int	launch_solo_command(t_data *data);
 int	type_is_redirection(int type);
+char	*get_command_path(t_data *data, char **directories, char *command);
+char	**get_av(t_token *tokens, int ac);
+int	get_ac(t_token *command_list, t_data *data);
+int	handle_redirections(t_data *data, int *in_out);
+int	is_builtin(char *command);
 
 // ------ SIGNALS ----- //
 //signals.c
