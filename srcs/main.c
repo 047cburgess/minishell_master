@@ -11,17 +11,16 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <sys/types.h>
-#include <sys/wait.h>	
-	
+
 int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
 	char *line;
-	char *new_line = NULL;
 	struct sigaction act[2];
 
+	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
+	new_log_timestamp(data.log, "Testing append to the log file");
 	if (ac != 1)
 	{
 		ft_putendl_fd("Minishell doesn't take any arguments", 2);
@@ -30,19 +29,26 @@ int	main(int ac, char **av, char **envp)
 	init_signals(act);
 	if (!set_environment(envp, &data))
 		return (1);
-	
 	while(1)
 	{
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
-		printf("new_line = %s\n", new_line);
-		parse_and_execute(line, &data);
-
+		handle_input(line, &data);
 		free(line);
-		free(new_line);
-	}	
+	}
+	close(data.log);	
 	shut_down_minishell(&data);
 	exit(5);
 }
+
+void	new_log_timestamp(int fd, char *message)
+{
+	time_t now = time(NULL);
+	struct tm *tm_info = localtime(&now);
+	char buffer[100];
+	strftime(buffer, sizeof(buffer), "%H:%M:%S", tm_info);
+	dprintf(fd, PINK"[%s] TEST: %s\n"RESET, buffer, message);
+}
+

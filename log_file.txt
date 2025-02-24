@@ -1,0 +1,3570 @@
+[35m[03:28:44] TEST: First log entry!
+PARENT: waiting for echo...
+ENTERED CHILD: echo
+attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:34:51] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'ls'
+Closed 'ls'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'ls'
+Closing 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'ls'
+Closing 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'ls'
+Closing 'ls'
+Closed 'ls'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:36:59] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'outy'
+Closing 'outy'
+Closed 'outy'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:37:27] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'fil'
+Closing 'fil'
+Closed 'fil'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[03:39:50] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+[-l] entering handle redirection
+[>>] entering handle redirection
+[>>] identified as redirection
+[>>] identified as RD_OUT
+Redirecting output to 'new'
+Closing 'new'
+Closed 'new'
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD: echo
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+[35m[04:08:33] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[file.c] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+[file.c] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+[file.c] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:12:25] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:13:09] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+[world] entering handle redirection
+[how] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'file'
+Closed 'file'
+[file] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'file'
+Closed 'file'
+[file] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:26:59] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+		CHILD: attempting to exec hello
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[-l] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:34:12] TEST: Testing append to the log file
+[0m[35m[04:34:29] TEST: Testing append to the log file
+[0m[35m[04:35:44] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hey'...
+	ENTERED CHILD
+		CHILD: attempting to exec hey
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[-la] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:37:25] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:41:22] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:42:28] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:43:15] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[which] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'which'...
+	ENTERED CHILD
+		CHILD: attempting to exec which
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[Makefile] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'out'
+Closing 'out'
+Closed 'out'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'her'
+Closed 'her'
+[her] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'o'
+Closing 'o'
+Closed 'o'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'baby'
+Closed 'baby'
+[baby] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'o'
+Closing 'o'
+Closed 'o'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'baby'
+Closed 'baby'
+[baby] entering handle redirection
+[>>] entering handle redirection
+[>>] identified as redirection
+[>>] identified as RD_OUT
+Redirecting output to 'baby'
+Closing 'baby'
+Closed 'baby'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:49:32] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:52:48] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[touch] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'touch'...
+	ENTERED CHILD
+		CHILD: attempting to exec touch
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[04:53:43] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'log_file.txt'
+Closed 'log_file.txt'
+[log_file.txt] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command cd
+[cd] entering handle redirection
+PARENT: attempting to executed cd
+PARENT: command is not built in, will attempt to find command
+[cd] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cd'...
+	ENTERED CHILD
+		CHILD: attempting to exec cd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command cd
+PARENT: attempting to executed cd
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+	ENTERED CHILD
+		CHILD: attempting to exec cd
+PARENT: waiting for child 'cd'...
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'make'...
+	ENTERED CHILD
+		CHILD: attempting to exec make
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child './minishell'...
+	ENTERED CHILD
+		CHILD: attempting to exec ./minishell
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[05:13:09] TEST: Testing append to the log file
+[0mPARENT: command is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[05:14:57] TEST: Testing append to the log file
+[0mPARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[05:22:28] TEST: Testing append to the log file
+PARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[14:26:48] TEST: Testing append to the log file
+PARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [cat] is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[15:58:48] TEST: Testing append to the log file
+[0mPARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [cat] is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [cat] is not built in, will attempt to find command
+[cat] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+[ls] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [echo]
+[echo] entering handle redirection
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+[echo] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [hello] is not built in, will attempt to find command
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+		CHILD: attempting to exec hello
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [echo]
+[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+[echo] entering handle redirection
+[hello] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [echo]
+[echo] entering handle redirection
+[hello] entering handle redirection
+[world!] entering handle redirection
+[What] entering handle redirection
+[a] entering handle redirection
+[fantastic] entering handle redirection
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+[echo] entering handle redirection
+[hello] entering handle redirection
+[world!] entering handle redirection
+[What] entering handle redirection
+[a] entering handle redirection
+[fantastic] entering handle redirection
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:17:49] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:20:14] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Executable found: /home/caburges/clangd/clangd_19.1.2/bin
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:22:19] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/binChecking path: /home/caburges/clangd/clangd_19.1.2/binExecutable found: /home/caburges/clangd/clangd_19.1.2/bin
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:25:27] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/binChecking path: /home/caburges/clangd/clangd_19.1.2/bin/comChecking directory: /home/caburges/nvim-linux-x86_64/binChecking path: /home/caburges/nvim-linux-x86_64/bin/comChecking directory: /home/caburges/.local/funcheck/hostChecking path: /home/caburges/.local/funcheck/host/comChecking directory: /home/caburges/binChecking path: /home/caburges/bin/comChecking directory: /usr/local/sbinChecking path: /usr/local/sbin/comChecking directory: /usr/local/binChecking path: /usr/local/bin/comChecking directory: /usr/sbinChecking path: /usr/sbin/comChecking directory: /usr/binChecking path: /usr/bin/comChecking directory: /sbinChecking path: /sbin/comChecking directory: /binChecking path: /bin/comChecking directory: /usr/gamesChecking path: /usr/games/comChecking directory: /usr/local/gamesChecking path: /usr/local/games/comChecking directory: /snap/binChecking path: /snap/bin/com		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/binChecking path: /home/caburges/clangd/clangd_19.1.2/bin/comChecking directory: /home/caburges/nvim-linux-x86_64/binChecking path: /home/caburges/nvim-linux-x86_64/bin/comChecking directory: /home/caburges/.local/funcheck/hostChecking path: /home/caburges/.local/funcheck/host/comChecking directory: /home/caburges/binChecking path: /home/caburges/bin/comChecking directory: /usr/local/sbinChecking path: /usr/local/sbin/comChecking directory: /usr/local/binChecking path: /usr/local/bin/comChecking directory: /usr/sbinChecking path: /usr/sbin/comChecking directory: /usr/binChecking path: /usr/bin/comChecking directory: /sbinChecking path: /sbin/comChecking directory: /binChecking path: /bin/comChecking directory: /usr/gamesChecking path: /usr/games/comChecking directory: /usr/local/gamesChecking path: /usr/local/games/comChecking directory: /snap/binChecking path: /snap/bin/com		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/binChecking path: /home/caburges/clangd/clangd_19.1.2/bin/coChecking directory: /home/caburges/nvim-linux-x86_64/binChecking path: /home/caburges/nvim-linux-x86_64/bin/coChecking directory: /home/caburges/.local/funcheck/hostChecking path: /home/caburges/.local/funcheck/host/coChecking directory: /home/caburges/binChecking path: /home/caburges/bin/coChecking directory: /usr/local/sbinChecking path: /usr/local/sbin/coChecking directory: /usr/local/binChecking path: /usr/local/bin/coChecking directory: /usr/sbinChecking path: /usr/sbin/coChecking directory: /usr/binChecking path: /usr/bin/coChecking directory: /sbinChecking path: /sbin/coChecking directory: /binChecking path: /bin/coChecking directory: /usr/gamesChecking path: /usr/games/coChecking directory: /usr/local/gamesChecking path: /usr/local/games/coChecking directory: /snap/binChecking path: /snap/bin/co		CHILD: attempting to exec ls
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:27:17] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/com
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/com
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/com
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/com
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/com
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/com
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/com
+Checking directory: /usr/bin
+Checking path: /usr/bin/com
+Checking directory: /sbin
+Checking path: /sbin/com
+Checking directory: /bin
+Checking path: /bin/com
+Checking directory: /usr/games
+Checking path: /usr/games/com
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/com
+Checking directory: /snap/bin
+Checking path: /snap/bin/com
+		CHILD: attempting to exec cat
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:28:27] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [make] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'make'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/make
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/make
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/make
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/make
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/make
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/make
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/make
+Checking directory: /usr/bin
+Checking path: /usr/bin/make
+Executable found: /usr/bin/make
+		CHILD: attempting to exec make
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [make] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'make'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/make
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/make
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/make
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/make
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/make
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/make
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/make
+Checking directory: /usr/bin
+Checking path: /usr/bin/make
+Executable found: /usr/bin/make
+		CHILD: attempting to exec make
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[./minishell] entering handle redirection
+PARENT: command [./minishell] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child './minishell'...
+	ENTERED CHILD
+Access OK:	cmd: ./minishell
+		CHILD: attempting to exec ./minishell
+[35m[17:31:45] TEST: Testing append to the log file
+[0mPARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [./minishell] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child './minishell'...
+	ENTERED CHILD
+Access OK:	cmd: ./minishell
+		CHILD: attempting to exec ./minishell
+[35m[17:32:00] TEST: Testing append to the log file
+[0m[./minishell] entering handle redirection
+PARENT: command [./minishell] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child './minishell'...
+	ENTERED CHILD
+Access OK:	cmd: ./minishell
+		CHILD: attempting to exec ./minishell
+[35m[17:32:05] TEST: Testing append to the log file
+[0mPARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [./minishell] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child './minishell'...
+	ENTERED CHILD
+Access OK:	cmd: ./minishell
+		CHILD: attempting to exec ./minishell
+[35m[17:32:14] TEST: Testing append to the log file
+[0mPARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:32:57] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cd] entering handle redirection
+PARENT: identified builtin command [cd]
+PARENT: attempting to execute [cd]
+PARENT: command [cd] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cd'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cd
+Checking directory: /usr/bin
+Checking path: /usr/bin/cd
+Checking directory: /sbin
+Checking path: /sbin/cd
+Checking directory: /bin
+Checking path: /bin/cd
+Checking directory: /usr/games
+Checking path: /usr/games/cd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/cd
+Checking directory: /snap/bin
+Checking path: /snap/bin/cd
+		CHILD: attempting to exec cd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cd] entering handle redirection
+PARENT: identified builtin command [cd]
+PARENT: attempting to execute [cd]
+PARENT: command [cd] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cd'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cd
+Checking directory: /usr/bin
+Checking path: /usr/bin/cd
+Checking directory: /sbin
+Checking path: /sbin/cd
+Checking directory: /bin
+Checking path: /bin/cd
+Checking directory: /usr/games
+Checking path: /usr/games/cd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/cd
+Checking directory: /snap/bin
+Checking path: /snap/bin/cd
+		CHILD: attempting to exec cd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+[log_file.txt] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+[log_file.txt] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:39:10] TEST: Testing append to the log file
+[0m[hello] entering handle redirection
+PARENT: command [hello] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/hello
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/hello
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/hello
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/hello
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hello
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hello
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hello
+Checking directory: /usr/bin
+Checking path: /usr/bin/hello
+Checking directory: /sbin
+Checking path: /sbin/hello
+Checking directory: /bin
+Checking path: /bin/hello
+Checking directory: /usr/games
+Checking path: /usr/games/hello
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hello
+Checking directory: /snap/bin
+Checking path: /snap/bin/hello
+		CHILD: attempting to exec hello
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[vim] entering handle redirection
+PARENT: command [vim] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'vim'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/vim
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/vim
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/vim
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/vim
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/vim
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/vim
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/vim
+Checking directory: /usr/bin
+Checking path: /usr/bin/vim
+Executable found: /usr/bin/vim
+		CHILD: attempting to exec vim
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [q:] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'q:'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/q:
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/q:
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/q:
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/q:
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/q:
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/q:
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/q:
+Checking directory: /usr/bin
+Checking path: /usr/bin/q:
+Checking directory: /sbin
+Checking path: /sbin/q:
+Checking directory: /bin
+Checking path: /bin/q:
+Checking directory: /usr/games
+Checking path: /usr/games/q:
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/q:
+Checking directory: /snap/bin
+Checking path: /snap/bin/q:
+		CHILD: attempting to exec q:
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[nvim] entering handle redirection
+PARENT: command [nvim] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'nvim'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/nvim
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/nvim
+Executable found: /home/caburges/nvim-linux-x86_64/bin/nvim
+		CHILD: attempting to exec nvim
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:43:16] TEST: Testing append to the log file
+[0mPARENT: command [cd] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cd'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cd
+Checking directory: /usr/bin
+Checking path: /usr/bin/cd
+Checking directory: /sbin
+Checking path: /sbin/cd
+Checking directory: /bin
+Checking path: /bin/cd
+Checking directory: /usr/games
+Checking path: /usr/games/cd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/cd
+Checking directory: /snap/bin
+Checking path: /snap/bin/cd
+		CHILD: attempting to exec cd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+[Makefile] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:44:37] TEST: Testing append to the log file
+[0mPARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+[log_file.txt] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[17:45:01] TEST: Testing append to the log file
+[0mPARENT: command [ls\] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls\'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls\
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls\
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls\
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls\
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls\
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls\
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls\
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls\
+Checking directory: /sbin
+Checking path: /sbin/ls\
+Checking directory: /bin
+Checking path: /bin/ls\
+Checking directory: /usr/games
+Checking path: /usr/games/ls\
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ls\
+Checking directory: /snap/bin
+Checking path: /snap/bin/ls\
+		CHILD: attempting to exec ls\
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls=adsasdasd] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls=adsasdasd'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls=adsasdasd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls=adsasdasd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls=adsasdasd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls=adsasdasd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls=adsasdasd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls=adsasdasd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls=adsasdasd
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls=adsasdasd
+Checking directory: /sbin
+Checking path: /sbin/ls=adsasdasd
+Checking directory: /bin
+Checking path: /bin/ls=adsasdasd
+Checking directory: /usr/games
+Checking path: /usr/games/ls=adsasdasd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ls=adsasdasd
+Checking directory: /snap/bin
+Checking path: /snap/bin/ls=adsasdasd
+		CHILD: attempting to exec ls=adsasdasd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'ls'
+Closed 'ls'
+[ls] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'ls'
+Closed 'ls'
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+[Makefile] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'makefilecopy'
+Closed 'makefilecopy'
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+[Makefile] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'makefilecopy'
+Closing 'makefilecopy'
+Closed 'makefilecopy'
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+[makefilecopy] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[cat] entering handle redirection
+PARENT: command [cat] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'cat'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+		CHILD: attempting to exec cat
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [clear] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'clear'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/clear
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/clear
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/clear
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+		CHILD: attempting to exec clear
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[18:08:05] TEST: Testing append to the log file
+[0m[ls] entering handle redirection
+PARENT: command [ls] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'ls'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+		CHILD: attempting to exec ls
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:55:00] TEST: Testing append to the log file
+[0m[hello] entering handle redirection
+PARENT: command [hello] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/hello
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hello
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hello
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hello
+Checking directory: /usr/bin
+Checking path: /usr/bin/hello
+Checking directory: /sbin
+Checking path: /sbin/hello
+Checking directory: /bin
+Checking path: /bin/hello
+Checking directory: /usr/games
+Checking path: /usr/games/hello
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hello
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/hello
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/hello
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/hello
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/hello
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//hello
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//hello
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//hello
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//hello
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/hello
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/hello
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/hello
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/hello
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/hello
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//hello
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//hello
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//hello
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/hello
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/hello
+Checking directory: /snap/bin
+Checking path: /snap/bin/hello
+		CHILD: attempting to exec hello
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command ['$HOME'$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''$HOME'$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/'$HOME'$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/'$HOME'$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/'$HOME'$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/'$HOME'$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/'$HOME'$USER
+Checking directory: /sbin
+Checking path: /sbin/'$HOME'$USER
+Checking directory: /bin
+Checking path: /bin/'$HOME'$USER
+Checking directory: /usr/games
+Checking path: /usr/games/'$HOME'$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/'$HOME'$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/'$HOME'$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/'$HOME'$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//'$HOME'$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/'$HOME'$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//'$HOME'$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/'$HOME'$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/'$HOME'$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/'$HOME'$USER
+		CHILD: attempting to exec '$HOME'$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:56:00] TEST: Testing append to the log file
+[0mPARENT: command ['$HOME'$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''$HOME'$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/'$HOME'$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/'$HOME'$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/'$HOME'$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/'$HOME'$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/'$HOME'$USER
+Checking directory: /sbin
+Checking path: /sbin/'$HOME'$USER
+Checking directory: /bin
+Checking path: /bin/'$HOME'$USER
+Checking directory: /usr/games
+Checking path: /usr/games/'$HOME'$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/'$HOME'$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/'$HOME'$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/'$HOME'$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//'$HOME'$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/'$HOME'$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//'$HOME'$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//'$HOME'$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//'$HOME'$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/'$HOME'$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/'$HOME'$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/'$HOME'$USER
+		CHILD: attempting to exec '$HOME'$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+['$HOME'] entering handle redirection
+PARENT: command ['$HOME'] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''$HOME''...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/'$HOME'
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/'$HOME'
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/'$HOME'
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/'$HOME'
+Checking directory: /usr/bin
+Checking path: /usr/bin/'$HOME'
+Checking directory: /sbin
+Checking path: /sbin/'$HOME'
+Checking directory: /bin
+Checking path: /bin/'$HOME'
+Checking directory: /usr/games
+Checking path: /usr/games/'$HOME'
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/'$HOME'
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/'$HOME'
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/'$HOME'
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/'$HOME'
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/'$HOME'
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//'$HOME'
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//'$HOME'
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//'$HOME'
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//'$HOME'
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/'$HOME'
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/'$HOME'
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/'$HOME'
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/'$HOME'
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/'$HOME'
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//'$HOME'
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//'$HOME'
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//'$HOME'
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/'$HOME'
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/'$HOME'
+Checking directory: /snap/bin
+Checking path: /snap/bin/'$HOME'
+		CHILD: attempting to exec '$HOME'
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:57:11] TEST: Testing append to the log file
+[0mPARENT: command [elo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'elo'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/elo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/elo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/elo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/elo
+Checking directory: /usr/bin
+Checking path: /usr/bin/elo
+Checking directory: /sbin
+Checking path: /sbin/elo
+Checking directory: /bin
+Checking path: /bin/elo
+Checking directory: /usr/games
+Checking path: /usr/games/elo
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/elo
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/elo
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/elo
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/elo
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/elo
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//elo
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//elo
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//elo
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//elo
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/elo
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/elo
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/elo
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/elo
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/elo
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//elo
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//elo
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//elo
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/elo
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/elo
+Checking directory: /snap/bin
+Checking path: /snap/bin/elo
+		CHILD: attempting to exec elo
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [heyy] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'heyy'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/heyy
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/heyy
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/heyy
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/heyy
+Checking directory: /usr/bin
+Checking path: /usr/bin/heyy
+Checking directory: /sbin
+Checking path: /sbin/heyy
+Checking directory: /bin
+Checking path: /bin/heyy
+Checking directory: /usr/games
+Checking path: /usr/games/heyy
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/heyy
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/heyy
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/heyy
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/heyy
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/heyy
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//heyy
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//heyy
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//heyy
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//heyy
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/heyy
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/heyy
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/heyy
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/heyy
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/heyy
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//heyy
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//heyy
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//heyy
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/heyy
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/heyy
+Checking directory: /snap/bin
+Checking path: /snap/bin/heyy
+		CHILD: attempting to exec heyy
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [$HOME$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child '$HOME$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/$HOME$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$HOME$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$HOME$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$HOME$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/$HOME$USER
+Checking directory: /sbin
+Checking path: /sbin/$HOME$USER
+Checking directory: /bin
+Checking path: /bin/$HOME$USER
+Checking directory: /usr/games
+Checking path: /usr/games/$HOME$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$HOME$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/$HOME$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/$HOME$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/$HOME$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/$HOME$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//$HOME$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//$HOME$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//$HOME$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//$HOME$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/$HOME$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/$HOME$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/$HOME$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/$HOME$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/$HOME$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//$HOME$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//$HOME$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//$HOME$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/$HOME$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/$HOME$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/$HOME$USER
+		CHILD: attempting to exec $HOME$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command ["HOME"$USER] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child '"HOME"$USER'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/"HOME"$USER
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/"HOME"$USER
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/"HOME"$USER
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/"HOME"$USER
+Checking directory: /usr/bin
+Checking path: /usr/bin/"HOME"$USER
+Checking directory: /sbin
+Checking path: /sbin/"HOME"$USER
+Checking directory: /bin
+Checking path: /bin/"HOME"$USER
+Checking directory: /usr/games
+Checking path: /usr/games/"HOME"$USER
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/"HOME"$USER
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/"HOME"$USER
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/"HOME"$USER
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/"HOME"$USER
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/"HOME"$USER
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//"HOME"$USER
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//"HOME"$USER
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//"HOME"$USER
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//"HOME"$USER
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"HOME"$USER
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//"HOME"$USER
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//"HOME"$USER
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//"HOME"$USER
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/"HOME"$USER
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/"HOME"$USER
+Checking directory: /snap/bin
+Checking path: /snap/bin/"HOME"$USER
+		CHILD: attempting to exec "HOME"$USER
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[00:58:03] TEST: Testing append to the log file
+[0mPARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function

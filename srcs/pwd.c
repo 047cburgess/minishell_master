@@ -20,10 +20,10 @@ int ft_pwd(void)
 	if (path == NULL)
 	{
 		perror("getcwd");
-		return (0);
+		return (FAILURE);
 	}
 	printf("%s\n", path);
 	free(path);
-	return (1);
+	return (SUCCESS);
 }
 

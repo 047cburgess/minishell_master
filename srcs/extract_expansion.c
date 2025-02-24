@@ -25,17 +25,16 @@ int	expansion_needed(char *content)
 		}
 		else if (*ptr == '$' && *(ptr + 1))
 			return (TRUE);
-		ptr++;
+		// WAS MISSING THIS ELSE SORRY
+		else
+			ptr++;
 	}
 	return (FALSE);
 }
 
 
 
-// []
-char	*expand_token(char *content)
-{
-	char	*content_map
+/*	char	*content_map
 
 		
 	
@@ -51,8 +50,8 @@ char	*expand_token(char *content)
 
 
 
-
-
+*/
+/*
 int	handle_expansions(t_data *data)
 {
 	t_token *expanded_tokens = NULL;
@@ -64,7 +63,7 @@ int	handle_expansions(t_data *data)
 	data->tokens = expanded_tokens;
 	return (SUCCESS);
 }
-
+*/
 
 
 
