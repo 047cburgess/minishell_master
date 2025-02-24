@@ -23,16 +23,19 @@ int	handle_input(char *line, t_data *data)
 
 	// 3: EXPAND && REMOVE QUOTES
 //	handle_expansions(data, data->env);
+//
+//	// 3A: MANAGE HEREDOCS
+//		--> create temp file (unique name)
+//		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
-	printf("\n--OUTPUT--\n");		
-	// 4: launch if solo command
+	printf("\n--OUTPUT--\n");	
+
+	// 4: launch if solo builtin
 
 	if (data->command_count == 1)
 		launch_solo_command(data);
 	else
 		printf("Pipeline of commands detected\n");
-//		launch_pipeline(data, data->command_count);
-	// 5: else launch Pipeline
 
 	token_lst_clear(&data->tokens_list, free);	
 	return (SUCCESS);
