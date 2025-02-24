@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:31:36 by alize             #+#    #+#             */
-/*   Updated: 2025/02/21 16:50:19 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/24 11:25:58 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ t_token	*token_lst_last(t_token *head)
 	return (head);
 }
 
-void print_tokens_list(t_data *data)
+void print_tokens_list(t_token *tokens_list)
 {
 	t_token *current;
 	

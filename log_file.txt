@@ -3568,3 +3568,400 @@ Executable found: /usr/bin/echo
 PARENT: resetting std[0] std[1]
 PARENT: closing std[0],std[1]
 PARENT: leaving execute solo command function
+[35m[11:27:57] TEST: Testing append to the log file
+[0m[hello] entering handle redirection
+PARENT: command [hello] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'hello'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/hello
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/hello
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/hello
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/hello
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hello
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hello
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hello
+Checking directory: /usr/bin
+Checking path: /usr/bin/hello
+Checking directory: /sbin
+Checking path: /sbin/hello
+Checking directory: /bin
+Checking path: /bin/hello
+Checking directory: /usr/games
+Checking path: /usr/games/hello
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hello
+Checking directory: /snap/bin
+Checking path: /snap/bin/hello
+		CHILD: attempting to exec hello
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[11:29:14] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[11:30:13] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[11:31:39] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[11:35:47] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child ''...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/
+Executable found: /home/caburges/clangd/clangd_19.1.2/bin/
+		CHILD: attempting to exec 
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[11:36:56] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+[/home/caburges] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[35m[11:44:13] TEST: Testing append to the log file
+[0m[35m[11:44:16] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/echo
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/echo
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/echo
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function

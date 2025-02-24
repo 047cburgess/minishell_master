@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:30:22 by alize             #+#    #+#             */
-/*   Updated: 2025/02/21 11:13:19 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/24 11:27:02 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,6 @@ int	tokenise(char *line, t_data *data)
 		}
 	}
 	printf("--TOKENS--\n\t");
-	print_tokens_list(data);
+	print_tokens_list(data->tokens_list);
 	return (SUCCESS);
 }

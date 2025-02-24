@@ -206,15 +206,16 @@ int handle_expansions(t_data *data, t_env *env)
    	current = data->tokens_list;
 	if (!current)
         return (FAILURE);
-	printf("--EXPANSIONS--\n");
+	printf("--EXPANSIONS--\n\t");
     while (current)
     {
         expanded_content = expand_token(env, current->content);
 		if (expanded_content != current->content)
         	free(current->content);
         current->content = expanded_content;
-		printf("[%s]\n", current->content);
+		printf("[%s]->", current->content);
         current = current->next;
     }
+    printf("\n");
     return (SUCCESS);
 }

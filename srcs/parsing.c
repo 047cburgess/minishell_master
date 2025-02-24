@@ -10,19 +10,6 @@ int	handle_input(char *line, t_data *data)
 	if (tokenise(line, data) == FAILURE)
 		return (FAILURE);
 	
-	t_token *tokens = data->tokens_list;
-	while (tokens)
-	{
-		if (expansion_needed(tokens->content))
-		{
-			printf("EXPANSION NEEDED ");
-			printf("content: %s\n", tokens->content);
-		}
-		else
-			printf("not needed -> %s\n", tokens->content);
-		tokens = tokens->next;
-	}
-
 	// 2: CHECK THE SYNTAX
 	if (check_token_syntax(data->tokens_list) == FAILURE)
 	{
@@ -33,7 +20,9 @@ int	handle_input(char *line, t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 
 	// 3: EXPAND && REMOVE QUOTES
-		
+	handle_expansions(data, data->env);
+
+	printf("\n--OUTPUT--\n");		
 	// 4: launch if solo command
 	if (data->command_count == 1)
 		launch_solo_command(data);

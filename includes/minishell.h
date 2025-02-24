@@ -131,7 +131,6 @@ char	**get_split_paths(t_data *data);
 void	shut_down_minishell(t_data *data);
 
 // ----- MISC UTILS ----- //
-void print_tokens_list(t_data *data);
 char	**duplicate_str_array(char **start_env);
 void	free_str_array(char **array, int size);
 void	new_log_timestamp(int fd, char *message);
