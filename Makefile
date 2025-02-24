@@ -18,10 +18,12 @@ SRCS = $(SRCS_DIR)/main.c \
 	   $(SRCS_DIR)/set_up.c \
 	   $(SRCS_DIR)/clean_up.c \
 	   $(SRCS_DIR)/extract_expansion.c \
+	   $(SRCS_DIR)/mapping.c \
 	   $(SRCS_DIR)/token_utils.c \
 	   $(SRCS_DIR)/get_tokens.c \
 	   $(SRCS_DIR)/executor.c \
 	   $(SRCS_DIR)/parse_tokens.c 
+
 	   
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

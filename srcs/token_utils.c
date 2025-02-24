@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:31:36 by alize             #+#    #+#             */
-/*   Updated: 2025/02/19 19:10:16 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/21 16:50:19 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void print_tokens_list(t_data *data)
 {
 	t_token *current;
 	
-	current = data->tokens_list;
+	current = tokens_list;
 	while (current)
 	{
 		printf("[%s]->", current->content);

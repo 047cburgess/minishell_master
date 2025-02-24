@@ -48,12 +48,14 @@ typedef struct s_token
 typedef struct s_data 
 {
 	t_token		*tokens_list;
+	t_list	*map_list;
 	int	command_count;
 	char 		**bash_env;
 	t_env		*env;
 	char	**paths;
 	int	log;
 } t_data;
+
 
 // ------ EXECUTION ----- //
 
@@ -67,7 +69,9 @@ void	init_signals(struct sigaction *act);
 
 // ------ PARSING ----- //
 // parsing.c
-char	*expansion_line(t_env *env, char *line);
+
+int		handle_expansions(t_data *data, t_env *env);
+int		set_environment(char **envp, t_data *data);
 int	handle_input(char *line, t_data *data);
 void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
@@ -86,9 +90,16 @@ t_token *new_token_node(char *content);
 void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
+t_list	*ft_lst_map(t_list *lst, char *(*f)(char *), void (*del)(void *));
+void 	print_tokens_list(t_token *tokens_list);
+int		is_operator(char c);
+int 	ft_mapping(t_data *data, t_list *cutting);
+void 	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
+char 	*expand_token(t_env *env, char *content);
 int	expansion_needed(char *content);
+
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
