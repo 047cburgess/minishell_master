@@ -19,7 +19,7 @@ t_token *new_token_node(char *content)
 	if (!new)
 		return (NULL);
 	new->content = content;
-	new->type = 0;
+	new->type = WORD;
 	new->next = NULL;
 	return (new);
 }
@@ -62,16 +62,26 @@ void	token_lst_clear(t_token **tokens_list, void (*del)(void *))
 	*tokens_list = NULL;
 }
 
-void print_tokens_list(t_token *tokens_list)
+t_token	*token_lst_last(t_token *head)
+{
+	if (!head)
+		return (NULL);
+	while (head->next != NULL)
+		head = head->next;
+	return (head);
+}
+
+void print_tokens_list(t_data *data)
 {
 	t_token *current;
 	
 	current = tokens_list;
 	while (current)
 	{
-		printf("[%s]\n", current->content);
+		printf("[%s]->", current->content);
 		current = current->next;
 	}
+	printf("\n");
 }
 
 int	is_operator(char c)

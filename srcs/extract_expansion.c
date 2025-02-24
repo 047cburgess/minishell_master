@@ -1,40 +1,12 @@
 
 #include "minishell.h"
 
-// int	expansion_needed(char *content)
-// {
-// 	char	*ptr = content;
-
-// 	if  (ft_strchr(content, '$') == NULL)
-// 		return (FALSE);
-// 	if (ft_strcmp(content, "$") == 0)
-// 		return (FALSE);
-// 	while(*ptr)
-// 	{
-// 		if (*ptr == '\'')
-// 			ptr = ft_strchr(ptr + 1, '\'') + 1;
-// 		else if (*ptr == '\"')
-// 		{
-// 			ptr++;
-// 			while (*ptr && *ptr != '\"')
-// 			{
-// 				if (*ptr == '$' && *(ptr + 1) != '\"')
-// 					return (TRUE);
-// 				ptr++;
-// 			}
-// 		}
-// 		else if (*ptr == '$' && *(ptr + 1) && *(ptr + 1) != '$')
-// 			return (TRUE);
-// 		else
-// 			ptr++;
-// 	}
-// 	return (FALSE);
-// }
 
 static char *find_key(char *line, int i)
 {
     int		start;
     char	*key;
+
 
 	start = i;
     while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
@@ -74,7 +46,6 @@ char *convert_expansion(t_env *env, char *line, int *i)
 	return (expansion);
 }
 
-// Gestion des quotes simples
 static void handle_simple_quotes(t_list **cutting, char *line, int *i)
 {
     int     start;
