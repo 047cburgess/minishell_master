@@ -1,41 +1,7 @@
 #include "minishell.h"
 
-char	*get_command(t_token *list)
-{
-	t_token	*current;
-	t_token *prev = NULL;
-
-	current = list;
-	if (current->type == WORD)
-		return (current->content);
-	prev = current;
-	current = current->next;
-	while (current != NULL && current->type != PIPE)
-	{	
-		if (current->type == WORD && prev->type == WORD)
-			return (current->content);
-		prev = current;
-		current = current->next;
-	}
-	return (NULL);
-}
 
 // DISABLED THIS SO CAN TEST WITH REAL COMMANDS FIRST
-int	is_builtin(char *command)
-{
-	if (ft_strcmp(command, "cd") == 0)
-		return (TRUE);
-	else
-		return (FALSE);
-	if (command == NULL)
-		return (FALSE);
-	if (ft_strcmp(command, "echo") == 0)
-		return (TRUE);
-	if (ft_strcmp(command, "pwd") == 0)
-		return (TRUE);
-	else
-		return (FALSE);
-}
 
 // TODO
 
@@ -47,16 +13,12 @@ int	is_builtin(char *command)
 
 // This function goes through the tokens and processes redirections from left to right
 // TODO: Handle errors in file opening
-int	handle_redirections(t_data *data, int *in_out)
+int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 {
 	int log_file = data->log;
 	t_token *token;
 
-	in_out[0] = STDIN_FILENO;
-	in_out[1] = STDOUT_FILENO;
-
-	token = data->tokens_list;
-
+	token = cmd->tokens;
 	while (token->next != NULL && token->type != PIPE)
 	{
 		dprintf(log_file, "[%s] entering handle redirection\n", token->content);
@@ -68,11 +30,20 @@ int	handle_redirections(t_data *data, int *in_out)
 				dprintf(log_file, "[%s] identified as RD_IN\n", token->content);
 				in_out[0] = open(token->next->content, O_RDONLY);
 				if (in_out[0] == -1)
+				{
 					perror("Open:");
+					clean_up_exit(data, errno, NULL);
+
+				}
 				dprintf(log_file, "Opened '%s'\n", token->next->content);
 				if (dup2(in_out[0], STDIN_FILENO) == -1)
+				{
 					perror("Dup2:");
-				close(in_out[0]);
+					clean_up_exit(data, errno, NULL);
+
+				}
+				if (in_out[0] != STDIN_FILENO)
+					close(in_out[0]);
 				dprintf(log_file, "Closed '%s'\n", token->next->content);
 			}
 			else
@@ -80,13 +51,24 @@ int	handle_redirections(t_data *data, int *in_out)
 				dprintf(log_file, "[%s] identified as RD_OUT\n", token->content);
 				in_out[1] = open(token->next->content, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 				if (in_out[1] == -1)
+				{
 					perror("Open:");
+					clean_up_exit(data, errno, NULL);
+
+				}
 				dprintf(log_file, "Redirecting output to '%s'\n", token->next->content);
 				if (dup2(in_out[1], STDOUT_FILENO) == -1)
+				{
 					perror("dup out failed");
+					clean_up_exit(data, errno, NULL);
+				}
 				dprintf(log_file, "Closing '%s'\n", token->next->content);
-				close(in_out[1]);
-				dprintf(log_file, "Closed '%s'\n", token->next->content);
+				if (in_out[1] != STDOUT_FILENO)
+				{
+					close(in_out[1]);
+					dprintf(log_file, "Closed '%s'\n", token->next->content);
+
+				}
 			}
 		}
 		token = token->next;
@@ -94,81 +76,24 @@ int	handle_redirections(t_data *data, int *in_out)
 	return (0);
 }
 
-int	get_ac(t_token *command_list, t_data *data)
-{
-	(void)data;
-	t_token *current;
-	t_token *prev = NULL;
-	int	ac = 0;
-
-	current = command_list;
-	if (current->type == WORD)
-	{
-		ac++;
-	}
-	prev = current;
-	current = current->next;
-	while (current != NULL && current->type != PIPE)
-	{
-		if (current->type == WORD && prev->type == WORD)
-		{
-			ac++;
-		}
-		prev = current;
-		current = current->next;
-	}
-	return (ac);
-}
 				
-char	**get_av(t_token *tokens, int ac)
-{
-	char	**av;
-	t_token *current;
-	t_token *prev = NULL;
-	int i = 0;
-
-	av = ft_calloc((ac + 1), sizeof(char *));
-	if (!av)
-		return (NULL);
-
-	current = tokens;
-	if (current->type == WORD)
-	{
-		av[i] = ft_strdup(current->content);
-		if (!av[i])
-			return (free_str_array(av, i), NULL);
-		i++;
-	}
-	prev = current;
-	current = current->next;
-	while (current != NULL && current->type != PIPE)
-	{
-		if (current->type == WORD && prev->type == WORD)
-		{
-			av[i] = ft_strdup(current->content);
-			if (!av[i])
-				return (free_str_array(av, i), NULL);
-			i++;
-		}
-		prev = current;
-		current = current->next;
-	}
-	return (av);
-}
 
 // This function returns the full path for a given command, ready to give to execve
 // If it's not found, it returns NULL
-char	*get_command_path(t_data *data, char **directories, char *command)
+char	*get_command_path(t_data *data, char *command)
 {
 	char	*full_path;
+	char	**directories;
 	int	directory_length;
-	int	command_length = ft_strlen(command);
+	int	command_length;
+	int	full_path_size;
+	int	i;
 
 	// Checks if it's a relative or absolute path already given
 	if (ft_strchr(command, '/') != NULL)
 	{
 		full_path = ft_strdup(command);
-		if (access(command, X_OK) == 0)
+		if (access(command, R_OK) == 0)
 		{
 			dprintf(data->log, "Access OK:\tcmd: %s\n", full_path);
 
@@ -177,43 +102,49 @@ char	*get_command_path(t_data *data, char **directories, char *command)
 		perror("access");
 		dprintf(data->log, "Access KO:\tcmd: %s\n", full_path);
 		free(full_path);
+		clean_up_exit(data, errno, NULL);
 		return (NULL);
 	}
-
+	directories = ft_split(ft_getenv(data->env, "PATH"), ':');
+	command_length = ft_strlen(command);
 	// Checks all path folders to see if it's correct
-	int	i = 0;
+	i = 0;
 	while (directories[i] != NULL)
 	{	
 		dprintf(data->log, "Checking directory: %s\n", directories[i]);
 		directory_length = ft_strlen(directories[i]);
-		int full_path_size = directory_length + command_length + 2;
+		full_path_size = directory_length + command_length + 2;
 		full_path = ft_calloc(full_path_size, sizeof(char));
 		if (!full_path)
 		{
 			perror("Malloc");
+			free_str_array(directories, i);
+			clean_up_exit(data, errno, NULL);
 			return (NULL);
 		}
 		ft_strcpy(full_path, directories[i]);
 		ft_strlcat(full_path, "/", full_path_size);
 		ft_strlcat(full_path, command, full_path_size);
 		dprintf(data->log, "Checking path: %s\n", full_path);
-		if (access(full_path, X_OK) == 0)
+		if (access(full_path, R_OK) == 0)
 		{
 			dprintf(data->log, "Executable found: %s\n", full_path);
+			free_str_array(directories, i);
 			return (full_path);
 
 		}
 		free(full_path);
 		i++;
 	}
-	printf("Command not found: %s\n", command);
+	free_str_array(directories, i);
+	clean_up_exit(data, 127, "Command not found");
 	return (NULL);
 }
 
 
 // Function to process a simple command
 // BUILTIN, CHILD, TBD how to incorporate heredoc in the handle redirections
-int	launch_solo_command1(t_data *data)
+/*int	launch_solo_command1(t_data *data)
 {
 	int	log_file = data->log;
 	char	*command;
@@ -221,7 +152,7 @@ int	launch_solo_command1(t_data *data)
 	char	**av;
 
 	command = get_command(data->tokens_list);
-	ac = get_ac(data->tokens_list, data);
+	ac = get_ac(data->tokens_list);
 	av = get_av(data->tokens_list, ac);
 	
 
@@ -299,7 +230,7 @@ int	launch_solo_command1(t_data *data)
         close(std[1]);
 	dprintf(log_file, "PARENT: leaving execute solo command function\n");
 	return (SUCCESS);
-}
+}*/
 /*
 int	launch_pipeline(t_data *data, int command_count)
 {

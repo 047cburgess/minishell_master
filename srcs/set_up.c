@@ -36,6 +36,7 @@ void	free_str_array(char **array, int size)
 	while (i < size)
 	{
 		free(array[i]);
+		array[i] = NULL;
 		i++;
 	}
 	free(array);

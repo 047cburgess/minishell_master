@@ -23,7 +23,9 @@ SRCS = $(SRCS_DIR)/main.c \
 	   $(SRCS_DIR)/get_tokens.c \
 	   $(SRCS_DIR)/executor.c \
 	   $(SRCS_DIR)/executor2.c \
-	   $(SRCS_DIR)/parse_tokens.c 
+	   $(SRCS_DIR)/parse_tokens.c \
+	   $(SRCS_DIR)/command_list_utils.c \
+	   $(SRCS_DIR)/command_table_helpers.c 
 
 	   
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)

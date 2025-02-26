@@ -18,6 +18,7 @@ int	main(int ac, char **av, char **envp)
 	t_data data;
 	char *line;
 	struct sigaction act[2];
+	ft_bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
 	new_log_timestamp(data.log, "Testing append to the log file");
