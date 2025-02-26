@@ -30,6 +30,8 @@ void ft_unset(char **av, t_data *data)
 			prev = current_env;
 			current_env = current_env->next;
 		}
+		if (!current_env)
+			printf("Minishell: unset: « %s » : not a valid identifier\n", av[i]);
 		i++;
 	}
 }

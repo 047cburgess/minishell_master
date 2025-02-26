@@ -13,7 +13,6 @@ int	check_pipe_syntax(t_token *tokens)
 	// IF 1st or last token is a pipe
 	if (current->type == PIPE || last->type == PIPE)
 		return (FAILURE);
-	
 	// If two pipes in a row
 	while (current && current->next)
 	{
@@ -41,7 +40,6 @@ int	check_valid_redirections(t_token *head)
 		printf("Invalid syntax near '%s'.\n", last->content);
 		return (FAILURE);
 	}
-
 	// If the token after a redirection is not a word
 	while (current && current->next)
 	{

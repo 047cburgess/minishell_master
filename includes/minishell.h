@@ -97,12 +97,12 @@ int		is_operator(char c);
 // ------ EXPANSIONS ----- //
 
 char	*find_key(char *line, int i);
-int 	dollar_count(char *line, int *i);
 char	*variable_content(t_env *env, char *line, int *i);
 char	*convert_expansion(t_env *env, char *line, int *i);
 void	handle_simple_quotes(t_list **cutting, char *line, int *i);
+void	append_substring(char **result, char *line, int start, int end);
 void	handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i);
-void	handle_simple_text(t_list **cutting, char *line, int *i);
+void 	handle_simple_text(t_env *env, t_list **cutting, char *line, int *i);
 char	*expansion_line(t_env *env, char *line);
 char	*expand_token(t_env *env, char *content);
 int		handle_expansions(t_data *data, t_env *env);

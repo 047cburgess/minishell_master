@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:30:22 by alize             #+#    #+#             */
-/*   Updated: 2025/02/24 11:27:02 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/26 13:27:29 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ t_token	*get_quoted_token(char *start, char quote)
 
 t_token	*get_unquoted_token(char *start)
 {
-	char	*ptr = start;
-	int len;
+	char	*ptr;
+	int		len;
 	t_token	*new_token = NULL;
 	char	*new_content = NULL;
-	int i = 0;
+	int		i;
 
+	i = 0;
+	ptr = start;
 	while (*ptr && !is_operator(*ptr) && *ptr != ' ')
 	{
 		if (is_quote(*ptr))
@@ -68,8 +70,8 @@ t_token	*get_unquoted_token(char *start)
 t_token	*get_operator_token(char *start)
 {
 	char	*content;
-	t_token *token;
-	int	type;
+	t_token	*token;
+	int		type;
 
 	content = ft_calloc(MAX_OPERATOR_LEN + 1, sizeof(char));
 	if (!content)
@@ -112,10 +114,11 @@ t_token	*get_operator_token(char *start)
 // WILL NEED TO ADAPT THIS FUNCTION ACCORDING TO NEW CUTTING/EXPANSION RULES
 int	tokenise(char *line, t_data *data)
 {
-	data->tokens_list = NULL;
 	t_token	*new_token = NULL;
+	int		i;
 
-	int i = 0;
+	i = 0;
+	data->tokens_list = NULL;
 	while (line[i] != '\0')
 	{
 		while (isspace(line[i]))

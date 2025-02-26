@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:48:11 by alize             #+#    #+#             */
-/*   Updated: 2025/02/24 13:30:15 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/26 16:30:06 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@ static char	*join_list(t_list *lst)
 
 	current = lst;
 	new_line = ft_strdup("");
+	if (!new_line)
+		return (NULL);
     while (current)
     {
         temp = new_line;
         new_line = ft_strjoin(new_line, (char *)current->content);
         free(temp);
+		if (!new_line)
+			return (NULL);
         current = current->next;
     }
     return (new_line);
@@ -34,9 +38,7 @@ static char	*join_list(t_list *lst)
 char	*expansion_line(t_env *env, char *line)
 {
     t_list *cutting = NULL;
-	t_list	*new_node;
 	char 	*new_line;
-	char 	*expansion;
     int 	i;
 
 	i = 0;
@@ -46,14 +48,10 @@ char	*expansion_line(t_env *env, char *line)
             handle_simple_quotes(&cutting, line, &i);
         else if (line[i] == '\"')
             handle_double_quotes(env, &cutting, line, &i);
-        else if (line[i] == '$' && line[i + 1] && line[i + 1] != '\'')
-		{
-            expansion = convert_expansion(env, line, &i);
-			new_node = ft_lstnew(expansion);
-    		ft_lstadd_back(&cutting, new_node);
-		}
+		else if (line[i] == '$' && (ft_isalnum(line[i]) || line[i] == '_'))
+            convert_expansion(env, line, &i);
         else
-            handle_simple_text(&cutting, line, &i);
+            handle_simple_text(env, &cutting, line, &i);
     }
     new_line = join_list(cutting);
     ft_lstclear(&cutting, free);

@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:16:29 by alize             #+#    #+#             */
-/*   Updated: 2025/02/24 14:50:33 by alize            ###   ########.fr       */
+/*   Updated: 2025/02/26 17:45:18 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 char	*find_key(char *line, int i)
 {
-    int		start;
-    char	*key;
+	int		start;
+	char	*key;
 
 	start = i;
-    while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
-        i++;
-    key = ft_substr(line, start, i - start);
-    return (key);
+	while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
+		i++;
+	key = ft_substr(line, start, i - start);
+	return (key);
 }
 
-int dollar_count(char *line, int *i)
+void	append_substring(char **result, char *line, int start, int end)
 {
-	int	count;
+	char	*temp;
+	char	*new_line;
 
-	count = 0;
-	while (line[*i] == '$')
+	if (end > start)
 	{
-		count++;
-		(*i)++;
+		temp = ft_substr(line, start, end - start);
+		new_line = ft_strjoin(*result, temp);
+		free(*result);
+		free(temp);
+		*result = new_line;
 	}
-	return (count);
 }
