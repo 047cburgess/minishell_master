@@ -8534,3 +8534,433 @@ Executable found: /usr/bin/cat
 Redirecting output to 'myfile'
 Closing 'myfile'
 Closed 'myfile'
+[35m[01:41:03] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/sd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/sd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/sd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/sd
+Checking directory: /usr/bin
+Checking path: /usr/bin/sd
+Checking directory: /sbin
+Checking path: /sbin/sd
+Checking directory: /bin
+Checking path: /bin/sd
+Checking directory: /usr/games
+Checking path: /usr/games/sd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/sd
+Checking directory: /usr/lib/wsl/lib
+Checking path: /usr/lib/wsl/lib/sd
+Checking directory: /mnt/c/Windows/system32
+Checking path: /mnt/c/Windows/system32/sd
+Checking directory: /mnt/c/Windows
+Checking path: /mnt/c/Windows/sd
+Checking directory: /mnt/c/Windows/System32/Wbem
+Checking path: /mnt/c/Windows/System32/Wbem/sd
+Checking directory: /mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/Windows/System32/WindowsPowerShell/v1.0//sd
+Checking directory: /mnt/c/Windows/System32/OpenSSH/
+Checking path: /mnt/c/Windows/System32/OpenSSH//sd
+Checking directory: /mnt/c/Program Files/Intel/WiFi/bin/
+Checking path: /mnt/c/Program Files/Intel/WiFi/bin//sd
+Checking directory: /mnt/c/Program Files/Common Files/Intel/WirelessCommon/
+Checking path: /mnt/c/Program Files/Common Files/Intel/WirelessCommon//sd
+Checking directory: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common
+Checking path: /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/sd
+Checking directory: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR
+Checking path: /mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR/sd
+Checking directory: /mnt/c/WINDOWS/system32
+Checking path: /mnt/c/WINDOWS/system32/sd
+Checking directory: /mnt/c/WINDOWS
+Checking path: /mnt/c/WINDOWS/sd
+Checking directory: /mnt/c/WINDOWS/System32/Wbem
+Checking path: /mnt/c/WINDOWS/System32/Wbem/sd
+Checking directory: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/
+Checking path: /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0//sd
+Checking directory: /mnt/c/WINDOWS/System32/OpenSSH/
+Checking path: /mnt/c/WINDOWS/System32/OpenSSH//sd
+Checking directory: /mnt/c/Program Files/dotnet/
+Checking path: /mnt/c/Program Files/dotnet//sd
+Checking directory: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps
+Checking path: /mnt/c/Users/casey/AppData/Local/Microsoft/WindowsApps/sd
+Checking directory: /home/caseycode/.local/bin
+Checking path: /home/caseycode/.local/bin/sd
+Checking directory: /snap/bin
+Checking path: /snap/bin/sd
+Checking directory: /home/caseycode/.venv/bin
+Checking path: /home/caseycode/.venv/bin/sd
+Checking directory: /home/caseycode/.venv/bin
+Checking path: /home/caseycode/.venv/bin/sd
+[echo] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+[35m[01:43:26] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+[35m[01:44:24] TEST: Testing append to the log file
+[0m[35m[13:08:30] TEST: Testing append to the log file
+[0m[echo] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+[35m[13:25:18] TEST: Testing append to the log file
+[0m[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+[cat] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+[35m[13:26:27] TEST: Testing append to the log file
+[0mChecking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+[35m[13:29:52] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+cmd identified as builtin
+[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+[35m[13:32:50] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+cmd identified as builtin
+[cd] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+[35m[13:35:18] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[cd] entering handle redirection
+preparing to execute cd
+[35m[13:35:46] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[cd] entering handle redirection
+preparing to execute cd
+[35m[13:36:11] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[cd] entering handle redirection
+preparing to execute cd
+[35m[13:37:18] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[cd] entering handle redirection
+preparing to execute cd
+[35m[13:39:24] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+preparing to execute echo
+cmd identified as builtin
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'newfile'
+Closing 'newfile'
+Closed 'newfile'
+preparing to execute echo
+[35m[13:39:53] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+preparing to execute echo
+[35m[13:40:05] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+preparing to execute echo
+[35m[13:40:26] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'file'
+Closed 'file'
+preparing to execute echo
+cmd identified as builtin
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+preparing to execute echo
+[35m[13:41:23] TEST: Testing append to the log file
+[0m[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+[Makefile] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'newmf'
+Closing 'newmf'
+Closed 'newmf'
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+[35m[13:41:54] TEST: Testing append to the log file
+[0mcmd identified as builtin
+preparing to execute pwd
+[35m[13:42:37] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+preparing to execute echo
+cmd identified as builtin
+[echo] entering handle redirection
+[hello] entering handle redirection
+preparing to execute echo
+[35m[13:42:54] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+preparing to execute echo
+[35m[13:43:40] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+preparing to execute echo
+cmd identified as builtin
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+preparing to execute echo
+[35m[13:44:32] TEST: Testing append to the log file
+[0mcmd identified as builtin
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file'
+Closing 'file'
+Closed 'file'
+preparing to execute echo
+[cat] entering handle redirection
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+[35m[13:46:26] TEST: Testing append to the log file
+[0mAccess OK:	cmd: ./minishell
+[35m[13:46:29] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'file.c'
+Closing 'file.c'
+Closed 'file.c'
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[14:07:48] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[cd] entering handle redirection
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/caseycode/.local/funcheck/host
+Checking path: /home/caseycode/.local/funcheck/host/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+cmd identified as builtin
+duping save of stdin stdout
+[cd] entering handle redirection
+[eherj] entering handle redirection
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout

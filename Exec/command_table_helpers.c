@@ -27,8 +27,6 @@ int	is_builtin(char **av)
 		return (FALSE);
 	if (ft_strcmp(av[0], "cd") == 0)
 		return (TRUE);
-	else
-		return (FALSE);
 	if (ft_strcmp(av[0], "echo") == 0)
 		return (TRUE);
 	if (ft_strcmp(av[0], "pwd") == 0)

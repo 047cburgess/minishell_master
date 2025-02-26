@@ -31,6 +31,7 @@ int	launch_solo_command(t_data *data)
 {
 	t_command	*command_table;
 	int	status;
+	int	std_save[2];
 
 	command_table = new_command_table(data->tokens_list, data);
 	if (!command_table)
@@ -39,14 +40,28 @@ int	launch_solo_command(t_data *data)
 	data->command_list = command_table;
 	if (is_builtin(command_table->av))
 	{
-		// Handle redirections
-		// Execute it and return the status??
+		dprintf(data->log, "cmd identified as builtin\n");
+		dprintf(data->log, "duping save of stdin stdout\n");
+		std_save[0] = dup(STDIN_FILENO);
+		std_save[1] = dup(STDOUT_FILENO);
+		handle_redirections(data, command_table, command_table->fds);
+		dprintf(data->log, "preparing to execute %s\n", command_table->av[0]);
+		status = execute_builtin(command_table->av, data);
+		dprintf(data->log, "restoring stdin stdout\n");
+		dup2(std_save[0], STDIN_FILENO);
+		dup2(std_save[1], STDOUT_FILENO);
+		dprintf(data->log, "closing dup of stdin stdout\n");
+		close(std_save[0]);
+		close(std_save[1]);
 	}
 	else
+	{
 		execute_solo_child(data, command_table);
-	if (command_table->pid != -1)
-		waitpid(command_table->pid, &status, 0);
+		if (command_table->pid != -1)
+			waitpid(command_table->pid, &status, 0);
+	}
 	command_lst_clear(&data->command_list);
+	return (status);
 	return (0);
 }
 

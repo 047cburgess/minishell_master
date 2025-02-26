@@ -18,31 +18,36 @@
 // If more than one argument is given, print too many args
 // If no arguments given, go to home: getenv?
 
+
+// NEEDS TO RETURN THE EXIT STATUS
 int	ft_cd(char **args)
 {
 	int	ac;
+	int	status;
 
+	status = 0;
 	ac = count_ac(args);
 	// If more than one argument is given, return false
 	if (ac > 1)
 	{
 		ft_putendl_fd("cd: too many arguments", 2);
-		return (0);
+		status = 1;
 	}
 
 	// TODO If no args are given, send home -> need to pass in our env
-	if (ac == 0)
+	else if (ac == 0)
+	{
 		chdir(getenv("HOME")); // temporary using getenv but need to traverse our own path
+		status = 0; // make sure to check if it succeeded and change status value
+	}
 	// if getenv returns null, perror?
 
 	// If the chdir fails
 	else if (chdir(args[0]) == -1)
 	{
 		perror("minishell: cd : %s"); // Change for strerror?
-		return (0);
+		return (errno);
+		
 	}
-
-	// Test
-	//ft_pwd();
-	return (1);
+	return (status);
 }

@@ -41,7 +41,7 @@ int	main(int ac, char **av, char **envp)
 	}
 	close(data.log);	
 	shut_down_minishell(&data);
-	exit(5);
+	exit(0);
 }
 
 void	new_log_timestamp(int fd, char *message)

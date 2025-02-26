@@ -22,7 +22,7 @@ int	handle_input(char *line, t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 
 	// 3: EXPAND && REMOVE QUOTES
-//	handle_expansions(data, data->env);
+	//handle_expansions(data, data->env);
 //
 //	// 3A: MANAGE HEREDOCS
 //		--> create temp file (unique name)
@@ -59,13 +59,15 @@ int	get_command_count(t_token *list)
 int	execute_builtin(char **av, t_data *data)
 {
 	(void)data;
+	int	status;
+
+	status = 0;
+
 	if (ft_strcmp(av[0], "echo") == 0)
-		ft_echo(&av[1]);
+		status = ft_echo(&av[1]);
 	else if (ft_strcmp(av[0], "cd") == 0)
-		ft_cd(&av[1]);
+		status = ft_cd(&av[1]);
 	else if (ft_strcmp(av[0], "pwd") == 0)
-		ft_pwd();
-	else
-		printf("Not a built in command\n");
-	return (SUCCESS);
+		status = ft_pwd();
+	return (status);
 }
