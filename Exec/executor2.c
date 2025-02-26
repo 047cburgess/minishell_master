@@ -56,13 +56,15 @@ int	launch_solo_command(t_data *data)
 	}
 	else
 	{
-		execute_solo_child(data, command_table);
+		status = execute_solo_child(data, command_table);
 		if (command_table->pid != -1)
+		{
 			waitpid(command_table->pid, &status, 0);
+			status = get_child_exit_status(status);
+		}
 	}
 	command_lst_clear(&data->command_list);
 	return (status);
-	return (0);
 }
 
 int	check_access(char *full_path, t_data *data, t_command *cmd)
@@ -72,20 +74,24 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	// Check it's executable
 	if (access(full_path, X_OK) != 0)
 	{
+		dprintf(data->log, "%s not executable\n", cmd->av[0]);
 		free(full_path);
 		perror("Open:");
 		close_fds(cmd);
-		clean_up_exit(data, errno, NULL);
+		clean_up_exit(data, 126, NULL);
 	}
 
+	dprintf(data->log, "%s is executable\n", cmd->av[0]);
 	// Check it's not a directory
 	stat(full_path, &status_buffer);
 	if ((status_buffer.st_mode & S_IFMT) == S_IFDIR)
 	{
+		dprintf(data->log, "%s is a directory\n", cmd->av[0]);
 		free(full_path);
 		close_fds(cmd);
 		clean_up_exit(data, 126, "Is a directory");
 	}
+	dprintf(data->log, "%s is not a directory\n", cmd->av[0]);
 	return (SUCCESS);
 }
 
@@ -95,11 +101,14 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 
 	cmd->pid = fork();
 	if (cmd->pid == -1)
-		return (FAILURE);
+		return (1);
 	if (cmd->pid == 0)
 	{
-		handle_redirections(data, cmd, cmd->fds);
-		print_command_list(cmd);
+		if (handle_redirections(data, cmd, cmd->fds) != 0)
+		{
+			close_fds(cmd);
+			clean_up_exit(data, errno, NULL);
+		}
 		if (cmd->ac == 0)
 		{
 			close_fds(cmd);
@@ -108,18 +117,18 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 		full_cmd_path = get_command_path(data, cmd->av[0]);
 		check_access(full_cmd_path, data, cmd);
 		execve(full_cmd_path, cmd->av, cmd->env);
-		perror("execve");
+		perror("execve: command execution failed.");
 		free(full_cmd_path);
 		close_fds(cmd);
-		clean_up_exit(data, 2, NULL);
+		clean_up_exit(data, 1, NULL);
 	}
-	return (SUCCESS);
+	return (0);
 }
 
 void	close_fds(t_command *cmd)
 {
-	if (cmd->fds[0] != STDIN_FILENO)
+	if (cmd->fds[0] > STDIN_FILENO)
 		close(cmd->fds[0]);
-	if (cmd->fds[1] != STDOUT_FILENO)
+	if (cmd->fds[1] > STDOUT_FILENO)
 		close(cmd->fds[1]);
 }

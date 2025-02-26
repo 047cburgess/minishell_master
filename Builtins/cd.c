@@ -46,7 +46,7 @@ int	ft_cd(char **args)
 	else if (chdir(args[0]) == -1)
 	{
 		perror("minishell: cd : %s"); // Change for strerror?
-		return (errno);
+		status = 1;
 		
 	}
 	return (status);

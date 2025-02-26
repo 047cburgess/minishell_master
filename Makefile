@@ -34,6 +34,7 @@ SRCS = main.c \
 	   $(EXEC_DIR)/executor2.c \
 	   $(EXEC_DIR)/command_list_utils.c \
 	   $(EXEC_DIR)/command_table_helpers.c \
+	   $(EXEC_DIR)/return_status.c \
 	   $(CLEAN_DIR)/clean_up.c \
 
 	   

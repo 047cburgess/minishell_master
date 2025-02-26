@@ -33,7 +33,11 @@ int	handle_input(char *line, t_data *data)
 	// 4: launch if solo builtin
 
 	if (data->command_count == 1)
-		launch_solo_command(data);
+	{
+		int status = launch_solo_command(data);
+		printf("command returned with exit status %i\n", status);
+	}
+
 	else
 		printf("Pipeline of commands detected\n");
 

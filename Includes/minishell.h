@@ -98,6 +98,7 @@ void	print_command_list(t_command *head);
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
+int	get_child_exit_status(int status);
 
 // ------ PARSING ----- //
 // parsing.c
