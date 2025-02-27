@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include "ft_dprintf.h"
 #include <ctype.h>
 
 char *find_key(char *line, int i)
@@ -22,7 +23,6 @@ char *find_key(char *line, int i)
     while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
         i++;
     key = ft_substr(line, start, i - start);
-    printf("KEY = %s\n", key);
     return (key);
 }
 
@@ -31,29 +31,25 @@ static char *join_list(t_list *lst)
     char	*new_line;
 	char 	*temp;
     t_list	*current;
-	// t_list	*print;
+	 t_list	*print;
 
-	//  print = lst;
-	//  printf("CUTTINGS: ");
-	//  while (print)
-	//  {	
-	//  	printf("[%s]->", (char*)print->content);
-	//  	print = print->next;
-	//  }
-	//  printf("\n");
+	  print = lst;
+	  printf("CUTTINGS: ");
+	  while (print)
+	  {	
+	  	printf("[%s]->", (char*)print->content);
+	  	print = print->next;
+	  }
+	  printf("\n");
 	current = lst;
 	new_line = ft_strdup("");
     while (current)
     {
-    	printf("current: %s\n", (char *)current->content);
         temp = new_line;
-    	printf("joining: %s\n", temp);
         new_line = ft_strjoin(new_line, (char *)current->content);
-    	printf("joining: %s\n", new_line);
         free(temp);
         current = current->next;
     }
-    printf("finished join");
     return (new_line);
 }
 
@@ -100,9 +96,6 @@ char *expand_token(t_env *env, char *content)
         return (NULL);
 	else
 		return (expansion_line(env, content));
-    // if (expansion_needed(content))
-    //     return (expansion_line(env, content));
-    //return (ft_strdup(content));
 }
 
 // Fonction principale pour gérer les expansions dans la liste t_token
@@ -114,16 +107,16 @@ int handle_expansions(t_data *data, t_env *env)
    	current = data->tokens_list;
 	if (!current)
         return (FAILURE);
-	printf("--EXPANSIONS--\n\t");
+	ft_dprintf(data->log, "--EXPANSIONS--\n\t");
     while (current)
     {
         expanded_content = expand_token(env, current->content);
 		if (expanded_content != current->content)
         	free(current->content);
         current->content = expanded_content;
-		printf("[%s]->", current->content);
+		ft_dprintf(data->log, "[%s]->", current->content);
         current = current->next;
     }
-    printf("\n");
+    ft_dprintf(data->log, "\n");
     return (SUCCESS);
 }

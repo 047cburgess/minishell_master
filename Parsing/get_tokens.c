@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include "ft_dprintf.h"
 
 t_token	*get_quoted_token(char *start, char quote)
 {
@@ -145,7 +146,7 @@ int	tokenise(char *line, t_data *data)
 			i += ft_strlen(new_token->content);
 		}
 	}
-	printf("--TOKENS--\n\t");
-	print_tokens_list(data->tokens_list);
+	ft_dprintf(data->log, "--TOKENS--\n\t");
+	print_tokens_list(data->log, data->tokens_list);
 	return (SUCCESS);
 }

@@ -37,7 +37,6 @@ int	launch_solo_command(t_data *data)
 	command_table = new_command_table(data->tokens_list, data);
 	if (!command_table)
 		return (1);
-	print_command_list(command_table);
 	data->command_list = command_table;
 	if (is_builtin(command_table->av))
 	{
@@ -75,8 +74,8 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	// Check it's executable
 	if (access(full_path, X_OK) != 0)
 	{
-		ft_dprintf(2, "minishell: %s: %s.\n", cmd->av[0], strerror(errno));
-		ft_dprintf(data->log, "minishell: %s: %s.\n", cmd->av[0], strerror(errno));
+		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
+		ft_dprintf(data->log, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		free(full_path);
 		close_fds(cmd);
 		clean_up_exit(data, 126, NULL);
@@ -87,11 +86,11 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	stat(full_path, &status_buffer);
 	if ((status_buffer.st_mode & S_IFMT) == S_IFDIR)
 	{
-		ft_dprintf(2, "minishell: %s: %s.\n", cmd->av[0]);
-		ft_dprintf(2, "minishell: %s: %s.\n", cmd->av[0]);
+		ft_dprintf(2, "minishell: %s: Is a directory\n", cmd->av[0]);
+		ft_dprintf(data->log, "minishell: %s: Is a directory\n", cmd->av[0]);
 		free(full_path);
 		close_fds(cmd);
-		clean_up_exit(data, 126, "Is a directory");
+		clean_up_exit(data, 126, NULL);
 	}
 	dprintf(data->log, "%s is not a directory\n", cmd->av[0]);
 	return (SUCCESS);

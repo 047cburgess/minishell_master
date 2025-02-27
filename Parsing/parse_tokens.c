@@ -1,4 +1,5 @@
 #include "minishell.h"
+#include "ft_dprintf.h"
 
 int	type_is_redirection(int type)
 {
@@ -29,30 +30,23 @@ int	check_valid_redirections(t_token *head)
 	t_token *current = head;
 	t_token *last = token_lst_last(head);
 
-	// If there's just a redirecton token in the list and nothing else
-	if (current->next == NULL && type_is_redirection(current->type))
-	{
-		printf("Invalid syntax near '%s'.\n", current->content);
-		return (FAILURE);
-	}
-	// If the last token in list is a redirection
-	if (type_is_redirection(last->type))
-	{
-		printf("Invalid syntax near '%s'.\n", last->content);
-		return (FAILURE);
-	}
 
 	// If the token after a redirection is not a word
 	while (current && current->next)
 	{
 		if (type_is_redirection(current->type) && current->next->type != WORD)
 		{
-			printf("Invalid syntax near '%s'.\n", current->content);
+			ft_dprintf(2, "minishell: syntax error near unexpected token '%s'\n", current->content);
 			return (FAILURE);
 		}
 		current = current->next;
 	}
-	// TODO: Check to see that a redirection file doesn't contain spaces (i.e. resulting from a split)
+	// If the last token in list is a redirection
+	if (type_is_redirection(last->type))
+	{
+		ft_dprintf(2, "minishell: syntax error near unexpected token 'newline'\n");
+		return (FAILURE);
+	}
 	return (SUCCESS);
 }
 

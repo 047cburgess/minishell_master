@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include "ft_dprintf.h"
 
 // This function goes through the tokens and processes redirections from left to right
 int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
@@ -109,7 +110,7 @@ char	*get_command_path(t_data *data, char *command)
 		ft_strlcat(full_path, "/", full_path_size);
 		ft_strlcat(full_path, command, full_path_size);
 		dprintf(data->log, "Checking path: %s\n", full_path);
-		if (access(full_path, R_OK) == 0)
+		if (access(full_path, F_OK) == 0)
 		{
 			dprintf(data->log, "Executable found: %s\n", full_path);
 			free_str_array(dirs, i);
@@ -120,6 +121,8 @@ char	*get_command_path(t_data *data, char *command)
 		i++;
 	}
 	free_str_array(dirs, i);
-	clean_up_exit(data, 127, "Command not found");
+	ft_dprintf(2, "%s: command not found\n", command);
+	ft_dprintf(data->log, "%s: command not found\n", command);
+	clean_up_exit(data, 127, NULL);
 	return (NULL);
 }
