@@ -51,5 +51,5 @@ int	ft_echo(char **args)
 	}
 	if (option(args) == false)
 		printf("\n");
-	return (1);
+	return (0);
 }

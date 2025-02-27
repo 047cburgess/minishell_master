@@ -18,6 +18,9 @@
 # define RD_OUT 4
 # define PIPE 5
 
+#define S_IFMT 0170000
+#define S_IFDIR 0040000
+
 # define MAX_OPERATOR_LEN 2
 
 # include <stdio.h>
@@ -30,6 +33,7 @@
 #include <sys/wait.h>	
 #include <fcntl.h>
 # include "libft.h"
+#include <errno.h>
 
 typedef struct s_env
 {
@@ -45,27 +49,57 @@ typedef struct s_token
 	struct s_token *next;
 } t_token;
 
+typedef struct s_command
+{
+	char	**av;
+	char	**env;
+	int	ac;
+	int	fds[2];
+	t_token *tokens;
+	char	*path;
+	char	**path_dirs;
+	pid_t	pid;
+	struct s_command *next;
+} t_command;
+
 typedef struct s_data 
 {
 	t_token		*tokens_list;
 	t_list	*map_list;
+	t_command	*command_list;
 	int	command_count;
 	char 		**bash_env;
 	t_env		*env;
-	char	**paths;
 	int	log;
 } t_data;
 
 
 // ------ EXECUTION ----- //
 
+int	execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
 int	launch_solo_command(t_data *data);
 int	type_is_redirection(int type);
+char	*get_command_path(t_data *data, char *command);
+char	**get_av(t_token *tokens, int ac);
+int	get_ac(t_token *command_list);
+int	handle_redirections(t_data *data, t_command *cmd, int *in_out);
+void handle_simple_text(t_env *env, t_list **cutting, char *line, int *i);
+int	is_builtin(char **av);
+
+// ------ COMMAND TABLE ------ //
+
+t_command	*new_command_table(t_token *tokens, t_data *data);
+void	command_add_back(t_command **head, t_command *new);
+void	command_del_node(t_command *cmd);
+void	command_lst_clear(t_command **head);
+t_command	*command_lst_last(t_command *head);
+void	print_command_list(t_command *head);
 
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
+int	get_child_exit_status(int status);
 
 // ------ PARSING ----- //
 // parsing.c
@@ -126,13 +160,17 @@ t_env	*env_to_list(char **bash_env);
 char	**env_to_array(t_env *env_head);
 char	*ft_getenv(t_env *env, char *key);
 char	**get_split_paths(t_data *data);
+int	env_lst_size(t_env *env);
 
 // ----- MINISHELL SHUT DOWN ----- //
 void	shut_down_minishell(t_data *data);
+void	close_fds(t_command *cmd);
+void	clean_up_exit(t_data *data, int exit_status, char *msg);
 
 // ----- MISC UTILS ----- //
 char	**duplicate_str_array(char **start_env);
 void	free_str_array(char **array, int size);
 void	new_log_timestamp(int fd, char *message);
+int	count_strings(char **array);
 
 #endif

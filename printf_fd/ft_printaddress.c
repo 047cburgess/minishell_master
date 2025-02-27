@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_up.c                                         :+:      :+:    :+:   */
+/*   ft_printaddress.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 15:52:44 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/17 15:54:20 by caburges         ###   ########.fr       */
+/*   Created: 2024/11/22 14:59:26 by caburges          #+#    #+#             */
+/*   Updated: 2024/11/25 15:24:39 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "ft_dprintf.h"
 
-//Function to free everything we need to when we exit minishell
-
-void	shut_down_minishell(t_data *data)
+int	ft_printaddress(int fd, void *address)
 {
-	env_list_clear(&data->env);
-	rl_clear_history();
+	int					chars_printed;
+	unsigned long		casted_address;
+
+	if (address == NULL)
+	{
+		chars_printed = ft_printstr(fd, "(nil)");
+		return (chars_printed);
+	}
+	casted_address = (unsigned long)address;
+	chars_printed = ft_printstr(fd, "0x");
+	chars_printed += ft_printhex(fd, casted_address, 'x');
+	return (chars_printed);
 }

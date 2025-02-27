@@ -67,6 +67,8 @@ void	env_delone(t_env *node)
 {
 	free(node->key);
 	free(node->value);
+	node->key = NULL;
+	node->value = NULL;
 	free(node);
 }
 
@@ -127,8 +129,8 @@ t_env	*env_to_list(char **bash_env)
 		new_node = env_node_new(key, value);
 		if (!new_node)
 		{
-			// free(key);
-			// free(value);
+			free(key);
+			free(value);
 			env_list_clear(&minishell_env);
 			return (NULL);
 
@@ -153,40 +155,10 @@ int	env_lst_size(t_env *env)
 	return (size);
 }
 
-// This function converts minishell env list back to an array
-char	**env_to_array(t_env *env_head)
-{
-	int	list_size;
-	int	strings_len;
-	char	**array;
-	int	i;
-
-	list_size = env_lst_size(env_head);
-	array = ft_calloc(list_size + 1, sizeof(char *));
-	if (!array)
-		return (NULL);
-	i = 0;
-	while (i < list_size)
-	{
-		strings_len = ft_strlen(env_head->key) + ft_strlen(env_head->value);
-		array[i] = ft_calloc(strings_len + 2, sizeof(char));
-		if (!array[i])
-		{
-			return (free_str_array(array, i), NULL);
-		}
-		ft_strcpy(array[i], env_head->key);
-		ft_strlcat(array[i], "=", strings_len + 2);
-		ft_strlcat(array[i], env_head->value, strings_len + 2);
-		i++;
-		env_head = env_head->next;
-	}
-	return (array);
-}
 
 // This function copies bash env at minishell startup and puts it into a linked list
 int	set_environment(char **bash_env, t_data *data)
 {
-	ft_bzero(data, sizeof(data));
 	data->bash_env = bash_env;
 	data->env = env_to_list(bash_env);
 	if (data->env == NULL)

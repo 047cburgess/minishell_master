@@ -1,54 +1,72 @@
 NAME = minishell
 CFLAGS = -Wall -Werror -Wextra -MMD -MP -g 
 
-SRCS_DIR = srcs
-INC_DIR = includes
-OBJS_DIR = objs
+##----- DIRECTORIES -----##
+PARSE_DIR = Parsing
+ENV_DIR = Environment
+CLEAN_DIR = Clean
+EXEC_DIR = Exec
+EXPAND_DIR = Expansions
+SIGNALS_DIR = Signals
+BUILTIN_DIR = Builtins
+INC_DIR = Includes
+OBJS_DIR = Objs
 LIBFT_DIR = libft
+DPRINTF_DIR = printf_fd
 LIBFT = libft/libft.a
+DPRINTF = printf_fd/libftdprintf.a
 
-SRCS = $(SRCS_DIR)/main.c \
-       $(SRCS_DIR)/signals.c \
-       $(SRCS_DIR)/echo.c \
-	   $(SRCS_DIR)/pwd.c \
-	   $(SRCS_DIR)/cd.c \
-	   $(SRCS_DIR)/parsing.c \
-	   $(SRCS_DIR)/handle_quotes.c \
-	   $(SRCS_DIR)/copy_env.c \
-	   $(SRCS_DIR)/set_up.c \
-	   $(SRCS_DIR)/clean_up.c \
-	   $(SRCS_DIR)/extract_expansion.c \
-	   $(SRCS_DIR)/mapping.c \
-	   $(SRCS_DIR)/token_utils.c \
-	   $(SRCS_DIR)/get_tokens.c \
-	   $(SRCS_DIR)/executor.c \
-	   $(SRCS_DIR)/parse_tokens.c 
+##----- FILES -----##
+
+SRCS = main.c \
+	   $(ENV_DIR)/copy_env.c \
+	   $(ENV_DIR)/set_up.c \
+	   $(SIGNALS_DIR)/signals.c \
+	   $(PARSE_DIR)/parsing.c \
+	   $(PARSE_DIR)/get_tokens.c \
+	   $(PARSE_DIR)/handle_quotes.c \
+	   $(PARSE_DIR)/token_utils.c \
+	   $(PARSE_DIR)/parse_tokens.c \
+	   $(EXPAND_DIR)/extract_expansion.c \
+	   $(EXPAND_DIR)/mapping.c \
+	   $(BUILTIN_DIR)/echo.c \
+	   $(BUILTIN_DIR)/pwd.c \
+	   $(BUILTIN_DIR)/cd.c \
+	   $(EXEC_DIR)/executor.c \
+	   $(EXEC_DIR)/executor2.c \
+	   $(EXEC_DIR)/command_list_utils.c \
+	   $(EXEC_DIR)/command_table_helpers.c \
+	   $(EXEC_DIR)/return_status.c \
+	   $(CLEAN_DIR)/clean_up.c \
 
 	   
-OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
+OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
-	cc $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -lreadline -lncurses  -o $(NAME) 
+$(NAME): $(LIBFT) $(DPRINTF) $(OBJS)
+	cc $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -L $(DPRINTF_DIR) -lft -lftdprintf -lreadline -lncurses  -o $(NAME) 
 
 $(LIBFT): 
 	@make -C $(LIBFT_DIR)
 
-$(OBJS_DIR):
-	@mkdir -p $(OBJS_DIR)
+$(DPRINTF):
+	@make -C $(DPRINTF_DIR)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
-	cc $(CFLAGS) -I$(LIBFT_DIR) -I$(INC_DIR) -c $< -o $@
+$(OBJS_DIR)/%.o: %.c
+	mkdir -p $(dir $@)
+	cc $(CFLAGS) -I$(LIBFT_DIR) -I$(DPRINTF_DIR) -I$(INC_DIR) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)
 	@make clean -C $(LIBFT_DIR)
+	@make clean -C $(DPRINTF_DIR)
 
 fclean: clean
 	@rm -rf $(NAME)
 	@make fclean -C $(LIBFT_DIR)
+	@make fclean -C $(DPRINTF_DIR)
 
 re: fclean all
 
