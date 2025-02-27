@@ -10319,3 +10319,216 @@ duping save of stdin stdout
 preparing to execute echo
 restoring stdin stdout
 closing dup of stdin stdout
+[35m[16:13:54] TEST: Testing append to the log file
+[0mChecking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+ls is executable
+ls is not a directory
+cmd identified as builtin
+duping save of stdin stdout
+[cd] entering handle redirection
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+ls is executable
+ls is not a directory
+cmd identified as builtin
+duping save of stdin stdout
+[cd] entering handle redirection
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+ls is executable
+ls is not a directory
+Access KO:	cmd: ./Pipex/pipex
+[35m[16:16:10] TEST: Testing append to the log file
+[0mAccess KO:	cmd: ./Pipex/pipex
+[35m[16:18:00] TEST: Testing append to the log file
+[0mAccess KO:	cmd: ./Pipex/pipex
+[35m[16:18:29] TEST: Testing append to the log file
+[0mAccess KO:	cmd: ./P
+[35m[16:18:42] TEST: Testing append to the log file
+[0mAccess OK:	cmd: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:19:27] TEST: Testing append to the log file
+[0mAccess OK:	cmd: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:20:23] TEST: Testing append to the log file
+[0mAccess OK:	cmd: ./Pipex/pipex
+Full cmd path: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:21:03] TEST: Testing append to the log file
+[0mChecking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+Access OK:	cmd: ./Pipex/pipex
+Full cmd path: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:22:19] TEST: Testing append to the log file
+[0mEntered get full path
+Access OK:	cmd: ./Pipex
+Full cmd path: ./Pipex
+./Pipex is executable
+./Pipex is a directory
+Entered get full path
+Access OK:	cmd: ./Pipex/pipex
+Full cmd path: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:23:19] TEST: Testing append to the log file
+[0mEntered get full path
+No '' in command name 
+Access OK:	cmd: ./Pipex/pipex
+Full cmd path: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:24:58] TEST: Testing append to the log file
+[0mEntered get full path
+No '' in command name 
+Full cmd path: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+Entered get full path
+No '' in command name 
+Full cmd path: ./Pipex/ff
+./Pipex/ff not executable
+Entered get full path
+No '' in command name 
+Full cmd path: ./Pi
+./Pi not executable
+Entered get full path
+No '' in command name 
+Full cmd path: ./Includes
+./Includes is executable
+./Includes is a directory
+Entered get full path
+No '' in command name 
+Full cmd path: ./fdf
+./fdf not executable
+[35m[16:26:26] TEST: Testing append to the log file
+[0mEntered get full path
+No '\' in command name 
+Full cmd path: ./Pipex/pipex
+./Pipex/pipex is executable
+./Pipex/pipex is not a directory
+[35m[16:27:12] TEST: Testing append to the log file
+[0mEntered get full path
+No '\' in command name 
+Full cmd path: ./Pipex/sdfds
+./Pipex/sdfds not executable
+Entered get full path
+No '\' in command name 
+Full cmd path: ./pdfjsfd
+./pdfjsfd not executable
+[35m[16:28:56] TEST: Testing append to the log file
+[0mEntered get full path
+No '\' in command name 
+Full cmd path: ./Pipefg
+Entered get full path
+No '\' in command name 
+Full cmd path: ./Includes
+Entered get full path
+No '\' in command name 
+Full cmd path: ./Includes
+[35m[16:45:22] TEST: Testing append to the log file
+[0mEntered get full path
+No '\' in command name 
+Full cmd path: ./Pipex/pipex
+Entered get full path
+No '\' in command name 
+Full cmd path: ./kk
+[35m[16:46:57] TEST: Testing append to the log file
+[0mEntered get full path
+No '\' in command name 
+Full cmd path: ./ere
+[35m[17:14:55] TEST: Testing append to the log file
+[0mFUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./psdf
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./Pipex/pipex
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./Includes
+[35m[17:16:49] TEST: Testing append to the log file
+[0mFUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./Includes
+./Includes is executable
+./Includes is a directory
+[35m[17:17:53] TEST: Testing append to the log file
+[0mFUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./Includes
+./Includes is executable
