@@ -21149,3 +21149,559 @@ Executable found: /usr/bin/clear
 PARENT: resetting std[0] std[1]
 PARENT: closing std[0],std[1]
 PARENT: leaving execute solo command function
+[35m[12:03:04] TEST: Testing append to the log file
+[0m[export] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/export
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/env
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [clear] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'clear'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+		CHILD: attempting to exec clear
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+[weshhey bonjour] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[echo] entering handle redirection
+PARENT: identified builtin command [echo]
+PARENT: attempting to execute [echo]
+PARENT: command [echo] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'echo'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo
+Executable found: /usr/bin/echo
+		CHILD: attempting to exec echo
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+[export] entering handle redirection
+[HOLA=p] entering handle redirection
+PARENT: identified builtin command [export]
+PARENT: attempting to execute [export]
+PARENT: command [export] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'export'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/export
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/export
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/export
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/export
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/export
+Checking directory: /usr/bin
+Checking path: /usr/bin/export
+Checking directory: /sbin
+Checking path: /sbin/export
+Checking directory: /bin
+Checking path: /bin/export
+Checking directory: /usr/games
+Checking path: /usr/games/export
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/export
+Checking directory: /snap/bin
+Checking path: /snap/bin/export
+		CHILD: attempting to exec export
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: identified builtin command [env]
+PARENT: attempting to execute [env]
+PARENT: command [env] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child 'env'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/env
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/env
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/env
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/env
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/env
+Checking directory: /usr/bin
+Checking path: /usr/bin/env
+Executable found: /usr/bin/env
+		CHILD: attempting to exec env
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
+PARENT: command [$HOLA$BYEd] is not built in, will attempt to find command
+PARENT: preparing to fork into child
+PARENT: waiting for child '$HOLA$BYEd'...
+	ENTERED CHILD
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$HOLA$BYEd
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$HOLA$BYEd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$HOLA$BYEd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$HOLA$BYEd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$HOLA$BYEd
+Checking directory: /usr/bin
+Checking path: /usr/bin/$HOLA$BYEd
+Checking directory: /sbin
+Checking path: /sbin/$HOLA$BYEd
+Checking directory: /bin
+Checking path: /bin/$HOLA$BYEd
+Checking directory: /usr/games
+Checking path: /usr/games/$HOLA$BYEd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$HOLA$BYEd
+Checking directory: /snap/bin
+Checking path: /snap/bin/$HOLA$BYEd
+		CHILD: attempting to exec $HOLA$BYEd
+		CHILD: execve failed
+		CHILD: exiting shell
+PARENT: resetting std[0] std[1]
+PARENT: closing std[0],std[1]
+PARENT: leaving execute solo command function
