@@ -10319,3 +10319,54 @@ duping save of stdin stdout
 preparing to execute echo
 restoring stdin stdout
 closing dup of stdin stdout
+[35m[16:56:56] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+clear is executable
+clear is not a directory
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:15:47] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hello] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hello] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
