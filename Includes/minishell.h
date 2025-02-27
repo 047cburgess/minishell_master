@@ -37,86 +37,83 @@
 
 typedef struct s_env
 {
-	char	*key;
-	char	*value;
+	char			*key;
+	char			*value;
 	struct s_env	*next;
 } t_env;
 
 typedef struct s_token
 {
-	char 		*content;
-	int			type;
+	char 			*content;
+	int				type;
 	struct s_token *next;
 } t_token;
 
 typedef struct s_command
 {
-	char	**av;
-	char	**env;
+	char			**av;
+	char			**env;
 	int	ac;
-	int	fds[2];
-	t_token *tokens;
-	char	*path;
-	char	**path_dirs;
-	pid_t	pid;
+	int				fds[2];
+	t_token 		*tokens;
+	char			*path;
+	char			**path_dirs;
+	pid_t			pid;
 	struct s_command *next;
 } t_command;
 
 typedef struct s_data 
 {
 	t_token		*tokens_list;
-	t_list	*map_list;
+	t_list		*map_list;
 	t_command	*command_list;
-	int	command_count;
+	int			command_count;
 	char 		**bash_env;
 	t_env		*env;
-	int	log;
+	int			log;
 } t_data;
-
 
 // ------ EXECUTION ----- //
 
-int	execute_solo_child(t_data *data, t_command *cmd);
+int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
-int	launch_solo_command(t_data *data);
-int	type_is_redirection(int type);
+int		launch_solo_command(t_data *data);
+int		type_is_redirection(int type);
 char	*get_command_path(t_data *data, char *command);
 char	**get_av(t_token *tokens, int ac);
-int	get_ac(t_token *command_list);
-int	handle_redirections(t_data *data, t_command *cmd, int *in_out);
-void handle_simple_text(t_env *env, t_list **cutting, char *line, int *i);
-int	is_builtin(char **av);
+int		get_ac(t_token *command_list);
+int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
+int		is_builtin(char **av);
 
 // ------ COMMAND TABLE ------ //
 
 t_command	*new_command_table(t_token *tokens, t_data *data);
-void	command_add_back(t_command **head, t_command *new);
-void	command_del_node(t_command *cmd);
-void	command_lst_clear(t_command **head);
+void		command_add_back(t_command **head, t_command *new);
+void		command_del_node(t_command *cmd);
+void		command_lst_clear(t_command **head);
 t_command	*command_lst_last(t_command *head);
-void	print_command_list(t_command *head);
+void		print_command_list(t_command *head);
 
 // ------ SIGNALS ----- //
 //signals.c
 void	init_signals(struct sigaction *act);
-int	get_child_exit_status(int status);
+int		get_child_exit_status(int status);
 
 // ------ PARSING ----- //
 // parsing.c
 
-int		handle_expansions(t_data *data, t_env *env);
 int		set_environment(char **envp, t_data *data);
-int	handle_input(char *line, t_data *data);
+int		handle_input(char *line, t_data *data);
 void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
 int		is_quote(char c);
-int	get_command_count(t_token *list);
+int		get_command_count(t_token *list);
 
 // ----- TOKEN_SYNTAX ----- //
-int	type_is_redirection(int type);
-int	check_pipe_syntax(t_token *tokens);
-int	check_valid_redirections(t_token *head);
-int	check_token_syntax(t_token *tokens);
+int		type_is_redirection(int type);
+int		check_pipe_syntax(t_token *tokens);
+int		check_valid_redirections(t_token *head);
+int		check_token_syntax(t_token *tokens);
 
 // ------ TOKENS ----- //
 int		tokenise(char *line, t_data *data);
@@ -132,16 +129,28 @@ void 	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 char 	*expand_token(t_env *env, char *content);
-int	expansion_needed(char *content);
+int		expansion_needed(char *content);
 
+// ------ EXPANSIONS ----- //
+char 	*find_key(char *line, int i);
+char	*convert_expansion(t_env *env, char *line, int *i);
+void	handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i);
+void	handle_simple_text(t_list **cutting, char *line, int *i);
+void	handle_simple_quotes(t_list **cutting, char *line, int *i);
+char 	*expansion_line(t_env *env, char *line);
+char 	*expand_token(t_env *env, char *content);
+int		handle_expansions(t_data *data, t_env *env);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
 int		ft_pwd(void);
 int		ft_cd(char **args);
+int		ft_export(char **av, t_data *data);
+int 	ft_unset(char **av, t_data *data);
+int		ft_env(t_data *data);
 
 // ------ BUILT IN HELPERS ----- //
-int	execute_builtin(char **av, t_data *data);
+int		execute_builtin(char **av, t_data *data);
 int 	count_ac(char **args);
 int		count_strings(char **array);
 
@@ -160,7 +169,7 @@ t_env	*env_to_list(char **bash_env);
 char	**env_to_array(t_env *env_head);
 char	*ft_getenv(t_env *env, char *key);
 char	**get_split_paths(t_data *data);
-int	env_lst_size(t_env *env);
+int		env_lst_size(t_env *env);
 
 // ----- MINISHELL SHUT DOWN ----- //
 void	shut_down_minishell(t_data *data);
@@ -171,6 +180,6 @@ void	clean_up_exit(t_data *data, int exit_status, char *msg);
 char	**duplicate_str_array(char **start_env);
 void	free_str_array(char **array, int size);
 void	new_log_timestamp(int fd, char *message);
-int	count_strings(char **array);
+int		count_strings(char **array);
 
 #endif

@@ -31,6 +31,12 @@ int	is_builtin(char **av)
 		return (TRUE);
 	if (ft_strcmp(av[0], "pwd") == 0)
 		return (TRUE);
+	if (ft_strcmp(av[0], "export") == 0)
+		return (TRUE);
+	if (ft_strcmp(av[0], "unset") == 0)
+		return (TRUE);
+	if (ft_strcmp(av[0], "env") == 0)
+		return (TRUE);
 	else
 		return (FALSE);
 }

@@ -21,6 +21,7 @@ DPRINTF = printf_fd/libftdprintf.a
 SRCS = main.c \
 	   $(ENV_DIR)/copy_env.c \
 	   $(ENV_DIR)/set_up.c \
+	   $(ENV_DIR)/env_utils.c \
 	   $(SIGNALS_DIR)/signals.c \
 	   $(PARSE_DIR)/parsing.c \
 	   $(PARSE_DIR)/get_tokens.c \
@@ -28,10 +29,13 @@ SRCS = main.c \
 	   $(PARSE_DIR)/token_utils.c \
 	   $(PARSE_DIR)/parse_tokens.c \
 	   $(EXPAND_DIR)/extract_expansion.c \
-	   $(EXPAND_DIR)/mapping.c \
+	    $(EXPAND_DIR)/expansions_cutting.c \
 	   $(BUILTIN_DIR)/echo.c \
 	   $(BUILTIN_DIR)/pwd.c \
 	   $(BUILTIN_DIR)/cd.c \
+		$(BUILTIN_DIR)/export.c \
+	   $(BUILTIN_DIR)/unset.c \
+	   $(BUILTIN_DIR)/env.c \
 	   $(EXEC_DIR)/executor.c \
 	   $(EXEC_DIR)/executor2.c \
 	   $(EXEC_DIR)/command_list_utils.c \
@@ -39,7 +43,6 @@ SRCS = main.c \
 	   $(EXEC_DIR)/return_status.c \
 	   $(CLEAN_DIR)/clean_up.c \
 
-	   
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 DEPS = $(OBJS:.o=.d)
 
