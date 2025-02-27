@@ -9606,3 +9606,716 @@ closing dup of stdin stdout
 [35m[15:43:56] TEST: Testing append to the log file
 [0mAccess OK:	cmd: ./Pipex/pipex
 ./Pipex/pipex not executable
+[35m[11:04:14] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[11:08:44] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:28:39] TEST: Testing append to the log file
+[0mChecking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/HOOWOOd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/HOOWOOd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/HOOWOOd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/HOOWOOd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/HOOWOOd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/HOOWOOd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/HOOWOOd
+Checking directory: /usr/bin
+Checking path: /usr/bin/HOOWOOd
+Checking directory: /sbin
+Checking path: /sbin/HOOWOOd
+Checking directory: /bin
+Checking path: /bin/HOOWOOd
+Checking directory: /usr/games
+Checking path: /usr/games/HOOWOOd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/HOOWOOd
+Checking directory: /snap/bin
+Checking path: /snap/bin/HOOWOOd
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:31:44] TEST: Testing append to the log file
+[0m[35m[12:31:58] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:34:04] TEST: Testing append to the log file
+[0m[35m[12:34:15] TEST: Testing append to the log file
+[0m[35m[12:35:25] TEST: Testing append to the log file
+[0m[35m[12:35:40] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:38:06] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:38:26] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:41:21] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:42:47] TEST: Testing append to the log file
+[0m[35m[12:43:45] TEST: Testing append to the log file
+[0m[35m[12:44:26] TEST: Testing append to the log file
+[0m[35m[12:45:59] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:47:49] TEST: Testing append to the log file
+[0m[35m[12:48:00] TEST: Testing append to the log file
+[0m[35m[12:52:46] TEST: Testing append to the log file
+[0m[35m[12:54:10] TEST: Testing append to the log file
+[0m[35m[12:56:40] TEST: Testing append to the log file
+[0m[35m[13:06:27] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:14:40] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:16:49] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:17:19] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:20:45] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/$$
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/$$
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/$$
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/$$
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$$
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$$
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$$
+Checking directory: /usr/bin
+Checking path: /usr/bin/$$
+Checking directory: /sbin
+Checking path: /sbin/$$
+Checking directory: /bin
+Checking path: /bin/$$
+Checking directory: /usr/games
+Checking path: /usr/games/$$
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$$
+Checking directory: /snap/bin
+Checking path: /snap/bin/$$
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[ecoh] entering handle redirection
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ecoh
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ecoh
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ecoh
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ecoh
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ecoh
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ecoh
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ecoh
+Checking directory: /usr/bin
+Checking path: /usr/bin/ecoh
+Checking directory: /sbin
+Checking path: /sbin/ecoh
+Checking directory: /bin
+Checking path: /bin/ecoh
+Checking directory: /usr/games
+Checking path: /usr/games/ecoh
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ecoh
+Checking directory: /snap/bin
+Checking path: /snap/bin/ecoh
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:23:39] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:25:51] TEST: Testing append to the log file
+[0m[cho] entering handle redirection
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cho
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cho
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cho
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cho
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cho
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cho
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cho
+Checking directory: /usr/bin
+Checking path: /usr/bin/cho
+Checking directory: /sbin
+Checking path: /sbin/cho
+Checking directory: /bin
+Checking path: /bin/cho
+Checking directory: /usr/games
+Checking path: /usr/games/cho
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/cho
+Checking directory: /snap/bin
+Checking path: /snap/bin/cho
+[cho] entering handle redirection
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cho
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cho
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cho
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cho
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cho
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cho
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cho
+Checking directory: /usr/bin
+Checking path: /usr/bin/cho
+Checking directory: /sbin
+Checking path: /sbin/cho
+Checking directory: /bin
+Checking path: /bin/cho
+Checking directory: /usr/games
+Checking path: /usr/games/cho
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/cho
+Checking directory: /snap/bin
+Checking path: /snap/bin/cho
+[35m[13:27:15] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:29:02] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:31:45] TEST: Testing append to the log file
+[0mAccess OK:	cmd: ./minishell
+./minishell is executable
+./minishell is not a directory
+[35m[13:31:47] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:32:37] TEST: Testing append to the log file
+[0m[35m[13:33:35] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[13:34:30] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[$] entering handle redirection
+[$] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[14:43:09] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[14:45:09] TEST: Testing append to the log file
+[0mChecking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/HOLABYEd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/HOLABYEd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/HOLABYEd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/HOLABYEd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/HOLABYEd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/HOLABYEd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/HOLABYEd
+Checking directory: /usr/bin
+Checking path: /usr/bin/HOLABYEd
+Checking directory: /sbin
+Checking path: /sbin/HOLABYEd
+Checking directory: /bin
+Checking path: /bin/HOLABYEd
+Checking directory: /usr/games
+Checking path: /usr/games/HOLABYEd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/HOLABYEd
+Checking directory: /snap/bin
+Checking path: /snap/bin/HOLABYEd
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[14:48:23] TEST: Testing append to the log file
+[0m[35m[14:49:27] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout

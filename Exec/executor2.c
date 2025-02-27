@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 #include <unistd.h>
+#include "ft_dprintf.h"
 
 // NEED TO STORE
 // 	pids for each process (or built in) to get exit status
@@ -40,7 +41,7 @@ int	launch_solo_command(t_data *data)
 	data->command_list = command_table;
 	if (is_builtin(command_table->av))
 	{
-		dprintf(data->log, "cmd identified as builtin\n");
+		ft_dprintf(data->log, "cmd identified as builtin\n");
 		dprintf(data->log, "duping save of stdin stdout\n");
 		std_save[0] = dup(STDIN_FILENO);
 		std_save[1] = dup(STDOUT_FILENO);

@@ -22,7 +22,7 @@ int	handle_input(char *line, t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 
 	// 3: EXPAND && REMOVE QUOTES
-	//handle_expansions(data, data->env);
+	handle_expansions(data, data->env);
 //
 //	// 3A: MANAGE HEREDOCS
 //		--> create temp file (unique name)

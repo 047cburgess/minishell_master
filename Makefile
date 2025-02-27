@@ -12,7 +12,9 @@ BUILTIN_DIR = Builtins
 INC_DIR = Includes
 OBJS_DIR = Objs
 LIBFT_DIR = libft
+DPRINTF_DIR = printf_fd
 LIBFT = libft/libft.a
+DPRINTF = printf_fd/libftdprintf.a
 
 ##----- FILES -----##
 
@@ -43,24 +45,28 @@ DEPS = $(OBJS:.o=.d)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
-	cc $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -lreadline -lncurses  -o $(NAME) 
+$(NAME): $(LIBFT) $(DPRINTF) $(OBJS)
+	cc $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -L $(DPRINTF_DIR) -lft -lftdprintf -lreadline -lncurses  -o $(NAME) 
 
 $(LIBFT): 
 	@make -C $(LIBFT_DIR)
 
+$(DPRINTF):
+	@make -C $(DPRINTF_DIR)
 
 $(OBJS_DIR)/%.o: %.c
 	mkdir -p $(dir $@)
-	cc $(CFLAGS) -I$(LIBFT_DIR) -I $(INC_DIR) -c $< -o $@
+	cc $(CFLAGS) -I$(LIBFT_DIR) -I$(DPRINTF_DIR) -I$(INC_DIR) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)
 	@make clean -C $(LIBFT_DIR)
+	@make clean -C $(DPRINTF_DIR)
 
 fclean: clean
 	@rm -rf $(NAME)
 	@make fclean -C $(LIBFT_DIR)
+	@make fclean -C $(DPRINTF_DIR)
 
 re: fclean all
 

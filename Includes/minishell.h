@@ -84,6 +84,7 @@ char	*get_command_path(t_data *data, char *command);
 char	**get_av(t_token *tokens, int ac);
 int	get_ac(t_token *command_list);
 int	handle_redirections(t_data *data, t_command *cmd, int *in_out);
+void handle_simple_text(t_env *env, t_list **cutting, char *line, int *i);
 int	is_builtin(char **av);
 
 // ------ COMMAND TABLE ------ //
