@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/27 17:10:54 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:17:11 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static char *join_list(t_list *lst)
 }
 
 // Fonction principale qui gère l'expansion dans la ligne
-char *expansion_line(t_env *env, char *line)
+char *expansion_line(t_data *data, char *line)
 {
     t_list *cutting = NULL;
 	t_list	*new_node;
@@ -73,10 +73,10 @@ char *expansion_line(t_env *env, char *line)
         if (line[i] == '\'')
             handle_simple_quotes(&cutting, line, &i);
         else if (line[i] == '\"')
-            handle_double_quotes(env, &cutting, line, &i);
+            handle_double_quotes(data, &cutting, line, &i);
 	else if (line[i] == '$' && line[i + 1])
 	{
-            expansion = convert_expansion(env, line, &i);
+            expansion = convert_expansion(data, line, &i);
 			new_node = ft_lstnew(expansion);
     		ft_lstadd_back(&cutting, new_node);
 		}
@@ -95,16 +95,16 @@ char *expansion_line(t_env *env, char *line)
 }
 
 // Applique l'expansion sur un token 
-char *expand_token(t_env *env, char *content)
+char *expand_token(t_data *data, char *content)
 {
     if (!content)
         return (NULL);
 	else
-		return (expansion_line(env, content));
+		return (expansion_line(data, content));
 }
 
 // Fonction principale pour gérer les expansions dans la liste t_token
-int handle_expansions(t_data *data, t_env *env)
+int handle_expansions(t_data *data)
 {
 	t_token *current;
     char    *expanded_content;
@@ -115,7 +115,7 @@ int handle_expansions(t_data *data, t_env *env)
 	ft_dprintf(data->log, "--EXPANSIONS--\n\t");
     while (current)
     {
-        expanded_content = expand_token(env, current->content);
+        expanded_content = expand_token(data, current->content);
 		if (expanded_content != current->content)
         	free(current->content);
         current->content = expanded_content;
