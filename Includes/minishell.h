@@ -33,6 +33,7 @@
 #include <sys/wait.h>	
 #include <fcntl.h>
 # include "libft.h"
+# include "ft_dprintf.h"
 #include <errno.h>
 
 typedef struct s_env
@@ -65,7 +66,6 @@ typedef struct s_command
 
 typedef struct s_data 
 {
-	int	status;
 	t_token		*tokens_list;
 	t_list		*map_list;
 	t_command	*command_list;
@@ -86,7 +86,11 @@ char	*get_command_path(t_data *data, char *command);
 char	**get_av(t_token *tokens, int ac);
 int		get_ac(t_token *command_list);
 int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
+int	is_redirection_in(int type);
+int	handle_redirection_in(t_data *data, t_command *cmd, int *in_out, t_token *token);
+int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *token);
 int		is_builtin(char **av);
+int	check_access(char *full_path, t_data *data, t_command *cmd);
 
 // ------ COMMAND TABLE ------ //
 

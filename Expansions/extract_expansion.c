@@ -36,16 +36,7 @@ static char *join_list(t_list *lst)
     char	*new_line;
 	char 	*temp;
     t_list	*current;
-	 t_list	*print;
 
-	  print = lst;
-	  printf("CUTTINGS: ");
-	  while (print)
-	  {	
-	  	printf("[%s]->", (char*)print->content);
-	  	print = print->next;
-	  }
-	  printf("\n");
 	current = lst;
 	new_line = ft_strdup("");
     while (current)

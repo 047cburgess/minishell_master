@@ -2667,3 +2667,1572 @@ duping save of stdin stdout
 preparing to execute echo
 restoring stdin stdout
 closing dup of stdin stdout
+[35m[16:19:05] TEST: Launched minishell
+
+[0m[35m[16:19:07] TEST: echo helo
+[0m--TOKENS--
+	[echo]->[helo]->
+--EXPANSIONS--
+	[echo]->[helo]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:19:10] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:19:14] TEST: sdkjfsd
+[0m--TOKENS--
+	[sdkjfsd]->
+--EXPANSIONS--
+	[sdkjfsd]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/sdkjfsd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/sdkjfsd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/sdkjfsd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/sdkjfsd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/sdkjfsd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/sdkjfsd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/sdkjfsd
+Checking directory: /usr/bin
+Checking path: /usr/bin/sdkjfsd
+Checking directory: /sbin
+Checking path: /sbin/sdkjfsd
+Checking directory: /bin
+Checking path: /bin/sdkjfsd
+Checking directory: /usr/games
+Checking path: /usr/games/sdkjfsd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/sdkjfsd
+Checking directory: /snap/bin
+Checking path: /snap/bin/sdkjfsd
+sdkjfsd: command not found
+[35m[16:19:17] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[127]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:19:23] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:19:30] TEST: ./Includes
+[0m--TOKENS--
+	[./Includes]->
+--EXPANSIONS--
+	[./Includes]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./Includes
+./Includes is executable
+minishell: ./Includes: Is a directory
+[35m[16:19:33] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[126]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:27:58] TEST: Launched minishell
+
+[0m[35m[16:28:09] TEST: echo < Makefile
+[0m--TOKENS--
+	[echo]->[<]->[Makefile]->
+--EXPANSIONS--
+	[echo]->[<]->[Makefile]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:28:12] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:28:23] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:28:29] TEST: cat Makefile
+[0m--TOKENS--
+	[cat]->[Makefile]->
+--EXPANSIONS--
+	[cat]->[Makefile]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[16:28:31] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:29:07] TEST: Launched minishell
+
+[0m[35m[16:29:11] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:29:15] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:30:00] TEST: Launched minishell
+
+[0m[35m[16:30:02] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:30:04] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:30:08] TEST: cat log_file.txt =
+[0m--TOKENS--
+	[cat]->[log_file.txt]->[=]->
+--EXPANSIONS--
+	[cat]->[log_file.txt]->[=]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[log_file.txt] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[16:30:57] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:30:59] TEST: echo 0
+[0m--TOKENS--
+	[echo]->[0]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:31:15] TEST: echo 9
+[0m--TOKENS--
+	[echo]->[9]->
+--EXPANSIONS--
+	[echo]->[9]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:31:17] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:31:59] TEST: Launched minishell
+
+[0m[35m[16:32:00] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:32:03] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:32:10] TEST: echo < Makefile
+[0m--TOKENS--
+	[echo]->[<]->[Makefile]->
+--EXPANSIONS--
+	[echo]->[<]->[Makefile]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:32:13] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:32:18] TEST: echo  < poo
+[0m--TOKENS--
+	[echo]->[<]->[poo]->
+--EXPANSIONS--
+	[echo]->[<]->[poo]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:32:21] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:37:55] TEST: Launched minishell
+
+[0m[35m[16:38:01] TEST: echo < poo
+[0m--TOKENS--
+	[echo]->[<]->[poo]->
+--EXPANSIONS--
+	[echo]->[<]->[poo]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:38:08] TEST: echo < Includes
+[0m--TOKENS--
+	[echo]->[<]->[Includes]->
+--EXPANSIONS--
+	[echo]->[<]->[Includes]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Includes'
+Closed 'Includes'
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:03:05] TEST: Launched minishell
+
+[0m[35m[17:03:11] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:03:14] TEST: echo $HOME
+[0m--TOKENS--
+	[echo]->[$HOME]->
+--EXPANSIONS--
+	[echo]->[/home/caburges]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:03:21] TEST: ls -l
+[0m--TOKENS--
+	[ls]->[-l]->
+--EXPANSIONS--
+	[ls]->[-l]->
+
+--OUTPUT--
+[ls] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[17:03:24] TEST: cat Makefile
+[0m--TOKENS--
+	[cat]->[Makefile]->
+--EXPANSIONS--
+	[cat]->[Makefile]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:03:28] TEST: clear
+[0m--TOKENS--
+	[clear]->
+--EXPANSIONS--
+	[clear]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/clear
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/clear
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/clear
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+Full cmd path: /usr/bin/clear
+clear is executable
+clear is not a directory
+[35m[17:03:49] TEST: ls
+[0m--TOKENS--
+	[ls]->
+--EXPANSIONS--
+	[ls]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[17:03:56] TEST: echo hello > outfile
+[0m--TOKENS--
+	[echo]->[hello]->[>]->[outfile]->
+--EXPANSIONS--
+	[echo]->[hello]->[>]->[outfile]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'outfile'
+Closing 'outfile'
+Closed 'outfile'
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:03:57] TEST: ls
+[0m--TOKENS--
+	[ls]->
+--EXPANSIONS--
+	[ls]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[17:03:59] TEST: cat outfile
+[0m--TOKENS--
+	[cat]->[outfile]->
+--EXPANSIONS--
+	[cat]->[outfile]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:04:15] TEST: rm outfile
+[0m--TOKENS--
+	[rm]->[outfile]->
+--EXPANSIONS--
+	[rm]->[outfile]->
+
+--OUTPUT--
+[rm] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/rm
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/rm
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/rm
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/rm
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/rm
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/rm
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/rm
+Checking directory: /usr/bin
+Checking path: /usr/bin/rm
+Executable found: /usr/bin/rm
+Full cmd path: /usr/bin/rm
+rm is executable
+rm is not a directory
+[35m[17:04:16] TEST: ls
+[0m--TOKENS--
+	[ls]->
+--EXPANSIONS--
+	[ls]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[17:33:25] TEST: Launched minishell
+
+[0m[35m[17:33:27] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:33:30] TEST: echo hello > out
+[0m--TOKENS--
+	[echo]->[hello]->[>]->[out]->
+--EXPANSIONS--
+	[echo]->[hello]->[>]->[out]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hello] entering handle redirection
+[>] entering handle redirection
+[>] identified as redirection
+[>] identified as RD_OUT
+Redirecting output to 'out'
+Closing 'out'
+Closed 'out'
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:33:32] TEST: ls
+[0m--TOKENS--
+	[ls]->
+--EXPANSIONS--
+	[ls]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[17:33:34] TEST: cat out
+[0m--TOKENS--
+	[cat]->[out]->
+--EXPANSIONS--
+	[cat]->[out]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:33:40] TEST: cat < Makefile
+[0m--TOKENS--
+	[cat]->[<]->[Makefile]->
+--EXPANSIONS--
+	[cat]->[<]->[Makefile]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Makefile'
+Closed 'Makefile'
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:33:44] TEST: cat log_file.txt
+[0m--TOKENS--
+	[cat]->[log_file.txt]->
+--EXPANSIONS--
+	[cat]->[log_file.txt]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:34:03] TEST: cat < poo
+[0m--TOKENS--
+	[cat]->[<]->[poo]->
+--EXPANSIONS--
+	[cat]->[<]->[poo]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:34:32] TEST: Launched minishell
+
+[0m[35m[17:34:35] TEST: cat < poo
+[0m--TOKENS--
+	[cat]->[<]->[poo]->
+--EXPANSIONS--
+	[cat]->[<]->[poo]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:34:37] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:34:53] TEST: cat log_file.txt
+[0m--TOKENS--
+	[cat]->[log_file.txt]->
+--EXPANSIONS--
+	[cat]->[log_file.txt]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:37:10] TEST: Launched minishell
+
+[0m[35m[17:37:15] TEST: cat < poo
+[0m--TOKENS--
+	[cat]->[<]->[poo]->
+--EXPANSIONS--
+	[cat]->[<]->[poo]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:37:31] TEST: Launched minishell
+
+[0m[35m[17:37:34] TEST: cat < poo
+[0m--TOKENS--
+	[cat]->[<]->[poo]->
+--EXPANSIONS--
+	[cat]->[<]->[poo]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:37:51] TEST: Launched minishell
+
+[0m[35m[17:37:53] TEST: cat < poo
+[0m--TOKENS--
+	[cat]->[<]->[poo]->
+--EXPANSIONS--
+	[cat]->[<]->[poo]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:40:27] TEST: Launched minishell
+
+[0m[35m[17:40:31] TEST: cat < poo
+[0m--TOKENS--
+	[cat]->[<]->[poo]->
+--EXPANSIONS--
+	[cat]->[<]->[poo]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:40:42] TEST: cat < Includes
+[0m--TOKENS--
+	[cat]->[<]->[Includes]->
+--EXPANSIONS--
+	[cat]->[<]->[Includes]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+Opened 'Includes'
+Closed 'Includes'
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[17:41:15] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[1]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:44:53] TEST: Launched minishell
+
+[0m[35m[17:44:59] TEST: ls
+[0m--TOKENS--
+	[ls]->
+--EXPANSIONS--
+	[ls]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[17:45:03] TEST: touch norights
+[0m--TOKENS--
+	[touch]->[norights]->
+--EXPANSIONS--
+	[touch]->[norights]->
+
+--OUTPUT--
+[touch] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/touch
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/touch
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/touch
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/touch
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/touch
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/touch
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/touch
+Checking directory: /usr/bin
+Checking path: /usr/bin/touch
+Executable found: /usr/bin/touch
+Full cmd path: /usr/bin/touch
+touch is executable
+touch is not a directory
+[35m[17:45:07] TEST: chmod 000 norights
+[0m--TOKENS--
+	[chmod]->[000]->[norights]->
+--EXPANSIONS--
+	[chmod]->[000]->[norights]->
+
+--OUTPUT--
+[chmod] entering handle redirection
+[000] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/chmod
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/chmod
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/chmod
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/chmod
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/chmod
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/chmod
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/chmod
+Checking directory: /usr/bin
+Checking path: /usr/bin/chmod
+Executable found: /usr/bin/chmod
+Full cmd path: /usr/bin/chmod
+chmod is executable
+chmod is not a directory
+[35m[17:45:14] TEST: cat < norights
+[0m--TOKENS--
+	[cat]->[<]->[norights]->
+--EXPANSIONS--
+	[cat]->[<]->[norights]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:45:17] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[13]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:49:38] TEST: Launched minishell
+
+[0m[35m[17:49:42] TEST: cat < noright
+[0m--TOKENS--
+	[cat]->[<]->[noright]->
+--EXPANSIONS--
+	[cat]->[<]->[noright]->
+
+--OUTPUT--
+[cat] entering handle redirection
+[<] entering handle redirection
+[<] identified as redirection
+[<] identified as RD_IN
+[35m[17:49:44] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:51:06] TEST: Launched minishell
+
+[0m[35m[17:51:08] TEST: cd gfdgd
+[0m--TOKENS--
+	[cd]->[gfdgd]->
+--EXPANSIONS--
+	[cd]->[gfdgd]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[cd] entering handle redirection
+preparing to execute cd
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:59:47] TEST: echo 
+[0m--TOKENS--
+	[echo]->[]->
+--EXPANSIONS--
+	[echo]->[]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:00:14] TEST: Launched minishell
+
+[0m[35m[18:00:16] TEST: norights
+[0m--TOKENS--
+	[norights]->
+--EXPANSIONS--
+	[norights]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/norights
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/norights
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/norights
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/norights
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/norights
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/norights
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/norights
+Checking directory: /usr/bin
+Checking path: /usr/bin/norights
+Checking directory: /sbin
+Checking path: /sbin/norights
+Checking directory: /bin
+Checking path: /bin/norights
+Checking directory: /usr/games
+Checking path: /usr/games/norights
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/norights
+Checking directory: /snap/bin
+Checking path: /snap/bin/norights
+norights: command not found
+[35m[18:00:18] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[127]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:00:33] TEST: ./norights
+[0m--TOKENS--
+	[./norights]->
+--EXPANSIONS--
+	[./norights]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./norights
+minishell: ./norights: Permission denied
+[35m[18:00:37] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[126]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:03:59] TEST: Launched minishell
+
+[0m[35m[18:04:02] TEST: ls
+[0m--TOKENS--
+	[ls]->
+--EXPANSIONS--
+	[ls]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/ls
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/ls
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/ls
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/ls
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ls
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ls
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ls
+Checking directory: /usr/bin
+Checking path: /usr/bin/ls
+Executable found: /usr/bin/ls
+Full cmd path: /usr/bin/ls
+ls is executable
+ls is not a directory
+[35m[18:04:11] TEST: echo meagain>> out
+[0m--TOKENS--
+	[echo]->[meagain]->[>>]->[out]->
+--EXPANSIONS--
+	[echo]->[meagain]->[>>]->[out]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[meagain] entering handle redirection
+[>>] entering handle redirection
+[>>] identified as redirection
+[>>] identified as RD_APPEND
+Redirecting output to 'out'
+Closing 'out'
+Closed 'out'
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:04:14] TEST: cat out
+[0m--TOKENS--
+	[cat]->[out]->
+--EXPANSIONS--
+	[cat]->[out]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[18:04:24] TEST: echo meaagain>>norights
+[0m--TOKENS--
+	[echo]->[meaagain]->[>>]->[norights]->
+--EXPANSIONS--
+	[echo]->[meaagain]->[>>]->[norights]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[meaagain] entering handle redirection
+[>>] entering handle redirection
+[>>] identified as redirection
+[>>] identified as RD_APPEND
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:04:26] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[13]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:12:37] TEST: Launched minishell
+
+[0m[35m[18:12:43] TEST: cat norights
+[0m--TOKENS--
+	[cat]->[norights]->
+--EXPANSIONS--
+	[cat]->[norights]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+[35m[18:12:46] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[1]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:24:21] TEST: Launched minishell
+
+[0m[35m[18:24:22] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:24:23] TEST: $?
+[0m--TOKENS--
+	[$?]->
+--EXPANSIONS--
+	[0]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/0
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/0
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/0
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/0
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/0
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/0
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/0
+Checking directory: /usr/bin
+Checking path: /usr/bin/0
+Checking directory: /sbin
+Checking path: /sbin/0
+Checking directory: /bin
+Checking path: /bin/0
+Checking directory: /usr/games
+Checking path: /usr/games/0
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/0
+Checking directory: /snap/bin
+Checking path: /snap/bin/0
+0: command not found
+[35m[18:24:27] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[127]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:57:14] TEST: Launched minishell
+
+[0m[35m[18:57:15] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:57:24] TEST: echo $"hello"
+[0m--TOKENS--
+	[echo]->[$"hello"]->
+--EXPANSIONS--
+	[echo]->[$hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:57:38] TEST: echo $"hello"
+[0m--TOKENS--
+	[echo]->[$"hello"]->
+--EXPANSIONS--
+	[echo]->[$hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:57:44] TEST: echo $[hello]
+[0m--TOKENS--
+	[echo]->[$[hello]]->
+--EXPANSIONS--
+	[echo]->[$[hello]]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:57:48] TEST: echo $HOME
+[0m--TOKENS--
+	[echo]->[$HOME]->
+--EXPANSIONS--
+	[echo]->[/home/caburges]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
