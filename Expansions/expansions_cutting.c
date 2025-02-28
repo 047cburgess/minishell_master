@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/28 13:12:03 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:14:07 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,21 @@ char	*convert_expansion(t_data *data, char *line, int *i)
 		(*i)++;
 		expansion = ft_strdup(ft_itoa(data->status));
 	}
+    int		start;
+
+    start = *i;
     key = find_key(line, *i + 1);
-	if (key[0] == '\0')
+    printf("key: %s\n", key);
+	/*if (key[0] == '\0')
 	{
 		*i += 1;
 		return (key);
+	}*/
+	if (key_is_valid(key) == false)
+	{
+    		*i += ft_strlen(key) + 1;
+		free(key);
+		return (ft_substr(line, start, *i - start));
 	}
     var_content = ft_getenv(data->env, key);
 	if (var_content != NULL)

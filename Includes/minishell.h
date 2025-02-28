@@ -123,7 +123,7 @@ void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
 t_list	*ft_lst_map(t_list *lst, char *(*f)(char *), void (*del)(void *));
-void 	print_tokens_list(t_token *tokens_list);
+void 	print_tokens_list(int fd, t_token *tokens_list);
 int		is_operator(char c);
 int 	ft_mapping(t_data *data, t_list *cutting);
 void 	print_map(t_list *map_list);

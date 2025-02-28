@@ -6,11 +6,12 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/28 13:06:54 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:13:03 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include "ft_dprintf.h"
 #include <ctype.h>
 
 char *find_key(char *line, int i)
@@ -19,10 +20,14 @@ char *find_key(char *line, int i)
     char	*key;
 
 	start = i;
+	if (ft_isdigit(line[i]))
+	{
+		return (ft_substr(line, i, 1));
+
+	}
     while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
         i++;
     key = ft_substr(line, start, i - start);
-    printf("KEY = %s\n", key);
     return (key);
 }
 
@@ -31,16 +36,16 @@ static char *join_list(t_list *lst)
     char	*new_line;
 	char 	*temp;
     t_list	*current;
-	// t_list	*print;
+	 t_list	*print;
 
-	//  print = lst;
-	//  printf("CUTTINGS: ");
-	//  while (print)
-	//  {	
-	//  	printf("[%s]->", (char*)print->content);
-	//  	print = print->next;
-	//  }
-	//  printf("\n");
+	  print = lst;
+	  printf("CUTTINGS: ");
+	  while (print)
+	  {	
+	  	printf("[%s]->", (char*)print->content);
+	  	print = print->next;
+	  }
+	  printf("\n");
 	current = lst;
 	new_line = ft_strdup("");
     while (current)
@@ -107,16 +112,16 @@ int handle_expansions(t_data *data)
    	current = data->tokens_list;
 	if (!current)
         return (FAILURE);
-	printf("--EXPANSIONS--\n\t");
+	ft_dprintf(data->log, "--EXPANSIONS--\n\t");
     while (current)
     {
         expanded_content = expand_token(data, current->content);
 		if (expanded_content != current->content)
         	free(current->content);
         current->content = expanded_content;
-		printf("[%s]->", current->content);
+		ft_dprintf(data->log, "[%s]->", current->content);
         current = current->next;
     }
-    printf("\n");
+    ft_dprintf(data->log, "\n");
     return (SUCCESS);
 }

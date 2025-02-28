@@ -1,9 +1,11 @@
 #include "minishell.h"
+#include "ft_dprintf.h"
 
 int	execute_builtin(char **av, t_data *data);
 
 int	handle_input(char *line, t_data *data)
 {
+	new_log_timestamp(data->log, line);
 	if (unclosed_quote_detected(line))
 		return (FAILURE);
 
@@ -28,7 +30,7 @@ int	handle_input(char *line, t_data *data)
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
-	printf("\n--OUTPUT--\n");	
+	ft_dprintf(data->log, "\n--OUTPUT--\n");	
 
 	// 4: launch if solo builtin
 	int status;

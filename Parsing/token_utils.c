@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include "ft_dprintf.h"
 
 t_token *new_token_node(char *content)
 {
@@ -71,17 +72,17 @@ t_token	*token_lst_last(t_token *head)
 	return (head);
 }
 
-void print_tokens_list(t_token *tokens_list)
+void print_tokens_list(int fd, t_token *tokens_list)
 {
 	t_token *current;
 	
 	current = tokens_list;
 	while (current)
 	{
-		printf("[%s]->", current->content);
+		ft_dprintf(fd, "[%s]->", current->content);
 		current = current->next;
 	}
-	printf("\n");
+	ft_dprintf(fd, "\n");
 }
 
 int	is_operator(char c)

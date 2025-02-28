@@ -11,17 +11,32 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include "ft_dprintf.h"
 
 t_token	*get_quoted_token(char *start, char quote)
 {
 	t_token	*new_token = NULL;
 	char	*new_content = NULL;
-	int i = 1;
+	char	q;
+	int i = 0;
+	(void)quote;
 
-	while (start[i] != quote)
-		i++;
-	while (start[i] && start[i] != ' ' && !is_operator(start[i]))
-		i++;
+	while(1)
+	{
+		if (is_quote(start[i]))
+		{
+			q = start[i];
+			i++;
+			while (start[i] != q)
+				i++;
+			i++;
+		}
+		if (start[i] == '\0' || start[i] == ' ' || is_operator(start[i]))
+			break;
+		else
+			while (start[i] && !is_quote(start[i]) && start[i] != ' ' && !is_operator(start[i]))
+				i++;
+	}
 	new_content = ft_substr(start, 0, i);
 	if (!new_content)
 		return (NULL);
@@ -145,7 +160,7 @@ int	tokenise(char *line, t_data *data)
 			i += ft_strlen(new_token->content);
 		}
 	}
-	printf("--TOKENS--\n\t");
-	print_tokens_list(data->tokens_list);
+	ft_dprintf(data->log, "--TOKENS--\n\t");
+	print_tokens_list(data->log, data->tokens_list);
 	return (SUCCESS);
 }
