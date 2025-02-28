@@ -18,13 +18,21 @@ char	*convert_expansion(t_env *env, char *line, int *i)
     char	*expansion;
     char	*var_content;
     char	*key;
-	
+    int		start;
+
+    start = *i;
     key = find_key(line, *i + 1);
-	if (key[0] == '\0')
+    printf("key: %s\n", key);
+	/*if (key[0] == '\0')
 	{
-		printf("no key");
 		*i += 1;
 		return (key);
+	}*/
+	if (key_is_valid(key) == false)
+	{
+    		*i += ft_strlen(key) + 1;
+		free(key);
+		return (ft_substr(line, start, *i - start));
 	}
     var_content = ft_getenv(env, key);
 	if (var_content != NULL)

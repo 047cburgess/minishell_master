@@ -36,8 +36,7 @@ int	launch_solo_command(t_data *data)
 
 	command_table = new_command_table(data->tokens_list, data);
 	if (!command_table)
-		return (FAILURE);
-	print_command_list(command_table);
+		return (1);
 	data->command_list = command_table;
 	if (is_builtin(command_table->av))
 	{
@@ -75,9 +74,9 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	// Check it's executable
 	if (access(full_path, X_OK) != 0)
 	{
-		dprintf(data->log, "%s not executable\n", cmd->av[0]);
+		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
+		ft_dprintf(data->log, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		free(full_path);
-		perror("Open:");
 		close_fds(cmd);
 		clean_up_exit(data, 126, NULL);
 	}
@@ -87,10 +86,11 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	stat(full_path, &status_buffer);
 	if ((status_buffer.st_mode & S_IFMT) == S_IFDIR)
 	{
-		dprintf(data->log, "%s is a directory\n", cmd->av[0]);
+		ft_dprintf(2, "minishell: %s: Is a directory\n", cmd->av[0]);
+		ft_dprintf(data->log, "minishell: %s: Is a directory\n", cmd->av[0]);
 		free(full_path);
 		close_fds(cmd);
-		clean_up_exit(data, 126, "Is a directory");
+		clean_up_exit(data, 126, NULL);
 	}
 	dprintf(data->log, "%s is not a directory\n", cmd->av[0]);
 	return (SUCCESS);
@@ -102,7 +102,10 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 
 	cmd->pid = fork();
 	if (cmd->pid == -1)
+	{
+		ft_dprintf(2, "minishell: %s\n", strerror(errno));
 		return (1);
+	}
 	if (cmd->pid == 0)
 	{
 		if (handle_redirections(data, cmd, cmd->fds) != 0)
@@ -116,6 +119,7 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 			clean_up_exit(data, 0, "No cmds to execute, returned 0");
 		}
 		full_cmd_path = get_command_path(data, cmd->av[0]);
+		ft_dprintf(data->log, "Full cmd path: %s\n", full_cmd_path);
 		check_access(full_cmd_path, data, cmd);
 		execve(full_cmd_path, cmd->av, cmd->env);
 		perror("execve: command execution failed.");
