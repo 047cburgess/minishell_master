@@ -6,27 +6,31 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/27 17:06:38 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 13:12:03 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
 // Remplace par expension
-char	*convert_expansion(t_env *env, char *line, int *i)
+char	*convert_expansion(t_data *data, char *line, int *i)
 {
     char	*expansion;
     char	*var_content;
     char	*key;
 	
+	if (line[*i + 1] == '?')
+	{
+		(*i)++;
+		expansion = ft_strdup(ft_itoa(data->status));
+	}
     key = find_key(line, *i + 1);
 	if (key[0] == '\0')
 	{
-		printf("no key");
 		*i += 1;
 		return (key);
 	}
-    var_content = ft_getenv(env, key);
+    var_content = ft_getenv(data->env, key);
 	if (var_content != NULL)
 		expansion = ft_strdup(var_content);
 	else
@@ -113,8 +117,6 @@ void	handle_simple_text(t_list **cutting, char *line, int *i)
 	{
         (*i)++;
 	}
-    	//if (line[*i] == '$')
-	//	(*i)++;
 	new_line = ft_substr(line, start, *i - start);
 	new_node = ft_lstnew(new_line);
 	ft_lstadd_back(cutting, new_node);

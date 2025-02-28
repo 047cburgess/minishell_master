@@ -53,7 +53,7 @@ typedef struct s_command
 {
 	char			**av;
 	char			**env;
-	int	ac;
+	int				ac;
 	int				fds[2];
 	t_token 		*tokens;
 	char			*path;
@@ -71,6 +71,7 @@ typedef struct s_data
 	char 		**bash_env;
 	t_env		*env;
 	int			log;
+	int 		status;
 } t_data;
 
 // ------ EXECUTION ----- //
@@ -128,18 +129,17 @@ int 	ft_mapping(t_data *data, t_list *cutting);
 void 	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
-char 	*expand_token(t_env *env, char *content);
 int		expansion_needed(char *content);
 
 // ------ EXPANSIONS ----- //
 char 	*find_key(char *line, int i);
-char	*convert_expansion(t_env *env, char *line, int *i);
+char	*convert_expansion(t_data *data, char *line, int *i);
 void	handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i);
 void	handle_simple_text(t_list **cutting, char *line, int *i);
 void	handle_simple_quotes(t_list **cutting, char *line, int *i);
-char 	*expansion_line(t_env *env, char *line);
-char 	*expand_token(t_env *env, char *content);
-int		handle_expansions(t_data *data, t_env *env);
+char 	*expansion_line(t_data *data, char *line);
+char 	*expand_token(t_data *data, char *content);
+int 	handle_expansions(t_data *data);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);

@@ -10370,3 +10370,945 @@ duping save of stdin stdout
 preparing to execute echo
 restoring stdin stdout
 closing dup of stdin stdout
+[35m[17:27:16] TEST: Testing append to the log file
+[0mChecking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/:
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/:
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/:
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/:
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/:
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/:
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/:
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/:
+Checking directory: /usr/bin
+Checking path: /usr/bin/:
+Checking directory: /sbin
+Checking path: /sbin/:
+Checking directory: /bin
+Checking path: /bin/:
+Checking directory: /usr/games
+Checking path: /usr/games/:
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/:
+Checking directory: /snap/bin
+Checking path: /snap/bin/:
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/&&
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/&&
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/&&
+Checking directory: /usr/bin
+Checking path: /usr/bin/&&
+Checking directory: /sbin
+Checking path: /sbin/&&
+Checking directory: /bin
+Checking path: /bin/&&
+Checking directory: /usr/games
+Checking path: /usr/games/&&
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/&&
+Checking directory: /snap/bin
+Checking path: /snap/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hola
+Checking directory: /usr/bin
+Checking path: /usr/bin/hola
+Checking directory: /sbin
+Checking path: /sbin/hola
+Checking directory: /bin
+Checking path: /bin/hola
+Checking directory: /usr/games
+Checking path: /usr/games/hola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hola
+Checking directory: /snap/bin
+Checking path: /snap/bin/hola
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[17:35:48] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echoHola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echoHola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echoHola
+Checking directory: /usr/bin
+Checking path: /usr/bin/echoHola
+Checking directory: /sbin
+Checking path: /sbin/echoHola
+Checking directory: /bin
+Checking path: /bin/echoHola
+Checking directory: /usr/games
+Checking path: /usr/games/echoHola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/echoHola
+Checking directory: /snap/bin
+Checking path: /snap/bin/echoHola
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echoHola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echoHola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echoHola
+Checking directory: /usr/bin
+Checking path: /usr/bin/echoHola
+Checking directory: /sbin
+Checking path: /sbin/echoHola
+Checking directory: /bin
+Checking path: /bin/echoHola
+Checking directory: /usr/games
+Checking path: /usr/games/echoHola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/echoHola
+Checking directory: /snap/bin
+Checking path: /snap/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo-nHola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo-nHola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo-nHola
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo-nHola
+Checking directory: /sbin
+Checking path: /sbin/echo-nHola
+Checking directory: /bin
+Checking path: /bin/echo-nHola
+Checking directory: /usr/games
+Checking path: /usr/games/echo-nHola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/echo-nHola
+Checking directory: /snap/bin
+Checking path: /snap/bin/echo-nHola
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[Hola] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[Hola] entering handle redirection
+[Que] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[Hola] entering handle redirection
+[Que] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[\n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hola] entering handle redirection
+[que] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+[Hola] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nonnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-no] entering handle redirection
+[nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n-nnn] entering handle redirection
+[hola] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-nnn] entering handle redirection
+[hola] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+[Hola] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-nnn] entering handle redirection
+[Hola] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnnnnnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[my] entering handle redirection
+[shit] entering handle redirection
+[terminal] entering handle redirection
+[is] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[my] entering handle redirection
+[shit] entering handle redirection
+[terminal] entering handle redirection
+[is] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[my] entering handle redirection
+[shit] entering handle redirection
+[terminal] entering handle redirection
+[is] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute env
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+clear is executable
+clear is not a directory
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[10:47:09] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[10:48:06] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[10:57:52] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[10:59:09] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[11:21:22] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnnnnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[11:35:47] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+[35m[11:37:06] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+[35m[11:45:05] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+[35m[11:51:01] TEST: Testing append to the log file
+[0m[ech] entering handle redirection
+[o-n] entering handle redirection
+[-n] entering handle redirection
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/ech
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/ech
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/ech
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/ech
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/ech
+Checking directory: /usr/bin
+Checking path: /usr/bin/ech
+Checking directory: /sbin
+Checking path: /sbin/ech
+Checking directory: /bin
+Checking path: /bin/ech
+Checking directory: /usr/games
+Checking path: /usr/games/ech
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/ech
+Checking directory: /snap/bin
+Checking path: /snap/bin/ech
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+[35m[11:53:53] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[11:56:32] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[12:16:52] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-n] entering handle redirection
+[hello] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-nnn] entering handle redirection
+[-nnnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-n] entering handle redirection
+[-nnn] entering handle redirection
+[-nnnn] entering handle redirection
+[helo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+clear is executable
+clear is not a directory
+[35m[12:30:30] TEST: Testing append to the log file
+[0mcmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[-nnn] entering handle redirection
+[] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$
+Checking directory: /usr/bin
+Checking path: /usr/bin/$
+Checking directory: /sbin
+Checking path: /sbin/$
+Checking directory: /bin
+Checking path: /bin/$
+Checking directory: /usr/games
+Checking path: /usr/games/$
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$
+Checking directory: /snap/bin
+Checking path: /snap/bin/$
+Access OK:	cmd: /home/alsuchon
+/home/alsuchon is executable
+/home/alsuchon is a directory
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/
+Executable found: /usr/local/sbin/
+ is executable
+ is a directory
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 11:45:05 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/13 12:04:16 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/28 12:25:00 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,34 @@ int 	count_ac(char **args)
 	return (ac);
 }
 
-bool	option(char **args)
+bool	option(char **args, int *index)
 {
+	int i;
+	int j;
 
-	if (args[0] == NULL)
-		return (false);
-	if (ft_strcmp(args[0], "-n") == 0)
+	i = 0;
+	while (args[i] && args[i][0] == '-' && args[i][1] == 'n')
+	{
+		j = 1;
+		while (args[i][j] == 'n')
+			j++;
+		if (args[i][j] != '\0')
+			break;
+		i++;
+	}
+	*index = i;
+	if (i > 0)
 		return (true);
-	else
-		return (false);
+	return (false);
 }
 
 int	ft_echo(char **args)
 {
-	int	i;
+	int i;
+	bool no_newline;
 
 	i = 0;
-	if (option(args) == true)
-		i++;
+	no_newline = option(args, &i);
 	while (args[i] != NULL)
 	{
 		printf("%s", args[i]);
@@ -49,7 +59,7 @@ int	ft_echo(char **args)
 			printf(" ");
 		i++;
 	}
-	if (option(args) == false)
+	if (!no_newline)
 		printf("\n");
 	return (0);
 }

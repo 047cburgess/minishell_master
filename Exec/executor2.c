@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executor2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:38:47 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/24 14:54:06 by caburges         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:32:16 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	launch_solo_command(t_data *data)
 	command_table = new_command_table(data->tokens_list, data);
 	if (!command_table)
 		return (FAILURE);
-	print_command_list(command_table);
+	//print_command_list(command_table);
 	data->command_list = command_table;
 	if (is_builtin(command_table->av))
 	{

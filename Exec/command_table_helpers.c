@@ -103,7 +103,6 @@ char	**get_av(t_token *tokens, int ac)
 	return (av);
 }
 
-
 // This function converts minishell env list back to an array
 char	**env_to_array(t_env *env_head)
 {
