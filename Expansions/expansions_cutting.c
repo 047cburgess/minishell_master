@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/28 15:14:07 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:30:47 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*convert_expansion(t_data *data, char *line, int *i)
     char	*expansion;
     char	*var_content;
     char	*key;
+	int		start;
 	
 	if (line[*i + 1] == '?')
 	{
-		(*i)++;
+		(*i)+= 2;
 		expansion = ft_strdup(ft_itoa(data->status));
+		return (expansion);
 	}
-    int		start;
-
     start = *i;
     key = find_key(line, *i + 1);
     printf("key: %s\n", key);
@@ -69,7 +69,7 @@ void	handle_simple_quotes(t_list **cutting, char *line, int *i)
     }
 }
 
-void	handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i)
+void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 {
 	char *expansion;
 	char *new_line;
@@ -92,7 +92,7 @@ void	handle_double_quotes(t_env *env, t_list **cutting, char *line, int *i)
 				free(temp);
                 result = new_line;
 			}
-            expansion = convert_expansion(env, line, i);
+            expansion = convert_expansion(data, line, i);
 			temp = ft_strjoin(result, expansion);
 			free(result);
 			free(expansion);

@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/28 15:13:03 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:17:11 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char *expansion_line(t_data *data, char *line)
         if (line[i] == '\'')
             handle_simple_quotes(&cutting, line, &i);
         else if (line[i] == '\"')
-            handle_double_quotes(data->env, &cutting, line, &i);
+            handle_double_quotes(data, &cutting, line, &i);
 	else if (line[i] == '$' && line[i + 1])
 	{
             expansion = convert_expansion(data, line, &i);

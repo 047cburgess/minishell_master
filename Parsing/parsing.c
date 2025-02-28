@@ -16,6 +16,7 @@ int	handle_input(char *line, t_data *data)
 	// 2: CHECK THE SYNTAX
 	if (check_token_syntax(data->tokens_list) == FAILURE)
 	{
+		data->status = 2;
 		token_lst_clear(&data->tokens_list, free);
 		return (FAILURE);
 	}

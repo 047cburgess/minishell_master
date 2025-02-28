@@ -30,7 +30,6 @@ int	check_valid_redirections(t_token *head)
 	t_token *current = head;
 	t_token *last = token_lst_last(head);
 
-
 	// If the token after a redirection is not a word
 	while (current && current->next)
 	{
