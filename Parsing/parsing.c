@@ -16,6 +16,7 @@ int	handle_input(char *line, t_data *data)
 	// 2: CHECK THE SYNTAX
 	if (check_token_syntax(data->tokens_list) == FAILURE)
 	{
+		data->status = 2;
 		token_lst_clear(&data->tokens_list, free);
 		return (FAILURE);
 	}
@@ -24,7 +25,7 @@ int	handle_input(char *line, t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 
 	// 3: EXPAND && REMOVE QUOTES
-	handle_expansions(data, data->env);
+	handle_expansions(data);
 //
 //	// 3A: MANAGE HEREDOCS
 //		--> create temp file (unique name)
@@ -33,16 +34,17 @@ int	handle_input(char *line, t_data *data)
 	ft_dprintf(data->log, "\n--OUTPUT--\n");	
 
 	// 4: launch if solo builtin
+	int status;
 
 	if (data->command_count == 1)
 	{
-		int status = launch_solo_command(data);
-		ft_dprintf(data->log, "--END OF COMMAND--\n");
-		ft_dprintf(data->log, "\tcommand returned with exit status %i\n", status);
+		status = launch_solo_command(data);
+		(void)status;
+		//printf("command returned with exit status %i\n", status);
 	}
 
 	else
-		printf("Pipeline of commands detected\n");
+		//printf("Pipeline of commands detected\n");
 
 	token_lst_clear(&data->tokens_list, free);	
 	return (SUCCESS);
@@ -65,22 +67,20 @@ int	get_command_count(t_token *list)
 // Passing data as a parameter as the built in functions will need it
 int	execute_builtin(char **av, t_data *data)
 {
-	(void)data;
 	int	status;
 
-	status = 0;
-
+	status = data->status;
 	if (ft_strcmp(av[0], "echo") == 0)
-		status = ft_echo(&av[1]);
+		data->status = ft_echo(&av[1]);
 	else if (ft_strcmp(av[0], "cd") == 0)
-		status = ft_cd(&av[1]);
+		data->status = ft_cd(&av[1]);
 	else if (ft_strcmp(av[0], "pwd") == 0)
-		status = ft_pwd();
+		data->status = ft_pwd();
 	else if (ft_strcmp(av[0], "export") == 0)
-		status = ft_export(av, data);
+		data->status = ft_export(av, data);
 	else if (ft_strcmp(av[0], "unset") == 0)
-		status = ft_unset(av, data);
+		data->status = ft_unset(av, data);
 	else if (ft_strcmp(av[0], "env") == 0)
-		status = ft_env(data);
-	return (status);
+		data->status = ft_env(data);
+	return (data->status);
 }
