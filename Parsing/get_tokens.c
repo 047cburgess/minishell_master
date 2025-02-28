@@ -17,12 +17,26 @@ t_token	*get_quoted_token(char *start, char quote)
 {
 	t_token	*new_token = NULL;
 	char	*new_content = NULL;
-	int i = 1;
+	char	q;
+	int i = 0;
+	(void)quote;
 
-	while (start[i] != quote)
-		i++;
-	while (start[i] && start[i] != ' ' && !is_operator(start[i]))
-		i++;
+	while(1)
+	{
+		if (is_quote(start[i]))
+		{
+			q = start[i];
+			i++;
+			while (start[i] != q)
+				i++;
+			i++;
+		}
+		if (start[i] == '\0' || start[i] == ' ' || is_operator(start[i]))
+			break;
+		else
+			while (start[i] && !is_quote(start[i]) && start[i] != ' ' && !is_operator(start[i]))
+				i++;
+	}
 	new_content = ft_substr(start, 0, i);
 	if (!new_content)
 		return (NULL);
