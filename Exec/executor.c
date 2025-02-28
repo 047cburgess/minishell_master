@@ -24,12 +24,14 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 				if (in_out[0] == -1)
 				{
 					perror("Open:");
+					cmd->error = errno;
 					return (errno);
 				}
 				dprintf(log_file, "Opened '%s'\n", token->next->content);
 				if (dup2(in_out[0], STDIN_FILENO) == -1)
 				{
 					perror("Dup2:");
+					cmd->error = errno;
 					return (errno);
 
 				}
@@ -44,6 +46,7 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 				if (in_out[1] == -1)
 				{
 					perror("Open:");
+					cmd->error = errno;
 					return (errno);
 
 				}
@@ -51,6 +54,7 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 				if (dup2(in_out[1], STDOUT_FILENO) == -1)
 				{
 					perror("dup out failed");
+					cmd->error = errno;
 					return (errno);
 				}
 				dprintf(log_file, "Closing '%s'\n", token->next->content);

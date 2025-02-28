@@ -31,7 +31,6 @@
 int	launch_solo_command(t_data *data)
 {
 	t_command	*command_table;
-	int	status;
 	int	std_save[2];
 
 	command_table = new_command_table(data->tokens_list, data);
@@ -44,9 +43,12 @@ int	launch_solo_command(t_data *data)
 		dprintf(data->log, "duping save of stdin stdout\n");
 		std_save[0] = dup(STDIN_FILENO);
 		std_save[1] = dup(STDOUT_FILENO);
-		handle_redirections(data, command_table, command_table->fds);
+		if (handle_redirections(data, command_table, command_table->fds) != 0)
+		{
+			
+		}
 		dprintf(data->log, "preparing to execute %s\n", command_table->av[0]);
-		status = execute_builtin(command_table->av, data);
+		data->status = execute_builtin(command_table->av, data);
 		dprintf(data->log, "restoring stdin stdout\n");
 		dup2(std_save[0], STDIN_FILENO);
 		dup2(std_save[1], STDOUT_FILENO);
@@ -56,15 +58,15 @@ int	launch_solo_command(t_data *data)
 	}
 	else
 	{
-		status = execute_solo_child(data, command_table);
+		data->status = execute_solo_child(data, command_table);
 		if (command_table->pid != -1)
 		{
 			waitpid(command_table->pid, &status, 0);
-			status = get_child_exit_status(status);
+			data->status = get_child_exit_status(status);
 		}
 	}
 	command_lst_clear(&data->command_list);
-	return (status);
+	return (data->status);
 }
 
 int	check_access(char *full_path, t_data *data, t_command *cmd)
@@ -111,7 +113,8 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 		if (handle_redirections(data, cmd, cmd->fds) != 0)
 		{
 			close_fds(cmd);
-			clean_up_exit(data, errno, NULL);
+			ft_dprintf(2, "minishell: %s\n", strerror(cmd->error));
+			clean_up_exit(data, cmd->error, NULL);
 		}
 		if (cmd->ac == 0)
 		{

@@ -29,6 +29,7 @@ t_command	*new_command_table(t_token *tokens, t_data *data)
 	}
 	node->path = NULL;//ft_getenv(data->env, "PATH");
 	node->next = NULL;
+	node->error = 0;
 	return (node);
 }
 

@@ -59,11 +59,13 @@ typedef struct s_command
 	char			*path;
 	char			**path_dirs;
 	pid_t			pid;
+	int	error;
 	struct s_command *next;
 } t_command;
 
 typedef struct s_data 
 {
+	int	status;
 	t_token		*tokens_list;
 	t_list		*map_list;
 	t_command	*command_list;
