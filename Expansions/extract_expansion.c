@@ -20,6 +20,11 @@ char *find_key(char *line, int i)
     char	*key;
 
 	start = i;
+	if (ft_isdigit(line[i]))
+	{
+		return (ft_substr(line, i, 1));
+
+	}
     while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
         i++;
     key = ft_substr(line, start, i - start);

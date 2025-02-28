@@ -1586,3 +1586,327 @@ restoring stdin stdout
 closing dup of stdin stdout
 --END OF COMMAND--
 	command returned with exit status 0
+[35m[13:15:07] TEST: Launched minishell
+
+[0m[35m[13:16:32] TEST: ""e"'c'ho 'b'"o"nj"o"'u'r"
+[0m--TOKENS--
+	[""e"'c'ho]->['b'"o"nj"o"'u'r"]->
+--EXPANSIONS--
+	[e'c'ho]->[bonjour]->
+
+--OUTPUT--
+[e'c'ho] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/e'c'ho
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/e'c'ho
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/e'c'ho
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/e'c'ho
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/e'c'ho
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/e'c'ho
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/e'c'ho
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/e'c'ho
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/e'c'ho
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/e'c'ho
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/e'c'ho
+Checking directory: /usr/bin
+Checking path: /usr/bin/e'c'ho
+Checking directory: /sbin
+Checking path: /sbin/e'c'ho
+Checking directory: /bin
+Checking path: /bin/e'c'ho
+Checking directory: /usr/games
+Checking path: /usr/games/e'c'ho
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/e'c'ho
+Checking directory: /snap/bin
+Checking path: /snap/bin/e'c'ho
+e'c'ho: command not found
+--END OF COMMAND--
+	command returned with exit status 127
+[35m[13:16:53] TEST: cat log_file.txt
+[0m--TOKENS--
+	[cat]->[log_file.txt]->
+--EXPANSIONS--
+	[cat]->[log_file.txt]->
+
+--OUTPUT--
+[cat] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/cat
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/cat
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/cat
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/cat
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/cat
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/cat
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/cat
+Checking directory: /usr/bin
+Checking path: /usr/bin/cat
+Executable found: /usr/bin/cat
+Full cmd path: /usr/bin/cat
+cat is executable
+cat is not a directory
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:30:56] TEST: Launched minishell
+
+[0m[35m[13:31:26] TEST: export HOLA=p BYE=w
+[0m--TOKENS--
+	[export]->[HOLA=p]->[BYE=w]->
+--EXPANSIONS--
+	[export]->[HOLA=p]->[BYE=w]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+[HOLA=p] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:31:29] TEST: env
+[0m--TOKENS--
+	[env]->
+--EXPANSIONS--
+	[env]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute env
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:31:34] TEST: clear
+[0m--TOKENS--
+	[clear]->
+--EXPANSIONS--
+	[clear]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/clear
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/clear
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/clear
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+Full cmd path: /usr/bin/clear
+clear is executable
+clear is not a directory
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:32:37] TEST: $'HOLA'$'BYE'd
+[0m--TOKENS--
+	[$'HOLA'$'BYE'd]->
+--EXPANSIONS--
+	[$HOLA$BYEd]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/caburges/clangd/clangd_19.1.2/bin
+Checking path: /home/caburges/clangd/clangd_19.1.2/bin/$HOLA$BYEd
+Checking directory: /home/caburges/nvim-linux-x86_64/bin
+Checking path: /home/caburges/nvim-linux-x86_64/bin/$HOLA$BYEd
+Checking directory: /home/caburges/.local/funcheck/host
+Checking path: /home/caburges/.local/funcheck/host/$HOLA$BYEd
+Checking directory: /home/caburges/bin
+Checking path: /home/caburges/bin/$HOLA$BYEd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$HOLA$BYEd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$HOLA$BYEd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$HOLA$BYEd
+Checking directory: /usr/bin
+Checking path: /usr/bin/$HOLA$BYEd
+Checking directory: /sbin
+Checking path: /sbin/$HOLA$BYEd
+Checking directory: /bin
+Checking path: /bin/$HOLA$BYEd
+Checking directory: /usr/games
+Checking path: /usr/games/$HOLA$BYEd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$HOLA$BYEd
+Checking directory: /snap/bin
+Checking path: /snap/bin/$HOLA$BYEd
+$HOLA$BYEd: command not found
+--END OF COMMAND--
+	command returned with exit status 127
+[35m[13:34:55] TEST: echo $9HOME
+[0m--TOKENS--
+	[echo]->[$9HOME]->
+--EXPANSIONS--
+	[echo]->[$9HOME]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:35:00] TEST: echo $.
+[0m--TOKENS--
+	[echo]->[$.]->
+--EXPANSIONS--
+	[echo]->[$.]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:35:04] TEST: echo $=
+[0m--TOKENS--
+	[echo]->[$=]->
+--EXPANSIONS--
+	[echo]->[$=]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:35:38] TEST: echo $9HJGHJ
+[0m--TOKENS--
+	[echo]->[$9HJGHJ]->
+--EXPANSIONS--
+	[echo]->[$9HJGHJ]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:48:08] TEST: Launched minishell
+
+[0m[35m[13:48:12] TEST: echo $9home
+[0m--TOKENS--
+	[echo]->[$9home]->
+--EXPANSIONS--
+	[echo]->[$9home]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:48:24] TEST: echo $.dshfdjf
+[0m--TOKENS--
+	[echo]->[$.dshfdjf]->
+--EXPANSIONS--
+	[echo]->[$.dshfdjf]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:49:20] TEST: ./minishell
+[0m--TOKENS--
+	[./minishell]->
+--EXPANSIONS--
+	[./minishell]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ./minishell
+./minishell is executable
+./minishell is not a directory
+[35m[13:49:20] TEST: Launched minishell
+
+[0m--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:49:34] TEST: echo hello$9$home
+[0m--TOKENS--
+	[echo]->[hello$9$home]->
+--EXPANSIONS--
+	[echo]->[hello$9]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
+[35m[13:52:26] TEST: echo hello$9jds
+[0m--TOKENS--
+	[echo]->[hello$9jds]->
+--EXPANSIONS--
+	[echo]->[hello$9jds]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+--END OF COMMAND--
+	command returned with exit status 0
