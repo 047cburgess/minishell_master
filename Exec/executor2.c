@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:38:47 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/28 15:13:26 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 17:25:50 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 int	launch_solo_command(t_data *data)
 {
 	t_command	*command_table;
-	int	status;
 	int	std_save[2];
 
 	command_table = new_command_table(data->tokens_list, data);
@@ -46,7 +45,7 @@ int	launch_solo_command(t_data *data)
 		std_save[1] = dup(STDOUT_FILENO);
 		handle_redirections(data, command_table, command_table->fds);
 		dprintf(data->log, "preparing to execute %s\n", command_table->av[0]);
-		status = execute_builtin(command_table->av, data);
+		data->status = execute_builtin(command_table->av, data);
 		dprintf(data->log, "restoring stdin stdout\n");
 		dup2(std_save[0], STDIN_FILENO);
 		dup2(std_save[1], STDOUT_FILENO);
@@ -56,15 +55,15 @@ int	launch_solo_command(t_data *data)
 	}
 	else
 	{
-		status = execute_solo_child(data, command_table);
+		data->status = execute_solo_child(data, command_table);
 		if (command_table->pid != -1)
 		{
-			waitpid(command_table->pid, &status, 0);
-			status = get_child_exit_status(status);
+			waitpid(command_table->pid, &data->status, 0);
+			data->status = get_child_exit_status(data->status);
 		}
 	}
 	command_lst_clear(&data->command_list);
-	return (status);
+	return (data->status);
 }
 
 int	check_access(char *full_path, t_data *data, t_command *cmd)

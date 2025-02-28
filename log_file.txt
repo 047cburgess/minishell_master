@@ -2667,3 +2667,1616 @@ duping save of stdin stdout
 preparing to execute echo
 restoring stdin stdout
 closing dup of stdin stdout
+[35m[16:13:12] TEST: Launched minishell
+
+[0m[35m[16:13:34] TEST: <>
+[0m--TOKENS--
+	[<]->[>]->
+[35m[16:14:29] TEST: /./../../../../..
+[0m--TOKENS--
+	[/./../../../../..]->
+--EXPANSIONS--
+	[/./../../../../..]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: /./../../../../..
+/./../../../../.. is executable
+minishell: /./../../../../..: Is a directory
+[35m[16:14:44] TEST: ////////////
+[0m--TOKENS--
+	[////////////]->
+--EXPANSIONS--
+	[////////////]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ////////////
+//////////// is executable
+minishell: ////////////: Is a directory
+[35m[16:14:54] TEST: -
+[0m--TOKENS--
+	[-]->
+--EXPANSIONS--
+	[-]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/-
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/-
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/-
+Checking directory: /usr/bin
+Checking path: /usr/bin/-
+Checking directory: /sbin
+Checking path: /sbin/-
+Checking directory: /bin
+Checking path: /bin/-
+Checking directory: /usr/games
+Checking path: /usr/games/-
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/-
+Checking directory: /snap/bin
+Checking path: /snap/bin/-
+-: command not found
+[35m[16:15:01] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:19:42] TEST: echo > <
+[0m--TOKENS--
+	[echo]->[>]->[<]->
+[35m[16:19:54] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:20:29] TEST: EechoE
+[0m--TOKENS--
+	[EechoE]->
+--EXPANSIONS--
+	[EechoE]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EechoE
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EechoE
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EechoE
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EechoE
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/EechoE
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/EechoE
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/EechoE
+Checking directory: /usr/bin
+Checking path: /usr/bin/EechoE
+Checking directory: /sbin
+Checking path: /sbin/EechoE
+Checking directory: /bin
+Checking path: /bin/EechoE
+Checking directory: /usr/games
+Checking path: /usr/games/EechoE
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/EechoE
+Checking directory: /snap/bin
+Checking path: /snap/bin/EechoE
+EechoE: command not found
+[35m[16:21:17] TEST: echo | |
+[0m--TOKENS--
+	[echo]->[|]->[|]->
+[35m[16:22:21] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:22:39] TEST: $?
+[0m--TOKENS--
+	[$?]->
+--EXPANSIONS--
+	[0]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/0
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/0
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/0
+Checking directory: /usr/bin
+Checking path: /usr/bin/0
+Checking directory: /sbin
+Checking path: /sbin/0
+Checking directory: /bin
+Checking path: /bin/0
+Checking directory: /usr/games
+Checking path: /usr/games/0
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/0
+Checking directory: /snap/bin
+Checking path: /snap/bin/0
+0: command not found
+[35m[16:22:58] TEST: $?$?
+[0m--TOKENS--
+	[$?$?]->
+--EXPANSIONS--
+	[00]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/00
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/00
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/00
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/00
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/00
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/00
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/00
+Checking directory: /usr/bin
+Checking path: /usr/bin/00
+Checking directory: /sbin
+Checking path: /sbin/00
+Checking directory: /bin
+Checking path: /bin/00
+Checking directory: /usr/games
+Checking path: /usr/games/00
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/00
+Checking directory: /snap/bin
+Checking path: /snap/bin/00
+00: command not found
+[35m[16:23:15] TEST: ?$HOME
+[0m--TOKENS--
+	[?$HOME]->
+--EXPANSIONS--
+	[?/home/alsuchon]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: ?/home/alsuchon
+minishell: ?/home/alsuchon: No such file or directory
+[35m[16:24:13] TEST: $
+[0m--TOKENS--
+	[$]->
+--EXPANSIONS--
+	[$]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$
+Checking directory: /usr/bin
+Checking path: /usr/bin/$
+Checking directory: /sbin
+Checking path: /sbin/$
+Checking directory: /bin
+Checking path: /bin/$
+Checking directory: /usr/games
+Checking path: /usr/games/$
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$
+Checking directory: /snap/bin
+Checking path: /snap/bin/$
+$: command not found
+[35m[16:24:31] TEST: $HOME
+[0m--TOKENS--
+	[$HOME]->
+--EXPANSIONS--
+	[/home/alsuchon]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+No '\' in command name 
+Full cmd path: /home/alsuchon
+/home/alsuchon is executable
+minishell: /home/alsuchon: Is a directory
+[35m[16:25:12] TEST: $HOMEjijdogjjojon
+[0m--TOKENS--
+	[$HOMEjijdogjjojon]->
+--EXPANSIONS--
+	[]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/
+Executable found: /usr/local/sbin/
+Full cmd path: /usr/local/sbin/
+ is executable
+minishell: : Is a directory
+[35m[16:25:25] TEST: $HOMEdskjhfkdshfsd
+[0m--TOKENS--
+	[$HOMEdskjhfkdshfsd]->
+--EXPANSIONS--
+	[]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/
+Executable found: /usr/local/sbin/
+Full cmd path: /usr/local/sbin/
+ is executable
+minishell: : Is a directory
+[35m[16:25:55] TEST: "$HOMEdskjhfkdshfsd"
+[0m--TOKENS--
+	["$HOMEdskjhfkdshfsd"]->
+--EXPANSIONS--
+	[]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/
+Executable found: /usr/local/sbin/
+Full cmd path: /usr/local/sbin/
+ is executable
+minishell: : Is a directory
+[35m[16:26:25] TEST: '$HOMEdskjhfkdshfsd'
+[0m--TOKENS--
+	['$HOMEdskjhfkdshfsd']->
+--EXPANSIONS--
+	[$HOMEdskjhfkdshfsd]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$HOMEdskjhfkdshfsd
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$HOMEdskjhfkdshfsd
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$HOMEdskjhfkdshfsd
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/$HOMEdskjhfkdshfsd
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/$HOMEdskjhfkdshfsd
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/$HOMEdskjhfkdshfsd
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/$HOMEdskjhfkdshfsd
+Checking directory: /usr/bin
+Checking path: /usr/bin/$HOMEdskjhfkdshfsd
+Checking directory: /sbin
+Checking path: /sbin/$HOMEdskjhfkdshfsd
+Checking directory: /bin
+Checking path: /bin/$HOMEdskjhfkdshfsd
+Checking directory: /usr/games
+Checking path: /usr/games/$HOMEdskjhfkdshfsd
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/$HOMEdskjhfkdshfsd
+Checking directory: /snap/bin
+Checking path: /snap/bin/$HOMEdskjhfkdshfsd
+$HOMEdskjhfkdshfsd: command not found
+[35m[16:26:41] TEST: $NOEXISTE
+[0m--TOKENS--
+	[$NOEXISTE]->
+--EXPANSIONS--
+	[]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/
+Executable found: /usr/local/sbin/
+Full cmd path: /usr/local/sbin/
+ is executable
+minishell: : Is a directory
+[35m[16:27:01] TEST: $LESS$VAR
+[0m--TOKENS--
+	[$LESS$VAR]->
+--EXPANSIONS--
+	[-R]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-R
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-R
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-R
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-R
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/-R
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/-R
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/-R
+Checking directory: /usr/bin
+Checking path: /usr/bin/-R
+Checking directory: /sbin
+Checking path: /sbin/-R
+Checking directory: /bin
+Checking path: /bin/-R
+Checking directory: /usr/games
+Checking path: /usr/games/-R
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/-R
+Checking directory: /snap/bin
+Checking path: /snap/bin/-R
+-R: command not found
+[35m[16:27:45] TEST: echo $=HOME
+[0m--TOKENS--
+	[echo]->[$=HOME]->
+--EXPANSIONS--
+	[echo]->[$=HOME]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:28:10] TEST: echo $NOEXIST hola
+[0m--TOKENS--
+	[echo]->[$NOEXIST]->[hola]->
+--EXPANSIONS--
+	[echo]->[]->[hola]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:32:40] TEST: [200~echo $USER$var\$USER$USER\$USERtest$USER
+[0m--TOKENS--
+	[[200~echo]->[$USER$var\$USER$USER\$USERtest$USER]->
+--EXPANSIONS--
+	[[200~echo]->[alsuchon\alsuchonalsuchon\alsuchon]->
+
+--OUTPUT--
+[[200~echo] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/[200~echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/[200~echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/[200~echo
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/[200~echo
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/[200~echo
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/[200~echo
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/[200~echo
+Checking directory: /usr/bin
+Checking path: /usr/bin/[200~echo
+Checking directory: /sbin
+Checking path: /sbin/[200~echo
+Checking directory: /bin
+Checking path: /bin/[200~echo
+Checking directory: /usr/games
+Checking path: /usr/games/[200~echo
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/[200~echo
+Checking directory: /snap/bin
+Checking path: /snap/bin/[200~echo
+[200~echo: command not found
+[35m[16:33:01] TEST: echo $USER$var\$USER$USER\$USERtest$USER
+[0m--TOKENS--
+	[echo]->[$USER$var\$USER$USER\$USERtest$USER]->
+--EXPANSIONS--
+	[echo]->[alsuchon\alsuchonalsuchon\alsuchon]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:33:29] TEST: clear
+[0m--TOKENS--
+	[clear]->
+--EXPANSIONS--
+	[clear]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/clear
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/clear
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/clear
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/clear
+Checking directory: /usr/bin
+Checking path: /usr/bin/clear
+Executable found: /usr/bin/clear
+Full cmd path: /usr/bin/clear
+clear is executable
+clear is not a directory
+[35m[16:33:31] TEST: echo $USER$var\$USER$USER\$USERtest$USER
+[0m--TOKENS--
+	[echo]->[$USER$var\$USER$USER\$USERtest$USER]->
+--EXPANSIONS--
+	[echo]->[alsuchon\alsuchonalsuchon\alsuchon]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:35:56] TEST: echo $
+[0m--TOKENS--
+	[echo]->[$]->
+--EXPANSIONS--
+	[echo]->[$]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:36:05] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:36:18] TEST: echo $?$
+[0m--TOKENS--
+	[echo]->[$?$]->
+--EXPANSIONS--
+	[echo]->[0$]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[16:37:00] TEST: echo-nHOla
+[0m--TOKENS--
+	[echo-nHOla]->
+--EXPANSIONS--
+	[echo-nHOla]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHOla
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHOla
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHOla
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHOla
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo-nHOla
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo-nHOla
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo-nHOla
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo-nHOla
+Checking directory: /sbin
+Checking path: /sbin/echo-nHOla
+Checking directory: /bin
+Checking path: /bin/echo-nHOla
+Checking directory: /usr/games
+Checking path: /usr/games/echo-nHOla
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/echo-nHOla
+Checking directory: /snap/bin
+Checking path: /snap/bin/echo-nHOla
+echo-nHOla: command not found
+[35m[16:37:20] TEST: echo-nHola
+[0m--TOKENS--
+	[echo-nHola]->
+--EXPANSIONS--
+	[echo-nHola]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echo-nHola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echo-nHola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echo-nHola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echo-nHola
+Checking directory: /usr/bin
+Checking path: /usr/bin/echo-nHola
+Checking directory: /sbin
+Checking path: /sbin/echo-nHola
+Checking directory: /bin
+Checking path: /bin/echo-nHola
+Checking directory: /usr/games
+Checking path: /usr/games/echo-nHola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/echo-nHola
+Checking directory: /snap/bin
+Checking path: /snap/bin/echo-nHola
+echo-nHola: command not found
+[35m[16:37:42] TEST: echoHola
+[0m--TOKENS--
+	[echoHola]->
+--EXPANSIONS--
+	[echoHola]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/echoHola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/echoHola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/echoHola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/echoHola
+Checking directory: /usr/bin
+Checking path: /usr/bin/echoHola
+Checking directory: /sbin
+Checking path: /sbin/echoHola
+Checking directory: /bin
+Checking path: /bin/echoHola
+Checking directory: /usr/games
+Checking path: /usr/games/echoHola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/echoHola
+Checking directory: /snap/bin
+Checking path: /snap/bin/echoHola
+echoHola: command not found
+[35m[16:38:07] TEST: hola que tal
+[0m--TOKENS--
+	[hola]->[que]->[tal]->
+--EXPANSIONS--
+	[hola]->[que]->[tal]->
+
+--OUTPUT--
+[hola] entering handle redirection
+[que] entering handle redirection
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hola
+Checking directory: /usr/bin
+Checking path: /usr/bin/hola
+Checking directory: /sbin
+Checking path: /sbin/hola
+Checking directory: /bin
+Checking path: /bin/hola
+Checking directory: /usr/games
+Checking path: /usr/games/hola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hola
+Checking directory: /snap/bin
+Checking path: /snap/bin/hola
+hola: command not found
+[35m[16:38:19] TEST: Makefile
+[0m--TOKENS--
+	[Makefile]->
+--EXPANSIONS--
+	[Makefile]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/Makefile
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/Makefile
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/Makefile
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/Makefile
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/Makefile
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/Makefile
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/Makefile
+Checking directory: /usr/bin
+Checking path: /usr/bin/Makefile
+Checking directory: /sbin
+Checking path: /sbin/Makefile
+Checking directory: /bin
+Checking path: /bin/Makefile
+Checking directory: /usr/games
+Checking path: /usr/games/Makefile
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/Makefile
+Checking directory: /snap/bin
+Checking path: /snap/bin/Makefile
+Makefile: command not found
+[35m[16:38:28] TEST: hola
+[0m--TOKENS--
+	[hola]->
+--EXPANSIONS--
+	[hola]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hola
+Checking directory: /usr/bin
+Checking path: /usr/bin/hola
+Checking directory: /sbin
+Checking path: /sbin/hola
+Checking directory: /bin
+Checking path: /bin/hola
+Checking directory: /usr/games
+Checking path: /usr/games/hola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hola
+Checking directory: /snap/bin
+Checking path: /snap/bin/hola
+hola: command not found
+[35m[16:38:42] TEST: 'hola'
+[0m--TOKENS--
+	['hola']->
+--EXPANSIONS--
+	[hola]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hola
+Checking directory: /usr/bin
+Checking path: /usr/bin/hola
+Checking directory: /sbin
+Checking path: /sbin/hola
+Checking directory: /bin
+Checking path: /bin/hola
+Checking directory: /usr/games
+Checking path: /usr/games/hola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hola
+Checking directory: /snap/bin
+Checking path: /snap/bin/hola
+hola: command not found
+[35m[16:38:53] TEST: "hola"
+[0m--TOKENS--
+	["hola"]->
+--EXPANSIONS--
+	[hola]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/hola
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/hola
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/hola
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/hola
+Checking directory: /usr/bin
+Checking path: /usr/bin/hola
+Checking directory: /sbin
+Checking path: /sbin/hola
+Checking directory: /bin
+Checking path: /bin/hola
+Checking directory: /usr/games
+Checking path: /usr/games/hola
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/hola
+Checking directory: /snap/bin
+Checking path: /snap/bin/hola
+hola: command not found
+[35m[16:39:03] TEST: &&&&&&&&&&&&
+[0m--TOKENS--
+	[&&&&&&&&&&&&]->
+--EXPANSIONS--
+	[&&&&&&&&&&&&]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&&&&&&&&&&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&&&&&&&&&&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&&&&&&&&&&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&&&&&&&&&&&
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/&&&&&&&&&&&&
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/&&&&&&&&&&&&
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/&&&&&&&&&&&&
+Checking directory: /usr/bin
+Checking path: /usr/bin/&&&&&&&&&&&&
+Checking directory: /sbin
+Checking path: /sbin/&&&&&&&&&&&&
+Checking directory: /bin
+Checking path: /bin/&&&&&&&&&&&&
+Checking directory: /usr/games
+Checking path: /usr/games/&&&&&&&&&&&&
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/&&&&&&&&&&&&
+Checking directory: /snap/bin
+Checking path: /snap/bin/&&&&&&&&&&&&
+&&&&&&&&&&&&: command not found
+[35m[16:39:27] TEST: >>|><
+[0m--TOKENS--
+	[>>]->[|]->[>]->[<]->
+[35m[16:40:35] TEST: ||||||||||||||||||
+[0m--TOKENS--
+	[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->
+[35m[17:22:19] TEST:  
+[0m--TOKENS--
+	[]->
+--EXPANSIONS--
+	[]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/
+Executable found: /usr/local/sbin/
+Full cmd path: /usr/local/sbin/
+ is executable
+minishell: : Is a directory
+[35m[17:26:02] TEST: Launched minishell
+
+[0m[35m[17:27:00] TEST: echo | |
+[0m--TOKENS--
+	[echo]->[|]->[|]->
+[35m[17:30:23] TEST: Launched minishell
+
+[0m[35m[17:30:40] TEST: |
+[0m--TOKENS--
+	[|]->
+[35m[17:31:01] TEST: ||
+[0m--TOKENS--
+	[|]->[|]->
+[35m[17:31:11] TEST: ||
+[0m--TOKENS--
+	[|]->[|]->
+[35m[17:38:51] TEST: Launched minishell
+
+[0m[35m[17:38:53] TEST: -
+[0m--TOKENS--
+	[-]->
+--EXPANSIONS--
+	[-]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/-
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/-
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/-
+Checking directory: /usr/bin
+Checking path: /usr/bin/-
+Checking directory: /sbin
+Checking path: /sbin/-
+Checking directory: /bin
+Checking path: /bin/-
+Checking directory: /usr/games
+Checking path: /usr/games/-
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/-
+Checking directory: /snap/bin
+Checking path: /snap/bin/-
+-: command not found
+[35m[17:56:12] TEST: Launched minishell
+
+[0m[35m[17:56:16] TEST: >>|><
+[0m--TOKENS--
+	[>>]->[|]->[>]->[<]->
+[35m[17:57:19] TEST: >>|><
+[0m--TOKENS--
+	[>>]->[|]->[>]->[<]->
+[35m[17:57:32] TEST: Launched minishell
+
+[0m[35m[17:57:36] TEST: >>|><
+[0m--TOKENS--
+	[>>]->[|]->[>]->[<]->
+[35m[17:58:31] TEST: |||||
+[0m--TOKENS--
+	[|]->[|]->[|]->[|]->[|]->
+[35m[17:58:35] TEST: ||||||||||||||||||||||||||||
+[0m--TOKENS--
+	[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->[|]->
+[35m[17:58:58] TEST: | | |
+[0m--TOKENS--
+	[|]->[|]->[|]->
+[35m[17:59:17] TEST: | hola
+[0m--TOKENS--
+	[|]->[hola]->
+[35m[17:59:32] TEST: -
+[0m--TOKENS--
+	[-]->
+--EXPANSIONS--
+	[-]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/-
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/-
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/-
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/-
+Checking directory: /usr/bin
+Checking path: /usr/bin/-
+Checking directory: /sbin
+Checking path: /sbin/-
+Checking directory: /bin
+Checking path: /bin/-
+Checking directory: /usr/games
+Checking path: /usr/games/-
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/-
+Checking directory: /snap/bin
+Checking path: /snap/bin/-
+minishell: -: command not found
+[35m[17:59:44] TEST: $?
+[0m--TOKENS--
+	[$?]->
+--EXPANSIONS--
+	[127]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/127
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/127
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/127
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/127
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/127
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/127
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/127
+Checking directory: /usr/bin
+Checking path: /usr/bin/127
+Checking directory: /sbin
+Checking path: /sbin/127
+Checking directory: /bin
+Checking path: /bin/127
+Checking directory: /usr/games
+Checking path: /usr/games/127
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/127
+Checking directory: /snap/bin
+Checking path: /snap/bin/127
+minishell: 127: command not found
+[35m[18:00:15] TEST: <>
+[0m--TOKENS--
+	[<]->[>]->
+[35m[18:00:33] TEST: &&
+[0m--TOKENS--
+	[&&]->
+--EXPANSIONS--
+	[&&]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/&&
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/&&
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/&&
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/&&
+Checking directory: /usr/bin
+Checking path: /usr/bin/&&
+Checking directory: /sbin
+Checking path: /sbin/&&
+Checking directory: /bin
+Checking path: /bin/&&
+Checking directory: /usr/games
+Checking path: /usr/games/&&
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/&&
+Checking directory: /snap/bin
+Checking path: /snap/bin/&&
+minishell: &&: command not found
+[35m[18:01:35] TEST: echo > <
+[0m--TOKENS--
+	[echo]->[>]->[<]->
+[35m[18:01:51] TEST: echo | |
+[0m--TOKENS--
+	[echo]->[|]->[|]->
+[35m[18:03:06] TEST: Launched minishell
+
+[0m[35m[18:03:16] TEST: echo | |
+[0m--TOKENS--
+	[echo]->[|]->[|]->
+[35m[18:03:34] TEST: $?
+[0m--TOKENS--
+	[$?]->
+--EXPANSIONS--
+	[2]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/2
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/2
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/2
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/2
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/2
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/2
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/2
+Checking directory: /usr/bin
+Checking path: /usr/bin/2
+Checking directory: /sbin
+Checking path: /sbin/2
+Checking directory: /bin
+Checking path: /bin/2
+Checking directory: /usr/games
+Checking path: /usr/games/2
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/2
+Checking directory: /snap/bin
+Checking path: /snap/bin/2
+minishell: 2: command not found
+[35m[18:05:59] TEST: EoechoO
+[0m--TOKENS--
+	[EoechoO]->
+--EXPANSIONS--
+	[EoechoO]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EoechoO
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EoechoO
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EoechoO
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/EoechoO
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/EoechoO
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/EoechoO
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/EoechoO
+Checking directory: /usr/bin
+Checking path: /usr/bin/EoechoO
+Checking directory: /sbin
+Checking path: /sbin/EoechoO
+Checking directory: /bin
+Checking path: /bin/EoechoO
+Checking directory: /usr/games
+Checking path: /usr/games/EoechoO
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/EoechoO
+Checking directory: /snap/bin
+Checking path: /snap/bin/EoechoO
+minishell: EoechoO: command not found
+[35m[18:07:10] TEST: echo $?
+[0m--TOKENS--
+	[echo]->[$?]->
+--EXPANSIONS--
+	[echo]->[127]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:07:17] TEST: echo hello
+[0m--TOKENS--
+	[echo]->[hello]->
+--EXPANSIONS--
+	[echo]->[hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:07:29] TEST: $?
+[0m--TOKENS--
+	[$?]->
+--EXPANSIONS--
+	[0]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/0
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/0
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/0
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/0
+Checking directory: /usr/bin
+Checking path: /usr/bin/0
+Checking directory: /sbin
+Checking path: /sbin/0
+Checking directory: /bin
+Checking path: /bin/0
+Checking directory: /usr/games
+Checking path: /usr/games/0
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/0
+Checking directory: /snap/bin
+Checking path: /snap/bin/0
+minishell: 0: command not found
+[35m[18:07:51] TEST: export $?
+[0m--TOKENS--
+	[export]->[$?]->
+--EXPANSIONS--
+	[export]->[127]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:08:50] TEST: export %
+[0m--TOKENS--
+	[export]->[%]->
+--EXPANSIONS--
+	[export]->[%]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:11:53] TEST: Launched minishell
+
+[0m[35m[18:12:11] TEST: export %
+[0m--TOKENS--
+	[export]->[%]->
+--EXPANSIONS--
+	[export]->[%]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:13:13] TEST: export $?
+[0m--TOKENS--
+	[export]->[$?]->
+--EXPANSIONS--
+	[export]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:14:52] TEST: Launched minishell
+
+[0m[35m[18:15:10] TEST: export %
+[0m--TOKENS--
+	[export]->[%]->
+--EXPANSIONS--
+	[export]->[%]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:15:50] TEST: export HOME
+[0m--TOKENS--
+	[export]->[HOME]->
+--EXPANSIONS--
+	[export]->[HOME]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:15:58] TEST: export $HOME
+[0m--TOKENS--
+	[export]->[$HOME]->
+--EXPANSIONS--
+	[export]->[/home/alsuchon]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:16:59] TEST: Launched minishell
+
+[0m[35m[18:17:11] TEST: export $?
+[0m--TOKENS--
+	[export]->[$?]->
+--EXPANSIONS--
+	[export]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:17:28] TEST: export %
+[0m--TOKENS--
+	[export]->[%]->
+--EXPANSIONS--
+	[export]->[%]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:18:39] TEST: export =
+[0m--TOKENS--
+	[export]->[=]->
+--EXPANSIONS--
+	[export]->[=]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:19:43] TEST: Launched minishell
+
+[0m[35m[18:19:48] TEST: export %
+[0m--TOKENS--
+	[export]->[%]->
+--EXPANSIONS--
+	[export]->[%]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:21:30] TEST: export 2
+[0m--TOKENS--
+	[export]->[2]->
+--EXPANSIONS--
+	[export]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:24:00] TEST: Launched minishell
+
+[0m[35m[18:24:08] TEST: export 2
+[0m--TOKENS--
+	[export]->[2]->
+--EXPANSIONS--
+	[export]->[2]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:24:16] TEST: export $?
+[0m--TOKENS--
+	[export]->[$?]->
+--EXPANSIONS--
+	[export]->[1]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:24:29] TEST: echo hello 
+[0m--TOKENS--
+	[echo]->[hello]->[]->
+--EXPANSIONS--
+	[echo]->[hello]->[]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[echo] entering handle redirection
+[hello] entering handle redirection
+preparing to execute echo
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:24:42] TEST: export $?
+[0m--TOKENS--
+	[export]->[$?]->
+--EXPANSIONS--
+	[export]->[0]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:26:03] TEST: export Hola9hey
+[0m--TOKENS--
+	[export]->[Hola9hey]->
+--EXPANSIONS--
+	[export]->[Hola9hey]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:26:12] TEST: export
+[0m--TOKENS--
+	[export]->
+--EXPANSIONS--
+	[export]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:30:59] TEST: env
+[0m--TOKENS--
+	[env]->
+--EXPANSIONS--
+	[env]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute env
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:51:09] TEST: export TEST=
+[0m--TOKENS--
+	[export]->[TEST=]->
+--EXPANSIONS--
+	[export]->[TEST=]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:51:18] TEST: env
+[0m--TOKENS--
+	[env]->
+--EXPANSIONS--
+	[env]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute env
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:52:00] TEST: TEST=hello
+[0m--TOKENS--
+	[TEST=hello]->
+--EXPANSIONS--
+	[TEST=hello]->
+
+--OUTPUT--
+FUNCTION: Entered get_command_path
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/TEST=hello
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/TEST=hello
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/TEST=hello
+Checking directory: /home/alsuchon/bin
+Checking path: /home/alsuchon/bin/TEST=hello
+Checking directory: /usr/local/sbin
+Checking path: /usr/local/sbin/TEST=hello
+Checking directory: /usr/local/bin
+Checking path: /usr/local/bin/TEST=hello
+Checking directory: /usr/sbin
+Checking path: /usr/sbin/TEST=hello
+Checking directory: /usr/bin
+Checking path: /usr/bin/TEST=hello
+Checking directory: /sbin
+Checking path: /sbin/TEST=hello
+Checking directory: /bin
+Checking path: /bin/TEST=hello
+Checking directory: /usr/games
+Checking path: /usr/games/TEST=hello
+Checking directory: /usr/local/games
+Checking path: /usr/local/games/TEST=hello
+Checking directory: /snap/bin
+Checking path: /snap/bin/TEST=hello
+minishell: TEST=hello: command not found
+[35m[18:52:33] TEST: export TEST=hello
+[0m--TOKENS--
+	[export]->[TEST=hello]->
+--EXPANSIONS--
+	[export]->[TEST=hello]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:52:36] TEST: env
+[0m--TOKENS--
+	[env]->
+--EXPANSIONS--
+	[env]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+preparing to execute env
+restoring stdin stdout
+closing dup of stdin stdout
+[35m[18:56:36] TEST: export $DONTEXIST
+[0m--TOKENS--
+	[export]->[$DONTEXIST]->
+--EXPANSIONS--
+	[export]->[]->
+
+--OUTPUT--
+cmd identified as builtin
+duping save of stdin stdout
+[export] entering handle redirection
+preparing to execute export
+restoring stdin stdout
+closing dup of stdin stdout

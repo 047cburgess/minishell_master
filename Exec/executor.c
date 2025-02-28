@@ -121,8 +121,8 @@ char	*get_command_path(t_data *data, char *command)
 		i++;
 	}
 	free_str_array(dirs, i);
-	ft_dprintf(2, "%s: command not found\n", command);
-	ft_dprintf(data->log, "%s: command not found\n", command);
+	ft_dprintf(2, "minishell: %s: command not found\n", command);
+	ft_dprintf(data->log, "minishell: %s: command not found\n", command);
 	clean_up_exit(data, 127, NULL);
 	return (NULL);
 }
