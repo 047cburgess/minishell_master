@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:19:45 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/27 16:46:41 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 18:23:37 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,9 +129,9 @@ int	ft_export(char **av, t_data *data)
 	i = 1;
 	while (av[i])
 	{
-		if (av[i][0] == '\0')
+		if (av[i][0] == '\0' || av[i][0] == '%' || ft_isdigit(av[i][0]))
 		{
-			printf("Minishell: export: « %s » : not a valid identifier\n", av[i]);
+			ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av[i]);
 			return (1);
 		}
 		sign_egal = ft_strchr(av[i], '=');
@@ -146,6 +146,7 @@ int	ft_export(char **av, t_data *data)
 				return (0);
 		}
 		new_key = ft_substr(av[i], 0, sign_egal - av[i]);
+		printf("key = %s", new_key);
 		if (*(sign_egal + 1) == '\0')
 			key_content = ft_strdup("");
 		else
@@ -154,7 +155,7 @@ int	ft_export(char **av, t_data *data)
 			check_var_env(data, new_key, key_content);
 		else
 		{
-			printf("Minishell: export: « %s » : not a valid identifier\n", av[i]);
+			ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av[i]);
 			return (1);
 		}
 		i++;
