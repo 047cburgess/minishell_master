@@ -1,128 +1,95 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   executor2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/24 14:38:47 by caburges          #+#    #+#             */
+/*   Updated: 2025/02/28 15:13:26 by alsuchon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
-#include <fcntl.h>
 #include <unistd.h>
-#include <sys/wait.h>
 #include "ft_dprintf.h"
 
-// This function goes through the tokens and processes redirections from left to right
-int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
+int	launch_solo_command(t_data *data)
 {
-	int log_file = data->log;
-	t_token *token;
+	t_command	*command_table;
+	int	std_save[2];
 
-	token = cmd->tokens;
-	while (token->next != NULL && token->type != PIPE)
+	command_table = new_command_table(data->tokens_list, data);
+	if (!command_table)
 	{
-		dprintf(log_file, "[%s] entering handle redirection\n", token->content);
-		if (type_is_redirection(token->type))
-		{
-			dprintf(log_file, "[%s] identified as redirection\n", token->content);
-			if (token->type == RD_IN)
-			{
-				dprintf(log_file, "[%s] identified as RD_IN\n", token->content);
-				in_out[0] = open(token->next->content, O_RDONLY);
-				if (in_out[0] == -1)
-				{
-					perror("Open:");
-					return (errno);
-				}
-				dprintf(log_file, "Opened '%s'\n", token->next->content);
-				if (dup2(in_out[0], STDIN_FILENO) == -1)
-				{
-					perror("Dup2:");
-					return (errno);
-
-				}
-				if (in_out[0] != STDIN_FILENO)
-					close(in_out[0]);
-				dprintf(log_file, "Closed '%s'\n", token->next->content);
-			}
-			else
-			{
-				dprintf(log_file, "[%s] identified as RD_OUT\n", token->content);
-				in_out[1] = open(token->next->content, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-				if (in_out[1] == -1)
-				{
-					perror("Open:");
-					return (errno);
-
-				}
-				dprintf(log_file, "Redirecting output to '%s'\n", token->next->content);
-				if (dup2(in_out[1], STDOUT_FILENO) == -1)
-				{
-					perror("dup out failed");
-					return (errno);
-				}
-				dprintf(log_file, "Closing '%s'\n", token->next->content);
-				if (in_out[1] != STDOUT_FILENO)
-				{
-					close(in_out[1]);
-					dprintf(log_file, "Closed '%s'\n", token->next->content);
-
-				}
-			}
-		}
-		token = token->next;
+		data->status = 1;
+		return (data->status);
 	}
-	return (0);
+	data->command_list = command_table;
+	if (is_builtin(command_table->av))
+	{
+		ft_dprintf(data->log, "cmd identified as builtin\n");
+		ft_dprintf(data->log, "duping save of stdin stdout\n");
+		std_save[0] = dup(STDIN_FILENO);
+		std_save[1] = dup(STDOUT_FILENO);
+		if (handle_redirections(data, command_table, command_table->fds) == 0)
+		{
+			dprintf(data->log, "preparing to execute %s\n", command_table->av[0]);
+			data->status = execute_builtin(command_table->av, data);
+		}
+		else
+			data->status = 1;
+		ft_dprintf(data->log, "restoring stdin stdout\n");
+		dup2(std_save[0], STDIN_FILENO);
+		dup2(std_save[1], STDOUT_FILENO);
+		ft_dprintf(data->log, "closing dup of stdin stdout\n");
+		close(std_save[0]);
+		close(std_save[1]);
+	}
+	else
+	{
+		data->status = execute_solo_child(data, command_table);
+		if (command_table->pid != -1)
+		{
+			waitpid(command_table->pid, &data->status, 0);
+			data->status = get_child_exit_status(data->status);
+		}
+	}
+	command_lst_clear(&data->command_list);
+	return (data->status);
 }
 
-				
 
-// This function returns the full path for a given command, ready to give to execve
-// If it's not found, it returns NULL
-char	*get_command_path(t_data *data, char *command)
+int	execute_solo_child(t_data *data, t_command *cmd)
 {
-	char	*full_path;
-	char	**dirs;
-	int	directory_length;
-	int	command_length;
-	int	full_path_size;
-	int	i;
+	char	*full_cmd_path;
 
-	dprintf(data->log, "FUNCTION: Entered get_command_path\n");
-	// Checks if it's a relative or absolute path already given
-	if (ft_strchr(command, '/'))
+	cmd->pid = fork();
+	if (cmd->pid == -1)
 	{
-		dprintf(data->log, "No '\\' in command name \n");
-		full_path = ft_strdup(command);
-		return (full_path);
+		ft_dprintf(2, "minishell: %s\n", strerror(errno));
+		return (1);
 	}
-	dirs = ft_split(ft_getenv(data->env, "PATH"), ':');
-	command_length = ft_strlen(command);
-
-	// Checks all path folders to see if it's correct
-	i = 0;
-	while (dirs[i] != NULL)
-	{	
-		dprintf(data->log, "Checking directory: %s\n", dirs[i]);
-		directory_length = ft_strlen(dirs[i]);
-		full_path_size = directory_length + command_length + 2;
-		full_path = ft_calloc(full_path_size, sizeof(char));
-		if (!full_path)
+	if (cmd->pid == 0)
+	{
+		if (handle_redirections(data, cmd, cmd->fds) != 0)
 		{
-			perror("Malloc");
-			free_str_array(dirs, i);
-			clean_up_exit(data, errno, NULL);
-			return (NULL);
+			close_fds(cmd);
+			clean_up_exit(data, 1, NULL);
 		}
-		ft_strcpy(full_path, dirs[i]);
-		ft_strlcat(full_path, "/", full_path_size);
-		ft_strlcat(full_path, command, full_path_size);
-		dprintf(data->log, "Checking path: %s\n", full_path);
-		if (access(full_path, F_OK) == 0)
+		if (cmd->ac == 0)
 		{
-			dprintf(data->log, "Executable found: %s\n", full_path);
-			free_str_array(dirs, i);
-			return (full_path);
-
+			close_fds(cmd);
+			clean_up_exit(data, 0, "No cmds to execute, returned 0");
 		}
-		free(full_path);
-		i++;
+		full_cmd_path = get_command_path(data, cmd->av[0]);
+		ft_dprintf(data->log, "Full cmd path: %s\n", full_cmd_path);
+		check_access(full_cmd_path, data, cmd);
+		execve(full_cmd_path, cmd->av, cmd->env);
+		ft_dprintf(2, "minishell: %s, execution failed\n", cmd->av[0]);
+		free(full_cmd_path);
+		close_fds(cmd);
+		clean_up_exit(data, 1, NULL);
 	}
-	free_str_array(dirs, i);
-	ft_dprintf(2, "minishell: %s: command not found\n", command);
-	ft_dprintf(data->log, "minishell: %s: command not found\n", command);
-	clean_up_exit(data, 127, NULL);
-	return (NULL);
+	return (0);
 }

@@ -60,6 +60,7 @@ typedef struct s_command
 	char			*path;
 	char			**path_dirs;
 	pid_t			pid;
+	int	error;
 	struct s_command *next;
 } t_command;
 
@@ -85,7 +86,11 @@ char	*get_command_path(t_data *data, char *command);
 char	**get_av(t_token *tokens, int ac);
 int		get_ac(t_token *command_list);
 int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
+int	is_redirection_in(int type);
+int	handle_redirection_in(t_data *data, t_command *cmd, int *in_out, t_token *token);
+int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *token);
 int		is_builtin(char **av);
+int	check_access(char *full_path, t_data *data, t_command *cmd);
 
 // ------ COMMAND TABLE ------ //
 
