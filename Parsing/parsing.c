@@ -34,12 +34,10 @@ int	handle_input(char *line, t_data *data)
 	ft_dprintf(data->log, "\n--OUTPUT--\n");	
 
 	// 4: launch if solo builtin
-	int status;
 
 	if (data->command_count == 1)
 	{
-		status = launch_solo_command(data);
-		(void)status;
+		launch_solo_command(data);
 		//printf("command returned with exit status %i\n", status);
 	}
 
@@ -67,9 +65,6 @@ int	get_command_count(t_token *list)
 // Passing data as a parameter as the built in functions will need it
 int	execute_builtin(char **av, t_data *data)
 {
-	int	status;
-
-	status = data->status;
 	if (ft_strcmp(av[0], "echo") == 0)
 		data->status = ft_echo(&av[1]);
 	else if (ft_strcmp(av[0], "cd") == 0)

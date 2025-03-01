@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:23:01 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/27 16:47:53 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/02/28 17:37:38 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int ft_unset(char **av, t_data *data)
 			prev = current_env;
 			current_env = current_env->next;
 		}
-		if (!current_env)
-			printf("Minishell: unset: « %s » : not a valid identifier\n", av[i]);
 		i++;
 	}
 	return (0);

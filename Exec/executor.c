@@ -18,7 +18,6 @@ int	launch_solo_command(t_data *data)
 {
 	t_command	*command_table;
 	int	std_save[2];
-	int	status;
 
 	command_table = new_command_table(data->tokens_list, data);
 	if (!command_table)
@@ -53,7 +52,7 @@ int	launch_solo_command(t_data *data)
 		if (command_table->pid != -1)
 		{
 			waitpid(command_table->pid, &status, 0);
-			data->status = get_child_exit_status(status);
+			data->status = get_child_exit_status(data->status);
 		}
 	}
 	command_lst_clear(&data->command_list);
@@ -94,4 +93,3 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 	}
 	return (0);
 }
-

@@ -1,0 +1,6 @@
+libft/libft.a
+printf_fd/libftdprintf.a
+minishell
+*.o
+*.d
+log_file.txt
