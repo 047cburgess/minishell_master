@@ -29,13 +29,16 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 			{
 				handle_redirection_in(data, cmd, in_out, token);
 				if (cmd->error != 0)
-					return (cmd->error);
+				{
+					ft_dprintf(data->log, "rd in failed: errno: %i\n", cmd->error);
+					return (1);
+				}
 			}
 			else
 			{
 				handle_redirection_out(data, cmd, in_out, token);
 				if (cmd->error != 0)
-					return (cmd->error);
+					return (1);
 			}
 		}
 		token = token->next;

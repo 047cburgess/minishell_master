@@ -29,7 +29,7 @@ int	launch_solo_command(t_data *data)
 	if (is_builtin(command_table->av))
 	{
 		ft_dprintf(data->log, "cmd identified as builtin\n");
-		dprintf(data->log, "duping save of stdin stdout\n");
+		ft_dprintf(data->log, "duping save of stdin stdout\n");
 		std_save[0] = dup(STDIN_FILENO);
 		std_save[1] = dup(STDOUT_FILENO);
 		if (handle_redirections(data, command_table, command_table->fds) == 0)
@@ -38,11 +38,11 @@ int	launch_solo_command(t_data *data)
 			data->status = execute_builtin(command_table->av, data);
 		}
 		else
-			data->status = command_table->error;
-		dprintf(data->log, "restoring stdin stdout\n");
+			data->status = 1;
+		ft_dprintf(data->log, "restoring stdin stdout\n");
 		dup2(std_save[0], STDIN_FILENO);
 		dup2(std_save[1], STDOUT_FILENO);
-		dprintf(data->log, "closing dup of stdin stdout\n");
+		ft_dprintf(data->log, "closing dup of stdin stdout\n");
 		close(std_save[0]);
 		close(std_save[1]);
 	}
@@ -51,7 +51,7 @@ int	launch_solo_command(t_data *data)
 		data->status = execute_solo_child(data, command_table);
 		if (command_table->pid != -1)
 		{
-			waitpid(command_table->pid, &status, 0);
+			waitpid(command_table->pid, &data->status, 0);
 			data->status = get_child_exit_status(data->status);
 		}
 	}
@@ -75,7 +75,7 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 		if (handle_redirections(data, cmd, cmd->fds) != 0)
 		{
 			close_fds(cmd);
-			clean_up_exit(data, cmd->error, NULL);
+			clean_up_exit(data, 1, NULL);
 		}
 		if (cmd->ac == 0)
 		{
