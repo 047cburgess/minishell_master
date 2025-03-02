@@ -99,7 +99,7 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd);
-		execve(cmd->path, cmd->av, cmd->env);
+		execve(cmd->path, cmd->av, data->env_array);
 		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		close_fds(cmd);
 		clean_up_exit(data, 1, NULL);
