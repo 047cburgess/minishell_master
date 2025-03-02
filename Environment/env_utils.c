@@ -34,6 +34,7 @@ void	env_delone(t_env *node)
 	free(node->value);
 	node->key = NULL;
 	node->value = NULL;
+	node->no_value = 0;
 	free(node);
 }
 

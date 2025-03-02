@@ -40,6 +40,7 @@ typedef struct s_env
 {
 	char			*key;
 	char			*value;
+	int				no_value;
 	struct s_env	*next;
 } t_env;
 
@@ -72,6 +73,7 @@ typedef struct s_data
 	int			command_count;
 	char 		**bash_env;
 	t_env		*env;
+	t_env		*export;
 	int			log;
 	int 		status;
 } t_data;

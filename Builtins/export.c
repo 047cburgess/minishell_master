@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:19:45 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/28 18:23:37 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/02 18:56:27 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,36 +37,44 @@ void	bubble_sort_ascii(t_env **env_tab, int size)
 	}
 }
 
-void	print_ascii_env(t_env *env)
+void	print_ascii_export(t_data *data)
 {
 	t_env	*current;
-	t_env	**env_tab;
+	t_env	**export_tab;
 	int		size;
 	int		i;
 
-	size = env_lst_size(env);
-	env_tab = malloc(sizeof(t_env*) * size);
-	if (!env_tab)
+	size = env_lst_size(data->env) + env_lst_size(data->export);
+	export_tab = malloc(sizeof(t_env*) * size);
+	if (!export_tab)
 		return ;
-	current = env;
+	current = data->env;
 	i = 0;
-	while (i < size)
+	while (current)
 	{
-		env_tab[i] = current;
+		export_tab[i] = current;
 		current = current->next;
 		i++;
 	}
-	bubble_sort_ascii(env_tab, size);
+	current = data->export;
+	while (current)
+	{
+		export_tab[i] = current;
+		current = current->next;
+		i++;
+	}
+	bubble_sort_ascii(export_tab, size);
 	i = 0;
 	while (i < size)
 	{
-		printf("declare -x %s", env_tab[i]->key);
-		if (env_tab[i]->value)
-			printf("=\"%s\"", env_tab[i]->value);
+		if (export_tab[i]->no_value == 1) 
+			printf("declare -x %s", export_tab[i]->key);
+		else
+			printf("declare -x %s=\"%s\"", export_tab[i]->key, export_tab[i]->value);
 		printf("\n");
 		i++;
 	}
-	free(env_tab);
+	free(export_tab);
 }
 
 bool	key_is_valid(char *key)
@@ -112,53 +120,115 @@ void	check_var_env(t_data *data, char *key, char *key_content)
 	env_add_back(&(data->env), new_node);
 }
 
-int	ft_export(char **av, t_data *data)
+void	check_var_export(t_data *data, char *key)
+{
+	t_env 	*current;
+	char	*key_content;
+	t_env	*new_node;
+
+	current = data->export;
+	while (current)
+	{
+		if (ft_strcmp(current->key, key) == 0)
+			return ;
+		current = current->next;
+	}
+	key_content = ft_strdup("");
+	if (!key_content)
+	{
+		free(key);
+		return ;
+	}
+	new_node = env_node_new(key, key_content);
+	new_node->no_value = 1;
+	printf("export node: key = %s, content = %s\n", new_node->key, new_node->value);
+	env_add_back(&data->export, new_node);	
+}
+
+int var_export(t_data *data, char *av)
+{
+	char	*new_key;
+
+	new_key = ft_strdup(av);
+	if (!new_key)
+		return (1);
+	if (!key_is_valid(new_key))
+	{
+		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
+		return (free(new_key), 1);
+	}
+	check_var_export(data, new_key);
+	return (0);
+}
+
+int var_env(t_data *data, char *av, char *sign_egal)
 {
 	char	*new_key;
 	char	*key_content;
+	int 	len;
+	
+	len = sign_egal - av;
+	new_key = ft_substr(av, 0, len);
+	printf("KEY = %s\n", new_key);
+	if (!new_key)
+		return (1);
+	key_content = ft_strdup(sign_egal + 1);
+	printf("KEY CONTENT = %s\n", key_content);
+	if (!key_content)
+		return (free(new_key), 1);
+	if (key_is_valid(new_key))
+		check_var_env(data, new_key, key_content);
+	else
+	{
+		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
+		return (free(new_key), free(key_content), 1);
+	}
+	return (0);
+}
+
+int	ft_export(char **av, t_data *data)
+{
 	int		i;
 	int		size;
 	char	*sign_egal;
+	int 	error_status;
 
 	size = count_ac(av);
 	if (size == 1)
 	{
-		print_ascii_env(data->env);
+		print_ascii_export(data);
 		return (0);
 	}
 	i = 1;
+	error_status = 0;
 	while (av[i])
 	{
 		if (av[i][0] == '\0' || av[i][0] == '%' || ft_isdigit(av[i][0]))
 		{
 			ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av[i]);
-			return (1);
+			error_status = 1;
 		}
-		sign_egal = ft_strchr(av[i], '=');
-		if (sign_egal == NULL)
+		else
 		{
-			if (size > 2)
+			sign_egal = ft_strchr(av[i], '=');
+			if (sign_egal == NULL)
 			{
-				i++;
-				continue ;
+				if (var_export(data, av[i]) != 0)
+					error_status = 1;
+				print_env_list(data->export);
 			}
 			else
-				return (0);
-		}
-		new_key = ft_substr(av[i], 0, sign_egal - av[i]);
-		printf("key = %s", new_key);
-		if (*(sign_egal + 1) == '\0')
-			key_content = ft_strdup("");
-		else
-			key_content = ft_strdup(sign_egal + 1);
-		if (key_is_valid(new_key))
-			check_var_env(data, new_key, key_content);
-		else
-		{
-			ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av[i]);
-			return (1);
+			{
+				if (var_env(data, av[i], sign_egal) != 0)
+					error_status = 1;
+			}
 		}
 		i++;
 	}
-	return (0);
+	if (error_status == 1)
+		data->status = 1;
+	else
+		data->status = 0;
+	return (data->status);
 }
+
