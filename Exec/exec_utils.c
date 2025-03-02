@@ -9,12 +9,13 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 {
 	int	i;
 	
+	dprintf(data->log, "FUNCTION: Entered get_command_path\n");
 	if (cmd->error != 0)
 	{
 		ft_dprintf(data->log, "Error detected, not setting command path\n");
 		return (0);
 	}
-	dprintf(data->log, "FUNCTION: Entered get_command_path\n");
+	
 	// Checks if it's a relative or absolute path already given
 	if (ft_strchr(command, '/') || data->path_dirs == NULL)
 	{
@@ -72,16 +73,9 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	if ((status_buffer.st_mode & S_IFMT) == S_IFDIR)
 	{
 		ft_dprintf(data->log, "minishell: %s: Is a directory\n", cmd->av[0]);
-		cmd->error = 500;
+		cmd->error = ER_IS_DIR;
 	}
 	dprintf(data->log, "%s is not a directory\n", cmd->av[0]);
 	return (SUCCESS);
 }
 
-void	close_fds(t_command *cmd)
-{
-	if (cmd->fds[0] > STDIN_FILENO)
-		close(cmd->fds[0]);
-	if (cmd->fds[1] > STDOUT_FILENO)
-		close(cmd->fds[1]);
-}

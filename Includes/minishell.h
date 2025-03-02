@@ -105,6 +105,9 @@ int	handle_redirection_out(t_data *data, int *in_out, t_token *token);
 int		is_builtin(char **av);
 int	check_access(char *full_path, t_data *data, t_command *cmd);
 void	clean_job_memory(t_data *data);
+int	print_errors_and_exit(t_data *data, t_command *command);
+int	dup_stds(t_data *data, int *std_save);
+int	restore_stds(t_data *data, int *std_save);
 
 // ------ COMMAND TABLE ------ //
 
