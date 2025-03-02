@@ -18,11 +18,18 @@
 # define RD_OUT 4
 # define PIPE 5
 
-#define S_IFMT 0170000
-#define S_IFDIR 0040000
+# define S_IFMT 0170000
+# define S_IFDIR 0040000
 
 # define MAX_OPERATOR_LEN 2
 # define FULL_PATH_MAX 4097
+
+//--- ERROR CODES ---//
+# define ER_IS_DIR 500
+# define ER_NO_CMD 501
+# define ER_CMD_NOT_FOUND 127
+# define ER_NOT_EXECUTABLE 126
+# define ER_FAILED_RD 1
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -87,13 +94,14 @@ int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
 int		launch_solo_command(t_data *data, t_command *command);
 int		type_is_redirection(int type);
-int	set_command_path(t_data *data, char *path, char *command);
+int	set_command_path(t_data *data, char *path, char *command, t_command *cmd);
 char	**get_av(t_token *tokens, int ac);
 int		get_ac(t_token *command_list);
 int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
 int	is_redirection_in(int type);
-int	handle_redirection_in(t_data *data, t_command *cmd, int *in_out, t_token *token);
-int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *token);
+int	is_redirection_out(int type);
+int	handle_redirection_in(t_data *data, int *in_out, t_token *token);
+int	handle_redirection_out(t_data *data, int *in_out, t_token *token);
 int		is_builtin(char **av);
 int	check_access(char *full_path, t_data *data, t_command *cmd);
 void	clean_job_memory(t_data *data);

@@ -5,10 +5,15 @@
 // This function returns the full path for a given command, ready to give to execve
 // If it's not found, it returns NULL
 
-int	set_command_path(t_data *data, char *path, char *command)
+int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 {
 	int	i;
-
+	
+	if (cmd->error != 0)
+	{
+		ft_dprintf(data->log, "Error detected, not setting command path\n");
+		return (0);
+	}
 	dprintf(data->log, "FUNCTION: Entered get_command_path\n");
 	// Checks if it's a relative or absolute path already given
 	if (ft_strchr(command, '/') || data->path_dirs == NULL)
@@ -33,23 +38,32 @@ int	set_command_path(t_data *data, char *path, char *command)
 		}
 		i++;
 	}
-	ft_dprintf(2, "%s: command not found\n", command);
+	ft_bzero(path, FULL_PATH_MAX);
 	ft_dprintf(data->log, "%s: command not found\n", command);
-	clean_up_exit(data, 127, NULL);
 	return (0);
 }
 
 int	check_access(char *full_path, t_data *data, t_command *cmd)
 {
 	struct stat	status_buffer;
+
+	if (cmd->error != 0)
+		return (0);
+	if (access(full_path, F_OK) == 0)
+		dprintf(data->log, "Executable found: %s\n", cmd->path);
+	else
+	{
+		ft_dprintf(data->log, "%s: command not found\n", cmd->av[0]);
+		cmd->error = 127;
+		return (0);
+	}
 	
 	// Check it's executable
 	if (access(full_path, X_OK) != 0)
 	{
-		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		ft_dprintf(data->log, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
-		close_fds(cmd);
-		clean_up_exit(data, 126, NULL);
+		cmd->error = 126;
+		return (0);
 	}
 	dprintf(data->log, "%s is executable\n", cmd->av[0]);
 
@@ -57,10 +71,8 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	stat(full_path, &status_buffer);
 	if ((status_buffer.st_mode & S_IFMT) == S_IFDIR)
 	{
-		ft_dprintf(2, "minishell: %s: Is a directory\n", cmd->av[0]);
 		ft_dprintf(data->log, "minishell: %s: Is a directory\n", cmd->av[0]);
-		close_fds(cmd);
-		clean_up_exit(data, 126, NULL);
+		cmd->error = 500;
 	}
 	dprintf(data->log, "%s is not a directory\n", cmd->av[0]);
 	return (SUCCESS);
