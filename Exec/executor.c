@@ -14,28 +14,20 @@
 #include <unistd.h>
 #include "ft_dprintf.h"
 
-int	launch_solo_command(t_data *data)
+int	launch_solo_command(t_data *data, t_command *command)
 {
-	t_command	*command_table;
 	int	std_save[2];
 
-	command_table = new_command_table(data->tokens_list, data);
-	if (!command_table)
-	{
-		data->status = 1;
-		return (data->status);
-	}
-	data->command_list = command_table;
-	if (is_builtin(command_table->av))
+	if (is_builtin(command->av))
 	{
 		ft_dprintf(data->log, "cmd identified as builtin\n");
 		ft_dprintf(data->log, "duping save of stdin stdout\n");
 		std_save[0] = dup(STDIN_FILENO);
 		std_save[1] = dup(STDOUT_FILENO);
-		if (handle_redirections(data, command_table, command_table->fds) == 0)
+		if (handle_redirections(data, command, command->fds) == 0)
 		{
-			dprintf(data->log, "preparing to execute %s\n", command_table->av[0]);
-			data->status = execute_builtin(command_table->av, data);
+			dprintf(data->log, "preparing to execute %s\n", command->av[0]);
+			data->status = execute_builtin(command->av, data);
 		}
 		else
 			data->status = 1;
@@ -48,10 +40,10 @@ int	launch_solo_command(t_data *data)
 	}
 	else
 	{
-		data->status = execute_solo_child(data, command_table);
-		if (command_table->pid != -1)
+		data->status = execute_solo_child(data, command);
+		if (command->pid != -1)
 		{
-			waitpid(command_table->pid, &data->status, 0);
+			waitpid(command->pid, &data->status, 0);
 			data->status = get_child_exit_status(data->status);
 		}
 	}
@@ -62,8 +54,6 @@ int	launch_solo_command(t_data *data)
 
 int	execute_solo_child(t_data *data, t_command *cmd)
 {
-	char	*full_cmd_path;
-
 	cmd->pid = fork();
 	if (cmd->pid == -1)
 	{
@@ -82,12 +72,11 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 			close_fds(cmd);
 			clean_up_exit(data, 0, "No cmds to execute, returned 0");
 		}
-		full_cmd_path = get_command_path(data, cmd->av[0]);
-		ft_dprintf(data->log, "Full cmd path: %s\n", full_cmd_path);
-		check_access(full_cmd_path, data, cmd);
-		execve(full_cmd_path, cmd->av, cmd->env);
+		set_command_path(data, cmd->path, cmd->av[0]);
+		ft_dprintf(data->log, "Full cmd path: %s\n", cmd->path);
+		check_access(cmd->path, data, cmd);
+		execve(cmd->path, cmd->av, cmd->env);
 		ft_dprintf(2, "minishell: %s, execution failed\n", cmd->av[0]);
-		free(full_cmd_path);
 		close_fds(cmd);
 		clean_up_exit(data, 1, NULL);
 	}

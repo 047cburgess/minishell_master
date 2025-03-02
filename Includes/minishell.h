@@ -22,6 +22,7 @@
 #define S_IFDIR 0040000
 
 # define MAX_OPERATOR_LEN 2
+# define FULL_PATH_MAX 4097
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -35,6 +36,8 @@
 # include "libft.h"
 # include "ft_dprintf.h"
 # include <errno.h>
+
+extern int g_log;
 
 typedef struct s_env
 {
@@ -57,7 +60,7 @@ typedef struct s_command
 	int				ac;
 	int				fds[2];
 	t_token 		*tokens;
-	char			*path;
+	char	path[FULL_PATH_MAX];
 	char			**path_dirs;
 	pid_t			pid;
 	int	error;
@@ -72,6 +75,8 @@ typedef struct s_data
 	int			command_count;
 	char 		**bash_env;
 	t_env		*env;
+	char	**path_dirs;
+	char	**env_array;
 	int			log;
 	int 		status;
 } t_data;
@@ -80,9 +85,9 @@ typedef struct s_data
 
 int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
-int		launch_solo_command(t_data *data);
+int		launch_solo_command(t_data *data, t_command *command);
 int		type_is_redirection(int type);
-char	*get_command_path(t_data *data, char *command);
+int	set_command_path(t_data *data, char *path, char *command);
 char	**get_av(t_token *tokens, int ac);
 int		get_ac(t_token *command_list);
 int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
@@ -91,14 +96,17 @@ int	handle_redirection_in(t_data *data, t_command *cmd, int *in_out, t_token *to
 int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *token);
 int		is_builtin(char **av);
 int	check_access(char *full_path, t_data *data, t_command *cmd);
+void	clean_job_memory(t_data *data);
 
 // ------ COMMAND TABLE ------ //
 
-t_command	*new_command_table(t_token *tokens, t_data *data);
+int	prep_command_tables(t_data *data, t_token *tokens);
+t_command	*new_command_table(t_token *tokens);
 void		command_add_back(t_command **head, t_command *new);
 void		command_del_node(t_command *cmd);
 void		command_lst_clear(t_command **head);
 t_command	*command_lst_last(t_command *head);
+t_command	*get_command_tables(t_token *tokens);
 void		print_command_list(t_command *head);
 
 // ------ SIGNALS ----- //
@@ -175,7 +183,6 @@ void	env_add_back(t_env **env_head, t_env *new_node);
 t_env	*env_to_list(char **bash_env);
 char	**env_to_array(t_env *env_head);
 char	*ft_getenv(t_env *env, char *key);
-char	**get_split_paths(t_data *data);
 int		env_lst_size(t_env *env);
 
 // ----- MINISHELL SHUT DOWN ----- //
