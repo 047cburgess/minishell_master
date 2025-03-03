@@ -3,39 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   export.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:19:45 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/02 18:56:27 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/03 17:51:39 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-void	bubble_sort_ascii(t_env **env_tab, int size)
-{
-	int		sorted;
-	int		i;
-	t_env	*temp;
-
-	sorted = 1;
-	while (sorted)
-	{
-		sorted = 0;
-		i = 0;
-		while (i < (size -1))
-		{
-			if (ft_strcmp(env_tab[i]->key, env_tab[i + 1]->key) > 0)
-			{
-				temp = env_tab[i];
-				env_tab[i] = env_tab[i + 1];
-				env_tab[i + 1] = temp;
-				sorted = 1;
-			}
-			i++;
-		}
-	}
-}
 
 void	print_ascii_export(t_data *data)
 {
@@ -45,7 +20,7 @@ void	print_ascii_export(t_data *data)
 	int		i;
 
 	size = env_lst_size(data->env) + env_lst_size(data->export);
-	export_tab = malloc(sizeof(t_env*) * size);
+	export_tab = malloc(sizeof(t_env*) * (size + 1));
 	if (!export_tab)
 		return ;
 	current = data->env;
@@ -77,77 +52,52 @@ void	print_ascii_export(t_data *data)
 	free(export_tab);
 }
 
-bool	key_is_valid(char *key)
+void handle_assignememt_var(t_data *data, char *key, char *value, int with_egal)
 {
-	int	i;
+	t_env *env_node;
+	t_env *export_node;
+	t_env *new_node;
+	t_env *move_node;
 
-	i = 0;
-	if (!key)
-		return (FALSE);
-	if (key[0] == '\0' || key[0] == '=')
-		return (FALSE);
-	if (ft_isdigit(key[0]))
-		return (FALSE);
-	while (key[i] && key[i] != '=')
+	env_node = search_key(data->env, key);
+	export_node = search_key(data->export, key);
+
+	if (with_egal)
 	{
-		if (!ft_isalnum(key[i]) && key[i] != '_')
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
-}
-
-void	check_var_env(t_data *data, char *key, char *key_content)
-{
-	t_env	*env;
-	t_env	*new_node;
-
-	env = data->env;
-	while (env)
-	{
-		if (ft_strcmp(env->key, key) == 0)
+		if (env_node) //si existe dans env/ mise a jour
 		{
-			free(env->value);
-			if (key_content)
-				env->value = ft_strdup(key_content);
-			else
-				env->value = NULL;
-			return ;
+			free(env_node->value);
+			env_node->value = ft_strdup(value);
 		}
-		env = env->next;
+		else if (export_node) // Si existe dans export, on le déplace vers env
+        {
+            move_node = search_key(data->export, key);
+            if (move_node)
+            {
+                env_remove_node(&(data->export), key);
+                move_node->value = ft_strdup(value);
+                move_node->no_value = 0;
+                env_add_back(&(data->env), move_node);
+            }
+        }
+		else //si n'existe pas -> ajout dns env
+			env_add_back(&(data->env), env_node_new(key, value));
 	}
-	new_node = env_node_new(key, key_content);
-	env_add_back(&(data->env), new_node);
-}
-
-void	check_var_export(t_data *data, char *key)
-{
-	t_env 	*current;
-	char	*key_content;
-	t_env	*new_node;
-
-	current = data->export;
-	while (current)
+	else //pas de egal ajout dans export 
 	{
-		if (ft_strcmp(current->key, key) == 0)
-			return ;
-		current = current->next;
+		if (!env_node && !export_node)
+		{
+			new_node = env_node_new(key, "");
+			env_add_back(&(data->export), new_node);
+			new_node->no_value = 1;
+		}
 	}
-	key_content = ft_strdup("");
-	if (!key_content)
-	{
-		free(key);
-		return ;
-	}
-	new_node = env_node_new(key, key_content);
-	new_node->no_value = 1;
-	printf("export node: key = %s, content = %s\n", new_node->key, new_node->value);
-	env_add_back(&data->export, new_node);	
 }
 
 int var_export(t_data *data, char *av)
 {
 	char	*new_key;
+	t_env 	*export_node;
 
 	new_key = ft_strdup(av);
 	if (!new_key)
@@ -157,7 +107,10 @@ int var_export(t_data *data, char *av)
 		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
 		return (free(new_key), 1);
 	}
-	check_var_export(data, new_key);
+	export_node = search_key(data->export, new_key);
+	if (!export_node)
+		handle_assignememt_var(data, new_key, NULL, 0);
+	free(new_key);
 	return (0);
 }
 
@@ -169,15 +122,13 @@ int var_env(t_data *data, char *av, char *sign_egal)
 	
 	len = sign_egal - av;
 	new_key = ft_substr(av, 0, len);
-	printf("KEY = %s\n", new_key);
 	if (!new_key)
 		return (1);
 	key_content = ft_strdup(sign_egal + 1);
-	printf("KEY CONTENT = %s\n", key_content);
 	if (!key_content)
 		return (free(new_key), 1);
 	if (key_is_valid(new_key))
-		check_var_env(data, new_key, key_content);
+		handle_assignememt_var(data, new_key, key_content, 1);
 	else
 	{
 		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
@@ -215,7 +166,6 @@ int	ft_export(char **av, t_data *data)
 			{
 				if (var_export(data, av[i]) != 0)
 					error_status = 1;
-				print_env_list(data->export);
 			}
 			else
 			{
@@ -225,10 +175,7 @@ int	ft_export(char **av, t_data *data)
 		}
 		i++;
 	}
-	if (error_status == 1)
-		data->status = 1;
-	else
-		data->status = 0;
+	data->status = error_status;
 	return (data->status);
 }
 

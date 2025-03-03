@@ -12,6 +12,11 @@
 
 #include "minishell.h"
 
+int	is_redirection_out(int token_type)
+{
+	return (token_type == RD_APPEND || token_type == RD_OUT);
+}
+
 // This function goes through the tokens and processes redirections from left to right
 int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 {
@@ -22,23 +27,20 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 	while (token->next != NULL && token->type != PIPE)
 	{
 		dprintf(log_file, "[%s] entering handle redirection\n", token->content);
-		if (type_is_redirection(token->type))
+		if (is_redirection_in(token->type))
 		{
-			dprintf(log_file, "[%s] identified as redirection\n", token->content);
-			if (is_redirection_in(token->type))
+			if (!handle_redirection_in(data, in_out, token))
 			{
-				handle_redirection_in(data, cmd, in_out, token);
-				if (cmd->error != 0)
-				{
-					ft_dprintf(data->log, "rd in failed: errno: %i\n", cmd->error);
-					return (1);
-				}
+				cmd->error = 1;
+				return (1);
 			}
-			else
+		}	
+		else if (is_redirection_out(token->type))
+		{
+			if (!handle_redirection_out(data, in_out, token))
 			{
-				handle_redirection_out(data, cmd, in_out, token);
-				if (cmd->error != 0)
-					return (1);
+				cmd->error = 1;
+				return (1);
 			}
 		}
 		token = token->next;
@@ -47,7 +49,7 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 }
 
 // Manages input redirections
-int	handle_redirection_in(t_data *data, t_command *cmd, int *in_out, t_token *token)
+int	handle_redirection_in(t_data *data, int *in_out, t_token *token)
 {
 	int log_file = data->log;
 	if (token->type == RD_IN)
@@ -57,28 +59,26 @@ int	handle_redirection_in(t_data *data, t_command *cmd, int *in_out, t_token *to
 		if (in_out[0] == -1)
 		{
 			ft_dprintf(2, "minishell: %s: %s\n", token->next->content, strerror(errno));
-			cmd->error = errno;
-			return (errno);
+			return (0);
 		}
 		dprintf(log_file, "Opened '%s'\n", token->next->content);
 		if (dup2(in_out[0], STDIN_FILENO) == -1)
 		{
 			ft_dprintf(2, "minishell: %s\n", strerror(errno));
-			cmd->error = errno;
-			return (errno);
+			return (0);
 		}
 		if (in_out[0] != STDIN_FILENO)
 			close(in_out[0]);
 		dprintf(log_file, "Closed '%s'\n", token->next->content);
-		return (0);
+		return (1);
 	}
 	else
 		ft_dprintf(2, "Not managing heredocs yet, need to see how and where to manage\n");
-	return (0);
+	return (1);
 }
 
 // Manages output redirections
-int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *token)
+int	handle_redirection_out(t_data *data, int *in_out, t_token *token)
 {
 	int log_file = data->log;
 	if (token->type == RD_OUT)
@@ -95,15 +95,13 @@ int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *t
 	if (in_out[1] == -1)
 	{
 		ft_dprintf(2, "minishell: %s: %s\n", token->next->content, strerror(errno));
-		cmd->error = errno;
-		return (errno);
+		return (0);
 	}
 	dprintf(log_file, "Redirecting output to '%s'\n", token->next->content);
 	if (dup2(in_out[1], STDOUT_FILENO) == -1)
 	{
 		ft_dprintf(2, "minishell: %s\n", strerror(errno));
-		cmd->error = errno;
-		return (errno);
+		return (0);
 	}
 	dprintf(log_file, "Closing '%s'\n", token->next->content);
 	if (in_out[1] != STDOUT_FILENO)
@@ -111,5 +109,5 @@ int	handle_redirection_out(t_data *data, t_command *cmd, int *in_out, t_token *t
 		close(in_out[1]);
 		dprintf(log_file, "Closed '%s'\n", token->next->content);
 	}
-	return (0);
+	return (1);
 }

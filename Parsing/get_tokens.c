@@ -151,7 +151,7 @@ int	tokenise(char *line, t_data *data)
 			token_add_back(&(data->tokens_list), new_token);
 			i += ft_strlen(new_token->content);
 		}
-		else if (!is_quote(line[i]))
+		else if (!is_quote(line[i]) && line[i] != '\0')
 		{
 			new_token = get_unquoted_token(&line[i]);
 			if (!new_token)
