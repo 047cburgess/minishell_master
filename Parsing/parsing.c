@@ -42,7 +42,10 @@ int	handle_input(char *line, t_data *data)
 		ft_dprintf(data->log, "Command returned with exit status %i\n", data->status);
 	}
 	else
-		printf("Pipeline of commands detected\n");
+	{
+		ft_dprintf(data->log, "Pipeline of commands detected\n");
+		launch_pipeline(data, data->command_list, data->command_count);
+	}
 	clean_job_memory(data);
 	return (SUCCESS);
 }

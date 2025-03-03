@@ -65,6 +65,7 @@ typedef struct s_command
 	char			**av;
 	int				ac;
 	int				fds[2];
+	int				pipe_fds[2];
 	t_token 		*tokens;
 	char	path[FULL_PATH_MAX];
 	pid_t			pid;
@@ -106,6 +107,7 @@ void	clean_job_memory(t_data *data);
 int	print_errors_and_exit(t_data *data, t_command *command);
 int	dup_stds(t_data *data, int *std_save);
 int	restore_stds(t_data *data, int *std_save);
+int	launch_pipeline(t_data *data, t_command *commands, int num_cmds);
 
 // ------ COMMAND TABLE ------ //
 
