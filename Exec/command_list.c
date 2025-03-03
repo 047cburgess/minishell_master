@@ -48,7 +48,6 @@ void	command_del_node(t_command *cmd)
 {
 	free(cmd->av);
 	cmd->av = NULL;
-	cmd->env = NULL;
 	cmd->tokens = NULL;
 	free(cmd);
 }

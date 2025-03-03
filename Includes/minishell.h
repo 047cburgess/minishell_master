@@ -63,12 +63,10 @@ typedef struct s_token
 typedef struct s_command
 {
 	char			**av;
-	char			**env;
 	int				ac;
 	int				fds[2];
 	t_token 		*tokens;
 	char	path[FULL_PATH_MAX];
-	char			**path_dirs;
 	pid_t			pid;
 	int	error;
 	struct s_command *next;
