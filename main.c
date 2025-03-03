@@ -12,6 +12,8 @@
 
 #include "minishell.h"
 
+int	g_log = -1;
+
 int	main(int ac, char **av, char **envp)
 {
 	(void)av;
@@ -21,6 +23,7 @@ int	main(int ac, char **av, char **envp)
 	ft_bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
+	g_log = data.log;
 	new_log_timestamp(data.log, "Launched minishell\n");
 	if (ac != 1)
 	{
