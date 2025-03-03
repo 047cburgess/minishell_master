@@ -14,9 +14,13 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 	int	pipe_fds[2];
 	t_command	*current;
 	t_command	*prev;
-
 	current = commands;
 
+	//pipe(pipe_fds);
+	
+	//launch_first_child_pipe(data, current, pipe_fds);
+	//launch_last_child_pipe(data, current->next, pipe_fds);
+	
 	int i = 0;
 	while (i < num_cmds)
 	{
@@ -33,13 +37,14 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 		i++;
 	}
 
+	i = 0;
 	while (i < num_cmds)
 	{
 		if (i == num_cmds - 1)
 			waitpid(commands->pid, &data->status, 0);
 		else
 			waitpid(commands->pid, NULL, 0);
-		current = current->next;
+		commands = commands->next;
 		i++;
 	}
 	// WAIT FOR ALL
@@ -87,7 +92,7 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd, int *pipe_fds)
 int	launch_middle_child_pipe(t_data *data, t_command *cmd, int* pipe_fds, t_command *prev)
 {
 	// PARENT
-	cmd->pipe_fds[0] = pipe_fds[0]; // represents the pipe it will WRITE INTO
+	cmd->pipe_fds[0] = pipe_fds[0]; // represents the pipe it will NOT NEED
 	cmd->pipe_fds[1] = pipe_fds[1]; // represents the pipe it will WRITE INTO
 	// LAUNCH FORK 
 	// (it will close pipe_fds[0])
@@ -104,6 +109,7 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, int* pipe_fds, t_comm
 	if (cmd->pid == 0)
 	{
 		close(cmd->pipe_fds[0]);
+		close(prev->pipe_fds[1]);
 		handle_redirections(data, cmd, cmd->fds);
 		if (dup2(prev->pipe_fds[0], STDIN_FILENO) == -1)
 			ft_dprintf(data->log, "%s: failed to dup stdin to prev pipe\n", cmd->av[0]);
