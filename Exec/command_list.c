@@ -20,6 +20,7 @@ t_command	*new_command_table(t_token *tokens)
 	}
 	node->fds[0] = STDIN_FILENO;
 	node->fds[1] = STDOUT_FILENO;
+	node->pid = -1;
 	node->next = NULL;
 	node->error = 0;
 	return (node);
