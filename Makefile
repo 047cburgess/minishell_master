@@ -34,6 +34,9 @@ SRCS = main.c \
 	   $(BUILTIN_DIR)/pwd.c \
 	   $(BUILTIN_DIR)/cd.c \
 		$(BUILTIN_DIR)/export.c \
+		$(BUILTIN_DIR)/handle_var_export.c \
+		$(BUILTIN_DIR)/init_export_list.c \
+		$(BUILTIN_DIR)/export_utils.c \
 	   $(BUILTIN_DIR)/unset.c \
 	   $(BUILTIN_DIR)/env.c \
 	   $(EXEC_DIR)/executor.c \

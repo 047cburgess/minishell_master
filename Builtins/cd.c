@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:56:19 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/13 14:56:21 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/04 17:08:01 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	ft_cd(char **args)
 	// If more than one argument is given, return false
 	if (ac > 1)
 	{
-		ft_putendl_fd("cd: too many arguments", 2);
+		
+		ft_putendl_fd("Minishell: cd: too many arguments", 2);
 		status = 1;
 	}
 
