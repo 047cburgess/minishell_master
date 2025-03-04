@@ -43,8 +43,8 @@ int	handle_input(char *line, t_data *data)
 	}
 	else
 	{
-		ft_dprintf(data->log, "Pipeline of commands detected\n");
 		launch_pipeline(data, data->command_list, data->command_count);
+		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
 	}
 	clean_job_memory(data);
 	return (SUCCESS);

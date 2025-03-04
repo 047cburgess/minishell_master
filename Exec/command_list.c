@@ -18,8 +18,8 @@ t_command	*new_command_table(t_token *tokens)
 		free(node);
 		return (NULL);
 	}
-	node->fds[0] = STDIN_FILENO;
-	node->fds[1] = STDOUT_FILENO;
+	node->fds[0] = -1;
+	node->fds[1] = -1;
 	node->pid = -1;
 	node->next = NULL;
 	node->error = 0;

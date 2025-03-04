@@ -36,6 +36,7 @@ int	launch_solo_command(t_data *data, t_command *command)
 			waitpid(command->pid, &data->status, 0);
 			data->status = get_child_exit_status(data->status);
 		}
+
 	}
 	command_lst_clear(&data->command_list);
 	return (data->status);
@@ -57,7 +58,7 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 			cmd->error = ER_NO_CMD;
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
-		print_errors_and_exit(data, cmd);
+		print_errors_and_exit(data, cmd, CHILD);
 		execve(cmd->path, cmd->av, data->env_array);
 		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		close_fds(cmd);

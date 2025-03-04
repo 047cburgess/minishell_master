@@ -10,9 +10,9 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 	int	i;
 	
 	dprintf(data->log, "FUNCTION: Entered get_command_path\n");
-	if (cmd->error != 0)
+	if (cmd->error != 0 || is_builtin(cmd->av))
 	{
-		ft_dprintf(data->log, "Error detected, not setting command path\n");
+		ft_dprintf(data->log, "Built in or previous Error detected, not setting command path\n");
 		return (0);
 	}
 	
@@ -48,7 +48,7 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 {
 	struct stat	status_buffer;
 
-	if (cmd->error != 0)
+	if (cmd->error != 0 || is_builtin(cmd->av))
 		return (0);
 	if (access(full_path, F_OK) == 0)
 		dprintf(data->log, "Executable found: %s\n", cmd->path);
