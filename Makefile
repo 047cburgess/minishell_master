@@ -30,6 +30,7 @@ SRCS = main.c \
 	   $(PARSE_DIR)/parse_tokens.c \
 	   $(EXPAND_DIR)/extract_expansion.c \
 	    $(EXPAND_DIR)/expansions_cutting.c \
+		$(EXPAND_DIR)/expansions_utils.c \
 	   $(BUILTIN_DIR)/echo.c \
 	   $(BUILTIN_DIR)/pwd.c \
 	   $(BUILTIN_DIR)/cd.c \

@@ -25,8 +25,8 @@ int	handle_input(char *line, t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 
 	// 3: EXPAND && REMOVE QUOTES
-	handle_expansions(data);
-//
+	handle_expansions_in_tokens(data);
+
 //	// 3A: MANAGE HEREDOCS
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]

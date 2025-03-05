@@ -6,13 +6,22 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/02/28 15:30:47 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/05 11:00:35 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-// Remplace par expension
+char *expand_status(t_data *data, char *line, int *i)
+{
+    if (line[*i + 1] == '?')
+    {
+        (*i) += 2;
+        return ft_strdup(ft_itoa(data->status));
+    }
+    return NULL;
+}
+
 char	*convert_expansion(t_data *data, char *line, int *i)
 {
     char	*expansion;
@@ -20,20 +29,12 @@ char	*convert_expansion(t_data *data, char *line, int *i)
     char	*key;
 	int		start;
 	
-	if (line[*i + 1] == '?')
-	{
-		(*i)+= 2;
-		expansion = ft_strdup(ft_itoa(data->status));
-		return (expansion);
-	}
+	expansion = expand_status(data, line, i);
+	if (expansion)
+	return (expansion);
     start = *i;
     key = find_key(line, *i + 1);
     printf("key: %s\n", key);
-	/*if (key[0] == '\0')
-	{
-		*i += 1;
-		return (key);
-	}*/
 	if (key_is_valid(key) == false)
 	{
     		*i += ft_strlen(key) + 1;
@@ -69,11 +70,33 @@ void	handle_simple_quotes(t_list **cutting, char *line, int *i)
     }
 }
 
+char static	*expansion_doubles_quotes(t_data *data, char *line, int *i, char *result, int *start)
+{
+    char	*expansion;
+    char	*temp;
+	
+	expansion = convert_expansion(data, line, i);
+	temp = ft_strjoin(result, expansion);
+    free(result);
+    free(expansion);
+    *start = *i;
+    return (temp);
+}
+
+char static	*add_substring(char *result, char *line, int start, int end)
+{
+    char *temp;
+    char *new_line;
+
+	temp = ft_substr(line, start, end - start);
+	new_line = ft_strjoin(result, temp);
+    free(result);
+    free(temp);
+    return (new_line);
+}
+
 void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 {
-	char *expansion;
-	char *new_line;
-    char *temp;
     char *result;
 	int start;
 
@@ -85,37 +108,21 @@ void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
         if (line[*i] == '$' && line[*i + 1] && line[*i + 1] != '\"')
         {
             if (*i > start)
-            {
-                temp = ft_substr(line, start, *i - start);
-                new_line = ft_strjoin(result, temp);
-                free(result);
-				free(temp);
-                result = new_line;
-			}
-            expansion = convert_expansion(data, line, i);
-			temp = ft_strjoin(result, expansion);
-			free(result);
-			free(expansion);
-			result = temp;
-            start = *i;
+            	result = add_substring(result, line, start, *i);
+           result = expansion_doubles_quotes(data, line, i, result, &start);
         }
         else
             (*i)++;
     }
     if (*i > start)
-    {
-        temp = ft_substr(line, start, *i - start);
-        new_line = ft_strjoin(result, temp);
-		free(result);
-		free(temp);
-        result = new_line;
-    }
+	{
+        result = add_substring(result, line, start, *i);
+	}
 	ft_lstadd_back(cutting, ft_lstnew(result));
     if (line[*i] == '\"')
         (*i)++;
 }
 
-// Texte simple
 void	handle_simple_text(t_list **cutting, char *line, int *i)
 {
 	char 	*new_line;

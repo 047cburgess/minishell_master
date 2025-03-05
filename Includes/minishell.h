@@ -35,6 +35,7 @@
 # include "libft.h"
 # include "ft_dprintf.h"
 # include <errno.h>
+#include <ctype.h>
 
 typedef struct s_env
 {
@@ -147,7 +148,9 @@ void	handle_simple_text(t_list **cutting, char *line, int *i);
 void	handle_simple_quotes(t_list **cutting, char *line, int *i);
 char	*expansion_line(t_data *data, char *line);
 char	*expand_token(t_data *data, char *content);
-int		handle_expansions(t_data *data);
+int 	handle_expansions_in_tokens(t_data *data);
+char 	*join_list(t_list *lst);
+
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
