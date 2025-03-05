@@ -56,6 +56,8 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
 			cmd->error = ER_NO_CMD;
+		else if (cmd->av[0][0] == '\0')
+			cmd->error = ER_CMD_NOT_FOUND;
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);

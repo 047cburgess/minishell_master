@@ -75,6 +75,8 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
 			cmd->error = ER_NO_CMD;
+		else if (cmd->av[0][0] == '\0')
+			cmd->error = ER_CMD_NOT_FOUND;
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
@@ -86,6 +88,8 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 			ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		}
 		close_fds(cmd);
+		if (is_builtin(cmd->av))
+			clean_up_exit(data, data->status, NULL);
 		clean_up_exit(data, errno, NULL);
 	}
 	ft_close(&prev->fds[0]);
@@ -112,6 +116,8 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
 			cmd->error = ER_NO_CMD;
+		else if (cmd->av[0][0] == '\0')
+			cmd->error = ER_CMD_NOT_FOUND;
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
@@ -123,6 +129,8 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 			ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		}
 		close_fds(cmd);
+		if (is_builtin(cmd->av))
+			clean_up_exit(data, data->status, NULL);
 		clean_up_exit(data, errno, NULL);
 	}
 	ft_close(&prev->fds[0]);
@@ -149,6 +157,8 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
 			cmd->error = ER_NO_CMD;
+		else if (cmd->av[0][0] == '\0')
+			cmd->error = ER_CMD_NOT_FOUND;
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
@@ -160,6 +170,8 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 			ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		}
 		close_fds(cmd);
+		if (is_builtin(cmd->av))
+			clean_up_exit(data, data->status, NULL);
 		clean_up_exit(data, errno, NULL);
 	}
 	return (0);
