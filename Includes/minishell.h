@@ -18,6 +18,9 @@
 # define RD_OUT 4
 # define PIPE 5
 
+# define CHILD 1
+# define PARENT 0
+
 # define S_IFMT 0170000
 # define S_IFDIR 0040000
 
@@ -30,6 +33,8 @@
 # define ER_CMD_NOT_FOUND 127
 # define ER_NOT_EXECUTABLE 126
 # define ER_FAILED_RD 1
+# define ER_FORK 503
+# define ER_PIPE 504
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -103,9 +108,15 @@ int	handle_redirection_out(t_data *data, int *in_out, t_token *token);
 int		is_builtin(char **av);
 int	check_access(char *full_path, t_data *data, t_command *cmd);
 void	clean_job_memory(t_data *data);
-int	print_errors_and_exit(t_data *data, t_command *command);
+int	print_errors_and_exit(t_data *data, t_command *command, int mode);
 int	dup_stds(t_data *data, int *std_save);
 int	restore_stds(t_data *data, int *std_save);
+int	launch_pipeline(t_data *data, t_command *commands, int num_cmds);
+int	connect_first_child_pipe(int *fds, t_command *cmd);
+int	connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev);
+int	connect_last_child_pipe(t_command *cmd, t_command *prev);
+void	close_all_fds(t_data *data);
+void	ft_close(int *fd);
 
 // ------ COMMAND TABLE ------ //
 

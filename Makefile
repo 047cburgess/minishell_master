@@ -46,6 +46,7 @@ SRCS = main.c \
 	   $(EXEC_DIR)/redirections_utils.c \
 	   $(EXEC_DIR)/child_errors.c \
 	   $(EXEC_DIR)/fd_management.c \
+	   $(EXEC_DIR)/pipeline2.c \
 	   $(CLEAN_DIR)/clean_up.c \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))

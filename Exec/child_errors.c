@@ -1,7 +1,9 @@
 #include "minishell.h"
 
-int	print_errors_and_exit(t_data *data, t_command *command)
+int	print_errors_and_exit(t_data *data, t_command *command, int mode)
 {
+	if (!command)
+		return (0);
 	if (command->error == 0)
 		return (0);
 	if (command->error == 127)
@@ -15,8 +17,11 @@ int	print_errors_and_exit(t_data *data, t_command *command)
 		command->error = 0;
 	else if (command->error != ER_FAILED_RD) 
 		ft_dprintf(2, "minishell: %s: %s\n", command->av[0], strerror(errno));
-	close_fds(command);
-	clean_up_exit(data, command->error, NULL);
+	close_all_fds(data);
+	if (mode == CHILD)
+		clean_up_exit(data, command->error, NULL);
+	else if (mode == PARENT && command->error == 1)
+		data->status = 1;
 	return (1);
 }
 

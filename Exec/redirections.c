@@ -23,6 +23,8 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 	int log_file = data->log;
 	t_token *token;
 
+	if (cmd->error != 0)
+		return (1);
 	token = cmd->tokens;
 	while (token->next != NULL && token->type != PIPE)
 	{

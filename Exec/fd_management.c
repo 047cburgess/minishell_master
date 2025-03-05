@@ -3,9 +3,9 @@
 void	close_fds(t_command *cmd)
 {
 	if (cmd->fds[0] > STDIN_FILENO)
-		close(cmd->fds[0]);
+		ft_close(&cmd->fds[0]);
 	if (cmd->fds[1] > STDOUT_FILENO)
-		close(cmd->fds[1]);
+		ft_close(&cmd->fds[1]);
 }
 
 int	dup_stds(t_data *data, int *std_save)
@@ -27,3 +27,21 @@ int	restore_stds(t_data *data, int *std_save)
 	return (0);
 }
 
+void	close_all_fds(t_data *data)
+{
+	t_command	*current;
+
+	current = data->command_list;
+	while (current)
+	{
+		close_fds(current);
+		current = current->next;
+	}
+}
+
+void	ft_close(int *fd)
+{
+	if (*fd != -1)
+		close(*fd);
+	*fd = -1;
+}
