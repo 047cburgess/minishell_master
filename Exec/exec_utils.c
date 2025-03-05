@@ -5,78 +5,66 @@
 // This function returns the full path for a given command, ready to give to execve
 // If it's not found, it returns NULL
 
-
-//TODO: BREAK THIS DOWN INTO SUBFUNCTIONS 
-//TODO: DECIDE ON THE CONTROL FLOW TO MANAGE EXITS
-
-char	*get_command_path(t_data *data, char *command)
+int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 {
-	char	*full_path;
-	char	**dirs;
-	int	directory_length;
-	int	command_length;
-	int	full_path_size;
 	int	i;
-
+	
 	dprintf(data->log, "FUNCTION: Entered get_command_path\n");
-	// Checks if it's a relative or absolute path already given
-	if (ft_strchr(command, '/'))
+	if (cmd->error != 0 || is_builtin(cmd->av))
 	{
-		dprintf(data->log, "No '\\' in command name \n");
-		full_path = ft_strdup(command);
-		return (full_path);
+		ft_dprintf(data->log, "Built in or previous Error detected, not setting command path\n");
+		return (0);
 	}
-	dirs = ft_split(ft_getenv(data->env, "PATH"), ':');
-	command_length = ft_strlen(command);
+	
+	// Checks if it's a relative or absolute path already given
+	if (ft_strchr(command, '/') || data->path_dirs == NULL)
+	{
+		dprintf(data->log, "No '\\' in command name or path is unset\n");
+		ft_strlcpy(path, command, FULL_PATH_MAX);
+		return (1);
+	}
 
 	// Checks all path folders to see if it's correct
 	i = 0;
-	while (dirs[i] != NULL)
+	while (data->path_dirs[i] != NULL)
 	{	
-		dprintf(data->log, "Checking directory: %s\n", dirs[i]);
-		directory_length = ft_strlen(dirs[i]);
-		full_path_size = directory_length + command_length + 2;
-		full_path = ft_calloc(full_path_size, sizeof(char));
-		if (!full_path)
+		ft_strlcpy(path, data->path_dirs[i], FULL_PATH_MAX);
+		ft_strlcat(path, "/", FULL_PATH_MAX);
+		ft_strlcat(path, command, FULL_PATH_MAX);
+		dprintf(data->log, "Checking path: %s\n", path);
+		if (access(path, F_OK) == 0)
 		{
-			perror("Malloc");
-			free_str_array(dirs, i);
-			clean_up_exit(data, errno, NULL);
-			return (NULL);
+			dprintf(data->log, "Executable found: %s\n", path);
+			return (1);
 		}
-		ft_strcpy(full_path, dirs[i]);
-		ft_strlcat(full_path, "/", full_path_size);
-		ft_strlcat(full_path, command, full_path_size);
-		dprintf(data->log, "Checking path: %s\n", full_path);
-		if (access(full_path, F_OK) == 0)
-		{
-			dprintf(data->log, "Executable found: %s\n", full_path);
-			free_str_array(dirs, i);
-			return (full_path);
-
-		}
-		free(full_path);
 		i++;
 	}
-	free_str_array(dirs, i);
-	ft_dprintf(2, "%s: command not found\n", command);
+	ft_bzero(path, FULL_PATH_MAX);
 	ft_dprintf(data->log, "%s: command not found\n", command);
-	clean_up_exit(data, 127, NULL);
-	return (NULL);
+	return (0);
 }
 
 int	check_access(char *full_path, t_data *data, t_command *cmd)
 {
 	struct stat	status_buffer;
+
+	if (cmd->error != 0 || is_builtin(cmd->av))
+		return (0);
+	if (access(full_path, F_OK) == 0)
+		dprintf(data->log, "Executable found: %s\n", cmd->path);
+	else
+	{
+		ft_dprintf(data->log, "%s: command not found\n", cmd->av[0]);
+		cmd->error = 127;
+		return (0);
+	}
 	
 	// Check it's executable
 	if (access(full_path, X_OK) != 0)
 	{
-		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		ft_dprintf(data->log, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
-		free(full_path);
-		close_fds(cmd);
-		clean_up_exit(data, 126, NULL);
+		cmd->error = 126;
+		return (0);
 	}
 	dprintf(data->log, "%s is executable\n", cmd->av[0]);
 
@@ -84,20 +72,10 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 	stat(full_path, &status_buffer);
 	if ((status_buffer.st_mode & S_IFMT) == S_IFDIR)
 	{
-		ft_dprintf(2, "minishell: %s: Is a directory\n", cmd->av[0]);
 		ft_dprintf(data->log, "minishell: %s: Is a directory\n", cmd->av[0]);
-		free(full_path);
-		close_fds(cmd);
-		clean_up_exit(data, 126, NULL);
+		cmd->error = ER_IS_DIR;
 	}
 	dprintf(data->log, "%s is not a directory\n", cmd->av[0]);
 	return (SUCCESS);
 }
 
-void	close_fds(t_command *cmd)
-{
-	if (cmd->fds[0] > STDIN_FILENO)
-		close(cmd->fds[0]);
-	if (cmd->fds[1] > STDOUT_FILENO)
-		close(cmd->fds[1]);
-}

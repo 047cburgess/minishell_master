@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:09:32 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/05 10:11:54 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/05 15:49:20 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,47 @@
 
 char	*find_key(char *line, int i)
 {
-    int		start;
-    char	*key;
+	int		start;
+	char	*key;
 
+	if (!line || i < 0)
+		return (NULL);
 	start = i;
 	if (ft_isdigit(line[i]))
 	{
 		return (ft_substr(line, i, 1));
-
 	}
-    while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
-        i++;
-    key = ft_substr(line, start, i - start);
-    return (key);
+	while (line[i] && (ft_isalnum(line[i]) || line[i] == '_'))
+		i++;
+	key = ft_substr(line, start, i - start);
+	if (!key)
+		return (NULL);
+	return (key);
 }
 
 char	*join_list(t_list *lst)
 {
-    char	*new_line;
-	char 	*temp;
-    t_list	*current;
-	
+	char	*new_line;
+	char	*temp;
+	t_list	*current;
+
+	if (!lst)
+		return (NULL);
 	new_line = ft_strdup("");
+	if (!new_line)
+		return (NULL);
 	current = lst;
-    while (current)
-    {
-        temp = new_line;
-        new_line = ft_strjoin(new_line, (char *)current->content);
-        free(temp);
-        current = current->next;
-    }
-    return (new_line);
+	while (current)
+	{
+		temp = new_line;
+		new_line = ft_strjoin(new_line, (char *)current->content);
+		if (!new_line)
+		{
+			free(temp);
+			return (NULL);
+		}
+		free(temp);
+		current = current->next;
+	}
+	return (new_line);
 }

@@ -72,18 +72,19 @@ char	**get_av(t_token *tokens, int ac)
 {
 	char	**av;
 	t_token *current;
-	t_token *prev = NULL;
-	int i = 0;
+	t_token *prev;
+	int	i;
 
 	av = ft_calloc((ac + 1), sizeof(char *));
 	if (!av)
 		return (NULL);
 	current = tokens;
+	i = 0;
 	if (current->type == WORD)
 	{
-		av[i] = ft_strdup(current->content);
+		av[i] = current->content;
 		if (!av[i])
-			return (ft_free((void*)av), NULL);
+			return (free(av), NULL);
 		i++;
 	}
 	prev = current;
@@ -92,9 +93,9 @@ char	**get_av(t_token *tokens, int ac)
 	{
 		if (current->type == WORD && prev->type == WORD)
 		{
-			av[i] = ft_strdup(current->content);
+			av[i] = current->content;
 			if (!av[i])
-				return (free_str_array(av, i), NULL);
+				return (free(av), NULL);
 			i++;
 		}
 		prev = current;

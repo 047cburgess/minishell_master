@@ -40,13 +40,17 @@ SRCS = main.c \
 		$(BUILTIN_DIR)/export_utils.c \
 	   $(BUILTIN_DIR)/unset.c \
 	   $(BUILTIN_DIR)/env.c \
+	   $(EXEC_DIR)/prep_command_tables.c \
+	   $(EXEC_DIR)/command_list.c \
+	   $(EXEC_DIR)/command_table_utils.c \
 	   $(EXEC_DIR)/executor.c \
 	   $(EXEC_DIR)/exec_utils.c \
-	   $(EXEC_DIR)/command_list_utils.c \
-	   $(EXEC_DIR)/command_table_helpers.c \
 	   $(EXEC_DIR)/return_status.c \
 	   $(EXEC_DIR)/redirections.c \
 	   $(EXEC_DIR)/redirections_utils.c \
+	   $(EXEC_DIR)/child_errors.c \
+	   $(EXEC_DIR)/fd_management.c \
+	   $(EXEC_DIR)/pipeline2.c \
 	   $(CLEAN_DIR)/clean_up.c \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))

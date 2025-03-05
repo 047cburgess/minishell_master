@@ -31,20 +31,22 @@ int	handle_input(char *line, t_data *data)
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
-	ft_dprintf(data->log, "\n--OUTPUT--\n");	
+	prep_command_tables(data, data->tokens_list);
 
 	// 4: launch if solo builtin
 
+	ft_dprintf(data->log, "\n--OUTPUT--\n");
 	if (data->command_count == 1)
 	{
-		launch_solo_command(data);
-		//printf("command returned with exit status %i\n", status);
+		launch_solo_command(data, data->command_list);
+		ft_dprintf(data->log, "Command returned with exit status %i\n", data->status);
 	}
-
 	else
-		//printf("Pipeline of commands detected\n");
-
-	token_lst_clear(&data->tokens_list, free);	
+	{
+		launch_pipeline(data, data->command_list, data->command_count);
+		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
+	}
+	clean_job_memory(data);
 	return (SUCCESS);
 }
 
