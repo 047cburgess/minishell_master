@@ -1,8 +1,5 @@
 # include "minishell.h"
 
-
-
-// TODO: clean seamless connect with builtin, making sure it exits properly. right now exits with errno
 // further clean into norm but already looking farly good and clean
 int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev);
 int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev);
@@ -31,8 +28,8 @@ int	wait_all_forks(t_data *data, t_command *commands, int num_cmds)
 	}
 	return (0);
 }
+
 // all except the last command creates a pipe (if not a solo command)
-// middle commands need to connect 
 int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 {
 	t_command	*current;
@@ -71,6 +68,7 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 	}
 	if (cmd->pid == 0)
 	{
+		restore_signals_for_child();
 		connect_last_child_pipe(cmd, prev);
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
@@ -112,6 +110,7 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 	}
 	if (cmd->pid == 0)
 	{
+		restore_signals_for_child();
 		connect_middle_child_pipe(cmd->fds, cmd, prev);
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
@@ -153,6 +152,7 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 	}
 	if (cmd->pid == 0)
 	{
+		restore_signals_for_child();
 		connect_first_child_pipe(cmd->fds, cmd);
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)

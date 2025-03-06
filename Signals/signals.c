@@ -12,10 +12,12 @@
 
 #include "minishell.h"
 
+
 static void signal_handler(int signal, siginfo_t *info, void *context)
 {
 	(void)context;
 	(void)info;
+	g_signal = signal;
 	if (signal == SIGINT)
 	{
 		printf("\n"); // force it to starrt on a new line
@@ -25,10 +27,14 @@ static void signal_handler(int signal, siginfo_t *info, void *context)
 	}
 }
 
-void init_signals(struct sigaction *act)
+void init_interactive_signals(void)
 {
-	// Ctl + C --> reprompt
+	struct sigaction act[2];
+
 	ft_bzero(&act[0], sizeof(*act));
+	ft_bzero(&act[1], sizeof(*act));
+
+	// Ctl + C --> reprompt
 	act[0].sa_sigaction = signal_handler;
 	sigemptyset(&act[0].sa_mask);
 	act[0].sa_flags = SA_SIGINFO;
@@ -36,9 +42,23 @@ void init_signals(struct sigaction *act)
 	
 
 	// Ctl + \ --> do nothing
-	ft_bzero(&act[1], sizeof(*act));
 	act[1].sa_handler = SIG_IGN; // ignore
 	sigemptyset(&act[0].sa_mask);
 	act[1].sa_flags = 0;
 	sigaction(SIGQUIT, &act[1], NULL);
+}
+
+void	set_noninteractive_signals(void)
+{
+	g_signal = 0;
+
+	// Ignore ctl+c
+	signal(SIGINT, SIG_IGN);
+	// already ignoring ctl + \ -
+}
+
+void	restore_signals_for_child(void)
+{
+	signal(SIGINT, SIG_DFL);	
+	signal(SIGQUIT, SIG_DFL);	
 }

@@ -5,7 +5,14 @@ int	execute_builtin(char **av, t_data *data);
 
 int	handle_input(char *line, t_data *data)
 {
+	set_noninteractive_signals();
 	new_log_timestamp(data->log, line);
+	if (line[0] == '\0')
+	{
+		data->status = 0;
+		return (FAILURE);
+
+	}
 	if (unclosed_quote_detected(line))
 		return (FAILURE);
 
