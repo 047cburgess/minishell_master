@@ -28,7 +28,7 @@ char	*convert_expansion(t_data *data, char *line, int *i)
 	}
     start = *i;
     key = find_key(line, *i + 1);
-    printf("key: %s\n", key);
+    ft_dprintf(g_log, "key: %s\n", key);
 	/*if (key[0] == '\0')
 	{
 		*i += 1;

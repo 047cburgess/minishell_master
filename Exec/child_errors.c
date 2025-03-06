@@ -2,12 +2,13 @@
 
 int	print_errors_and_exit(t_data *data, t_command *command, int mode)
 {
-	if (!command)
+	if (!command || command->error == 0)
 		return (0);
-	if (command->error == 0)
-		return (0);
-	if (command->error == 127)
+	if (command->error == ER_CMD_NOT_FOUND)
+	{
 		ft_dprintf(2, "minishell: %s: command not found\n", command->av[0]);
+		command->error = 127;
+	}
 	else if (command->error == ER_IS_DIR)
 	{
 		ft_dprintf(2, "minishell: %s: Is a directory\n", command->av[0]);
