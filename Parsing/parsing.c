@@ -38,7 +38,7 @@ int	handle_input(char *line, t_data *data)
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
-	//prep_heredocs(data, data->tokens_list)
+	handle_heredocs(data, data->tokens_list);
 	prep_command_tables(data, data->tokens_list);
 
 	// 4: launch if solo builtin

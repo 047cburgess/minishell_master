@@ -28,6 +28,7 @@ SRCS = main.c \
 	   $(PARSE_DIR)/handle_quotes.c \
 	   $(PARSE_DIR)/token_utils.c \
 	   $(PARSE_DIR)/parse_tokens.c \
+	   $(PARSE_DIR)/heredocs.c \
 	   $(EXPAND_DIR)/extract_expansion.c \
 	    $(EXPAND_DIR)/expansions_cutting.c \
 	   $(BUILTIN_DIR)/echo.c \

@@ -54,7 +54,7 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 int	handle_redirection_in(t_data *data, int *in_out, t_token *token)
 {
 	int log_file = data->log;
-	if (token->type == RD_IN)
+	if (token->type == RD_IN || token->type == RD_HEREDOC)
 	{
 		dprintf(log_file, "[%s] identified as RD_IN\n", token->content);
 		in_out[0] = open(token->next->content, O_RDONLY);
@@ -74,8 +74,6 @@ int	handle_redirection_in(t_data *data, int *in_out, t_token *token)
 		dprintf(log_file, "Closed '%s'\n", token->next->content);
 		return (1);
 	}
-	else
-		ft_dprintf(2, "Not managing heredocs yet, need to see how and where to manage\n");
 	return (1);
 }
 

@@ -179,6 +179,9 @@ char 	*expansion_line(t_data *data, char *line);
 char 	*expand_token(t_data *data, char *content);
 int 	handle_expansions(t_data *data);
 
+// ------ HEREDOC ----- //
+int	handle_heredocs(t_data *data, t_token *tokens);
+
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
 int		ft_pwd(void);
