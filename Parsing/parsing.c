@@ -5,7 +5,14 @@ int	execute_builtin(char **av, t_data *data);
 
 int	handle_input(char *line, t_data *data)
 {
+	set_noninteractive_signals();
 	new_log_timestamp(data->log, line);
+	if (line[0] == '\0')
+	{
+		data->status = 0;
+		return (FAILURE);
+
+	}
 	if (unclosed_quote_detected(line))
 		return (FAILURE);
 
@@ -31,6 +38,7 @@ int	handle_input(char *line, t_data *data)
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
+	//prep_heredocs(data, data->tokens_list)
 	prep_command_tables(data, data->tokens_list);
 
 	// 4: launch if solo builtin
