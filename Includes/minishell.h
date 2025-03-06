@@ -183,7 +183,7 @@ char 	*join_list(t_list *lst);
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
 int		ft_pwd(void);
-int		ft_cd(char **args);
+int		ft_cd(char **av);
 int		ft_env(t_data *data);
 
 // ------ Export utils----- //

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   token_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:31:36 by alize             #+#    #+#             */
-/*   Updated: 2025/02/24 11:25:58 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/06 11:56:22 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_token	*token_lst_last(t_token *head)
 void print_tokens_list(int fd, t_token *tokens_list)
 {
 	t_token *current;
-	
+
 	current = tokens_list;
 	while (current)
 	{

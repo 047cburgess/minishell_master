@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:09:32 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/05 15:49:20 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:23:09 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*find_key(char *line, int i)
 	key = ft_substr(line, start, i - start);
 	if (!key)
 		return (NULL);
+	ft_dprintf(g_log, "%s\n", key);
 	return (key);
 }
 
