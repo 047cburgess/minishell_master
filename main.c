@@ -36,6 +36,8 @@ int	main(int ac, char **av, char **envp)
 	while(1)
 	{
 		init_interactive_signals();
+		init_interactive_signals();
+		init_interactive_signals();
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 			break;

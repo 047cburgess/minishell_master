@@ -34,15 +34,17 @@ t_token	*get_next_heredoc_delimiter(t_token *tokens)
 // stop reading when line contains only delimiter OR ctld is received (null)
 int	write_into_heredoc(int fd, char *delimiter)
 {
-
+	signal(SIGINT, heredoc);
 	ft_dprintf(g_log, "FUNCTION: WRITE INTO HEREDOC\n");
 	char	*line;
 	int stdin_dup = dup(STDIN_FILENO);
 	line = NULL;
 	ft_dprintf(g_log, "delimiter: %s\n", delimiter);
-	while (1)
+	while (g_signal == 0)
 	{
-		line = readline(">");
+		ft_dprintf(g_log, "g signal not at zero %i\n", g_signal);
+		write(1, ">", 1);
+		line = get_next_line(0);
 		ft_dprintf(g_log, "line: %s", line);
 		ft_dprintf(g_log, "strlen line: %i\n", ft_strlen(line));
 		if (!line)
@@ -50,7 +52,7 @@ int	write_into_heredoc(int fd, char *delimiter)
 			ft_dprintf(g_log, "ended with Ctrl-D\n");
 			break;
 		}
-		else if (ft_strncmp(line, delimiter, ft_strlen(line)) == 0)
+		else if (ft_strncmp(line, delimiter, ft_strlen(line) - 1) == 0)
 		{
 			ft_dprintf(g_log, "delimiter found\n");
 			break;
@@ -59,8 +61,14 @@ int	write_into_heredoc(int fd, char *delimiter)
 		free(line);
 		line = NULL;
 	}
+
 	//get_next_line(-1); // flush gnl
+	get_next_line(-1);
+	ft_dprintf(g_log, "preparin to close stdindup\n");
+	dup2(stdin_dup, STDIN_FILENO);
 	close(stdin_dup);
+	if (g_signal != 0)
+		return (FAILURE);
 	return (0);
 }
 
@@ -91,12 +99,12 @@ int	process_heredoc(t_token *delimiter, int id)
 
 	// CLOSE THE TEMP FILE
 	close(fd);
+	ft_dprintf(g_log, "closed heredoc %i\n", id);
 
 	// REPLACE THE TOKEN WITH THE FILENAME
 	free(delimiter->content);
 	delimiter->content = file_name;
 	ft_dprintf(g_log, "filename2: %s\n", delimiter->content);
-
 	return (0);
 }
 
@@ -116,6 +124,11 @@ int	handle_heredocs(t_data *data, t_token *tokens)
 		current_delimiter = get_next_heredoc_delimiter(current_delimiter);
 		ft_dprintf(g_log, "found heredoc: %s\n", current_delimiter->content);
 		process_heredoc(current_delimiter, i);
+		if(g_signal != 0)
+		{
+			data->status = g_signal + 128;
+			return (0);
+		}
 		current_delimiter = current_delimiter->next;
 		i++;
 	}

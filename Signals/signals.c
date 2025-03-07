@@ -48,6 +48,25 @@ void init_interactive_signals(void)
 	sigaction(SIGQUIT, &act[1], NULL);
 }
 
+
+void	heredoc(int signal)
+{
+	g_signal = signal;
+	close(0);
+	printf("\n"); // force it to starrt on a new line
+	//rl_on_new_line(); // tell readline a new line is starting
+	//rl_replace_line("", 0); // reset cursor to the beginning
+	//rl_redisplay(); // redisplay the prompt
+
+
+}
+
+void	set_heredoc_signals(void)
+{
+	g_signal = 0;
+	signal(SIGINT, heredoc);
+}
+
 void	set_noninteractive_signals(void)
 {
 	g_signal = 0;

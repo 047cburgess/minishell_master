@@ -137,6 +137,7 @@ int		get_child_exit_status(int status);
 void init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
+void	heredoc(int signal);
 
 // ------ PARSING ----- //
 // parsing.c
