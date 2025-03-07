@@ -53,6 +53,7 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 	}
 	if (cmd->pid == 0)
 	{
+		restore_signals_for_child();
 		handle_redirections(data, cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
 			cmd->error = ER_NO_CMD;

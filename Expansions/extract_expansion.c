@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/05 16:00:54 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:46:29 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	handle_expansions_in_tokens(t_data *data)
 	current = data->tokens_list;
 	if (!current)
 		return (FAILURE);
-	ft_dprintf(data->log, "--EXPANSIONS--\n\t");
+	ft_dprintf(data->log, "FUNC HANDLEEXPANSIONSINTOKENS--EXPANSIONS--\n");
 	while (current)
 	{
 		expanded_content = expand_token(data, current->content);

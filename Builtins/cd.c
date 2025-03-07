@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:56:19 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/06 12:10:36 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:28:58 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	ft_cd(char **av)
 		ft_dprintf(2, "Minishell: cd: Not enough argument\n");
 		return (1);
 	}
-
 	else if (chdir(av[0]) == -1)
 	{
 		ft_dprintf(2, "Minishell: cd: %s: %s\n", av[0], strerror(errno));

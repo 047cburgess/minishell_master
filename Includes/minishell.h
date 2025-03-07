@@ -30,7 +30,7 @@
 //--- ERROR CODES ---//
 # define ER_IS_DIR 500
 # define ER_NO_CMD 501
-# define ER_CMD_NOT_FOUND 127
+# define ER_CMD_NOT_FOUND 505
 # define ER_NOT_EXECUTABLE 126
 # define ER_FAILED_RD 1
 # define ER_FORK 503
@@ -51,6 +51,7 @@
 #include <ctype.h>
 
 extern int g_log;
+extern int g_signal;
 
 typedef struct s_env
 {
@@ -134,8 +135,11 @@ void		print_command_list(t_command *head);
 
 // ------ SIGNALS ----- //
 //signals.c
-void	init_signals(struct sigaction *act);
+void	init_interactive_signals(void);
 int		get_child_exit_status(int status);
+void init_interactive_signals(void);
+void	set_noninteractive_signals(void);
+void	restore_signals_for_child(void);
 
 // ------ PARSING ----- //
 // parsing.c

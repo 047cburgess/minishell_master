@@ -87,6 +87,7 @@ int	handle_redirection_out(t_data *data, int *in_out, t_token *token)
 	{
 		dprintf(log_file, "[%s] identified as RD_OUT\n", token->content);
 		in_out[1] = open(token->next->content, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+		dprintf(log_file, "[%s] opened\n", token->next->content);
 	}
 	else
 	{
@@ -97,12 +98,14 @@ int	handle_redirection_out(t_data *data, int *in_out, t_token *token)
 	if (in_out[1] == -1)
 	{
 		ft_dprintf(2, "minishell: %s: %s\n", token->next->content, strerror(errno));
+		ft_dprintf(g_log, "open returned -1...minishell: %s: %s\n", token->next->content, strerror(errno));
 		return (0);
 	}
 	dprintf(log_file, "Redirecting output to '%s'\n", token->next->content);
 	if (dup2(in_out[1], STDOUT_FILENO) == -1)
 	{
 		ft_dprintf(2, "minishell: %s\n", strerror(errno));
+		ft_dprintf(g_log, "tried to redirect stdout to %s: %s\n", token->next->content, strerror(errno));
 		return (0);
 	}
 	dprintf(log_file, "Closing '%s'\n", token->next->content);

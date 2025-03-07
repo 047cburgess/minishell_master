@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/06 13:13:00 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/07 16:07:40 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,15 @@ char	*convert_expansion(t_data *data, char *line, int *i)
 	if (key_is_valid(key) == false)
 	{
 		*i += ft_strlen(key) + 1;
-		free(key);
-		return (ft_substr(line, start, *i - start));
+		return (free(key), ft_substr(line, start, *i - start));
 	}
 	var_content = ft_getenv(data->env, key);
-	free(key);
 	if (!var_content)
-		return (ft_strdup(""));
-	expansion = ft_strdup(var_content);
+		expansion = ft_strdup("");
+	else
+		expansion = ft_strdup(var_content);
 	*i += ft_strlen(key) + 1;
+	free(key);
 	return (expansion);
 }
 
@@ -85,61 +85,37 @@ void	handle_simple_quotes(t_list **cutting, char *line, int *i)
 	}
 }
 
-char static	*expansion_doubles_quotes(t_data *data, char *line, int *i, char *result)
+void handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 {
-	char	*expansion;
-	char	*temp;
-
-	expansion = convert_expansion(data, line, i);
-	if (!expansion)
-		return (result);
-	temp = ft_strjoin(result, expansion);
-	free(result);
-	free(expansion);
-	if (!temp)
-		return (NULL);
-	return (temp);
-}
-
-char static	*add_substring(char *result, char *line, int start, int end)
-{
-	char	*temp;
-	char	*new_line;
-
-	temp = ft_substr(line, start, end - start);
-	if (!temp)
-		return (free(result), NULL);
-	new_line = ft_strjoin(result, temp);
-	free(temp);
-	if (!new_line)
-		return (free(result), NULL);
-	free(result);
-	return (new_line);
-}
-
-void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
-{
-	char	*result;
-	int		start;
+	int 	start;
+	char 	*new_line;
+	char 	*expansion;
+	t_list	*new_node;
 
 	(*i)++;
-	result = ft_strdup("");
-	if (!result)
-		return ;
 	start = *i;
+	if (line[*i] == '\"')
+	{
+		new_line = ft_strdup("");
+		new_node = ft_lstnew(new_line);
+		ft_lstadd_back(cutting, new_node);
+	}
 	while (line[*i] && line[*i] != '\"')
 	{
-    	if (line[*i] == '$' && line[*i + 1] && line[*i + 1] != '\"')
+		if (line[*i] == '$' && line[*i + 1] && line[*i + 1] != '\"')
 		{
 			if (*i > start)
 			{
-				result = add_substring(result, line, start, *i);
-				if (!result)
-					return ;
+				new_line = ft_substr(line, start, *i - start);
+				new_node = ft_lstnew(new_line);
+				ft_lstadd_back(cutting, new_node);
 			}
-			result = expansion_doubles_quotes(data, line, i, result);
-			if (!result)
-				return ;
+			expansion = convert_expansion(data, line, i);
+			if (expansion)
+			{
+				new_node = ft_lstnew(expansion);
+				ft_lstadd_back(cutting, new_node);
+			}
 			start = *i;
 		}
 		else
@@ -147,11 +123,10 @@ void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 	}
 	if (*i > start)
 	{
-		result = add_substring(result, line, start, *i);
-		if (!result)
-			return ;
+		new_line = ft_substr(line, start, *i - start);
+		new_node = ft_lstnew(new_line);
+		ft_lstadd_back(cutting, new_node);
 	}
-	ft_lstadd_back(cutting, ft_lstnew(result));
 	if (line[*i] == '\"')
 		(*i)++;
 }
@@ -178,3 +153,74 @@ void	handle_simple_text(t_list **cutting, char *line, int *i)
 	}
 	ft_lstadd_back(cutting, new_node);
 }
+
+// char static	*expansion_doubles_quotes(t_data *data, char *line, int *i, char *result)
+// {
+// 	char	*expansion;
+// 	char	*temp;
+
+// 	expansion = convert_expansion(data, line, i);
+// 	if (!expansion)
+// 		return (result);
+// 	temp = ft_strjoin(result, expansion);
+// 	free(result);
+// 	free(expansion);
+// 	if (!temp)
+// 		return (NULL);
+// 	return (temp);
+// }
+
+// char static	*add_substring(char *result, char *line, int start, int end)
+// {
+// 	char	*temp;
+// 	char	*new_line;
+
+// 	temp = ft_substr(line, start, end - start);
+// 	if (!temp)
+// 		return (free(result), NULL);
+// 	new_line = ft_strjoin(result, temp);
+// 	free(temp);
+// 	if (!new_line)
+// 		return (free(result), NULL);
+// 	free(result);
+// 	return (new_line);
+// }
+
+// void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
+// {
+// 	char	*result;
+// 	int		start;
+
+// 	(*i)++;
+// 	result = ft_strdup("");
+// 	if (!result)
+// 		return ;
+// 	start = *i;
+// 	while (line[*i] && line[*i] != '\"')
+// 	{
+//     	if (line[*i] == '$' && line[*i + 1] && line[*i + 1] != '\"')
+// 		{
+// 			if (*i > start)
+// 			{
+// 				result = add_substring(result, line, start, *i);
+// 				if (!result)
+// 					return ;
+// 			}
+// 			result = expansion_doubles_quotes(data, line, i, result);
+// 			if (!result)
+// 				return ;
+// 			start = *i;
+// 		}
+// 		else
+// 			(*i)++;
+// 	}
+// 	if (*i > start)
+// 	{
+// 		result = add_substring(result, line, start, *i);
+// 		if (!result)
+// 			return ;
+// 	}
+// 	ft_lstadd_back(cutting, ft_lstnew(result));
+// 	if (line[*i] == '\"')
+// 		(*i)++;
+// }

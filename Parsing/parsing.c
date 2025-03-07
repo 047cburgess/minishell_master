@@ -5,14 +5,26 @@ int	execute_builtin(char **av, t_data *data);
 
 int	handle_input(char *line, t_data *data)
 {
+	set_noninteractive_signals();
 	new_log_timestamp(data->log, line);
-	if (unclosed_quote_detected(line))
+	if (line[0] == '\0')
+	{
+		data->status = 0;
 		return (FAILURE);
 
+	}
+	if (unclosed_quote_detected(line))
+	{
+		ft_dprintf(2, "minishell: unclosed quote detected\n");
+		data->status = 1;
+		return (FAILURE);
+	}
 	// 1: GET FIRST TOKENS
 	if (tokenise(line, data) == FAILURE)
+	{
+		data->status = 1;
 		return (FAILURE);
-	
+	}
 	// 2: CHECK THE SYNTAX
 	if (check_token_syntax(data->tokens_list) == FAILURE)
 	{
@@ -31,6 +43,7 @@ int	handle_input(char *line, t_data *data)
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
+	//prep_heredocs(data, data->tokens_list)
 	prep_command_tables(data, data->tokens_list);
 
 	// 4: launch if solo builtin

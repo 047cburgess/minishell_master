@@ -13,13 +13,13 @@
 #include "minishell.h"
 
 int	g_log = -1;
+int	g_signal = 0;
 
 int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
 	char *line;
-	struct sigaction act[2];
 	ft_bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
@@ -30,11 +30,12 @@ int	main(int ac, char **av, char **envp)
 		ft_putendl_fd("Minishell doesn't take any arguments", 2);
 		return (1);
 	}
-	init_signals(act);
+	//init_signals(act);
 	if (!set_environment(envp, &data))
 		return (1);
 	while(1)
 	{
+		init_interactive_signals();
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
@@ -44,7 +45,6 @@ int	main(int ac, char **av, char **envp)
 	}
 	close(data.log);	
 	shut_down_minishell(&data);
-	exit(0);
 }
 
 void	new_log_timestamp(int fd, char *message)

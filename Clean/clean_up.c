@@ -39,10 +39,16 @@ void	clean_up_exit(t_data *data, int exit_status, char *msg)
 
 void	shut_down_minishell(t_data *data)
 {
+	int	exit_code;
+
+	if (g_signal == 0)
+		exit_code = data->status;
+	else
+		exit_code = g_signal + 128;
 	clean_job_memory(data);
-	// CLOSE ANY OPEN FILE DESCRIPTORS
 	env_list_clear(&data->env);
 	ft_bzero(data, sizeof(t_data));
 	rl_clear_history();
+	exit(exit_code);
 }
 
