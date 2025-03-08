@@ -3,44 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   extract_expansion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/07 14:46:29 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:39:14 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	handle_expansion(t_data *data, t_list **cutting, char *line, int *i)
+static void handle_expansion(t_data *data, t_list **cutting, char *line, int *i)
 {
-	char	*expansion;
 	t_list	*new_node;
-
-	if (!line || !data)
-		return ;
-	expansion = convert_expansion(data, line, i);
-	new_node = ft_lstnew(expansion);
-	if (!new_node)
+	
+	if (line[*i] == '$' && line[*i + 1] == '?')
+		handle_exit_extansion(data, cutting, line, i);
+	else if (line[*i] == '$' && line[*i + 1])
 	{
-		ft_lstclear(cutting, free);
-		return ;
+		new_node = convert_var_expansion(data, line, i);
+		if (new_node)
+			ft_lstadd_back(cutting, new_node);
 	}
-	ft_lstadd_back(cutting, new_node);
+	else if (line[*i] == '$' && line[*i + 1] == '\0')
+		handle_dollar_alone(cutting, i);
 }
 
-static void	handle_dollar_alone(t_list **cutting, int *i)
+static void handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 {
-	t_list	*new_node;
-
-	new_node = ft_lstnew(ft_strdup("$"));
-	if (!new_node)
-	{
-		ft_lstclear(cutting, free);
-		return ;
-	}
-	ft_lstadd_back(cutting, ft_lstnew(ft_strdup("$")));
-	(*i)++;
+	if (line[*i] == '\"')
+    {
+        if (!empty_quotes(cutting))
+            return ;
+        (*i)++;
+        return ;
+    }
+	else
+		extract_double_quotes(data, cutting, line, i);
 }
 
 char	*expansion_line(t_data *data, char *line)
@@ -57,10 +55,8 @@ char	*expansion_line(t_data *data, char *line)
 			handle_simple_quotes(&cutting, line, &i);
 		else if (line[i] == '\"')
 			handle_double_quotes(data, &cutting, line, &i);
-		else if (line[i] == '$' && line[i + 1])
+		else if (line[i] == '$')
 			handle_expansion(data, &cutting, line, &i);
-		else if (line[i] == '$' && line[i + 1] == '\0')
-			handle_dollar_alone(&cutting, &i);
 		else
 			handle_simple_text(&cutting, line, &i);
 	}
@@ -87,7 +83,7 @@ int	handle_expansions_in_tokens(t_data *data)
 	current = data->tokens_list;
 	if (!current)
 		return (FAILURE);
-	ft_dprintf(data->log, "FUNC HANDLEEXPANSIONSINTOKENS--EXPANSIONS--\n");
+	ft_dprintf(data->log, "--EXPANSIONS--\n");
 	while (current)
 	{
 		expanded_content = expand_token(data, current->content);

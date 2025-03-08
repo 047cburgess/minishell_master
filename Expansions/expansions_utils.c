@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expansions_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:09:32 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/06 12:23:09 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:51:50 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,16 @@ char	*join_list(t_list *lst)
 	char	*new_line;
 	char	*temp;
 	t_list	*current;
+	t_list *print;
 
+ 	print = lst;
+	printf("CUTTINGS: ");
+    while (print)
+    {
+   printf("[%s]->", (char*)print->content);
+   print = print->next;
+    }
+    printf("\n");
 	if (!lst)
 		return (NULL);
 	new_line = ft_strdup("");
