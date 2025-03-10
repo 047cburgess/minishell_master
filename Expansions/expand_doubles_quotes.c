@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:44:14 by alize             #+#    #+#             */
-/*   Updated: 2025/03/08 12:39:05 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/10 15:12:10 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	empty_quotes(t_list **cutting)
 {
-	char	*empty_line;
+	char	*empty_quotes;
 	t_list	*new_node;
 
-	if (!(empty_line = ft_strdup("")) || !(new_node = ft_lstnew(empty_line)))
+	if (!(empty_quotes = ft_strdup("")) || !(new_node = ft_lstnew(empty_quotes)))
 	{
-		free(empty_line);
+		free(empty_quotes);
 		return (0);
 	}
 	ft_lstadd_back(cutting, new_node);
@@ -41,7 +41,7 @@ static void	text_doubles_quotes(t_list **cutting, char *line, int start, int end
 	}
 }
 
-void extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
+void    extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 {
     int     start;
     t_list  *new_node;

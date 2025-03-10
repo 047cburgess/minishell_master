@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/08 12:42:34 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/10 14:32:56 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,31 +73,59 @@ t_list	*convert_var_expansion(t_data *data, char *line, int *i)
 	return (ft_lstnew(expansion));
 }
 
-void	handle_simple_quotes(t_list **cutting, char *line, int *i)
-{
-	int		start;
-	char	*new_line;
-	t_list	*new_node;
+// void	handle_simple_quotes(t_list **cutting, char *line, int *i)
+// {
+// 	int		start;
+// 	char	*new_line;
+// 	t_list	*new_node;
 
-	(*i)++;
-	start = *i;
-	while (line[*i] && line[*i] != '\'')
-		(*i)++;
-	if (line[*i] == '\'')
-	{
-		new_line = ft_substr(line, start, *i - start);
-		if (!new_line)
-			return ;
-		new_node = ft_lstnew(new_line);
-		if (!new_node)
-		{
-			free(new_line);
-			return ;
-		}
-		ft_lstadd_back(cutting, new_node);
-		(*i)++;
-	}
+// 	(*i)++;
+// 	start = *i;
+// 	while (line[*i] && line[*i] != '\'')
+// 		(*i)++;
+// 	if (line[*i] == '\'')
+// 	{
+// 		new_line = ft_substr(line, start, *i - start);
+// 		if (!new_line)
+// 			return ;
+// 		new_node = ft_lstnew(new_line);
+// 		if (!new_node)
+// 		{
+// 			free(new_line);
+// 			return ;
+// 		}
+// 		ft_lstadd_back(cutting, new_node);
+// 		(*i)++;
+// 	}
+// }
+
+void handle_simple_quotes(t_list **cutting, char *line, int *i)
+{
+int start;
+char *new_line;
+t_list *new_node;
+
+(*i)++;
+start = *i;
+while (line[*i] && line[*i] != '\'')
+(*i)++;
+if (line[*i] == '\'')
+{
+new_line = ft_substr(line, start, *i - start);
+if (!new_line)
+return ;
+if (new_line[0] == '\0') // Ignore les quotes vides !
+{
+free(new_line);
+(*i)++;
+return ;
 }
+new_node = ft_lstnew(new_line);
+ft_lstadd_back(cutting, new_node);
+(*i)++;
+}
+}
+
 
 void	handle_simple_text(t_list **cutting, char *line, int *i)
 {

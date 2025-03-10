@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/08 12:39:14 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/10 15:27:16 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,23 @@ static void handle_expansion(t_data *data, t_list **cutting, char *line, int *i)
 
 static void handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
 {
-	if (line[*i] == '\"')
+    if (line[*i] == '\"')
     {
-        if (!empty_quotes(cutting))
-            return ;
+        if (line[*i + 1] == '\"')
+        {
+            if (!empty_quotes(cutting))
+                return;
+            (*i)++;
+            return;
+        } 
         (*i)++;
-        return ;
+        extract_double_quotes(data, cutting, line, i);
+        return;
     }
-	else
-		extract_double_quotes(data, cutting, line, i);
+    else
+        extract_double_quotes(data, cutting, line, i);
 }
+
 
 char	*expansion_line(t_data *data, char *line)
 {
@@ -54,7 +61,9 @@ char	*expansion_line(t_data *data, char *line)
 		if (line[i] == '\'')
 			handle_simple_quotes(&cutting, line, &i);
 		else if (line[i] == '\"')
+		{
 			handle_double_quotes(data, &cutting, line, &i);
+		}
 		else if (line[i] == '$')
 			handle_expansion(data, &cutting, line, &i);
 		else
