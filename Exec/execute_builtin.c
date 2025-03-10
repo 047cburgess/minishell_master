@@ -34,6 +34,6 @@ int	execute_builtin(char **av, t_data *data, t_command *cmd)
 	else if (ft_strcmp(av[0], "env") == 0)
 		data->status = ft_env(data);
 	else if (ft_strcmp(av[0], "exit") == 0)
-		data->status = ft_exit(av, data);
+		data->status = ft_exit(av, data, cmd);
 	return (data->status);
 }

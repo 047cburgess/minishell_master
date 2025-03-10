@@ -207,7 +207,7 @@ int		ft_echo(char **args);
 int		ft_pwd(void);
 int		ft_cd(char **av);
 int		ft_env(t_data *data);
-int		ft_exit(char **av, t_data *data);
+int		ft_exit(char **av, t_data *data, t_command *cmd);
 
 // ------ Export utils----- //
 int		ft_export(char **av, t_data *data);
