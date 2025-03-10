@@ -50,6 +50,8 @@ int	get_ac(t_token *command_list)
 	t_token *prev = NULL;
 	int	ac = 0;
 
+	if (!command_list)
+		ft_dprintf(g_log, "GET_AC: CMD LIST IS NULL\n");
 	current = command_list;
 	if (current->type == WORD)
 	{
@@ -81,6 +83,8 @@ char	**get_av(t_token *tokens, int ac)
 	if (!av)
 		return (NULL);
 	current = tokens;
+	if (!current)
+		ft_dprintf(g_log, "GET AV: TOKENS IS NULL\n");
 	i = 0;
 	if (current->type == WORD)
 	{
@@ -97,7 +101,11 @@ char	**get_av(t_token *tokens, int ac)
 		{
 			av[i] = current->content;
 			if (!av[i])
+			{
+				ft_dprintf(g_log, "GET_AV: null content detected in tokens...\n");
 				return (free(av), NULL);
+
+			}
 			i++;
 		}
 		prev = current;

@@ -144,6 +144,7 @@ void init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
 void	heredoc(int signal);
+void	catch_signals_for_data_status(t_data *data);
 
 // ------ PARSING ----- //
 // parsing.c

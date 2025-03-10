@@ -46,15 +46,15 @@ int	minishell_parser(t_data *data)
 	}
 
 	// 3: Create the heredoc temp files
+	set_noninteractive_signals();
 	handle_heredocs(data, data->tokens_list);
 	if (g_signal != 0)
 	{
 		ft_dprintf(g_log, "parser after heredoc: signal was found\n");
 		data->status = g_signal + 128;
 		g_signal = 0;
-		return (set_noninteractive_signals(), 0);
+		return (FAILURE);
 	}
-	set_noninteractive_signals();
 	
 	// 4: Prepare the command tables
 	if (prep_command_tables(data, data->tokens_list) == FAILURE)

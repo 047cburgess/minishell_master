@@ -12,6 +12,15 @@
 
 #include "minishell.h"
 
+void	catch_signals_for_data_status(t_data *data)
+{
+	if (g_signal != 0)
+	{
+		ft_dprintf(g_log, "caugh sigint in mainloop after readline\n");
+		data->status = g_signal + 128;
+		g_signal = 0;
+	}
+}
 
 static void signal_handler(int signal)
 {
@@ -37,7 +46,7 @@ void	heredoc(int signal)
 {
 	ft_dprintf(g_log, "HEREDOC HANDLER: sigint received\n");
 	g_signal = signal;
-	close(0);
+	close(STDIN_FILENO);
 	printf("\n"); // force it to starrt on a new line
 }
 

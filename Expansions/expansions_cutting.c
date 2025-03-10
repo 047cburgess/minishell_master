@@ -101,29 +101,29 @@ t_list	*convert_var_expansion(t_data *data, char *line, int *i)
 
 void handle_simple_quotes(t_list **cutting, char *line, int *i)
 {
-int start;
-char *new_line;
-t_list *new_node;
+	int start;
+	char *new_line;
+	t_list *new_node;
 
-(*i)++;
-start = *i;
-while (line[*i] && line[*i] != '\'')
-(*i)++;
-if (line[*i] == '\'')
-{
-new_line = ft_substr(line, start, *i - start);
-if (!new_line)
-return ;
-if (new_line[0] == '\0') // Ignore les quotes vides !
-{
-free(new_line);
-(*i)++;
-return ;
-}
-new_node = ft_lstnew(new_line);
-ft_lstadd_back(cutting, new_node);
-(*i)++;
-}
+	(*i)++;
+	start = *i;
+	while (line[*i] && line[*i] != '\'')
+		(*i)++;
+	if (line[*i] == '\'')
+	{
+		new_line = ft_substr(line, start, *i - start);
+		if (!new_line)
+		return ;
+		//if (new_line[0] == '\0') // Ignore les quotes vides !
+		//{
+		//	free(new_line);
+		//	(*i)++;
+		//	return ;
+		//}
+		new_node = ft_lstnew(new_line);
+		ft_lstadd_back(cutting, new_node);
+		(*i)++;
+	}
 }
 
 

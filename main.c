@@ -39,6 +39,7 @@ int	main(int ac, char **av, char **envp)
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
+		catch_signals_for_data_status(&data);
 		handle_input(line, &data);
 		free(line);
 	}

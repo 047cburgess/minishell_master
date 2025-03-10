@@ -74,6 +74,8 @@ t_command	*get_command_tables(t_token *tokens)
 
 	list = NULL;
 	current_command = NULL;
+	if(!tokens)
+		ft_dprintf(g_log, "GET_CMD_TABLES -> tokens is NULL\n");
 	while (tokens)
 	{
 		current_command = new_command_table(tokens);
