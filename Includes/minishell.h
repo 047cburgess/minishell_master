@@ -140,6 +140,7 @@ int		get_child_exit_status(int status);
 void init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
+void	heredoc(int signal);
 
 // ------ PARSING ----- //
 // parsing.c
@@ -171,6 +172,11 @@ void	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 int		expansion_needed(char *content);
+int	handle_operator_token(int *i, char *start, t_token **tokens_list);
+int	handle_word_token(int *i, char *start, t_token **tokens_list);
+t_token	*get_word_token(char *start);
+t_token	*get_operator_token(char *start);
+int	get_token_type(char *content);
 
 // ------ EXPANSIONS ----- //
 char	*find_key(char *line, int i);
@@ -186,6 +192,9 @@ int 	handle_expansions_in_tokens(t_data *data);
 char 	*join_list(t_list *lst);
 void	handle_dollar_alone(t_list **cutting, int *i);
 void	handle_exit_extansion(t_data *data, t_list **cutting, char *line, int *i);
+
+// ------ HEREDOC ----- //
+int	handle_heredocs(t_data *data, t_token *tokens);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
