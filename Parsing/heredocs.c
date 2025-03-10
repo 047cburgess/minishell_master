@@ -57,7 +57,7 @@ int	write_into_heredoc(int fd, char *delimiter)
 			ft_dprintf(g_log, "delimiter found\n");
 			break;
 		}
-		write(fd, ft_strjoin(line, "\n"), ft_strlen(line) + 1);
+		write(fd, line, ft_strlen(line));
 		free(line);
 		line = NULL;
 	}
