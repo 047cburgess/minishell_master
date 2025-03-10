@@ -13,49 +13,8 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-int	get_after_next_quote(char *start)
-{
-	int		i;
-	char	quote;
-
-	i = 1;
-	quote = start[0];
-	while (start[i] != quote)
-		i++;
-	i++;
-	return (i);
-}
-
-// line too long, but wll just shorten name of is_operator function...
-t_token	*get_quoted_token(char *ptr)
-{
-	t_token	*new_token;
-	char	*new_content;
-	int		i;
-
-	i = 0;
-	while (1)
-	{
-		if (is_quote(ptr[i]))
-			i += get_after_next_quote(&ptr[i]);
-		if (ptr[i] == '\0' || ft_isspace(ptr[i]) || is_operator(ptr[i]))
-			break;
-		while (ptr[i] && !is_quote(ptr[i]) && !ft_isspace(ptr[i]) && !is_operator(ptr[i]))
-				i++;
-	}
-	new_content = ft_substr(ptr, 0, i);
-	if (!new_content)
-		return (NULL);
-	new_token = new_token_node(new_content);
-	if (!new_token)
-	{
-		free(new_content);
-		return (NULL);
-	}
-	return (new_token);
-}
-
-t_token	*get_unquoted_token(char *start)
+// NORM OK
+t_token	*get_word_token(char *start)
 {
 	char	*ptr;
 	int		len;
@@ -80,6 +39,7 @@ t_token	*get_unquoted_token(char *start)
 	return (new_token);
 }
 
+// NORM OK
 int	get_token_type(char *content)
 {
 	if (ft_strcmp(content, "<<") == 0)
@@ -94,6 +54,7 @@ int	get_token_type(char *content)
 		return (RD_OUT);
 }
 
+// NORM OK
 t_token	*get_operator_token(char *start)
 {
 	char	*content;
@@ -121,6 +82,7 @@ t_token	*get_operator_token(char *start)
 	return (token);
 }
 
+// NORM OK --> to check for is_space -> think for bash should be just space, tab and new line so prob need to amend
 int	tokenise(char *line, t_data *data)
 {
 	int		i;
@@ -135,14 +97,9 @@ int	tokenise(char *line, t_data *data)
 			if (!handle_operator_token(&i, &line[i], &data->tokens_list))
 				return (token_lst_clear(&data->tokens_list, free), FAILURE);
 		}
-		else if (is_quote(line[i]))
+		else if (line[i] != '\0')
 		{
-			if (!handle_quoted_token(&i, &line[i], &data->tokens_list))
-				return (token_lst_clear(&data->tokens_list, free), FAILURE);
-		}
-		else if (!is_quote(line[i]) && line[i] != '\0')
-		{
-			if (!handle_unquoted_token(&i, &line[i], &data->tokens_list))
+			if (!handle_word_token(&i, &line[i], &data->tokens_list))
 				return (token_lst_clear(&data->tokens_list, free), FAILURE);
 		}
 	}

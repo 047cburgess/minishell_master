@@ -47,7 +47,7 @@ int	write_into_heredoc(int fd, char *delimiter)
 		line = get_next_line(0);
 		ft_dprintf(g_log, "line: %s", line);
 		ft_dprintf(g_log, "strlen line: %i\n", ft_strlen(line));
-		if (!line)
+		if (!line && g_signal == 0)
 		{
 			ft_dprintf(g_log, "ended with Ctrl-D\n");
 			break;
@@ -62,7 +62,7 @@ int	write_into_heredoc(int fd, char *delimiter)
 		line = NULL;
 	}
 
-	//get_next_line(-1); // flush gnl
+	// flush gnl
 	get_next_line(-1);
 	ft_dprintf(g_log, "preparin to close stdindup\n");
 	dup2(stdin_dup, STDIN_FILENO);

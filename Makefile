@@ -25,6 +25,7 @@ SRCS = main.c \
 	   $(SIGNALS_DIR)/signals.c \
 	   $(PARSE_DIR)/parsing.c \
 	   $(PARSE_DIR)/get_tokens.c \
+	   $(PARSE_DIR)/handle_tokens.c \
 	   $(PARSE_DIR)/handle_quotes.c \
 	   $(PARSE_DIR)/token_utils.c \
 	   $(PARSE_DIR)/parse_tokens.c \

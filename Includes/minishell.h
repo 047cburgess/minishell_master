@@ -169,6 +169,11 @@ void 	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 int		expansion_needed(char *content);
+int	handle_operator_token(int *i, char *start, t_token **tokens_list);
+int	handle_word_token(int *i, char *start, t_token **tokens_list);
+t_token	*get_word_token(char *start);
+t_token	*get_operator_token(char *start);
+int	get_token_type(char *content);
 
 // ------ EXPANSIONS ----- //
 char 	*find_key(char *line, int i);
