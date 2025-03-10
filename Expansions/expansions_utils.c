@@ -40,14 +40,15 @@ char	*join_list(t_list *lst)
 	t_list	*current;
     t_list	*print;
 
+    ft_dprintf(g_log, "FUNCTION: JOIN LIST\n");
     print = lst;
-	printf("CUTTINGS: ");
+	ft_dprintf(g_log, "CUTTINGS: ");
     while (print)
     {
-	    printf("[%s]->", (char*)print->content);
+	    ft_dprintf(g_log, "[%s]->", (char*)print->content);
 	    print = print->next;
     }
-    printf("\n");
+    ft_dprintf(g_log, "\n");
 
 	if (!lst)
 		return (NULL);

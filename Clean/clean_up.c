@@ -23,6 +23,8 @@ void	clean_job_memory(t_data *data)
 	free_str_array(data->path_dirs, count_strings(data->path_dirs));
 	data->env_array = NULL;
 	data->path_dirs = NULL;
+	data->tokens_list = NULL;
+	data->command_list = NULL;
 }
 
 void	clean_up_exit(t_data *data, int exit_status, char *msg)

@@ -82,7 +82,7 @@ t_token	*get_operator_token(char *start)
 	return (token);
 }
 
-// NORM OK --> to check for is_space -> think for bash should be just space, tab and new line so prob need to amend
+// NORM OK
 int	tokenise(char *line, t_data *data)
 {
 	int		i;

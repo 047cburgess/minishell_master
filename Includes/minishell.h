@@ -97,6 +97,8 @@ typedef struct s_data
 
 // ------ EXECUTION ----- //
 
+int		execute_builtin(char **av, t_data *data, t_command *cmd);
+int	launch_builtin(t_data *data, t_command *cmd);
 int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
 int		launch_solo_command(t_data *data, t_command *command);
@@ -121,6 +123,7 @@ int		connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev);
 int		connect_last_child_pipe(t_command *cmd, t_command *prev);
 void	close_all_fds(t_data *data);
 void	ft_close(int *fd);
+void	minishell_executor(t_data *data, int cmd_count, t_command *commands);
 
 // ------ COMMAND TABLE ------ //
 
@@ -151,6 +154,8 @@ void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
 int		is_quote(char c);
 int		get_command_count(t_token *list);
+int	minishell_parser(t_data *data);
+int	minishell_lexer(t_data *data, char *line);
 
 // ----- TOKEN_SYNTAX ----- //
 int		type_is_redirection(int type);
@@ -201,6 +206,7 @@ int		ft_echo(char **args);
 int		ft_pwd(void);
 int		ft_cd(char **av);
 int		ft_env(t_data *data);
+int		ft_exit(char **av, t_data *data);
 
 // ------ Export utils----- //
 int		ft_export(char **av, t_data *data);
@@ -223,7 +229,6 @@ int		ft_unset(char **av, t_data *data);
 void	env_remove_node(t_env **list, char *key);
 
 // ------ BUILT IN HELPERS ----- //
-int		execute_builtin(char **av, t_data *data);
 int		count_ac(char **args);
 int		count_strings(char **array);
 

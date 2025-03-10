@@ -81,7 +81,7 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		if (is_builtin(cmd->av))
-			execute_builtin(cmd->av, data);
+			execute_builtin(cmd->av, data, cmd);
 		else
 		{
 			execve(cmd->path, cmd->av, data->env_array);
@@ -123,7 +123,7 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		if (is_builtin(cmd->av))
-			execute_builtin(cmd->av, data);
+			execute_builtin(cmd->av, data, cmd);
 		else
 		{
 			execve(cmd->path, cmd->av, data->env_array);
@@ -165,7 +165,7 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		if (is_builtin(cmd->av))
-			execute_builtin(cmd->av, data);
+			execute_builtin(cmd->av, data, cmd);
 		else
 		{
 			execve(cmd->path, cmd->av, data->env_array);

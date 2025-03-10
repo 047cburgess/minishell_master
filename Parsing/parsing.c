@@ -1,80 +1,68 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-int	execute_builtin(char **av, t_data *data);
 
-int	line_is_whitespace(char *line, t_data *data)
-{
-	int	i;
-
-	i = 0;
-	while (line[i])
-	{
-		if (!ft_isspace(line[i]))
-			return (0);
-		i++;
-	}
-	data->status = 1;
-	return (1);
-}
-
+// Sets the non interactive signals for the start of the function
+// Signals get reset to interactive in the main when it's needed
+// Point of control between lexer, parser and executor
 int	handle_input(char *line, t_data *data)
 {
-	set_noninteractive_signals();
 	new_log_timestamp(data->log, line);
-	// Check if all spaces in the line (otherwise segfault)
-	//
-	if (line_is_whitespace(line, data))
+	set_noninteractive_signals();
+	
+	if (!minishell_lexer(data, line))
 		return (FAILURE);
-	if (unclosed_quote_detected(line))
+
+	if (!minishell_parser(data))
 	{
-		ft_dprintf(2, "minishell: unclosed quote detected\n");
-		data->status = 1;
-		return (FAILURE);
-	}
-	// 1: GET FIRST TOKENS
-	if (tokenise(line, data) == FAILURE)
-	{
-		data->status = 1;
-		return (FAILURE);
-	}
-	// 2: CHECK THE SYNTAX
-	if (check_token_syntax(data->tokens_list) == FAILURE)
-	{
-		data->status = 2;
 		token_lst_clear(&data->tokens_list, free);
 		return (FAILURE);
 	}
+	minishell_executor(data, data->command_count, data->command_list);
+	return (SUCCESS);
+}
 
-	// 2A: GET THE NUMBER OF COMMANDS
+// Point of control for the parsing process
+// Prints any error messages
+// Sets the relevant data status
+// Frees what it allocated when necessary
+// If success, tokens and commands guaranteed to be non-null and correct
+int	minishell_parser(t_data *data)
+{
+	// 1: Check the token syntax
+	if (check_token_syntax(data->tokens_list) == FAILURE)
+	{
+		data->status = 2;
+		return (FAILURE);
+	}
 	data->command_count = get_command_count(data->tokens_list);
 
-	// 3: EXPAND && REMOVE QUOTES
-	handle_expansions_in_tokens(data);
+	// 2: Expand the tokens
+	if (handle_expansions_in_tokens(data) == FAILURE)
+	{
+		data->status = 1; // Will always be a malloc failure
+		perror("expander: malloc failure");
+		return (FAILURE);
+	}
 
-//	// 3A: MANAGE HEREDOCS
-//		--> create temp file (unique name)
-//		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
-
+	// 3: Create the heredoc temp files
 	handle_heredocs(data, data->tokens_list);
 	if (g_signal != 0)
+	{
+		ft_dprintf(g_log, "parser after heredoc: signal was found\n");
+		data->status = g_signal + 128;
+		g_signal = 0;
 		return (set_noninteractive_signals(), 0);
-	prep_command_tables(data, data->tokens_list);
-
-	// 4: launch if solo builtin
-
-	ft_dprintf(data->log, "\n--OUTPUT--\n");
-	if (data->command_count == 1)
-	{
-		launch_solo_command(data, data->command_list);
-		ft_dprintf(data->log, "Command returned with exit status %i\n", data->status);
 	}
-	else
+	set_noninteractive_signals();
+	
+	// 4: Prepare the command tables
+	if (prep_command_tables(data, data->tokens_list) == FAILURE)
 	{
-		launch_pipeline(data, data->command_list, data->command_count);
-		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
+		perror("prep_command_tables: malloc failure");
+		data->status = 1;
+		return(FAILURE);
 	}
-	clean_job_memory(data);
 	return (SUCCESS);
 }
 
@@ -92,20 +80,4 @@ int	get_command_count(t_token *list)
 	return (pipe_count + 1);
 }
 
-// Passing data as a parameter as the built in functions will need it
-int	execute_builtin(char **av, t_data *data)
-{
-	if (ft_strcmp(av[0], "echo") == 0)
-		data->status = ft_echo(&av[1]);
-	else if (ft_strcmp(av[0], "cd") == 0)
-		data->status = ft_cd(&av[1]);
-	else if (ft_strcmp(av[0], "pwd") == 0)
-		data->status = ft_pwd();
-	else if (ft_strcmp(av[0], "export") == 0)
-		data->status = ft_export(av, data);
-	else if (ft_strcmp(av[0], "unset") == 0)
-		data->status = ft_unset(av, data);
-	else if (ft_strcmp(av[0], "env") == 0)
-		data->status = ft_env(data);
-	return (data->status);
-}
+
