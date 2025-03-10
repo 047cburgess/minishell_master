@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:37:13 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/13 11:03:39 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:37:28 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void init_interactive_signals(void)
 	sigaction(SIGQUIT, &act[1], NULL);
 }
 
-
 void	heredoc(int signal)
 {
 	g_signal = signal;
@@ -57,8 +56,6 @@ void	heredoc(int signal)
 	//rl_on_new_line(); // tell readline a new line is starting
 	//rl_replace_line("", 0); // reset cursor to the beginning
 	//rl_redisplay(); // redisplay the prompt
-
-
 }
 
 void	set_heredoc_signals(void)

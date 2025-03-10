@@ -16,13 +16,14 @@ t_env	*env_node_new(char *key, char *value)
 {
 	t_env	*new_node;
 
-	if (!key || !value)
+	if (!key)
 		return (NULL);
 	new_node = ft_calloc(1, sizeof(t_env));
 	if (!new_node)
 		return (NULL);
 	new_node->key = key;
 	new_node->value = value;
+	new_node->no_value = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -34,6 +35,7 @@ void	env_delone(t_env *node)
 	free(node->value);
 	node->key = NULL;
 	node->value = NULL;
+	node->no_value = 0;
 	free(node);
 }
 

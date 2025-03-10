@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:56:19 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/13 14:56:21 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:28:58 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,36 +18,25 @@
 // If more than one argument is given, print too many args
 // If no arguments given, go to home: getenv?
 
-
-// NEEDS TO RETURN THE EXIT STATUS
-int	ft_cd(char **args)
+int	ft_cd(char **av)
 {
 	int	ac;
-	int	status;
 
-	status = 0;
-	ac = count_ac(args);
-	// If more than one argument is given, return false
+	ac = count_ac(av);
 	if (ac > 1)
 	{
-		ft_putendl_fd("cd: too many arguments", 2);
-		status = 1;
+		ft_dprintf(2, "Minishell: cd: too many arguments\n");
+		return (1);
 	}
-
-	// TODO If no args are given, send home -> need to pass in our env
 	else if (ac == 0)
 	{
-		chdir(getenv("HOME")); // temporary using getenv but need to traverse our own path
-		status = 0; // make sure to check if it succeeded and change status value
+		ft_dprintf(2, "Minishell: cd: Not enough argument\n");
+		return (1);
 	}
-	// if getenv returns null, perror?
-
-	// If the chdir fails
-	else if (chdir(args[0]) == -1)
+	else if (chdir(av[0]) == -1)
 	{
-		perror("minishell: cd : %s"); // Change for strerror?
-		status = 1;
-		
+		ft_dprintf(2, "Minishell: cd: %s: %s\n", av[0], strerror(errno));
+		return (1);
 	}
-	return (status);
+	return (0);
 }

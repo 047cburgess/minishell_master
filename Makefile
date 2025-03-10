@@ -32,10 +32,15 @@ SRCS = main.c \
 	   $(PARSE_DIR)/heredocs.c \
 	   $(EXPAND_DIR)/extract_expansion.c \
 	    $(EXPAND_DIR)/expansions_cutting.c \
+		$(EXPAND_DIR)/expand_doubles_quotes.c \
+		$(EXPAND_DIR)/expansions_utils.c \
 	   $(BUILTIN_DIR)/echo.c \
 	   $(BUILTIN_DIR)/pwd.c \
 	   $(BUILTIN_DIR)/cd.c \
 		$(BUILTIN_DIR)/export.c \
+		$(BUILTIN_DIR)/handle_var_export.c \
+		$(BUILTIN_DIR)/init_export_list.c \
+		$(BUILTIN_DIR)/export_utils.c \
 	   $(BUILTIN_DIR)/unset.c \
 	   $(BUILTIN_DIR)/env.c \
 	   $(EXEC_DIR)/prep_command_tables.c \

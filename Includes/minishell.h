@@ -48,6 +48,7 @@
 # include "libft.h"
 # include "ft_dprintf.h"
 # include <errno.h>
+#include <ctype.h>
 
 extern int g_log;
 extern int g_signal;
@@ -56,6 +57,7 @@ typedef struct s_env
 {
 	char			*key;
 	char			*value;
+	int				no_value;
 	struct s_env	*next;
 } t_env;
 
@@ -72,9 +74,9 @@ typedef struct s_command
 	int				ac;
 	int				fds[2];
 	t_token 		*tokens;
-	char	path[FULL_PATH_MAX];
+	char			path[FULL_PATH_MAX];
 	pid_t			pid;
-	int	error;
+	int				error;
 	struct s_command *next;
 } t_command;
 
@@ -86,8 +88,9 @@ typedef struct s_data
 	int			command_count;
 	char 		**bash_env;
 	t_env		*env;
-	char	**path_dirs;
-	char	**env_array;
+	t_env		*export;
+	char		**path_dirs;
+	char		**env_array;
 	int			log;
 	int 		status;
 } t_data;
@@ -98,24 +101,24 @@ int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
 int		launch_solo_command(t_data *data, t_command *command);
 int		type_is_redirection(int type);
-int	set_command_path(t_data *data, char *path, char *command, t_command *cmd);
+int		set_command_path(t_data *data, char *path, char *command, t_command *cmd);
 char	**get_av(t_token *tokens, int ac);
 int		get_ac(t_token *command_list);
 int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
-int	is_redirection_in(int type);
-int	is_redirection_out(int type);
-int	handle_redirection_in(t_data *data, int *in_out, t_token *token);
-int	handle_redirection_out(t_data *data, int *in_out, t_token *token);
+int		is_redirection_in(int type);
+int		is_redirection_out(int type);
+int		handle_redirection_in(t_data *data, int *in_out, t_token *token);
+int		handle_redirection_out(t_data *data, int *in_out, t_token *token);
 int		is_builtin(char **av);
-int	check_access(char *full_path, t_data *data, t_command *cmd);
+int		check_access(char *full_path, t_data *data, t_command *cmd);
 void	clean_job_memory(t_data *data);
-int	print_errors_and_exit(t_data *data, t_command *command, int mode);
-int	dup_stds(t_data *data, int *std_save);
-int	restore_stds(t_data *data, int *std_save);
-int	launch_pipeline(t_data *data, t_command *commands, int num_cmds);
-int	connect_first_child_pipe(int *fds, t_command *cmd);
-int	connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev);
-int	connect_last_child_pipe(t_command *cmd, t_command *prev);
+int		print_errors_and_exit(t_data *data, t_command *command, int mode);
+int		dup_stds(t_data *data, int *std_save);
+int		restore_stds(t_data *data, int *std_save);
+int		launch_pipeline(t_data *data, t_command *commands, int num_cmds);
+int		connect_first_child_pipe(int *fds, t_command *cmd);
+int		connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev);
+int		connect_last_child_pipe(t_command *cmd, t_command *prev);
 void	close_all_fds(t_data *data);
 void	ft_close(int *fd);
 
@@ -162,10 +165,10 @@ void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
 t_list	*ft_lst_map(t_list *lst, char *(*f)(char *), void (*del)(void *));
-void 	print_tokens_list(int fd, t_token *tokens_list);
+void	print_tokens_list(int fd, t_token *tokens_list);
 int		is_operator(char c);
 int 	ft_mapping(t_data *data, t_list *cutting);
-void 	print_map(t_list *map_list);
+void	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 int		expansion_needed(char *content);
@@ -176,14 +179,19 @@ t_token	*get_operator_token(char *start);
 int	get_token_type(char *content);
 
 // ------ EXPANSIONS ----- //
-char 	*find_key(char *line, int i);
-char	*convert_expansion(t_data *data, char *line, int *i);
-void	handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i);
+char	*find_key(char *line, int i);
+t_list  *convert_var_expansion(t_data *data, char *line, int *i);
+void extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i);
+int	empty_quotes(t_list **cutting);
+
 void	handle_simple_text(t_list **cutting, char *line, int *i);
 void	handle_simple_quotes(t_list **cutting, char *line, int *i);
-char 	*expansion_line(t_data *data, char *line);
-char 	*expand_token(t_data *data, char *content);
-int 	handle_expansions(t_data *data);
+char	*expansion_line(t_data *data, char *line);
+char	*expand_token(t_data *data, char *content);
+int 	handle_expansions_in_tokens(t_data *data);
+char 	*join_list(t_list *lst);
+void	handle_dollar_alone(t_list **cutting, int *i);
+void	handle_exit_extansion(t_data *data, t_list **cutting, char *line, int *i);
 
 // ------ HEREDOC ----- //
 int	handle_heredocs(t_data *data, t_token *tokens);
@@ -191,15 +199,32 @@ int	handle_heredocs(t_data *data, t_token *tokens);
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
 int		ft_pwd(void);
-int		ft_cd(char **args);
-int		ft_export(char **av, t_data *data);
-bool	key_is_valid(char *key);
-int 	ft_unset(char **av, t_data *data);
+int		ft_cd(char **av);
 int		ft_env(t_data *data);
+
+// ------ Export utils----- //
+int		ft_export(char **av, t_data *data);
+t_env	*ft_new_node(char *key, char *value);
+t_env	*init_new_node(char *key);
+bool	key_is_valid(char *key);
+t_env	*find_var_in_list(t_env *list, const char *key);
+void	bubble_sort_ascii(t_env **env_tab, int size);
+void	print_ascii_export(t_data *data);
+void	update_or_add_var_env(t_data *data, char *key, char *value);
+void	update_or_add_var_export(t_data *data, char *key);
+int		add_var_in_export(t_data *data, char *av);
+int		add_var_in_env(t_data *data, char *av, char *sign_egal);
+t_env	**create_sorted_export_list(t_data *data, int *size);
+void	print_sorted_export_list(t_env **export_tab, int size);
+void	expansion_no_exist(t_data *data, char *av);
+
+// ------ Unset utils----- //
+int		ft_unset(char **av, t_data *data);
+void	env_remove_node(t_env **list, char *key);
 
 // ------ BUILT IN HELPERS ----- //
 int		execute_builtin(char **av, t_data *data);
-int 	count_ac(char **args);
+int		count_ac(char **args);
 int		count_strings(char **array);
 
 // ----- ENV SET UP ----- //

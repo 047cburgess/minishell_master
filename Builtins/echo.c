@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 11:45:05 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/28 12:25:00 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:59:53 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int 	count_ac(char **args)
+int	count_ac(char **args)
 {
-	int ac;
+	int	ac;
 
 	ac = 0;
 	while (args[ac] != NULL)
@@ -26,8 +26,8 @@ int 	count_ac(char **args)
 
 bool	option(char **args, int *index)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (args[i] && args[i][0] == '-' && args[i][1] == 'n')
@@ -36,7 +36,7 @@ bool	option(char **args, int *index)
 		while (args[i][j] == 'n')
 			j++;
 		if (args[i][j] != '\0')
-			break;
+			break ;
 		i++;
 	}
 	*index = i;
@@ -47,8 +47,8 @@ bool	option(char **args, int *index)
 
 int	ft_echo(char **args)
 {
-	int i;
-	bool no_newline;
+	int		i;
+	bool	no_newline;
 
 	i = 0;
 	no_newline = option(args, &i);
