@@ -24,7 +24,8 @@ int	ft_exit(char **av, t_data *data, t_command *cmd)
 	int	i;
 
 	ac = count_ac(av);
-	ft_dprintf(2, "exit\n");
+	if (cmd->pid != 0)
+		ft_dprintf(2, "exit\n"); // to only print in the parent
 	if (ac == 1)
 		return (data->status);
 	i = 1;
