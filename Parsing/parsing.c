@@ -3,16 +3,29 @@
 
 int	execute_builtin(char **av, t_data *data);
 
+int	line_is_whitespace(char *line, t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (!ft_isspace(line[i]))
+			return (0);
+		i++;
+	}
+	data->status = 1;
+	return (1);
+}
+
 int	handle_input(char *line, t_data *data)
 {
 	set_noninteractive_signals();
 	new_log_timestamp(data->log, line);
-	if (line[0] == '\0')
-	{
-		data->status = 0;
+	// Check if all spaces in the line (otherwise segfault)
+	//
+	if (line_is_whitespace(line, data))
 		return (FAILURE);
-
-	}
 	if (unclosed_quote_detected(line))
 		return (FAILURE);
 
@@ -38,7 +51,9 @@ int	handle_input(char *line, t_data *data)
 //		--> create temp file (unique name)
 //		--> replace the delimiter content token with the actual file name, so in fork redirection it opens the file name [<<]->[C] becomes [<<]->[file.txt]
 
-	//prep_heredocs(data, data->tokens_list)
+	handle_heredocs(data, data->tokens_list);
+	if (g_signal != 0)
+		return (set_noninteractive_signals(), 0);
 	prep_command_tables(data, data->tokens_list);
 
 	// 4: launch if solo builtin
