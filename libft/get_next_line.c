@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 	char		*new_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (free(vault), NULL);
+		return (ft_free((void *)&vault), NULL);
 	if (vault == NULL)
 	{
 		vault = ft_calloc(1, sizeof(char));
