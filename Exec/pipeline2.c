@@ -52,7 +52,15 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 	return (0);
 }
 
-int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
+void	check_no_or_empty_command(t_command *cmd)
+{
+	if (cmd->ac == 0 && cmd->error == 0)
+		cmd->error = ER_NO_CMD;
+	else if (cmd->av[0][0] == '\0')
+		cmd->error = ER_CMD_NOT_FOUND;
+}
+
+int	create_fork(t_command *cmd)
 {
 	cmd->pid = fork();
 	if (cmd->pid == -1)
@@ -60,15 +68,29 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 		cmd->error = ER_FORK;
 		return (FAILURE);
 	}
+	return (SUCCESS);
+}
+
+int	create_pipe(t_command *cmd)
+{
+	if (pipe(cmd->fds) == -1)
+	{
+		cmd->error = ER_PIPE;
+		return (FAILURE);
+	}
+	return (SUCCESS);
+}
+
+int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
+{
+	if (!create_fork(cmd))
+		return (FAILURE);
 	if (cmd->pid == 0)
 	{
 		restore_signals_for_child();
 		connect_last_child_pipe(cmd, prev);
 		handle_redirections(data, cmd, cmd->fds);
-		if (cmd->ac == 0 && cmd->error == 0)
-			cmd->error = ER_NO_CMD;
-		else if (cmd->av[0][0] == '\0')
-			cmd->error = ER_CMD_NOT_FOUND;
+		check_no_or_empty_command(cmd);
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
@@ -91,26 +113,14 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 
 int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 {
-	if (pipe(cmd->fds) == -1)
-	{
-		cmd->error = ER_PIPE;
+	if (!create_pipe(cmd) || !create_fork(cmd))
 		return (FAILURE);
-	}
-	cmd->pid = fork();
-	if (cmd->pid == -1)
-	{
-		cmd->error = ER_FORK;
-		return (FAILURE);
-	}
 	if (cmd->pid == 0)
 	{
 		restore_signals_for_child();
 		connect_middle_child_pipe(cmd->fds, cmd, prev);
 		handle_redirections(data, cmd, cmd->fds);
-		if (cmd->ac == 0 && cmd->error == 0)
-			cmd->error = ER_NO_CMD;
-		else if (cmd->av[0][0] == '\0')
-			cmd->error = ER_CMD_NOT_FOUND;
+		check_no_or_empty_command(cmd);
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
@@ -133,26 +143,14 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 
 int	launch_first_child_pipe(t_data *data, t_command *cmd)
 {
-	if (pipe(cmd->fds) == -1)
-	{
-		cmd->error = ER_PIPE;
+	if (!create_pipe(cmd) || !create_fork(cmd))
 		return (FAILURE);
-	}
-	cmd->pid = fork();
-	if (cmd->pid == -1)
-	{
-		cmd->error = ER_FORK;
-		return (FAILURE);
-	}
 	if (cmd->pid == 0)
 	{
 		restore_signals_for_child();
 		connect_first_child_pipe(cmd->fds, cmd);
 		handle_redirections(data, cmd, cmd->fds);
-		if (cmd->ac == 0 && cmd->error == 0)
-			cmd->error = ER_NO_CMD;
-		else if (cmd->av[0][0] == '\0')
-			cmd->error = ER_CMD_NOT_FOUND;
+		check_no_or_empty_command(cmd);
 		set_command_path(data, cmd->path, cmd->av[0], cmd);
 		check_access(cmd->path, data, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
@@ -166,7 +164,7 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 		close_fds(cmd);
 		if (is_builtin(cmd->av))
 			clean_up_exit(data, data->status, NULL);
-		clean_up_exit(data, errno, NULL); // replace with the ft_dprintf
+		clean_up_exit(data, errno, NULL);
 	}
 	return (0);
 }

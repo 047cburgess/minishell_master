@@ -2,8 +2,23 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-// This function returns the full path for a given command (checking the file exists only)
+int	set_path_for_abs_or_rel_command(t_command *cmd, char *path, char *command)
+{
+	dprintf(g_log, "Has '/' in command name or path is unset\n");
+	ft_strlcpy(path, command, FULL_PATH_MAX);
+	ft_dprintf(g_log, "Checking access F_OK (if it exists)\n");
+	if (access(path, F_OK != 0))
+	{
+		ft_dprintf(g_log, "KO -> file no exist, set cmd->error to 127\n");
+		cmd->error = 127;
+	}
+	else
+		ft_dprintf(g_log, "OK -> file exists\n");
+	return (1);
+}
 
+// NORM OK when logs removed
+// This function returns the full path for a given cmd (check file exists only)
 int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 {
 	int	i;
@@ -12,25 +27,13 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 	dprintf(data->log, "FUNCTION: GET_COMMAND_PATH\n");
 	if (cmd->error != 0 || is_builtin(cmd->av))
 	{
-		ft_dprintf(data->log, "Built in or previous Error detected, not setting command path\n");
+		ft_dprintf(data->log, "Builtin/previous Error detected, leaving.\n");
 		return (0);
 	}
 	
 	// Checks if it's a relative or absolute path already given, and if that file exists
 	if (ft_strchr(command, '/') || data->path_dirs == NULL)
-	{
-		dprintf(data->log, "Has '/' in command name or path is unset\n");
-		ft_strlcpy(path, command, FULL_PATH_MAX);
-		ft_dprintf(g_log, "Checking access F_OK (if it exists)\n");
-		if (access(path, F_OK != 0))
-		{
-			ft_dprintf(g_log, "KO -> file doesnt exist, setting cmd->error to 127\n");
-			cmd->error = 127;
-		}
-		else
-			ft_dprintf(g_log, "OK -> file exists\n");
-		return (1);
-	}
+		return (set_path_for_abs_or_rel_command(cmd, path, command));
 
 	// Checks all path folders to see if it's correct
 	ft_dprintf(g_log, "Attempting to search PATH_DIRS for file...\n");
@@ -43,7 +46,7 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 		dprintf(data->log, "Checking path: %s\n", path);
 		if (access(path, F_OK) == 0)
 		{
-			dprintf(data->log, "Executable found: %s\n", path);
+			ft_dprintf(data->log, "Executable found: %s\n", path);
 			return (1);
 		}
 		i++;
@@ -53,13 +56,14 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 	return (0);
 }
 
+// NORM OK WHEN LOGS REMOVED
 // Checks the remaining executable permissions -> if it's a directory and if it's executable
 // Early return if there was already an error or if it's a builtin
 int	check_access(char *full_path, t_data *data, t_command *cmd)
 {
 	struct stat	status_buffer;
-	ft_dprintf(data->log, "FUNC: CHECK_ACCESS\n");
 
+	ft_dprintf(data->log, "FUNC: CHECK_ACCESS\n");
 	if (cmd->error != 0 || is_builtin(cmd->av))
 		return (0);
 	
@@ -84,7 +88,5 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 		return (0);
 	}
 	dprintf(data->log, "--%s is executable\n", cmd->av[0]);
-
 	return (SUCCESS);
 }
-
