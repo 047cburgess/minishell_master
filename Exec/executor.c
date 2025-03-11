@@ -44,6 +44,7 @@ int	launch_solo_command(t_data *data, t_command *command)
 			data->status = get_child_exit_status(data->status);
 		}
 	}
+	ft_dprintf(g_log, "LAUNCH SOLO CMD: data status is %i\n", data->status);
 	return (data->status);
 }
 

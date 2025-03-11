@@ -34,17 +34,17 @@ int	restore_stds(t_data *data, int *std_save)
 {
 	int	error;
 
-	error = 0;
+	error = 1;
 	ft_dprintf(data->log, "restoring stdin stdout\n");
 	if (dup2(std_save[0], STDIN_FILENO) == -1)
 	{
 		ft_dprintf(2, "minishell: %s\n", strerror(errno));
-		error = 1;
+		error = 0;
 	}
 	if (dup2(std_save[1], STDOUT_FILENO) == -1)
 	{
 		ft_dprintf(2, "minishell: %s\n", strerror(errno));
-		error = 1;
+		error = 0;
 	}
 	ft_dprintf(data->log, "closing dup of stdin stdout\n");
 	ft_close(&std_save[0]);
