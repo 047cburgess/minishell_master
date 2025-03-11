@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:30:58 by alize             #+#    #+#             */
-/*   Updated: 2025/03/04 15:38:56 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/11 18:26:02 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ t_env	*ft_new_node(char *key, char *value)
 		new_node->value = ft_strdup(value);
 		if (!new_node->value)
 		{
-			env_delone(new_node);
+			free(new_node->key);
+			//free(new_node->value);
+			free(new_node);
+			//env_delone(new_node);
 			return (NULL);
 		}
 	}

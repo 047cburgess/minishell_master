@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:23:01 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/04 15:25:14 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/11 17:52:42 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	env_remove_node(t_env **list, char *key)
 				*list = current->next;
 			else
 				prev->next = current->next;
-			env_delone(temp);
+			current = current->next;
+			free(temp->key);
+			free(temp->value);
+			continue ;
 		}
 		prev = current;
 		current = current->next;

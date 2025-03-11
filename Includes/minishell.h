@@ -83,7 +83,6 @@ typedef struct s_command
 typedef struct s_data 
 {
 	t_token		*tokens_list;
-	t_list		*map_list;
 	t_command	*command_list;
 	int			command_count;
 	char 		**bash_env;
@@ -93,6 +92,7 @@ typedef struct s_data
 	char		**env_array;
 	int			log;
 	int 		status;
+	t_list		*cutting;
 } t_data;
 
 // ------ EXECUTION ----- //
@@ -167,8 +167,6 @@ void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
 t_list	*ft_lst_map(t_list *lst, char *(*f)(char *), void (*del)(void *));
 void	print_tokens_list(int fd, t_token *tokens_list);
 int		is_operator(char c);
-int 	ft_mapping(t_data *data, t_list *cutting);
-void	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 int		expansion_needed(char *content);
@@ -181,18 +179,18 @@ int		get_token_type(char *content);
 // ------ EXPANSIONS ----- //
 char	*find_key(char *line, int i);
 t_list  *convert_var_expansion(t_data *data, char *line, int *i);
-void 	extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i);
-int		empty_quotes(t_list **cutting);
+void 	extract_double_quotes(t_data *data, char *line, int *i);
+int		empty_quotes(t_data *data);
 
-void	handle_simple_text(t_list **cutting, char *line, int *i);
-void	handle_simple_quotes(t_list **cutting, char *line, int *i);
+void	handle_simple_text(t_data *data, char *line, int *i);
+void	handle_simple_quotes(t_data *data, char *line, int *i);
 char	*expansion_line(t_data *data, char *line);
 char	*expand_token(t_data *data, char *content);
 int 	handle_expansions_in_tokens(t_data *data);
-char 	*join_list(t_list *lst);
-void	handle_dollar_alone(t_list **cutting, int *i);
-void	handle_exit_extansion(t_data *data, t_list **cutting, char *line, int *i);
-void 	handle_expansion(t_data *data, t_list **cutting, char *line, int *i);
+char 	*join_list(t_list **lst);
+void	handle_dollar_alone(t_data *data, int *i);
+void	handle_exit_extansion(t_data *data, char *line, int *i);
+void 	handle_expansion(t_data *data, char *line, int *i);
 
 // ------ HEREDOC ----- //
 int	handle_heredocs(t_data *data, t_token *tokens);

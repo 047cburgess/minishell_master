@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:08:40 by alize             #+#    #+#             */
-/*   Updated: 2025/03/04 15:23:05 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/11 17:35:08 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	update_or_add_var_export(t_data *data, char *key)
 		new_node->no_value = 1;
 		env_add_back(&data->export, new_node);
 	}
+	else
+		free(key_content);
 }
 
 int	add_var_in_export(t_data *data, char *av)

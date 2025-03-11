@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/23 23:16:03 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/11 17:32:27 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av, char **envp)
 	(void)av;
 	t_data data;
 	char *line;
-	ft_bzero(&data, sizeof(t_data));
+	bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
 	g_log = data.log;
@@ -30,7 +30,6 @@ int	main(int ac, char **av, char **envp)
 		ft_putendl_fd("Minishell doesn't take any arguments", 2);
 		return (1);
 	}
-	//init_signals(act);
 	if (!set_environment(envp, &data))
 		return (1);
 	while(1)
