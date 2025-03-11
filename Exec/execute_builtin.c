@@ -1,22 +1,27 @@
 #include "minishell.h"
 
 // Passing data as a parameter as the built in functions will need it
-
-
+// NORM OK
 int	launch_builtin(t_data *data, t_command *cmd)
 {
 	int	std_save[2];
-	
-	dup_stds(data, std_save);
+
+	if (!dup_stds(data, std_save))
+		cmd->error = 1;
 	handle_redirections(data, cmd, cmd->fds);
-	dprintf(data->log, "preparing to execute %s\n", cmd->av[0]);
+	ft_dprintf(data->log, "preparing to execute %s\n", cmd->av[0]);
 	data->status = execute_builtin(cmd->av, data, cmd);
-	restore_stds(data, std_save);
+	if (!restore_stds(data, std_save))
+	{
+		cmd->error = 1;
+		data->status = cmd->error;
+	}
 	if (ft_strcmp(cmd->av[0], "exit") == 0 && cmd->error == 0)
 		shut_down_minishell(data);
 	return (data->status);
 }
 
+// NORM OK
 int	execute_builtin(char **av, t_data *data, t_command *cmd)
 {
 	if (cmd->error != 0)

@@ -59,7 +59,6 @@ t_env	*env_to_list(char **bash_env)
 			free(value);
 			env_list_clear(&minishell_env);
 			return (NULL);
-
 		}
 		env_add_back(&minishell_env, new_node);
 		bash_env++;
@@ -71,7 +70,7 @@ t_env	*env_to_list(char **bash_env)
 int	set_environment(char **bash_env, t_data *data)
 {
 	t_env *new_node;
-	
+
 	data->bash_env = bash_env;
 	if (!bash_env || !*bash_env)
 	{
@@ -104,7 +103,6 @@ char	*ft_getenv(t_env *env, char *key)
 		if (ft_strcmp(env->key, key) == 0)
 		{
 			return (env->value);
-
 		}
 		env = env->next;
 	}

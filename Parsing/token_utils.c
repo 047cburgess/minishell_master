@@ -13,9 +13,11 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-t_token *new_token_node(char *content)
+// NORM OK
+t_token	*new_token_node(char *content)
 {
-	t_token *new;
+	t_token	*new;
+
 	new = malloc(sizeof(t_token));
 	if (!new)
 		return (NULL);
@@ -25,6 +27,7 @@ t_token *new_token_node(char *content)
 	return (new);
 }
 
+// NORM OK
 void	token_add_back(t_token **tokens, t_token *new)
 {
 	t_token	*current;
@@ -44,12 +47,14 @@ void	token_add_back(t_token **tokens, t_token *new)
 	current->next = new;
 }
 
+// NORM OK
 void	token_del_node(t_token *tokens_list, void (*del)(void *))
 {
 	(*del)(tokens_list->content);
 	free(tokens_list);
 }
 
+// NORM OK
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *))
 {
 	t_token	*temp;
@@ -63,6 +68,7 @@ void	token_lst_clear(t_token **tokens_list, void (*del)(void *))
 	*tokens_list = NULL;
 }
 
+// NORM OK
 t_token	*token_lst_last(t_token *head)
 {
 	if (!head)
@@ -72,9 +78,10 @@ t_token	*token_lst_last(t_token *head)
 	return (head);
 }
 
-void print_tokens_list(int fd, t_token *tokens_list)
+// DEBUG ONLY
+void	print_tokens_list(int fd, t_token *tokens_list)
 {
-	t_token *current;
+	t_token	*current;
 
 	current = tokens_list;
 	while (current)
@@ -83,9 +90,4 @@ void print_tokens_list(int fd, t_token *tokens_list)
 		current = current->next;
 	}
 	ft_dprintf(fd, "\n");
-}
-
-int	is_operator(char c)
-{
-	return ((c == '|') || (c == '<') || (c == '>'));
 }

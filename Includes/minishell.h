@@ -36,6 +36,9 @@
 # define ER_FORK 503
 # define ER_PIPE 504
 
+//--- ERROR MESSAGES ---//
+# define ER_MSG_SYNTX_TKN "minishell: syntax error near unexpected token"
+
 # include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>

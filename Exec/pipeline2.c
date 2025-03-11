@@ -1,12 +1,11 @@
-
-
-# include "minishell.h"
+#include "minishell.h"
 
 // further clean into norm but already looking farly good and clean
 int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev);
 int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev);
 int	launch_first_child_pipe(t_data *data, t_command *cmd);
 
+// NORM OK
 int	wait_all_forks(t_data *data, t_command *commands, int num_cmds)
 {
 	int	i;
@@ -14,17 +13,10 @@ int	wait_all_forks(t_data *data, t_command *commands, int num_cmds)
 	i = 0;
 	while (i < num_cmds)
 	{
-		if (i == num_cmds - 1)
-		{
-			if (commands->pid != -1)
-				waitpid(commands->pid, &data->status, 0);
-		}
-		else
-		{
-			if (commands->pid != -1)
-				waitpid(commands->pid, NULL, 0);
-
-		}
+		if ((i == num_cmds - 1) && (commands->pid != -1))
+			waitpid(commands->pid, &data->status, 0);
+		else if (commands->pid != -1)
+			waitpid(commands->pid, NULL, 0);
 		commands = commands->next;
 		i++;
 	}
@@ -49,7 +41,7 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 		else
 			launch_last_child_pipe(data, current, prev);
 		if (current->error != 0)
-			break;
+			break ;
 		prev = current;
 		current = current->next;
 		i++;
@@ -57,7 +49,7 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 	print_errors_and_exit(data, current, PARENT);
 	wait_all_forks(data, commands, num_cmds);
 	data->status = get_child_exit_status(data->status);
-	return(0);
+	return (0);
 }
 
 int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
@@ -174,7 +166,7 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 		close_fds(cmd);
 		if (is_builtin(cmd->av))
 			clean_up_exit(data, data->status, NULL);
-		clean_up_exit(data, errno, NULL);
+		clean_up_exit(data, errno, NULL); // replace with the ft_dprintf
 	}
 	return (0);
 }

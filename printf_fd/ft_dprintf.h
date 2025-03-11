@@ -15,12 +15,18 @@
 
 # include "libft.h"
 
+typedef struct s_printf
+{
+	t_list	*cutting;
+	int	error;
+	char	*final_line;
+	int	line_len;
+
+}	t_printf;
+
 int	ft_dprintf(int fd, const char *str, ...);
-int	ft_printchar(int fd, const char c);
-int	ft_printstr(int fd, char *s);
-int	ft_printnbr(int fd, int nbr);
-int	ft_printunbr(int fd, unsigned int nbr);
-int	ft_printaddress(int fd, void *address);
-int	ft_printhex(int fd, unsigned long nbr, char format);
+char	*ft_printstr(char *s);
+char	*ft_printnbr(int nbr);
+void	init_printf(t_printf *data);
 
 #endif

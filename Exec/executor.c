@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 
+// NORM OK
 void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 {
 	ft_dprintf(data->log, "\n--OUTPUT--\n");
@@ -28,6 +29,7 @@ void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 	clean_job_memory(data);
 }
 
+// NORM OK
 int	launch_solo_command(t_data *data, t_command *command)
 {
 	ft_dprintf(data->log, "FUNCTION: Launch_solo_command\n");

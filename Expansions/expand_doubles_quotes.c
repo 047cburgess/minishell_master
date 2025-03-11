@@ -46,7 +46,7 @@ void    extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i
     int     start;
     t_list  *new_node;
 
-    start = (*i); // NOT I++ -> ALREADY MOVED
+    start = (*i); // start = (*i)++ NOT I++ -> ALREADY MOVED
     while (line[*i] && line[*i] != '\"')
     {
         if (line[*i] == '$' && line[*i + 1] == '?')

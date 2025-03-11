@@ -30,10 +30,10 @@ t_token	*get_word_token(char *start)
 			ptr++;
 	}
 	len = ptr - start;
-	new_content = ft_substr(start, 0, len);
+	new_content = ft_substr(start, 0, len);   // MALLOC CHECK OK
 	if (!new_content)
 		return (NULL);
-	new_token = new_token_node(new_content);
+	new_token = new_token_node(new_content);  // MALLOC CHECK OK
 	if (!new_token)
 		return (free(new_content), NULL);
 	return (new_token);
@@ -70,9 +70,9 @@ t_token	*get_operator_token(char *start)
 		content = ft_strdup("<");
 	else
 		content = ft_strdup(">");
-	if (!content)
+	if (!content) // MALLOC CHECK OK
 		return (NULL);
-	token = new_token_node(content);
+	token = new_token_node(content); // MALLOC CHECK OK
 	if (!token)
 	{
 		free(content);
@@ -106,4 +106,9 @@ int	tokenise(char *line, t_data *data)
 	ft_dprintf(data->log, "--TOKENS--\n\t");
 	print_tokens_list(data->log, data->tokens_list);
 	return (SUCCESS);
+}
+
+int	is_operator(char c)
+{
+	return ((c == '|') || (c == '<') || (c == '>'));
 }

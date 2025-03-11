@@ -11,24 +11,26 @@
 # **************************************************************************** #
 
 NAME = libftdprintf.a
+OUT = test
 
 LIBFT = ../libft/libft.a
 
 LIBFT_DIR = ../libft
 
 SRCS = ft_printf.c \
-	ft_printchar.c \
 	ft_printstr.c \
 	ft_printnbr.c \
-	ft_printunbr.c \
-	ft_printaddress.c \
-	ft_printhex.c
+	init_printf.c \
 
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR)
+CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I. -g
 
 all: $(NAME)
+
+test:
+	cc $(CFLAGS) -c main.c -o main.o
+	cc $(CFLAGS) main.o -L$(LIBFT_DIR) -lft -L. -lftdprintf -o $(OUT)
 
 $(NAME): $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)

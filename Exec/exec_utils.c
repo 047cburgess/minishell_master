@@ -28,7 +28,7 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 			cmd->error = 127;
 		}
 		else
-		ft_dprintf(g_log, "OK -> file exists\n");
+			ft_dprintf(g_log, "OK -> file exists\n");
 		return (1);
 	}
 

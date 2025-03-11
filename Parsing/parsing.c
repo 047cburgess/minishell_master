@@ -29,24 +29,18 @@ int	handle_input(char *line, t_data *data)
 // If success, tokens and commands guaranteed to be non-null and correct
 int	minishell_parser(t_data *data)
 {
-	// 1: Check the token syntax
 	if (check_token_syntax(data->tokens_list) == FAILURE)
 	{
 		data->status = 2;
 		return (FAILURE);
 	}
 	data->command_count = get_command_count(data->tokens_list);
-
-	// 2: Expand the tokens
 	if (handle_expansions_in_tokens(data) == FAILURE)
 	{
 		data->status = 1; // Will always be a malloc failure
 		perror("expander: malloc failure");
 		return (FAILURE);
 	}
-
-	// 3: Create the heredoc temp files
-	set_noninteractive_signals();
 	handle_heredocs(data, data->tokens_list);
 	if (g_signal != 0)
 	{
@@ -55,8 +49,6 @@ int	minishell_parser(t_data *data)
 		g_signal = 0;
 		return (FAILURE);
 	}
-	
-	// 4: Prepare the command tables
 	if (prep_command_tables(data, data->tokens_list) == FAILURE)
 	{
 		perror("prep_command_tables: malloc failure");
@@ -79,5 +71,3 @@ int	get_command_count(t_token *list)
 	}
 	return (pipe_count + 1);
 }
-
-

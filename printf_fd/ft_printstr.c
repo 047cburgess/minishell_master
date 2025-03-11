@@ -12,10 +12,10 @@
 
 #include "ft_dprintf.h"
 
-int	ft_printstr(int fd, char *s)
+char	*ft_printstr(char *s)
 {
 	if (s == NULL)
-		return (write(fd, "(null)", 6));
-	ft_putstr_fd(s, fd);
-	return (ft_strlen(s));
+		return (ft_strdup("'null'"));
+	else
+		return (ft_strdup(s));
 }

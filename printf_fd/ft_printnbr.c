@@ -12,15 +12,13 @@
 
 #include "ft_dprintf.h"
 
-int	ft_printnbr(int fd, int nbr)
+char	*ft_printnbr(int nbr)
 {
 	char	*number;
-	int		chars_printed;
 
 	number = ft_itoa(nbr);
-	if (number == NULL)
-		return (0);
-	chars_printed = ft_printstr(fd, number);
-	free(number);
-	return (chars_printed);
+	if (!number)
+		return (NULL);
+	else
+		return (number);
 }
