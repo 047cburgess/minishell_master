@@ -62,6 +62,7 @@ void	update_or_add_var_export(t_data *data, char *key)
 		new_node->no_value = 1;
 		env_add_back(&data->export, new_node);
 	}
+	free(key_content); // CASEY: ADDED THIS
 }
 
 int	add_var_in_export(t_data *data, char *av)

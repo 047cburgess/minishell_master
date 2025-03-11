@@ -1,5 +1,5 @@
 NAME = minishell
-CFLAGS = -Wall -Werror -Wextra -MMD -MP -g #-fsanitize=address 
+CFLAGS = -Wall -Werror -Wextra -MMD -MP -g -fsanitize=address 
 
 ##----- DIRECTORIES -----##
 PARSE_DIR = Parsing
