@@ -19,7 +19,7 @@ t_token	*get_next_heredoc_delimiter(t_token *tokens)
 	while (tokens && tokens->type != RD_HEREDOC)
 		tokens = tokens->next;
 
-	if (tokens == NULL)
+	if (tokens == NULL || tokens->next == NULL)
 		return (NULL);
 	else 
 		return (tokens->next);
@@ -38,39 +38,47 @@ int	write_into_heredoc(int fd, char *delimiter)
 	ft_dprintf(g_log, "FUNCTION: WRITE INTO HEREDOC\n");
 	char	*line;
 	int stdin_dup = dup(STDIN_FILENO);
+	if (stdin_dup == -1)
+	{
+		return (FAILURE);
+	}
 	line = NULL;
 	ft_dprintf(g_log, "delimiter: %s\n", delimiter);
 	while (g_signal == 0)
 	{
-		ft_dprintf(g_log, "g signal not at zero %i\n", g_signal);
-		write(1, ">", 1);
+		ft_dprintf(g_log, "g signal = %i\n", g_signal);
+		write(1, "> ", 2);
 		line = get_next_line(0);
-		ft_dprintf(g_log, "line: %s", line);
 		//ft_dprintf(g_log, "strlen line: %i\n", ft_strlen(line));
-		if (!line && g_signal == 0)
+		if (!line)
 		{
 			ft_dprintf(g_log, "ended with Ctrl-D\n");
 			break;
 		}
-		else if (ft_strncmp(line, delimiter, ft_strlen(line) - 1) == 0)
+		ft_dprintf(g_log, "line: %s", line);
+		if (ft_strncmp(line, delimiter, ft_strlen(line) - 1) == 0)
 		{
+			//ft_free((void *)&line);
 			ft_dprintf(g_log, "delimiter found\n");
 			break;
 		}
 		write(fd, line, ft_strlen(line));
-		ft_free((void *)&line);
-		line = NULL;
+		if (line)
+		{
+			ft_free((void *)&line);
+			line = NULL;
+		}
 	}
-
+	ft_dprintf(g_log, "preparin to close stdindup\n");
 	// flush gnl
 	get_next_line(-1);
-	ft_dprintf(g_log, "preparin to close stdindup\n");
 	dup2(stdin_dup, STDIN_FILENO);
 	close(stdin_dup);
 	if (g_signal != 0)
 		return (FAILURE);
 	return (0);
 }
+
 
 int	process_heredoc(t_token *delimiter, int id)
 {
@@ -88,15 +96,20 @@ int	process_heredoc(t_token *delimiter, int id)
 	ft_strlcat(buffer, hd_id, sizeof(buffer));
 	free(hd_id);
 	file_name = ft_strdup(buffer);
-
+	if (!file_name)
+		return (FAILURE);
 	ft_dprintf(g_log, "filename1: %s\n", file_name);
 
 	// CREATE & OPEN THE FILE
 	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-
+	if (fd == -1)
+	{
+		ft_dprintf(g_log, "error opening heredoc file: %s\n", file_name);
+		free(file_name);
+		return (FAILURE);
+	}
 	// READ AND WRITE INTO IT UNTIL YOU GET TO THE DELIMITER OR EOF
 	write_into_heredoc(fd, delimiter->content);
-
 	// CLOSE THE TEMP FILE
 	close(fd);
 	ft_dprintf(g_log, "closed heredoc %i\n", id);

@@ -58,7 +58,12 @@ int	handle_input(char *line, t_data *data)
 
 	handle_heredocs(data, data->tokens_list);
 	if (g_signal != 0)
+	{
+		data->status = g_signal + 128;
+		g_signal = 0;
 		return (set_noninteractive_signals(), 0);
+	}
+	set_noninteractive_signals();
 	prep_command_tables(data, data->tokens_list);
 
 	// 4: launch if solo builtin

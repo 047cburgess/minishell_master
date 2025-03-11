@@ -6,13 +6,13 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/10 15:27:16 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/11 14:33:50 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void handle_expansion(t_data *data, t_list **cutting, char *line, int *i)
+void handle_expansion(t_data *data, t_list **cutting, char *line, int *i)
 {
 	t_list	*new_node;
 	
@@ -28,26 +28,6 @@ static void handle_expansion(t_data *data, t_list **cutting, char *line, int *i)
 		handle_dollar_alone(cutting, i);
 }
 
-static void handle_double_quotes(t_data *data, t_list **cutting, char *line, int *i)
-{
-    if (line[*i] == '\"')
-    {
-        if (line[*i + 1] == '\"')
-        {
-            if (!empty_quotes(cutting))
-                return;
-            (*i)++;
-            return;
-        } 
-        (*i)++;
-        extract_double_quotes(data, cutting, line, i);
-        return;
-    }
-    else
-        extract_double_quotes(data, cutting, line, i);
-}
-
-
 char	*expansion_line(t_data *data, char *line)
 {
 	t_list	*cutting;
@@ -61,9 +41,7 @@ char	*expansion_line(t_data *data, char *line)
 		if (line[i] == '\'')
 			handle_simple_quotes(&cutting, line, &i);
 		else if (line[i] == '\"')
-		{
-			handle_double_quotes(data, &cutting, line, &i);
-		}
+			extract_double_quotes(data, &cutting, line, &i);
 		else if (line[i] == '$')
 			handle_expansion(data, &cutting, line, &i);
 		else

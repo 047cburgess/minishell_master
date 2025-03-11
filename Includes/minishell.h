@@ -124,7 +124,7 @@ void	ft_close(int *fd);
 
 // ------ COMMAND TABLE ------ //
 
-int	prep_command_tables(t_data *data, t_token *tokens);
+int			prep_command_tables(t_data *data, t_token *tokens);
 t_command	*new_command_table(t_token *tokens);
 void		command_add_back(t_command **head, t_command *new);
 void		command_del_node(t_command *cmd);
@@ -137,7 +137,7 @@ void		print_command_list(t_command *head);
 //signals.c
 void	init_interactive_signals(void);
 int		get_child_exit_status(int status);
-void init_interactive_signals(void);
+void 	init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
 void	heredoc(int signal);
@@ -172,17 +172,17 @@ void	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
 int		expansion_needed(char *content);
-int	handle_operator_token(int *i, char *start, t_token **tokens_list);
-int	handle_word_token(int *i, char *start, t_token **tokens_list);
+int		handle_operator_token(int *i, char *start, t_token **tokens_list);
+int		handle_word_token(int *i, char *start, t_token **tokens_list);
 t_token	*get_word_token(char *start);
 t_token	*get_operator_token(char *start);
-int	get_token_type(char *content);
+int		get_token_type(char *content);
 
 // ------ EXPANSIONS ----- //
 char	*find_key(char *line, int i);
 t_list  *convert_var_expansion(t_data *data, char *line, int *i);
-void extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i);
-int	empty_quotes(t_list **cutting);
+void 	extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i);
+int		empty_quotes(t_list **cutting);
 
 void	handle_simple_text(t_list **cutting, char *line, int *i);
 void	handle_simple_quotes(t_list **cutting, char *line, int *i);
@@ -192,6 +192,7 @@ int 	handle_expansions_in_tokens(t_data *data);
 char 	*join_list(t_list *lst);
 void	handle_dollar_alone(t_list **cutting, int *i);
 void	handle_exit_extansion(t_data *data, t_list **cutting, char *line, int *i);
+void 	handle_expansion(t_data *data, t_list **cutting, char *line, int *i);
 
 // ------ HEREDOC ----- //
 int	handle_heredocs(t_data *data, t_token *tokens);
