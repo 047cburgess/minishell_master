@@ -6,7 +6,7 @@
 /*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:09:32 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/10 14:45:35 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/11 16:55:05 by alize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,27 @@ char	*find_key(char *line, int i)
 	return (key);
 }
 
-char	*join_list(t_list *lst)
+char	*join_list(t_list **lst)
 {
 	char	*new_line;
 	char	*temp;
 	t_list	*current;
-    t_list	*print;
+    //t_list	*print;
 
-    print = lst;
-	printf("CUTTINGS: ");
-    while (print)
-    {
-	    printf("[%s]->", (char*)print->content);
-	    print = print->next;
-    }
-    printf("\n");
-
+    // print = lst;
+	// printf("CUTTINGS: ");
+    // while (print)
+    // {
+	//     printf("[%s]->", (char*)print->content);
+	//     print = print->next;
+    // }
+    // printf("\n");
 	if (!lst)
 		return (NULL);
 	new_line = ft_strdup("");
 	if (!new_line)
 		return (NULL);
-	current = lst;
+	current = *lst;
 	while (current)
 	{
 		temp = new_line;

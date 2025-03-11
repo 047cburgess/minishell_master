@@ -30,18 +30,16 @@ int	main(int ac, char **av, char **envp)
 		ft_putendl_fd("Minishell doesn't take any arguments", 2);
 		return (1);
 	}
-	//init_signals(act);
 	if (!set_environment(envp, &data))
 		return (1);
 	while(1)
 	{
 		init_interactive_signals();
-		init_interactive_signals();
-		init_interactive_signals();
 		line = readline(PROMPT);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
+		catch_signals_for_data_status(&data);
 		handle_input(line, &data);
 		free(line);
 	}

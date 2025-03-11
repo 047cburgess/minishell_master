@@ -12,22 +12,29 @@
 
 #include "minishell.h"
 
+// NORM OK
+void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
+{
+	ft_dprintf(data->log, "\n--OUTPUT--\n");
+	if (cmd_count == 1)
+	{
+		launch_solo_command(data, commands);
+		ft_dprintf(data->log, "Command returned with exit status %i\n", data->status);
+	}
+	else
+	{
+		launch_pipeline(data, commands, cmd_count);
+		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
+	}
+	clean_job_memory(data);
+}
+
+// NORM OK
 int	launch_solo_command(t_data *data, t_command *command)
 {
-	int	std_save[2];
+	ft_dprintf(data->log, "FUNCTION: Launch_solo_command\n");
 	if (is_builtin(command->av))
-	{
-		ft_dprintf(data->log, "cmd identified as builtin\n");
-		dup_stds(data, std_save);
-		if (handle_redirections(data, command, command->fds) == 0)
-		{
-			dprintf(data->log, "preparing to execute %s\n", command->av[0]);
-			data->status = execute_builtin(command->av, data);
-		}
-		else
-			data->status = 1;
-		restore_stds(data, std_save);
-	}
+		launch_builtin(data, command);
 	else
 	{
 		execute_solo_child(data, command);
@@ -36,12 +43,12 @@ int	launch_solo_command(t_data *data, t_command *command)
 			waitpid(command->pid, &data->status, 0);
 			data->status = get_child_exit_status(data->status);
 		}
-
 	}
-	command_lst_clear(&data->command_list);
+	ft_dprintf(g_log, "LAUNCH SOLO CMD: data status is %i\n", data->status);
 	return (data->status);
 }
 
+// LINES OK
 int	execute_solo_child(t_data *data, t_command *cmd)
 {
 	cmd->pid = fork();

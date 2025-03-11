@@ -13,50 +13,119 @@
 #include "ft_dprintf.h"
 #include <stdarg.h>
 
-int	ft_printformat(int fd, va_list args, char format)
+t_list	*ft_printformat(t_list **head, va_list args, char form, t_printf *data)
 {
-	int	chars_printed;
+	char	*return_string;
+	t_list	*new_node;
 
-	chars_printed = 0;
-	if (format == 'i' || format == 'd')
-		chars_printed = ft_printnbr(fd, va_arg(args, int));
-	else if (format == 'c')
-		chars_printed = ft_printchar(fd, va_arg(args, int));
-	else if (format == 's')
-		chars_printed = ft_printstr(fd, va_arg(args, char *));
-	else if (format == '%')
-		chars_printed = ft_printchar(fd, '%');
-	else if (format == 'u')
-		chars_printed = ft_printunbr(fd, va_arg(args, unsigned int));
-	else if (format == 'p')
-		chars_printed = ft_printaddress(fd, va_arg(args, void *));
-	else if (format == 'x' || format == 'X')
-		chars_printed = ft_printhex(fd, va_arg(args, unsigned int), format);
-	return (chars_printed);
+	if (form == 'i' || form == 'd')
+		return_string = ft_printnbr(va_arg(args, int));
+	else if (form == 's')
+		return_string = ft_printstr(va_arg(args, char *));
+	if (!return_string)
+	{
+		return (NULL);
+	}
+	new_node = ft_lstnew(return_string);
+	if (!new_node)
+	{
+		free(return_string);
+		data->error = 1;
+		return (NULL);
+	}
+	ft_lstadd_back(head, new_node);
+	return (new_node);
+}
+
+t_list	*extract_until_next(t_list **head, const char **ptr, t_printf *data)
+{
+	char	*return_string;
+	const char	*str;
+	t_list	*new_node;
+	int	i;
+
+	str = *ptr;
+	i = 0;
+	if (str[i] == '%')
+		i++;
+	while (str[i] && str[i] != '%')
+		i++;
+	return_string = ft_substr(str, 0, i);
+	if (!return_string)
+	{
+		data->error = 1;
+		return (NULL);
+	}
+	new_node = ft_lstnew(return_string);
+	if (!new_node)
+	{
+		data->error = 1;
+		return (free(return_string), NULL);
+	}
+	*ptr = *ptr + i;
+	return (ft_lstadd_back(head, new_node), new_node);
+}
+
+int	get_final_len(t_list *head)
+{
+	int	i;
+
+	i = 0;
+	while (head)
+	{
+		i += ft_strlen(head->content);
+		head = head->next;
+	}
+	return (i);
+}
+
+char	*set_final_line(char **line, t_list *head, int error)
+{
+	int	len;
+	char	*final_line;
+
+	if (!head || *line || error)
+		return (NULL);
+	len = get_final_len(head);
+	final_line = ft_calloc(len + 1, sizeof(char));
+	if (!final_line)
+	{
+		*line = NULL;
+		return (NULL);
+	}
+	while (head)
+	{
+		ft_strlcat(final_line, head->content, len + 1);
+		head = head->next;
+	}
+	*line = final_line;
+	return (final_line);
 }
 
 int	ft_dprintf(int fd, const char *str, ...)
 {
-	size_t	chars_printed;
 	va_list	args;
+	t_printf	data;
 
-	chars_printed = 0;
 	if (str == NULL || fd < 0)
 		return (-1);
+	init_printf(&data);
 	va_start(args, str);
 	while (*str != '\0')
 	{
-		if (*str == '%' && ft_strchr("idcsupxX%", *(str + 1)))
+		if (*str == '%' && ft_strchr("ids", *(str + 1)))
 		{
-			chars_printed += ft_printformat(fd, args, *(str + 1));
+			if (!ft_printformat(&data.cutting, args, *(str + 1), &data))
+				break ;
 			str += 2;
 		}
-		else
-		{
-			chars_printed += ft_printchar(fd, *str);
-			str++;
-		}
+		else if (!extract_until_next(&data.cutting, &str, &data))
+			break ;
 	}
 	va_end(args);
-	return (chars_printed);
+	if (set_final_line(&data.final_line, data.cutting, data.error))
+		data.line_len = write(fd, data.final_line, ft_strlen(data.final_line));
+	ft_lstclear(&data.cutting, free);
+	ft_free((void *)&data.final_line);
+	return (data.line_len);
 }

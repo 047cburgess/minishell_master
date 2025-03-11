@@ -12,14 +12,23 @@
 
 #include "minishell.h"
 
-
-static void signal_handler(int signal, siginfo_t *info, void *context)
+void	catch_signals_for_data_status(t_data *data)
 {
-	(void)context;
-	(void)info;
+	if (g_signal != 0)
+	{
+		ft_dprintf(g_log, "caugh sigint in mainloop after readline\n");
+		data->status = g_signal + 128;
+		g_signal = 0;
+	}
+}
+
+static void signal_handler(int signal)
+{
 	g_signal = signal;
+	ft_dprintf(g_log, "SIGNAL HANDLER: sigint received\n");
 	if (signal == SIGINT)
 	{
+		ft_dprintf(g_log, "SIGNAL HANDLER: reputting the new prompt\n");
 		printf("\n"); // force it to starrt on a new line
 		rl_on_new_line(); // tell readline a new line is starting
 		rl_replace_line("", 0); // reset cursor to the beginning
@@ -29,48 +38,29 @@ static void signal_handler(int signal, siginfo_t *info, void *context)
 
 void init_interactive_signals(void)
 {
-	struct sigaction act[2];
-
-	ft_bzero(&act[0], sizeof(*act));
-	ft_bzero(&act[1], sizeof(*act));
-
-	// Ctl + C --> reprompt
-	act[0].sa_sigaction = signal_handler;
-	sigemptyset(&act[0].sa_mask);
-	act[0].sa_flags = SA_SIGINFO;
-	sigaction(SIGINT, &act[0], NULL);
-	
-
-	// Ctl + \ --> do nothing
-	act[1].sa_handler = SIG_IGN; // ignore
-	sigemptyset(&act[0].sa_mask);
-	act[1].sa_flags = 0;
-	sigaction(SIGQUIT, &act[1], NULL);
+	signal(SIGINT, signal_handler);
+	signal(SIGQUIT, SIG_IGN);
 }
 
 void	heredoc(int signal)
 {
+	ft_dprintf(g_log, "HEREDOC HANDLER: sigint received\n");
 	g_signal = signal;
-	close(0);
+	close(STDIN_FILENO);
 	printf("\n"); // force it to starrt on a new line
-	//rl_on_new_line(); // tell readline a new line is starting
-	//rl_replace_line("", 0); // reset cursor to the beginning
-	//rl_redisplay(); // redisplay the prompt
 }
 
 void	set_heredoc_signals(void)
 {
-	g_signal = 0;
 	signal(SIGINT, heredoc);
 }
 
 void	set_noninteractive_signals(void)
 {
-	g_signal = 0;
-
 	// Ignore ctl+c
 	signal(SIGINT, SIG_IGN);
 	// already ignoring ctl + \ -
+	signal(SIGQUIT, SIG_IGN);
 }
 
 void	restore_signals_for_child(void)

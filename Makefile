@@ -30,12 +30,14 @@ SRCS = main.c \
 	   $(PARSE_DIR)/token_utils.c \
 	   $(PARSE_DIR)/parse_tokens.c \
 	   $(PARSE_DIR)/heredocs.c \
+	   $(PARSE_DIR)/lexer.c \
 	   $(EXPAND_DIR)/extract_expansion.c \
 	    $(EXPAND_DIR)/expansions_cutting.c \
 		$(EXPAND_DIR)/expand_doubles_quotes.c \
 		$(EXPAND_DIR)/expansions_utils.c \
 	   $(BUILTIN_DIR)/echo.c \
 	   $(BUILTIN_DIR)/pwd.c \
+	   $(BUILTIN_DIR)/exit.c \
 	   $(BUILTIN_DIR)/cd.c \
 		$(BUILTIN_DIR)/export.c \
 		$(BUILTIN_DIR)/handle_var_export.c \
@@ -44,6 +46,7 @@ SRCS = main.c \
 	   $(BUILTIN_DIR)/unset.c \
 	   $(BUILTIN_DIR)/env.c \
 	   $(EXEC_DIR)/prep_command_tables.c \
+	   $(EXEC_DIR)/execute_builtin.c \
 	   $(EXEC_DIR)/command_list.c \
 	   $(EXEC_DIR)/command_table_utils.c \
 	   $(EXEC_DIR)/executor.c \

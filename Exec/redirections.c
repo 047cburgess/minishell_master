@@ -20,7 +20,6 @@ int	is_redirection_out(int token_type)
 // This function goes through the tokens and processes redirections from left to right
 int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 {
-	int log_file = data->log;
 	t_token *token;
 
 	if (cmd->error != 0)
@@ -28,23 +27,18 @@ int	handle_redirections(t_data *data, t_command *cmd, int *in_out)
 	token = cmd->tokens;
 	while (token->next != NULL && token->type != PIPE)
 	{
-		dprintf(log_file, "[%s] entering handle redirection\n", token->content);
 		if (is_redirection_in(token->type))
 		{
 			if (!handle_redirection_in(data, in_out, token))
-			{
 				cmd->error = 1;
-				return (1);
-			}
 		}	
 		else if (is_redirection_out(token->type))
 		{
 			if (!handle_redirection_out(data, in_out, token))
-			{
 				cmd->error = 1;
-				return (1);
-			}
 		}
+		if (cmd->error)
+			return (1);
 		token = token->next;
 	}
 	return (0);

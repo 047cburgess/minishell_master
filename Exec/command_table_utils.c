@@ -1,18 +1,20 @@
 #include "minishell.h"
 
+// NORM OK
 // This function returns the command name / program name (av[0])
 char	*get_command(t_token *list)
 {
 	t_token	*current;
-	t_token *prev = NULL;
+	t_token	*prev;
 
+	prev = NULL;
 	current = list;
 	if (current->type == WORD)
 		return (current->content);
 	prev = current;
 	current = current->next;
 	while (current != NULL && current->type != PIPE)
-	{	
+	{
 		if (current->type == WORD && prev->type == WORD)
 			return (current->content);
 		prev = current;
@@ -21,6 +23,7 @@ char	*get_command(t_token *list)
 	return (NULL);
 }
 
+// NORM OK
 int	is_builtin(char **av)
 {
 	if (av == NULL || *av == NULL)
@@ -37,42 +40,47 @@ int	is_builtin(char **av)
 		return (TRUE);
 	if (ft_strcmp(av[0], "env") == 0)
 		return (TRUE);
+	if (ft_strcmp(av[0], "exit") == 0)
+		return (TRUE);
 	else
 		return (FALSE);
 }
 
+// NORM OK
 // This function returns the number of arguments for a command (its ac)
 int	get_ac(t_token *command_list)
 {
-	t_token *current;
-	t_token *prev = NULL;
-	int	ac = 0;
+	t_token	*current;
+	t_token	*prev;
+	int	ac;
 
+	prev = NULL;
+	ac = 0;
+	if (!command_list)
+		ft_dprintf(g_log, "GET_AC: CMD LIST IS NULL\n");
 	current = command_list;
 	if (current->type == WORD)
-	{
 		ac++;
-	}
 	prev = current;
 	current = current->next;
 	while (current != NULL && current->type != PIPE)
 	{
 		if (current->type == WORD && prev->type == WORD)
-		{
 			ac++;
-		}
 		prev = current;
 		current = current->next;
 	}
 	return (ac);
 }
 
-// This function returns the command's argv, NULL if malloc error , empty array if no commands/args
+// This function returns the command's argv, 
+// NULL if malloc error , empty array if no commands/args
+// NORM -> OK
 char	**get_av(t_token *tokens, int ac)
 {
 	char	**av;
-	t_token *current;
-	t_token *prev;
+	t_token	*current;
+	t_token	*prev;
 	int	i;
 
 	av = ft_calloc((ac + 1), sizeof(char *));
@@ -81,29 +89,20 @@ char	**get_av(t_token *tokens, int ac)
 	current = tokens;
 	i = 0;
 	if (current->type == WORD)
-	{
-		av[i] = current->content;
-		if (!av[i])
-			return (free(av), NULL);
-		i++;
-	}
+		av[i++] = current->content;
 	prev = current;
 	current = current->next;
 	while (current != NULL && current->type != PIPE)
 	{
 		if (current->type == WORD && prev->type == WORD)
-		{
-			av[i] = current->content;
-			if (!av[i])
-				return (free(av), NULL);
-			i++;
-		}
+			av[i++] = current->content;
 		prev = current;
 		current = current->next;
 	}
 	return (av);
 }
 
+// NORM OK -> variable declaration to do
 // This function converts minishell env list back to an array
 char	**env_to_array(t_env *env_head)
 {

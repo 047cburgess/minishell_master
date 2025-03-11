@@ -43,32 +43,31 @@ int	write_into_heredoc(int fd, char *delimiter)
 	while (g_signal == 0)
 	{
 		ft_dprintf(g_log, "g signal not at zero %i\n", g_signal);
-		write(1, ">", 1);
-		line = get_next_line(0);
+		ft_dprintf(g_log, "writing the heredoc prompt\n");
+		//write(1, ">", 1);
+		line = readline("> ");
 		ft_dprintf(g_log, "line: %s", line);
-		//ft_dprintf(g_log, "strlen line: %i\n", ft_strlen(line));
-		if (!line && g_signal == 0)
+		if (!line)
 		{
-			ft_dprintf(g_log, "ended with Ctrl-D\n");
+			ft_dprintf(g_log, "ended with Ctrl-D OR Ctrl-C\n");
 			break;
 		}
-		else if (ft_strncmp(line, delimiter, ft_strlen(line) - 1) == 0)
+		else if (ft_strncmp(line, delimiter, ft_strlen(line)) == 0)
 		{
 			ft_dprintf(g_log, "delimiter found\n");
 			break;
 		}
 		write(fd, line, ft_strlen(line));
+		write(fd, "\n", 1);
 		ft_free((void *)&line);
-		line = NULL;
 	}
-
 	// flush gnl
-	get_next_line(-1);
+	//get_next_line(-1);
+	ft_free((void *)&line);
 	ft_dprintf(g_log, "preparin to close stdindup\n");
 	dup2(stdin_dup, STDIN_FILENO);
 	close(stdin_dup);
-	if (g_signal != 0)
-		return (FAILURE);
+	signal(SIGINT, SIG_IGN);
 	return (0);
 }
 
@@ -134,5 +133,5 @@ int	handle_heredocs(t_data *data, t_token *tokens)
 	}
 	ft_dprintf(data->log, "printing tokens list\n");
 	print_tokens_list(data->log, tokens);
-	return (0);
+	return (1);
 }

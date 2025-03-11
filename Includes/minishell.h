@@ -36,6 +36,9 @@
 # define ER_FORK 503
 # define ER_PIPE 504
 
+//--- ERROR MESSAGES ---//
+# define ER_MSG_SYNTX_TKN "minishell: syntax error near unexpected token"
+
 # include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>
@@ -93,10 +96,13 @@ typedef struct s_data
 	char		**env_array;
 	int			log;
 	int 		status;
+	t_list	*cutting;
 } t_data;
 
 // ------ EXECUTION ----- //
 
+int		execute_builtin(char **av, t_data *data, t_command *cmd);
+int	launch_builtin(t_data *data, t_command *cmd);
 int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
 int		launch_solo_command(t_data *data, t_command *command);
@@ -121,6 +127,7 @@ int		connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev);
 int		connect_last_child_pipe(t_command *cmd, t_command *prev);
 void	close_all_fds(t_data *data);
 void	ft_close(int *fd);
+void	minishell_executor(t_data *data, int cmd_count, t_command *commands);
 
 // ------ COMMAND TABLE ------ //
 
@@ -141,6 +148,7 @@ void init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
 void	heredoc(int signal);
+void	catch_signals_for_data_status(t_data *data);
 
 // ------ PARSING ----- //
 // parsing.c
@@ -151,6 +159,8 @@ void	print_str_array(char **array);
 int		unclosed_quote_detected(char *input);
 int		is_quote(char c);
 int		get_command_count(t_token *list);
+int	minishell_parser(t_data *data);
+int	minishell_lexer(t_data *data, char *line);
 
 // ----- TOKEN_SYNTAX ----- //
 int		type_is_redirection(int type);
@@ -181,17 +191,18 @@ int	get_token_type(char *content);
 // ------ EXPANSIONS ----- //
 char	*find_key(char *line, int i);
 t_list  *convert_var_expansion(t_data *data, char *line, int *i);
-void extract_double_quotes(t_data *data, t_list **cutting, char *line, int *i);
-int	empty_quotes(t_list **cutting);
+void extract_double_quotes(t_data *data, char *line, int *i);
+int	empty_quotes(t_data *data);
 
-void	handle_simple_text(t_list **cutting, char *line, int *i);
-void	handle_simple_quotes(t_list **cutting, char *line, int *i);
+void	handle_simple_text(t_data *data, char *line, int *i);
+void	handle_simple_quotes(t_data *data, char *line, int *i);
 char	*expansion_line(t_data *data, char *line);
 char	*expand_token(t_data *data, char *content);
 int 	handle_expansions_in_tokens(t_data *data);
-char 	*join_list(t_list *lst);
-void	handle_dollar_alone(t_list **cutting, int *i);
-void	handle_exit_extansion(t_data *data, t_list **cutting, char *line, int *i);
+char 	*join_list(t_list **lst);
+void	handle_dollar_alone(t_data *data, int *i);
+void	handle_exit_extansion(t_data *data, char *line, int *i);
+void	handle_expansion(t_data *data, char *line, int *i);
 
 // ------ HEREDOC ----- //
 int	handle_heredocs(t_data *data, t_token *tokens);
@@ -201,6 +212,7 @@ int		ft_echo(char **args);
 int		ft_pwd(void);
 int		ft_cd(char **av);
 int		ft_env(t_data *data);
+int		ft_exit(char **av, t_data *data, t_command *cmd);
 
 // ------ Export utils----- //
 int		ft_export(char **av, t_data *data);
@@ -223,7 +235,6 @@ int		ft_unset(char **av, t_data *data);
 void	env_remove_node(t_env **list, char *key);
 
 // ------ BUILT IN HELPERS ----- //
-int		execute_builtin(char **av, t_data *data);
 int		count_ac(char **args);
 int		count_strings(char **array);
 
