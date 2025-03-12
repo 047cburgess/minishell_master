@@ -18,13 +18,13 @@
 typedef struct s_printf
 {
 	t_list	*cutting;
-	int	error;
+	int		error;
 	char	*final_line;
-	int	line_len;
+	int		line_len;
 
 }	t_printf;
 
-int	ft_dprintf(int fd, const char *str, ...);
+int		ft_dprintf(int fd, const char *str, ...);
 char	*ft_printstr(char *s);
 char	*ft_printnbr(int nbr);
 void	init_printf(t_printf *data);

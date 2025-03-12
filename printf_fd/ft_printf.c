@@ -40,10 +40,10 @@ t_list	*ft_printformat(t_list **head, va_list args, char form, t_printf *data)
 
 t_list	*extract_until_next(t_list **head, const char **ptr, t_printf *data)
 {
-	char	*return_string;
+	char		*return_string;
 	const char	*str;
-	t_list	*new_node;
-	int	i;
+	t_list		*new_node;
+	int			i;
 
 	str = *ptr;
 	i = 0;
@@ -82,7 +82,7 @@ int	get_final_len(t_list *head)
 
 char	*set_final_line(char **line, t_list *head, int error)
 {
-	int	len;
+	int		len;
 	char	*final_line;
 
 	if (!head || *line || error)
@@ -105,7 +105,7 @@ char	*set_final_line(char **line, t_list *head, int error)
 
 int	ft_dprintf(int fd, const char *str, ...)
 {
-	va_list	args;
+	va_list		args;
 	t_printf	data;
 
 	if (str == NULL || fd < 0)
