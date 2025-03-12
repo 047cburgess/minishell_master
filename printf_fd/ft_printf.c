@@ -6,7 +6,7 @@
 /*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:29:45 by caburges          #+#    #+#             */
-/*   Updated: 2024/11/25 12:18:32 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/12 10:55:24 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_list	*ft_printformat(t_list **head, va_list args, char form, t_printf *data)
 	char	*return_string;
 	t_list	*new_node;
 
+	return_string = NULL;
 	if (form == 'i' || form == 'd')
 		return_string = ft_printnbr(va_arg(args, int));
 	else if (form == 's')
