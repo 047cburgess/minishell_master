@@ -17,6 +17,7 @@
 
 void	clean_job_memory(t_data *data)
 {
+	// unlink heredocs
 	token_lst_clear(&data->tokens_list, free);
 	command_lst_clear(&data->command_list);
 	free_str_array(data->env_array, count_strings(data->env_array));

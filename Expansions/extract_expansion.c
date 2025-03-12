@@ -63,6 +63,7 @@ char	*expand_token(t_data *data, char *content)
 		return (expansion_line(data, content));
 }
 
+// Perror and clean if fail
 int	handle_expansions_in_tokens(t_data *data)
 {
 	t_token	*current;
@@ -74,13 +75,20 @@ int	handle_expansions_in_tokens(t_data *data)
 	ft_dprintf(data->log, "--EXPANSIONS--\n");
 	while (current)
 	{
+		if (current->type == RD_HEREDOC)
+		{
+			current->next->content = heredoc_delimiteur_token(current->next->content);
+			current = current->next->next;
+			continue;
+		}
 		expanded_content = expand_token(data, current->content);
-		if (expanded_content != current->content)
-			free(current->content);
+		//if (expanded_content != current->content)
+		free(current->content);
 		current->content = expanded_content;
 		ft_dprintf(data->log, "[%s]->", current->content);
 		current = current->next;
 	}
 	ft_dprintf(data->log, "\n");
+	print_tokens_list(g_log, data->tokens_list);
 	return (SUCCESS);
 }

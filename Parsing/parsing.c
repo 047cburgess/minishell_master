@@ -15,6 +15,7 @@ int	handle_input(char *line, t_data *data)
 
 	if (!minishell_parser(data))
 	{
+		// function to unlink heredocs
 		token_lst_clear(&data->tokens_list, free);
 		return (FAILURE);
 	}
@@ -41,12 +42,16 @@ int	minishell_parser(t_data *data)
 		perror("expander: malloc failure");
 		return (FAILURE);
 	}
-	handle_heredocs(data, data->tokens_list);
-	if (g_signal != 0)
+	if (handle_heredocs(data, data->tokens_list) == FAILURE)
 	{
-		ft_dprintf(g_log, "parser after heredoc: signal was found\n");
-		data->status = g_signal + 128;
-		g_signal = 0;
+		delete_heredocs_files(data, data->tokens_list);
+		if (catch_signals_for_data_status(data))
+		{
+			ft_dprintf(g_log, "ctl c found (if catch signals for dataa status)\n");
+			return (FAILURE);
+		}
+		perror("heredocs: fail");
+		data->status = 1;
 		return (FAILURE);
 	}
 	if (prep_command_tables(data, data->tokens_list) == FAILURE)

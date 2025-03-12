@@ -12,14 +12,16 @@
 
 #include "minishell.h"
 
-void	catch_signals_for_data_status(t_data *data)
+int	catch_signals_for_data_status(t_data *data)
 {
 	if (g_signal != 0)
 	{
 		ft_dprintf(g_log, "caugh sigint in mainloop after readline\n");
 		data->status = g_signal + 128;
 		g_signal = 0;
+		return (1);
 	}
+	return (0);
 }
 
 static void signal_handler(int signal)

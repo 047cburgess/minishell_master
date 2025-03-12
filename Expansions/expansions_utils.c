@@ -68,3 +68,25 @@ char	*join_list(t_list **lst)
 	}
 	return (new_line);
 }
+
+char *heredoc_delimiteur_token(char *line)
+{
+	char	*ptr;
+	char	quote;
+
+	ptr = line;
+	while (*ptr != '\0')
+	{
+		if (!is_quote(*ptr))
+			ptr++;
+		else
+		{
+			quote = *ptr;
+			ft_strcpy(ptr, ptr + 1);
+			while (*ptr != quote)
+				ptr++;
+			ft_strcpy(ptr, ptr + 1);
+		}
+	}
+	return (line);
+}

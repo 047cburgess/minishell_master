@@ -109,6 +109,7 @@ typedef struct s_data
 	int			log;
 	int 		status;
 	t_list	*cutting;
+	int		heredoc_count;
 } t_data;
 
 // ------ EXECUTION ----- //
@@ -160,7 +161,7 @@ void	init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
 void	heredoc(int signal);
-void	catch_signals_for_data_status(t_data *data);
+int	catch_signals_for_data_status(t_data *data);
 
 // ------ PARSING ----- //
 // parsing.c
@@ -215,9 +216,11 @@ char 	*join_list(t_list **lst);
 void	handle_dollar_alone(t_data *data, int *i);
 void	handle_exit_extansion(t_data *data, char *line, int *i);
 void	handle_expansion(t_data *data, char *line, int *i);
+char	*heredoc_delimiteur_token(char *line);
 
 // ------ HEREDOC ----- //
 int		handle_heredocs(t_data *data, t_token *tokens);
+int delete_heredocs_files(t_data *data, t_token *tokens);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
