@@ -35,7 +35,7 @@ int	main(int ac, char **av, char **envp)
 	while(1)
 	{
 		init_interactive_signals();
-		line = readline(PROMPT);
+		line = readline(BOLD PINK PROMPT RESET);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);

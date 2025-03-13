@@ -53,7 +53,7 @@ int	execute_builtin(char **av, t_data *data, t_command *cmd)
 		ft_dprintf(g_log, "EXECUTE BUILTIN: data status after echo : %i\n", data->status);
 	}
 	else if (ft_strcmp(av[0], "cd") == 0)
-		data->status = ft_cd(&av[1]);
+		data->status = ft_cd(&av[1], data);
 	else if (ft_strcmp(av[0], "pwd") == 0)
 		data->status = ft_pwd();
 	else if (ft_strcmp(av[0], "export") == 0)

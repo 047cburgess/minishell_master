@@ -19,7 +19,7 @@ int ft_pwd(void)
 	path = getcwd(NULL, 0);
 	if (path == NULL)
 	{
-		perror("getcwd");
+		perror("getcwd failed to get currrent working dir");
 		return (1);
 	}
 	printf("%s\n", path);

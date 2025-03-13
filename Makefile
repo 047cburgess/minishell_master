@@ -1,5 +1,5 @@
 NAME = minishell
-CFLAGS = -Wall -Werror -Wextra -MMD -MP -g #-fsanitize=address 
+CFLAGS = -Wall -Werror -Wextra -MMD -MP -g -fsanitize=address 
 
 ##----- DIRECTORIES -----##
 PARSE_DIR = Parsing
@@ -30,6 +30,7 @@ SRCS = main.c \
 	   $(PARSE_DIR)/token_utils.c \
 	   $(PARSE_DIR)/parse_tokens.c \
 	   $(PARSE_DIR)/heredocs.c \
+	   $(PARSE_DIR)/heredocs_utils.c \
 	   $(PARSE_DIR)/lexer.c \
 	   $(EXPAND_DIR)/extract_expansion.c \
 	    $(EXPAND_DIR)/expansions_cutting.c \

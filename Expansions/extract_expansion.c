@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-void handle_expansion(t_data *data, char *line, int *i)
+int handle_expansion(t_data *data, char *line, int *i)
 {
 	t_list	*new_node;
 	
@@ -23,33 +23,37 @@ void handle_expansion(t_data *data, char *line, int *i)
 		new_node = convert_var_expansion(data, line, i);
 		if (new_node)
 			ft_lstadd_back(&data->cutting, new_node);
+		else
+			return (1);
 	}
 	else if (line[*i] == '$' && line[*i + 1] == '\0')
 		handle_dollar_alone(data, i);
+	return (0);
 }
 
 char	*expansion_line(t_data *data, char *line)
 {
-	//t_list	*cutting;
 	char	*new_line;
 	int		i;
+	int 	status;
 	
-	//cutting = data->cutting;
 	data->cutting = NULL;
 	i = 0;
-	while (line[i])
+	status = 0;
+	while (status == 0 && line[i])
 	{
 		if (line[i] == '\'')
-			handle_simple_quotes(data, line, &i);
+			status = handle_simple_quotes(data, line, &i);
 		else if (line[i] == '\"')
-			extract_double_quotes(data, line, &i);
+			status = extract_double_quotes(data, line, &i);
 		else if (line[i] == '$')
-			handle_expansion(data, line, &i);
+			status = handle_expansion(data, line, &i);
 		else
-			handle_simple_text(data, line, &i);
+			status = handle_simple_text(data, line, &i);
 	}
-	new_line = join_list(&data->cutting);
-	if (!new_line)
+	if (status == 0)
+		new_line = join_list(&data->cutting);
+	else
 		return (ft_lstclear(&data->cutting, free), NULL);
 	ft_lstclear(&data->cutting, free);
 	return (new_line);
@@ -77,12 +81,16 @@ int	handle_expansions_in_tokens(t_data *data)
 	{
 		if (current->type == RD_HEREDOC)
 		{
-			current->next->content = heredoc_delimiteur_token(current->next->content);
+			current->next->content = heredoc_delim_tkn(current->next->content);
 			current = current->next->next;
 			continue;
 		}
 		expanded_content = expand_token(data, current->content);
-		//if (expanded_content != current->content)
+		if (!expanded_content)
+		{
+			perror("expander: malloc failure");
+			return (FAILURE);
+		}
 		free(current->content);
 		current->content = expanded_content;
 		ft_dprintf(data->log, "[%s]->", current->content);

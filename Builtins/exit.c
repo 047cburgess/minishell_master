@@ -32,13 +32,11 @@ int	is_numeric(char *str)
 // returns always between 0 and 255 -> cast to unsigned int
 int	ft_exit(char **av, t_data *data, t_command *cmd)
 {
-	int	ac;
 	int	i;
 
-	ac = count_ac(av);
 	if (cmd->pid != 0)
 		ft_dprintf(2, "exit\n"); // to only print in the parent
-	if (ac == 1)
+	if (count_ac(av) == 1)
 		return (data->status);
 	i = 1;
 	while (av[i])

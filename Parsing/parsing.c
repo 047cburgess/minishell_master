@@ -39,7 +39,6 @@ int	minishell_parser(t_data *data)
 	if (handle_expansions_in_tokens(data) == FAILURE)
 	{
 		data->status = 1; // Will always be a malloc failure
-		perror("expander: malloc failure");
 		return (FAILURE);
 	}
 	if (handle_heredocs(data, data->tokens_list) == FAILURE)

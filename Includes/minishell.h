@@ -16,7 +16,7 @@
 # define BOLD "\033[1m"
 # define PINK "\e[35m"
 # define RESET "\033[0m"
-# define PROMPT BOLD PINK"Welcome 🌊🦦 >$ "RESET
+# define PROMPT "Welcome 🌊🦦 >$ "
 
 # define SUCCESS 1
 # define FAILURE 0
@@ -50,6 +50,7 @@
 
 //--- ERROR MESSAGES ---//
 # define ER_MSG_SYNTX_TKN "minishell: syntax error near unexpected token"
+# define ER_HEREDOC_MSG "minishell: warning: delimited by EOF (wanted '%s')\n"
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -110,6 +111,7 @@ typedef struct s_data
 	int 		status;
 	t_list	*cutting;
 	int		heredoc_count;
+	int		expansion_status;
 } t_data;
 
 // ------ EXECUTION ----- //
@@ -204,28 +206,30 @@ int		get_token_type(char *content);
 // ------ EXPANSIONS ----- //
 char	*find_key(char *line, int i);
 t_list  *convert_var_expansion(t_data *data, char *line, int *i);
-void	extract_double_quotes(t_data *data, char *line, int *i);
+int	extract_double_quotes(t_data *data, char *line, int *i);
 int		empty_quotes(t_data *data);
 
-void	handle_simple_text(t_data *data, char *line, int *i);
-void	handle_simple_quotes(t_data *data, char *line, int *i);
+int	handle_simple_text(t_data *data, char *line, int *i);
+int	handle_simple_quotes(t_data *data, char *line, int *i);
 char	*expansion_line(t_data *data, char *line);
 char	*expand_token(t_data *data, char *content);
 int 	handle_expansions_in_tokens(t_data *data);
 char 	*join_list(t_list **lst);
-void	handle_dollar_alone(t_data *data, int *i);
-void	handle_exit_extansion(t_data *data, char *line, int *i);
-void	handle_expansion(t_data *data, char *line, int *i);
-char	*heredoc_delimiteur_token(char *line);
+int	handle_dollar_alone(t_data *data, int *i);
+int	handle_exit_extansion(t_data *data, char *line, int *i);
+int	handle_expansion(t_data *data, char *line, int *i);
+char	*heredoc_delim_tkn(char *line);
 
 // ------ HEREDOC ----- //
 int		handle_heredocs(t_data *data, t_token *tokens);
 int delete_heredocs_files(t_data *data, t_token *tokens);
+t_token	*get_next_heredoc_delimiter(t_token *tokens);
+int	get_heredoc_count(t_token *tokens);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
 int		ft_pwd(void);
-int		ft_cd(char **av);
+int		ft_cd(char **av, t_data *data);
 int		ft_env(t_data *data);
 int		ft_exit(char **av, t_data *data, t_command *cmd);
 
@@ -236,9 +240,9 @@ t_env	*init_new_node(char *key);
 bool	key_is_valid(char *key);
 t_env	*find_var_in_list(t_env *list, const char *key);
 void	bubble_sort_ascii(t_env **env_tab, int size);
-void	print_ascii_export(t_data *data);
-void	update_or_add_var_env(t_data *data, char *key, char *value);
-void	update_or_add_var_export(t_data *data, char *key);
+int	print_ascii_export(t_data *data);
+int	update_or_add_var_env(t_data *data, char *key, char *value);
+int	update_or_add_var_export(t_data *data, char *key);
 int		add_var_in_export(t_data *data, char *av);
 int		add_var_in_env(t_data *data, char *av, char *sign_egal);
 t_env	**create_sorted_export_list(t_data *data, int *size);

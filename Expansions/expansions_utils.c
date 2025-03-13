@@ -38,16 +38,7 @@ char	*join_list(t_list **lst)
 	char	*new_line;
 	char	*temp;
 	t_list	*current;
-    //t_list	*print;
 
-    // print = lst;
-	// printf("CUTTINGS: ");
-    // while (print)
-    // {
-	//     printf("[%s]->", (char*)print->content);
-	//     print = print->next;
-    // }
-    // printf("\n");
 	if (!lst)
 		return (NULL);
 	new_line = ft_strdup("");
@@ -69,7 +60,7 @@ char	*join_list(t_list **lst)
 	return (new_line);
 }
 
-char *heredoc_delimiteur_token(char *line)
+char	*heredoc_delim_tkn(char *line)
 {
 	char	*ptr;
 	char	quote;

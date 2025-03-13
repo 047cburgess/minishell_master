@@ -12,25 +12,26 @@
 
 #include "minishell.h"
 
-void	handle_dollar_alone(t_data *data, int *i)
+int	handle_dollar_alone(t_data *data, int *i)
 {
 	t_list	*new_node;
 	char 	*dollar;
 
 	dollar = ft_strdup("$");
 	if (!dollar)
-		return ;
+		return (1);
 	new_node = ft_lstnew(dollar);
 	if (!new_node)
 	{
 		free(dollar);
-		return;
+		return (1);
 	}
 	ft_lstadd_back(&data->cutting, new_node);
 	(*i)++;
+	return (0);
 }
 
-void	handle_exit_extansion(t_data *data, char *line, int *i)
+int	handle_exit_extansion(t_data *data, char *line, int *i)
 {
 	char	*expansion;
 	char	*result;
@@ -41,12 +42,17 @@ void	handle_exit_extansion(t_data *data, char *line, int *i)
 		(*i) += 2;
 		result = ft_itoa(data->status);
 		if (!result)
-			return ;
+			return (1);
 		expansion = ft_strdup(result);
 		free(result);
 		new_node = ft_lstnew(expansion);
-		ft_lstadd_back(&data->cutting, new_node);
+		if (new_node)
+			ft_lstadd_back(&data->cutting, new_node);
+		else
+			return (1);
+		return (0);
 	}
+	return (0);
 }
 
 t_list	*convert_var_expansion(t_data *data, char *line, int *i)
@@ -77,7 +83,7 @@ t_list	*convert_var_expansion(t_data *data, char *line, int *i)
 	return (ft_lstnew(expansion));
 }
 
-void	handle_simple_quotes(t_data *data, char *line, int *i)
+int	handle_simple_quotes(t_data *data, char *line, int *i)
 {
 	int		start;
 	char	*new_line;
@@ -91,19 +97,20 @@ void	handle_simple_quotes(t_data *data, char *line, int *i)
 	{
 		new_line = ft_substr(line, start, *i - start);
 		if (!new_line)
-			return ;
+			return (1);
 		new_node = ft_lstnew(new_line);
 		if (!new_node)
 		{
 			free(new_line);
-			return ;
+			return (1);
 		}
 		ft_lstadd_back(&data->cutting, new_node);
 		(*i)++;
 	}
+	return (0);
 }
 
-void	handle_simple_text(t_data *data, char *line, int *i)
+int	handle_simple_text(t_data *data, char *line, int *i)
 {
 	char	*new_line;
 	t_list	*new_node;
@@ -116,12 +123,13 @@ void	handle_simple_text(t_data *data, char *line, int *i)
 	}
 	new_line = ft_substr(line, start, *i - start);
 	if (!new_line)
-		return ;
+		return (1);
 	new_node = ft_lstnew(new_line);
 	if (!new_node)
 	{
 		free(new_line);
-		return ;
+		return (1);
 	}
 	ft_lstadd_back(&data->cutting, new_node);
+	return (0);
 }

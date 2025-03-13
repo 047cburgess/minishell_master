@@ -12,14 +12,26 @@
 
 #include "minishell.h"
 
-// Behaviour: Only changes directory for the lifetime of the current process ->
-// Many change to represent a mock program --> ft_cd(int ac, char **av) ??
-// Then the 'program' is responsible for cleaning up it's own args??
-// If more than one argument is given, print too many args
-// If no arguments given, go to home: getenv?
-
-int	ft_cd(char **av)
+void update_pwd_value(t_data *data, char *key, char *value)
 {
+	t_env *existing_var;
+
+	existing_var = find_var_in_list(data->env, key);
+	if (existing_var)
+	{
+		free(existing_var->value);
+		if (!value)
+			existing_var->value = ft_strdup("");
+		else
+			existing_var->value = ft_strdup(value);
+		if (!existing_var->value)
+			env_remove_node(&data->env, key);
+	}
+}
+
+int	ft_cd(char **av, t_data *data)
+{
+	char	*new_pwd;
 	int	ac;
 
 	ac = count_ac(av);
@@ -38,5 +50,9 @@ int	ft_cd(char **av)
 		ft_dprintf(2, "Minishell: cd: %s: %s\n", av[0], strerror(errno));
 		return (1);
 	}
+	new_pwd = getcwd(NULL, 0);
+	update_pwd_value(data, "OLDPWD", ft_getenv(data->env, "PWD"));
+	update_pwd_value(data, "PWD", new_pwd);
+	ft_free((void *)&new_pwd);
 	return (0);
 }

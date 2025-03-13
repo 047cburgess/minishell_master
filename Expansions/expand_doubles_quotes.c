@@ -12,56 +12,63 @@
 
 #include "minishell.h"
 
-void    handle_empty_quotes(t_data *data, int *i)
+int    handle_empty_quotes(t_data *data, int *i)
 {
     t_list  *new_node;
     char    *empty;
 
     empty = ft_strdup("");
     if (!empty)
-        return ;
-    new_node = ft_lstnew(empty);
+        //return (1);
+	data->expansion_status = 1;
+    new_node = NULL; //ft_lstnew(empty);
     if (!new_node)
-        return;
+	{
+		free(empty);
+        	return (1);
+	}
     ft_lstadd_back(&data->cutting, new_node);
     (*i)++;
+    return (0);
 }
 
-void    handle_static_part(char *line, int start, int end, t_data *data)
+int    handle_static_part(char *line, int start, int end, t_data *data)
 {
     t_list *new_node;
     char *new_line;
     
+    if (data->expansion_status != 0)
+	    return (1);
     new_line = ft_substr(line, start, end - start);
     if (!new_line)
-        return;
+        return (1);
     new_node = ft_lstnew(new_line);
     if (!new_node)
     {
         free(new_line);
-        return;
+        return (1);
     }
     ft_lstadd_back(&data->cutting, new_node);
+    return (0);
 }
 
 void extract_expansion(t_data *data, char *line, int *i, int *start)
 {
+	if (data->expansion_status != 0)
+		return ;
     handle_expansion(data, line, i);
     *start = *i;
 }
 
-void    extract_double_quotes(t_data *data, char *line, int *i)
+int    extract_double_quotes(t_data *data, char *line, int *i)
 {
     int start;
     
     (*i)++;
     start = *i;
     if (line[*i] == '\"')
-    {
-        handle_empty_quotes(data, i);
-        return;
-    }
-    while (line[*i] && line[*i] != '\"')
+        return (handle_empty_quotes(data, i));
+    while (data->expansion_status == 0 && line[*i] && line[*i] != '\"')
     {
         if (line[*i] == '$')
         {
@@ -76,4 +83,5 @@ void    extract_double_quotes(t_data *data, char *line, int *i)
         handle_static_part(line, start, *i, data);
     if (line[*i] == '\"')
         (*i)++;
+    return (data->expansion_status);
 }

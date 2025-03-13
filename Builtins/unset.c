@@ -32,7 +32,7 @@ void	env_remove_node(t_env **list, char *key)
 			else
 				prev->next = current->next;
 			env_delone(temp);
-			break; // added BREAK
+			break;
 		}
 		prev = current;
 		current = current->next;
