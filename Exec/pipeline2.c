@@ -61,7 +61,6 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 	}
 	print_errors_and_exit(data, current, PARENT);
 	wait_all_forks(data, commands, num_cmds);
-	//data->status = get_child_exit_status(data->status);
 	return (0);
 }
 

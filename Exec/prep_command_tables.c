@@ -24,7 +24,6 @@ int	set_env_and_path_dir_arrays(t_data *data)
 	data->env_array = env_to_array(data->env);
 	if (data->env_array == NULL)
 		return (0);
-	// If path is found in env (hasnt been unset), then split it
 	path = ft_getenv(data->env, "PATH");
 	if (path)
 	{
@@ -32,9 +31,7 @@ int	set_env_and_path_dir_arrays(t_data *data)
 		if (!data->path_dirs)
 		{
 			free_str_array(data->env_array, count_strings(data->env_array));
-			free_str_array(data->path_dirs, count_strings(data->path_dirs));
 			data->env_array = NULL;
-			data->path_dirs = NULL;
 			return (0);
 		}
 	}
@@ -51,7 +48,10 @@ int	prep_command_tables(t_data *data, t_token *tokens)
 
 	command_tables = NULL;
 	if (!set_env_and_path_dir_arrays(data))
+	{
+		ft_dprintf(2, "malloc failure\n");
 		return (0);
+	}
 	command_tables = get_command_tables(tokens);
 	if (!command_tables)
 	{
@@ -59,6 +59,7 @@ int	prep_command_tables(t_data *data, t_token *tokens)
 		free_str_array(data->path_dirs, count_strings(data->path_dirs));
 		data->env_array = NULL;
 		data->path_dirs = NULL;
+		ft_dprintf(2, "malloc failure\n");
 		return (0);
 	}
 	data->command_list = command_tables;

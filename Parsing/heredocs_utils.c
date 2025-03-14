@@ -30,17 +30,16 @@ t_token	*get_next_heredoc_delimiter(t_token *tokens)
 {
 	while (tokens && tokens->type != RD_HEREDOC)
 		tokens = tokens->next;
-
 	if (tokens == NULL)
 		return (NULL);
-	else 
+	else
 		return (tokens->next);
 }
 
-int delete_heredocs_files(t_data *data, t_token *tokens)
+int	delete_heredocs_files(t_data *data, t_token *tokens)
 {
-	int i;
-	t_token *current_delimiter;
+	int	i;
+	t_token	*current_delimiter;
 
 	ft_dprintf(g_log, "TOKENS BEFORE DELETE HEREDOCS FILES\n");
 	print_tokens_list(data->log, tokens);

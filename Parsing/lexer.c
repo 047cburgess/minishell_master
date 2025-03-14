@@ -4,12 +4,11 @@
 // Prints any error messages
 // Sets the relevant data status
 // Frees what it allocated if necessary
-// If success, tokens are guaranteed to be non_null
 int	line_is_whitespace(char *line);
 
 int	minishell_lexer(t_data *data, char *line)
 {
-	if (line_is_whitespace(line)) // doesn't update the data status -> correct
+	if (line_is_whitespace(line))
 		return (FAILURE);
 	if (unclosed_quote_detected(line))
 	{

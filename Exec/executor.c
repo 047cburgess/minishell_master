@@ -26,7 +26,6 @@ void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 		launch_pipeline(data, commands, cmd_count);
 		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
 	}
-	delete_heredocs_files(data, data->tokens_list);
 	clean_job_memory(data);
 }
 

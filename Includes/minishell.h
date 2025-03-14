@@ -52,6 +52,8 @@
 //--- ERROR MESSAGES ---//
 # define ER_MSG_SYNTX_TKN "minishell: syntax error near unexpected token"
 # define ER_HEREDOC_MSG "minishell: warning: delimited by EOF (wanted '%s')\n"
+# define ER_FT_EXIT_VAL "minishell: exit: %s: numeric argument required\n"
+# define ER_FT_EXIT_ARG "minishell: exit: too many arguments\n"
 
 # include <stdio.h>
 # include <readline/readline.h>

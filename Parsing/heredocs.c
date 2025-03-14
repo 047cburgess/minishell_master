@@ -21,10 +21,10 @@ void	read_and_write(char **line, char *delimiter, int fd)
 		{
 			if (g_signal == 0)
 				ft_dprintf(2, ER_HEREDOC_MSG, delimiter);
-			break;
+			break ;
 		}
 		else if (ft_strcmp(*line, delimiter) == 0)
-			break;
+			break ;
 		write(fd, *line, ft_strlen(*line));
 		write(fd, "\n", 1);
 		ft_free((void *)line);
@@ -83,12 +83,12 @@ int	process_heredoc(t_token *delimiter, int id)
 	ft_dprintf(g_log, "filename1: %s\n", file_name);
 	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd == -1)
-		return (ft_free((void*)&file_name), 0);
+		return (ft_free((void *)&file_name), 0);
 	if (!write_into_heredoc(fd, delimiter->content))
 	{
 		ft_dprintf(g_log, "unlinking '%s'\n", file_name);
 		unlink(file_name);
-		ft_free((void*)&file_name);
+		ft_free((void *)&file_name);
 		close(fd);
 		return (0);
 	}
@@ -103,7 +103,7 @@ int	process_heredoc(t_token *delimiter, int id)
 int	handle_heredocs(t_data *data, t_token *tokens)
 {
 	int	heredoc_count;
-	t_token 	*current_delimiter;
+	t_token	*current_delimiter;
 	int	i;
 
 	heredoc_count = get_heredoc_count(tokens);
@@ -125,4 +125,3 @@ int	handle_heredocs(t_data *data, t_token *tokens)
 	print_tokens_list(data->log, tokens);
 	return (1);
 }
-
