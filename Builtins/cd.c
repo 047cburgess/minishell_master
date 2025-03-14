@@ -6,15 +6,15 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 14:56:19 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/07 14:28:58 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:09:43 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void update_pwd_value(t_data *data, char *key, char *value)
+void	update_pwd_value(t_data *data, char *key, char *value)
 {
-	t_env *existing_var;
+	t_env	*existing_var;
 
 	existing_var = find_var_in_list(data->env, key);
 	if (existing_var)
@@ -32,7 +32,7 @@ void update_pwd_value(t_data *data, char *key, char *value)
 int	ft_cd(char **av, t_data *data)
 {
 	char	*new_pwd;
-	int	ac;
+	int		ac;
 
 	ac = count_ac(av);
 	if (ac > 1)

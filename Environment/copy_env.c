@@ -6,17 +6,17 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:01:26 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/05 13:09:37 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/14 15:57:13 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-// This function extracts a the key from the environment string e.g. "HOME=/home/caburges/" returns "HOME"
+// This function extracts a the key from the environment
 char	*get_key(char *str)
 {
 	char	*key;
-	int	key_len;
+	int		key_len;
 
 	key_len = 0;
 	while (str[key_len] != '=')
@@ -36,7 +36,7 @@ char	*get_value(char *str)
 	return (value);
 }
 
-// This function converts bash env to a list structure and returns it
+//This function converts bash env to a list structure and returns it
 t_env	*env_to_list(char **bash_env)
 {
 	t_env	*minishell_env;
@@ -66,23 +66,14 @@ t_env	*env_to_list(char **bash_env)
 	return (minishell_env);
 }
 
-// This function copies bash env at minishell startup and puts it into a linked list
+// This function copies bash env at minishell 
+//startup and puts it into a linked list
 int	set_environment(char **bash_env, t_data *data)
 {
-	t_env *new_node;
-
 	data->bash_env = bash_env;
 	if (!bash_env || !*bash_env)
 	{
 		data->env = NULL;
-		new_node = ft_new_node("PATH", "/bin:/usr/bin");
-		if (new_node)
-			env_add_back(&data->env, new_node);
-		else
-		{
-			ft_putendl_fd("Fatal: failed to allocate memory", 2);
-			return (FAILURE);
-		}
 		return (SUCCESS);
 	}
 	data->env = env_to_list(bash_env);

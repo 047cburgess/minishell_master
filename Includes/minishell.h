@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:01:40 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/12 11:02:06 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/14 18:16:03 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define BOLD "\033[1m"
 # define PINK "\e[35m"
 # define RESET "\033[0m"
+//# define PROMPT "Welcome >$ "
 # define PROMPT "Welcome 🌊🦦 >$ "
 
 # define SUCCESS 1
@@ -64,10 +65,10 @@
 # include "libft.h"
 # include "ft_dprintf.h"
 # include <errno.h>
-#include <ctype.h>
+# include <ctype.h>
 
 extern int g_log;
-extern int g_signal;
+extern int	g_signal;
 
 typedef struct s_env
 {
@@ -75,44 +76,44 @@ typedef struct s_env
 	char			*value;
 	int				no_value;
 	struct s_env	*next;
-} t_env;
+}					t_env;
 
 typedef struct s_token
 {
-	char 			*content;
+	char			*content;
 	int				type;
-	struct s_token *next;
-} t_token;
+	struct s_token	*next;
+}					t_token;
 
 typedef struct s_command
 {
 	char			**av;
 	int				ac;
 	int				fds[2];
-	t_token 		*tokens;
+	t_token			*tokens;
 	char			path[FULL_PATH_MAX];
 	pid_t			pid;
 	int				error;
-	struct s_command *next;
-} t_command;
+	struct s_command	*next;
+}					t_command;
 
-typedef struct s_data 
+typedef struct	s_data
 {
 	t_token		*tokens_list;
 	t_list		*map_list;
 	t_command	*command_list;
 	int			command_count;
-	char 		**bash_env;
+	char		**bash_env;
 	t_env		*env;
 	t_env		*export;
 	char		**path_dirs;
 	char		**env_array;
 	int			log;
-	int 		status;
-	t_list	*cutting;
+	int			status;
+	t_list		*cutting;
 	int		heredoc_count;
 	int		expansion_status;
-} t_data;
+}			t_data;
 
 // ------ EXECUTION ----- //
 
@@ -163,7 +164,7 @@ void	init_interactive_signals(void);
 void	set_noninteractive_signals(void);
 void	restore_signals_for_child(void);
 void	heredoc(int signal);
-int	catch_signals_for_data_status(t_data *data);
+int		catch_signals_for_data_status(t_data *data);
 
 // ------ PARSING ----- //
 // parsing.c
@@ -185,14 +186,14 @@ int		check_token_syntax(t_token *tokens);
 
 // ------ TOKENS ----- //
 int		tokenise(char *line, t_data *data);
-t_token *new_token_node(char *content);
+t_token	*new_token_node(char *content);
 void	token_add_back(t_token **tokens, t_token *new);
 void	token_del_node(t_token *tokens_list, void (*del)(void *));
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *));
 t_list	*ft_lst_map(t_list *lst, char *(*f)(char *), void (*del)(void *));
 void	print_tokens_list(int fd, t_token *tokens_list);
 int		is_operator(char c);
-int 	ft_mapping(t_data *data, t_list *cutting);
+int		ft_mapping(t_data *data, t_list *cutting);
 void	print_map(t_list *map_list);
 t_token	*token_lst_last(t_token *head);
 int		is_operator(char c);
@@ -205,26 +206,26 @@ int		get_token_type(char *content);
 
 // ------ EXPANSIONS ----- //
 char	*find_key(char *line, int i);
-t_list  *convert_var_expansion(t_data *data, char *line, int *i);
-int	extract_double_quotes(t_data *data, char *line, int *i);
+t_list	*convert_var_expansion(t_data *data, char *line, int *i);
+int		extract_double_quotes(t_data *data, char *line, int *i);
 int		empty_quotes(t_data *data);
 
-int	handle_simple_text(t_data *data, char *line, int *i);
-int	handle_simple_quotes(t_data *data, char *line, int *i);
+int		handle_simple_text(t_data *data, char *line, int *i);
+int		handle_simple_quotes(t_data *data, char *line, int *i);
 char	*expansion_line(t_data *data, char *line);
 char	*expand_token(t_data *data, char *content);
-int 	handle_expansions_in_tokens(t_data *data);
-char 	*join_list(t_list **lst);
-int	handle_dollar_alone(t_data *data, int *i);
-int	handle_exit_extansion(t_data *data, char *line, int *i);
-int	handle_expansion(t_data *data, char *line, int *i);
+int		handle_expansions_in_tokens(t_data *data);
+char	*join_list(t_list **lst);
+int		handle_dollar_alone(t_data *data, int *i);
+int		handle_exit_extansion(t_data *data, char *line, int *i);
+int		handle_expansion(t_data *data, char *line, int *i);
 char	*heredoc_delim_tkn(char *line);
 
 // ------ HEREDOC ----- //
 int		handle_heredocs(t_data *data, t_token *tokens);
-int delete_heredocs_files(t_data *data, t_token *tokens);
+int		delete_heredocs_files(t_data *data, t_token *tokens);
 t_token	*get_next_heredoc_delimiter(t_token *tokens);
-int	get_heredoc_count(t_token *tokens);
+int		get_heredoc_count(t_token *tokens);
 
 // ------ BUILT IN ----- //
 int		ft_echo(char **args);
@@ -240,9 +241,9 @@ t_env	*init_new_node(char *key);
 bool	key_is_valid(char *key);
 t_env	*find_var_in_list(t_env *list, const char *key);
 void	bubble_sort_ascii(t_env **env_tab, int size);
-int	print_ascii_export(t_data *data);
-int	update_or_add_var_env(t_data *data, char *key, char *value);
-int	update_or_add_var_export(t_data *data, char *key);
+int		print_ascii_export(t_data *data);
+int		update_or_add_var_env(t_data *data, char *key, char *value);
+int		update_or_add_var_export(t_data *data, char *key);
 int		add_var_in_export(t_data *data, char *av);
 int		add_var_in_env(t_data *data, char *av, char *sign_egal);
 t_env	**create_sorted_export_list(t_data *data, int *size);

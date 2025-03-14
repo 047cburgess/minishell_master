@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fork.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 16:14:58 by caburges          #+#    #+#             */
-/*   Updated: 2025/01/27 16:43:30 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/14 17:12:03 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,7 @@ void	run_command_1(t_pipe *pipe, char **av, char **envp)
 }
 
 
-void	run_command_middle(t_pipe *in, t_pipe *out, t_command *cmd)
-{
-	// close write end of first pipe
-	// close read end of second pipe
-	// fds[0] = in[0];
-	// fds[1] = out[1];
-	// manage other redirections
-	execute the command
-}
+
 
 // last in pipeline
 void	run_command_2(t_pipe *pipe, char **av, char **envp)

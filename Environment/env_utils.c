@@ -16,7 +16,7 @@ t_env	*env_node_new(char *key, char *value)
 {
 	t_env	*new_node;
 
-	if (!key)
+	if (!key || !value)
 		return (NULL);
 	new_node = ft_calloc(1, sizeof(t_env));
 	if (!new_node)
@@ -28,7 +28,7 @@ t_env	*env_node_new(char *key, char *value)
 	return (new_node);
 }
 
-// This function deletes a node from the environment list (does not connect the list back together)
+// This function deletes a node from the environment list
 void	env_delone(t_env *node)
 {
 	free(node->key);

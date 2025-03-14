@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:30:22 by alize             #+#    #+#             */
-/*   Updated: 2025/03/06 11:55:08 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/14 16:44:25 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_token	*get_word_token(char *start)
 	char	*new_content;
 
 	ptr = start;
-	while (*ptr && !is_operator(*ptr) && *ptr != ' ')
+	while (*ptr && !is_operator(*ptr) && !ft_isspace(*ptr))
 	{
 		if (is_quote(*ptr))
 			ptr = ft_strchr(ptr + 1, *ptr) + 1;

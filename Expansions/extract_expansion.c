@@ -3,40 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   extract_expansion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/11 16:48:46 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 15:28:10 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int handle_expansion(t_data *data, char *line, int *i)
+int	handle_expansion(t_data *data, char *line, int *i)
 {
 	t_list	*new_node;
-	
+
+	if (data->expansion_status != 0)
+		return (1);
 	if (line[*i] == '$' && line[*i + 1] == '?')
-		handle_exit_extansion(data, line, i);
+		data->expansion_status = handle_exit_extansion(data, line, i);
 	else if (line[*i] == '$' && line[*i + 1])
 	{
 		new_node = convert_var_expansion(data, line, i);
 		if (new_node)
 			ft_lstadd_back(&data->cutting, new_node);
 		else
-			return (1);
+			data->expansion_status = 1;
 	}
 	else if (line[*i] == '$' && line[*i + 1] == '\0')
-		handle_dollar_alone(data, i);
-	return (0);
+		data->expansion_status = handle_dollar_alone(data, i);
+	return (data->expansion_status);
 }
 
 char	*expansion_line(t_data *data, char *line)
 {
 	char	*new_line;
 	int		i;
-	int 	status;
-	
+	int		status;
+
 	data->cutting = NULL;
 	i = 0;
 	status = 0;
@@ -83,7 +85,7 @@ int	handle_expansions_in_tokens(t_data *data)
 		{
 			current->next->content = heredoc_delim_tkn(current->next->content);
 			current = current->next->next;
-			continue;
+			continue ;
 		}
 		expanded_content = expand_token(data, current->content);
 		if (!expanded_content)

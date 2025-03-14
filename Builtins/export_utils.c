@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:52:32 by alize             #+#    #+#             */
-/*   Updated: 2025/03/04 15:46:45 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 12:10:17 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	print_ascii_export(t_data *data)
 
 	export_tab = create_sorted_export_list(data, &size);
 	if (!export_tab)
-		return (1) ;
+		return (1);
 	print_sorted_export_list(export_tab, size);
 	free(export_tab);
 	return (0);

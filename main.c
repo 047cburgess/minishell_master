@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/23 23:16:03 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 18:21:29 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ int	main(int ac, char **av, char **envp)
 	while(1)
 	{
 		init_interactive_signals();
-		line = readline(BOLD PINK PROMPT RESET);
+		if (isatty(STDIN_FILENO))
+			line = readline(PINK PROMPT RESET);
+		else
+		{
+			line = readline("");
+		}
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_var_export.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:08:40 by alize             #+#    #+#             */
-/*   Updated: 2025/03/04 15:23:05 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 12:11:43 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ int	update_or_add_var_export(t_data *data, char *key)
 		free(key_content);
 		return (1);
 	}
-	free(key_content); 
+	free(key_content);
 	return (0);
 }
 
 int	add_var_in_export(t_data *data, char *av)
 {
 	char	*new_key;
-	int	status;
+	int		status;
 
 	status = 0;
 	new_key = ft_strdup(av);
@@ -86,7 +86,8 @@ int	add_var_in_export(t_data *data, char *av)
 		return (1);
 	if (!key_is_valid(new_key))
 	{
-		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
+		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n",
+			av);
 		free(new_key);
 		return (1);
 	}
@@ -99,7 +100,7 @@ int	add_var_in_env(t_data *data, char *av, char *sign_egal)
 {
 	char	*new_key;
 	char	*key_content;
-	int	status;
+	int		status;
 
 	status = 0;
 	new_key = ft_substr(av, 0, sign_egal - av);
@@ -110,8 +111,9 @@ int	add_var_in_env(t_data *data, char *av, char *sign_egal)
 		status = update_or_add_var_env(data, new_key, key_content);
 	else
 	{
-		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
-		status = 1;	//free(new_key);
+		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n",
+				av);
+		status = 1;
 	}
 	free(new_key);
 	free(key_content);

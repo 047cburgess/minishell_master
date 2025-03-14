@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:58:48 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/12 10:58:49 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/14 16:28:17 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_exit(char **av, t_data *data, t_command *cmd)
 {
 	int	i;
 
-	if (cmd->pid != 0)
-		ft_dprintf(2, "exit\n"); // to only print in the parent
+	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
+		ft_dprintf(2, "exit\n");
 	if (count_ac(av) == 1)
 		return (data->status);
 	i = 1;
