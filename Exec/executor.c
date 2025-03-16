@@ -15,8 +15,8 @@
 // NORM OK
 void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 {
-	int std_in = dup(STDIN_FILENO);
-	int std_out = dup(STDOUT_FILENO);
+	//int std_in = dup(STDIN_FILENO);
+	//int std_out = dup(STDOUT_FILENO);
 	ft_dprintf(data->log, "\n--OUTPUT--\n");
 	if (cmd_count == 1)
 	{
@@ -28,10 +28,11 @@ void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 		launch_pipeline(data, commands, cmd_count);
 		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
 	}
-	dup2(std_in, STDIN_FILENO);
-	dup2(std_out, STDOUT_FILENO);
-	close(std_in);
-	close(std_out);
+	//dup2(std_in, STDIN_FILENO);
+	//dup2(std_out, STDOUT_FILENO);
+	//close(std_in);
+	//close(std_out);
+	delete_heredocs_files(data, data->tokens_list);
 	clean_job_memory(data);
 }
 

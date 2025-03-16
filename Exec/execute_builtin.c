@@ -16,23 +16,23 @@
 // NORM OK
 int	launch_builtin(t_data *data, t_command *cmd)
 {
-//	int	std_save[2];
+	int	std_save[2];
 
-//	if (!dup_stds(data, std_save))
-//	{
-//		cmd->error = 1;
-//		ft_dprintf(g_log, "LAUNCH_BUILTIN: dup stds failed\n");
-//
-//	}
+	if (!dup_stds(data, std_save))
+	{
+		cmd->error = 1;
+		ft_dprintf(g_log, "LAUNCH_BUILTIN: dup stds failed\n");
+
+	}
 	handle_redirections(data, cmd, cmd->fds);
 	ft_dprintf(data->log, "preparing to execute %s\n", cmd->av[0]);
 	data->status = execute_builtin(cmd->av, data, cmd);
-//	if (!restore_stds(data, std_save))
-//	{
-//		ft_dprintf(g_log, "LAUNCH BUILTIN: failed to restore stds\n");
-//		cmd->error = 1;
-///		data->status = cmd->error;
-//	}
+	if (!restore_stds(data, std_save))
+	{
+		ft_dprintf(g_log, "LAUNCH BUILTIN: failed to restore stds\n");
+		cmd->error = 1;
+		data->status = cmd->error;
+	}
 	if (ft_strcmp(cmd->av[0], "exit") == 0 && cmd->error == 0)
 		shut_down_minishell(data);
 	return (data->status);

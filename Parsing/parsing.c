@@ -40,6 +40,8 @@ int	minishell_parser(t_data *data)
 	if (handle_heredocs(data, data->tokens_list) == FAILURE)
 	{
 		delete_heredocs_files(data, data->tokens_list);
+		if (g_signal != 0)
+			return (FAILURE);
 		if (catch_signals_for_data_status(data))
 			return (FAILURE);
 		perror("heredocs: fail");

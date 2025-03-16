@@ -19,7 +19,6 @@ int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
-	char *line;
 	ft_bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
@@ -37,16 +36,19 @@ int	main(int ac, char **av, char **envp)
 		init_interactive_signals();
 		if (isatty(STDIN_FILENO))
 		{
-			line = readline("HEY $ ");
+			data.line = readline(PROMPT);
 		}
 		else
-			line = get_next_line(STDIN_FILENO);
-		if (line == NULL) // EOF / Ctl+D received
+		{
+			data.line = readline(NULL);
+
+		}
+		if (data.line == NULL) // EOF / Ctl+D received
 			break;
-		add_history(line);
+		add_history(data.line);
 		catch_signals_for_data_status(&data);
-		handle_input(line, &data);
-		free(line);
+		handle_input(data.line, &data);
+		ft_free((void *)&data.line);
 	}
 	close(data.log);	
 	shut_down_minishell(&data);

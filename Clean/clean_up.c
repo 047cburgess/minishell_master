@@ -17,7 +17,7 @@
 
 void	clean_job_memory(t_data *data)
 {
-	delete_heredocs_files(data, data->tokens_list);
+	ft_free((void *)&data->line);
 	token_lst_clear(&data->tokens_list, free);
 	command_lst_clear(&data->command_list);
 	free_str_array(data->env_array, count_strings(data->env_array));

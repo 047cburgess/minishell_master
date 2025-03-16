@@ -115,6 +115,7 @@ typedef struct	s_data
 	t_list		*cutting;
 	int		heredoc_count;
 	int		expansion_status;
+	char	*line;
 }			t_data;
 
 // ------ EXECUTION ----- //
