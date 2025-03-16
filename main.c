@@ -36,11 +36,11 @@ int	main(int ac, char **av, char **envp)
 	{
 		init_interactive_signals();
 		if (isatty(STDIN_FILENO))
-			line = readline(PINK PROMPT RESET);
-		else
 		{
-			line = readline("");
+			line = readline("HEY $ ");
 		}
+		else
+			line = get_next_line(STDIN_FILENO);
 		if (line == NULL) // EOF / Ctl+D received
 			break;
 		add_history(line);
