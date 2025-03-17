@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   heredoc_signal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 19:20:25 by caburges          #+#    #+#             */
-/*   Updated: 2025/01/12 18:49:22 by caburges         ###   ########.fr       */
+/*   Created: 2025/03/17 14:27:26 by alsuchon          #+#    #+#             */
+/*   Updated: 2025/03/17 14:28:06 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-size_t	ft_strlen(const char *s)
+void	heredoc(int signal)
 {
-	size_t	len;
+	g_signal = signal;
+	close(STDIN_FILENO);
+	printf("\n");
+}
 
-	len = 0;
-	if (s == NULL)
-		return (0);
-	while (s[len])
-		len++;
-	return (len);
+void	set_heredoc_signals(void)
+{
+	signal(SIGINT, heredoc);
 }

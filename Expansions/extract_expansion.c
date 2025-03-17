@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/14 15:28:10 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:12:18 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int	handle_expansions_in_tokens(t_data *data)
 	current = data->tokens_list;
 	if (!current)
 		return (FAILURE);
-	ft_dprintf(data->log, "--EXPANSIONS--\n");
 	while (current)
 	{
 		if (current->type == RD_HEREDOC)
@@ -95,10 +94,7 @@ int	handle_expansions_in_tokens(t_data *data)
 		}
 		free(current->content);
 		current->content = expanded_content;
-		ft_dprintf(data->log, "[%s]->", current->content);
 		current = current->next;
 	}
-	ft_dprintf(data->log, "\n");
-	print_tokens_list(g_log, data->tokens_list);
 	return (SUCCESS);
 }

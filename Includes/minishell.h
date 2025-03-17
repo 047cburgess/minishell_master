@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:01:40 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/14 18:16:03 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:20:26 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define BOLD "\033[1m"
 # define PINK "\e[35m"
 # define RESET "\033[0m"
-//# define PROMPT "Welcome >$ "
 # define PROMPT "Welcome 🌊🦦 >$ "
 
 # define SUCCESS 1
@@ -67,7 +66,6 @@
 # include <errno.h>
 # include <ctype.h>
 
-extern int g_log;
 extern int	g_signal;
 
 typedef struct s_env
@@ -87,17 +85,17 @@ typedef struct s_token
 
 typedef struct s_command
 {
-	char			**av;
-	int				ac;
-	int				fds[2];
-	t_token			*tokens;
-	char			path[FULL_PATH_MAX];
-	pid_t			pid;
-	int				error;
+	char				**av;
+	int					ac;
+	int					fds[2];
+	t_token				*tokens;
+	char				path[FULL_PATH_MAX];
+	pid_t				pid;
+	int					error;
 	struct s_command	*next;
 }					t_command;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	t_token		*tokens_list;
 	t_list		*map_list;
@@ -111,8 +109,8 @@ typedef struct	s_data
 	int			log;
 	int			status;
 	t_list		*cutting;
-	int		heredoc_count;
-	int		expansion_status;
+	int			heredoc_count;
+	int			expansion_status;
 }			t_data;
 
 // ------ EXECUTION ----- //
@@ -146,15 +144,14 @@ void	ft_close(int *fd);
 void	minishell_executor(t_data *data, int cmd_count, t_command *commands);
 
 // ------ COMMAND TABLE ------ //
-
-int			prep_command_tables(t_data *data, t_token *tokens);
 t_command	*new_command_table(t_token *tokens);
-void		command_add_back(t_command **head, t_command *new);
-void		command_del_node(t_command *cmd);
-void		command_lst_clear(t_command **head);
 t_command	*command_lst_last(t_command *head);
 t_command	*get_command_tables(t_token *tokens);
-void		print_command_list(t_command *head);
+int		prep_command_tables(t_data *data, t_token *tokens);
+void	command_add_back(t_command **head, t_command *new);
+void	command_del_node(t_command *cmd);
+void	command_lst_clear(t_command **head);
+void	print_command_list(t_command *head);
 
 // ------ SIGNALS ----- //
 //signals.c

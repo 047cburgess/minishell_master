@@ -24,6 +24,7 @@ SRCS = main.c \
 	   $(ENV_DIR)/env_utils.c \
 	   $(ENV_DIR)/env_utils_2.c \
 	   $(SIGNALS_DIR)/signals.c \
+	   $(SIGNALS_DIR)/heredoc_signal.c \
 	   $(PARSE_DIR)/parsing.c \
 	   $(PARSE_DIR)/get_tokens.c \
 	   $(PARSE_DIR)/handle_tokens.c \

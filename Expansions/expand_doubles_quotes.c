@@ -6,11 +6,30 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 18:44:14 by alize             #+#    #+#             */
-/*   Updated: 2025/03/14 13:24:26 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:13:30 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+int	handle_dollar_alone(t_data *data, int *i)
+{
+	t_list	*new_node;
+	char	*dollar;
+
+	dollar = ft_strdup("$");
+	if (!dollar)
+		return (1);
+	new_node = ft_lstnew(dollar);
+	if (!new_node)
+	{
+		free(dollar);
+		return (1);
+	}
+	ft_lstadd_back(&data->cutting, new_node);
+	(*i)++;
+	return (0);
+}
 
 int	handle_static_part(char *line, int start, int end, t_data *data)
 {

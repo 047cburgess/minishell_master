@@ -6,30 +6,11 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:04:47 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/14 15:36:07 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:13:20 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-int	handle_dollar_alone(t_data *data, int *i)
-{
-	t_list	*new_node;
-	char	*dollar;
-
-	dollar = ft_strdup("$");
-	if (!dollar)
-		return (1);
-	new_node = ft_lstnew(dollar);
-	if (!new_node)
-	{
-		free(dollar);
-		return (1);
-	}
-	ft_lstadd_back(&data->cutting, new_node);
-	(*i)++;
-	return (0);
-}
 
 int	handle_exit_extansion(t_data *data, char *line, int *i)
 {
