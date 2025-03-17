@@ -15,17 +15,10 @@
 // NORM OK
 void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 {
-	ft_dprintf(data->log, "\n--OUTPUT--\n");
 	if (cmd_count == 1)
-	{
 		launch_solo_command(data, commands);
-		ft_dprintf(data->log, "Command returned with exit status %i\n", data->status);
-	}
 	else
-	{
 		launch_pipeline(data, commands, cmd_count);
-		ft_dprintf(data->log, "last command returned with exit status %i\n", data->status);
-	}
 	delete_heredocs_files(data, data->tokens_list);
 	clean_job_memory(data);
 }
@@ -33,7 +26,6 @@ void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 // NORM OK
 int	launch_solo_command(t_data *data, t_command *command)
 {
-	ft_dprintf(data->log, "FUNCTION: Launch_solo_command\n");
 	if (is_builtin(command->av))
 		launch_builtin(data, command);
 	else
@@ -45,7 +37,6 @@ int	launch_solo_command(t_data *data, t_command *command)
 			data->status = get_child_exit_status(data->status);
 		}
 	}
-	ft_dprintf(g_log, "LAUNCH SOLO CMD: data status is %i\n", data->status);
 	return (data->status);
 }
 
@@ -62,13 +53,13 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 	if (cmd->pid == 0)
 	{
 		restore_signals_for_child();
-		handle_redirections(data, cmd, cmd->fds);
+		handle_redirections(cmd, cmd->fds);
 		if (cmd->ac == 0 && cmd->error == 0)
 			cmd->error = ER_NO_CMD;
 		else if (cmd->av[0][0] == '\0')
 			cmd->error = ER_CMD_NOT_FOUND;
-		set_command_path(data, cmd->path, cmd->av[0], cmd);
-		check_access(cmd->path, data, cmd);
+		set_cmd_path(data, cmd->path, cmd->av[0], cmd);
+		check_access(cmd->path, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		execve(cmd->path, cmd->av, data->env_array);
 		ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
@@ -76,4 +67,25 @@ int	execute_solo_child(t_data *data, t_command *cmd)
 		clean_up_exit(data, errno, NULL);
 	}
 	return (0);
+}
+
+int	create_fork(t_command *cmd)
+{
+	cmd->pid = fork();
+	if (cmd->pid == -1)
+	{
+		cmd->error = ER_FORK;
+		return (FAILURE);
+	}
+	return (SUCCESS);
+}
+
+int	create_pipe(t_command *cmd)
+{
+	if (pipe(cmd->fds) == -1)
+	{
+		cmd->error = ER_PIPE;
+		return (FAILURE);
+	}
+	return (SUCCESS);
 }

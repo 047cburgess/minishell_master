@@ -6,11 +6,13 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:37:13 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/17 14:27:51 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 18:12:23 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+// DO WE NEED TO CATCH SIGPIPE TO FREE IT BUILTIN RECEIVES?
 
 int	catch_signals_for_data_status(t_data *data)
 {

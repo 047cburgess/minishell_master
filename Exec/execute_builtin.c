@@ -18,18 +18,12 @@ int	launch_builtin(t_data *data, t_command *cmd)
 {
 	int	std_save[2];
 
-	if (!dup_stds(data, std_save))
-	{
+	if (!dup_stds(std_save))
 		cmd->error = 1;
-		ft_dprintf(g_log, "LAUNCH_BUILTIN: dup stds failed\n");
-
-	}
-	handle_redirections(data, cmd, cmd->fds);
-	ft_dprintf(data->log, "preparing to execute %s\n", cmd->av[0]);
+	handle_redirections(cmd, cmd->fds);
 	data->status = execute_builtin(cmd->av, data, cmd);
-	if (!restore_stds(data, std_save))
+	if (!restore_stds(std_save))
 	{
-		ft_dprintf(g_log, "LAUNCH BUILTIN: failed to restore stds\n");
 		cmd->error = 1;
 		data->status = cmd->error;
 	}
@@ -42,16 +36,9 @@ int	launch_builtin(t_data *data, t_command *cmd)
 int	execute_builtin(char **av, t_data *data, t_command *cmd)
 {
 	if (cmd->error != 0)
-	{
-		ft_dprintf(g_log, "EXECUTE BUILTIN: cmd error isnt 0 so not executing\n");
 		return (cmd->error);
-
-	}
 	if (ft_strcmp(av[0], "echo") == 0)
-	{
 		data->status = ft_echo(&av[1]);
-		ft_dprintf(g_log, "EXECUTE BUILTIN: data status after echo : %i\n", data->status);
-	}
 	else if (ft_strcmp(av[0], "cd") == 0)
 		data->status = ft_cd(&av[1], data);
 	else if (ft_strcmp(av[0], "pwd") == 0)

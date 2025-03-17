@@ -77,17 +77,3 @@ t_token	*token_lst_last(t_token *head)
 		head = head->next;
 	return (head);
 }
-
-// DEBUG ONLY
-void	print_tokens_list(int fd, t_token *tokens_list)
-{
-	t_token	*current;
-
-	current = tokens_list;
-	while (current)
-	{
-		ft_dprintf(fd, "[%s]->", current->content);
-		current = current->next;
-	}
-	ft_dprintf(fd, "\n");
-}

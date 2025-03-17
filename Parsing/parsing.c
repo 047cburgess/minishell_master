@@ -1,21 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 13:57:36 by caburges          #+#    #+#             */
+/*   Updated: 2025/03/17 13:57:48 by caburges         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-
-// Sets the non interactive signals for the start of the function
-// Signals get reset to interactive in the main when it's needed
 // Point of control between lexer, parser and executor
 int	handle_input(char *line, t_data *data)
 {
-	new_log_timestamp(data->log, line);
 	set_noninteractive_signals();
-	
 	if (!minishell_lexer(data, line))
 		return (FAILURE);
-
 	if (!minishell_parser(data))
 	{
-		// function to unlink heredocs
 		token_lst_clear(&data->tokens_list, free);
 		return (FAILURE);
 	}
@@ -23,11 +28,6 @@ int	handle_input(char *line, t_data *data)
 	return (SUCCESS);
 }
 
-// Point of control for the parsing process
-// Prints any error messages
-// Sets the relevant data status
-// Frees what it allocated when necessary
-// If success, tokens and commands guaranteed to be non-null and correct
 int	minishell_parser(t_data *data)
 {
 	if (check_token_syntax(data->tokens_list) == FAILURE)
@@ -38,26 +38,21 @@ int	minishell_parser(t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 	if (handle_expansions_in_tokens(data) == FAILURE)
 	{
-		data->status = 1; // Will always be a malloc failure
+		data->status = 1;
 		return (FAILURE);
 	}
 	if (handle_heredocs(data, data->tokens_list) == FAILURE)
 	{
 		delete_heredocs_files(data, data->tokens_list);
 		if (catch_signals_for_data_status(data))
-		{
-			ft_dprintf(g_log, "ctl c found (if catch signals for dataa status)\n");
 			return (FAILURE);
-		}
-		perror("heredocs: fail");
 		data->status = 1;
-		return (FAILURE);
+		return (perror("heredocs: fail"), FAILURE);
 	}
 	if (prep_command_tables(data, data->tokens_list) == FAILURE)
 	{
-		perror("prep_command_tables: malloc failure");
 		data->status = 1;
-		return(FAILURE);
+		return (FAILURE);
 	}
 	return (SUCCESS);
 }
