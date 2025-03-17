@@ -64,12 +64,10 @@ int	get_ac(t_token *command_list)
 {
 	t_token	*current;
 	t_token	*prev;
-	int	ac;
+	int		ac;
 
 	prev = NULL;
 	ac = 0;
-	if (!command_list)
-		ft_dprintf(g_log, "GET_AC: CMD LIST IS NULL\n");
 	current = command_list;
 	if (current->type == WORD)
 		ac++;
@@ -93,7 +91,7 @@ char	**get_av(t_token *tokens, int ac)
 	char	**av;
 	t_token	*current;
 	t_token	*prev;
-	int	i;
+	int		i;
 
 	av = ft_calloc((ac + 1), sizeof(char *));
 	if (!av)
@@ -118,10 +116,10 @@ char	**get_av(t_token *tokens, int ac)
 // This function converts minishell env list back to an array
 char	**env_to_array(t_env *env_head)
 {
-	int	list_size;
-	int	strings_len;
+	int		list_size;
+	int		strings_len;
 	char	**array;
-	int	i;
+	int		i;
 
 	list_size = env_lst_size(env_head);
 	array = ft_calloc(list_size + 1, sizeof(char *));

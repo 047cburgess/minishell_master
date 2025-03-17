@@ -1,9 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lexer.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 13:56:54 by caburges          #+#    #+#             */
+/*   Updated: 2025/03/17 13:57:03 by caburges         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-// Point of control for the lexing process.
-// Prints any error messages
-// Sets the relevant data status
-// Frees what it allocated if necessary
 int	line_is_whitespace(char *line);
 
 int	minishell_lexer(t_data *data, char *line)

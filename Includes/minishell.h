@@ -16,7 +16,6 @@
 # define BOLD "\001\033[1m\002"
 # define PINK "\001\e[35m\002"
 # define RESET "\001\033[0m\002"
-//# define PROMPT "Welcome >$ "
 # define PROMPT "Welcome 🌊🦦 >$ "
 
 # define SUCCESS 1
@@ -54,6 +53,7 @@
 # define ER_HEREDOC_MSG "minishell: warning: delimited by EOF (wanted '%s')\n"
 # define ER_FT_EXIT_VAL "minishell: exit: %s: numeric argument required\n"
 # define ER_FT_EXIT_ARG "minishell: exit: too many arguments\n"
+# define ER_OPEN "minishell: %s: %s\n"
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -69,7 +69,6 @@
 # include <errno.h>
 # include <ctype.h>
 
-extern int g_log;
 extern int	g_signal;
 
 typedef struct s_env
@@ -126,20 +125,20 @@ int		execute_solo_child(t_data *data, t_command *cmd);
 char	*get_command(t_token *list);
 int		launch_solo_command(t_data *data, t_command *command);
 int		type_is_redirection(int type);
-int		set_command_path(t_data *data, char *path, char *command, t_command *cmd);
+int		set_cmd_path(t_data *data, char *path, char *command, t_command *cmd);
 char	**get_av(t_token *tokens, int ac);
 int		get_ac(t_token *command_list);
-int		handle_redirections(t_data *data, t_command *cmd, int *in_out);
+int		handle_redirections(t_command *cmd, int *in_out);
 int		is_redirection_in(int type);
 int		is_redirection_out(int type);
-int		handle_redirection_in(t_data *data, int *in_out, t_token *token);
-int		handle_redirection_out(t_data *data, int *in_out, t_token *token);
+int		handle_redirection_in(int *in_out, t_token *token);
+int		handle_redirection_out(int *in_out, t_token *token);
 int		is_builtin(char **av);
-int		check_access(char *full_path, t_data *data, t_command *cmd);
+int		check_access(char *full_path, t_command *cmd);
 void	clean_job_memory(t_data *data);
 int		print_errors_and_exit(t_data *data, t_command *command, int mode);
-int		dup_stds(t_data *data, int *std_save);
-int		restore_stds(t_data *data, int *std_save);
+int		dup_stds(int *std_save);
+int		restore_stds(int *std_save);
 int		launch_pipeline(t_data *data, t_command *commands, int num_cmds);
 int		connect_first_child_pipe(int *fds, t_command *cmd);
 int		connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev);
@@ -147,6 +146,9 @@ int		connect_last_child_pipe(t_command *cmd, t_command *prev);
 void	close_all_fds(t_data *data);
 void	ft_close(int *fd);
 void	minishell_executor(t_data *data, int cmd_count, t_command *commands);
+void	check_no_or_empty_command(t_command *cmd);
+int	create_fork(t_command *cmd);
+int	create_pipe(t_command *cmd);
 
 // ------ COMMAND TABLE ------ //
 

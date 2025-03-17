@@ -104,8 +104,6 @@ int	tokenise(char *line, t_data *data)
 		}
 	}
 	ft_free((void *)&data->line);
-	ft_dprintf(data->log, "--TOKENS--\n\t");
-	print_tokens_list(data->log, data->tokens_list);
 	return (SUCCESS);
 }
 

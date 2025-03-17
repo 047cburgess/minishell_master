@@ -18,7 +18,6 @@ int	catch_signals_for_data_status(t_data *data)
 {
 	if (g_signal != 0)
 	{
-		ft_dprintf(g_log, "caugh sigint in mainloop after readline or heredoc\n");
 		data->status = g_signal + 128;
 		g_signal = 0;
 		return (1);
@@ -26,14 +25,11 @@ int	catch_signals_for_data_status(t_data *data)
 	return (0);
 }
 
-
 static void signal_handler(int signal)
 {
 	g_signal = signal;
-	ft_dprintf(g_log, "SIGNAL HANDLER: sigint received\n");
 	if (signal == SIGINT)
 	{
-		ft_dprintf(g_log, "SIGNAL HANDLER: reputting the new prompt\n");
 		printf("\n"); // force it to starrt on a new line
 		rl_on_new_line(); // tell readline a new line is starting
 		rl_replace_line("", 0); // reset cursor to the beginning
@@ -49,7 +45,6 @@ void init_interactive_signals(void)
 
 void	heredoc(int signal)
 {
-	ft_dprintf(g_log, "HEREDOC HANDLER: sigint received\n");
 	g_signal = signal;
 	close(STDIN_FILENO);
 	printf("\n"); // force it to starrt on a new line
@@ -62,9 +57,7 @@ void	set_heredoc_signals(void)
 
 void	set_noninteractive_signals(void)
 {
-	// Ignore ctl+c
 	signal(SIGINT, SIG_IGN);
-	// already ignoring ctl + \ -
 	signal(SIGQUIT, SIG_IGN);
 }
 

@@ -29,7 +29,6 @@ char	*find_key(char *line, int i)
 	key = ft_substr(line, start, i - start);
 	if (!key)
 		return (NULL);
-	ft_dprintf(g_log, "%s\n", key);
 	return (key);
 }
 
@@ -48,7 +47,6 @@ char	*join_list(t_list **lst)
 	while (current)
 	{
 		temp = new_line;
-		ft_dprintf(g_log, "current content = [%s]\n", current->content);
 		new_line = ft_strjoin(new_line, (char *)current->content);
 		if (!new_line)
 		{

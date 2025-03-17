@@ -88,8 +88,6 @@ t_command	*get_command_tables(t_token *tokens)
 
 	list = NULL;
 	current_command = NULL;
-	if (!tokens)
-		ft_dprintf(g_log, "GET_CMD_TABLES -> tokens is NULL\n");
 	while (tokens)
 	{
 		current_command = new_command_table(tokens);
@@ -101,6 +99,5 @@ t_command	*get_command_tables(t_token *tokens)
 		command_add_back(&list, current_command);
 		tokens = get_next_command_start(tokens);
 	}
-	print_command_list(list);
 	return (list);
 }
