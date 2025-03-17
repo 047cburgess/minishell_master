@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   clean_up.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 15:52:44 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/17 15:54:20 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/17 18:31:43 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
 //Function to free everything we need to when we exit minishell
-
 
 void	clean_job_memory(t_data *data)
 {
@@ -30,7 +29,6 @@ void	clean_job_memory(t_data *data)
 
 void	clean_up_exit(t_data *data, int exit_status, char *msg)
 {
-	
 	if (msg)
 		printf("%s\n", msg);
 	clean_job_memory(data);
@@ -56,4 +54,3 @@ void	shut_down_minishell(t_data *data)
 	rl_clear_history();
 	exit(exit_code);
 }
-

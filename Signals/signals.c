@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:37:13 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/10 15:37:28 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/17 18:12:23 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,36 +25,24 @@ int	catch_signals_for_data_status(t_data *data)
 	return (0);
 }
 
-static void signal_handler(int signal)
+static void	signal_handler(int signal)
 {
 	g_signal = signal;
 	if (signal == SIGINT)
 	{
-		printf("\n"); // force it to starrt on a new line
-		rl_on_new_line(); // tell readline a new line is starting
-		rl_replace_line("", 0); // reset cursor to the beginning
-		rl_redisplay(); // redisplay the prompt
+		rl_on_new_line();
+		rl_replace_line("", 0);
+		rl_redisplay();
 	}
 }
 
-void init_interactive_signals(void)
+void	init_interactive_signals(void)
 {
 	signal(SIGINT, signal_handler);
 	signal(SIGQUIT, SIG_IGN);
 }
 
-void	heredoc(int signal)
-{
-	g_signal = signal;
-	close(STDIN_FILENO);
-	printf("\n"); // force it to starrt on a new line
-}
-
-void	set_heredoc_signals(void)
-{
-	signal(SIGINT, heredoc);
-}
-
+// Ignore ctl+c | already ignoring ctl + \ -
 void	set_noninteractive_signals(void)
 {
 	signal(SIGINT, SIG_IGN);
@@ -63,6 +51,6 @@ void	set_noninteractive_signals(void)
 
 void	restore_signals_for_child(void)
 {
-	signal(SIGINT, SIG_DFL);	
-	signal(SIGQUIT, SIG_DFL);	
+	signal(SIGINT, SIG_DFL);
+	signal(SIGQUIT, SIG_DFL);
 }

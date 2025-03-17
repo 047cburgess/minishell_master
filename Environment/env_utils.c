@@ -1,15 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   env_utils.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 13:56:46 by alsuchon          #+#    #+#             */
+/*   Updated: 2025/03/17 13:59:28 by alsuchon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "minishell.h"
-
-// This function prints the env list like bash
-void	print_env_list(t_env *env_head)
-{
-	while (env_head != NULL)
-	{
-		printf("%s=%s\n", env_head->key, env_head->value);
-		env_head = env_head->next;
-	}
-}
 
 // This function creates and returns a new node according to given key and value
 t_env	*env_node_new(char *key, char *value)
@@ -75,18 +76,4 @@ void	env_add_back(t_env **env_head, t_env *new_node)
 		last = env_last(*env_head);
 		last->next = new_node;
 	}
-}
-
-// This function returns the list size of minishell env
-int	env_lst_size(t_env *env)
-{
-	int	size;
-
-	size = 0;
-	while (env != NULL)
-	{
-		size++;
-		env = env->next;
-	}
-	return (size);
 }
