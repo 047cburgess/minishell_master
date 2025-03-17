@@ -36,7 +36,7 @@ int	main(int ac, char **av, char **envp)
 		init_interactive_signals();
 		if (isatty(STDIN_FILENO))
 		{
-			data.line = readline(PROMPT);
+			data.line = readline(PINK PROMPT RESET);
 		}
 		else
 		{

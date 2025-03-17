@@ -13,9 +13,9 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# define BOLD "\033[1m"
-# define PINK "\e[35m"
-# define RESET "\033[0m"
+# define BOLD "\001\033[1m\002"
+# define PINK "\001\e[35m\002"
+# define RESET "\001\033[0m\002"
 //# define PROMPT "Welcome >$ "
 # define PROMPT "Welcome 🌊🦦 >$ "
 
