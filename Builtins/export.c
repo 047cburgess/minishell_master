@@ -24,9 +24,10 @@ int	handle_export_display(t_data *data, int size)
 
 int	handle_invalid_identifier(char *av)
 {
-	if (av[0] == '\0' || av[0] == '%' || ft_isdigit(av[0]))
+	if (av[0] == '\0' || ft_isdigit(av[0]))
 	{
-		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n", av);
+		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n",
+			av);
 		return (1);
 	}
 	return (0);

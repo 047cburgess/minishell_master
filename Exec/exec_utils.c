@@ -36,7 +36,7 @@ int	set_command_path(t_data *data, char *path, char *command, t_command *cmd)
 	int	i;
 	
 	ft_bzero(path, FULL_PATH_MAX);
-	dprintf(data->log, "FUNCTION: GET_COMMAND_PATH\n");
+	dprintf(data->log, "FUNCTION: GET_COMMAND_PATH: %s\n", command);
 	if (cmd->error != 0 || is_builtin(cmd->av))
 	{
 		ft_dprintf(data->log, "Builtin/previous Error detected, leaving.\n");
@@ -75,7 +75,7 @@ int	check_access(char *full_path, t_data *data, t_command *cmd)
 {
 	struct stat	status_buffer;
 
-	ft_dprintf(data->log, "FUNC: CHECK_ACCESS\n");
+	ft_dprintf(data->log, "FUNC: CHECK_ACCESS: %s\n", cmd->av[0]);
 	if (cmd->error != 0 || is_builtin(cmd->av))
 		return (0);
 	

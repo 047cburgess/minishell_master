@@ -41,7 +41,7 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 {
 	t_command	*current;
 	t_command	*prev;
-	int	i;
+	int			i;
 
 	current = commands;
 	i = 0;
@@ -64,35 +64,7 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 	return (0);
 }
 
-void	check_no_or_empty_command(t_command *cmd)
-{
-	if (cmd->ac == 0 && cmd->error == 0)
-		cmd->error = ER_NO_CMD;
-	else if (cmd->av[0][0] == '\0')
-		cmd->error = ER_CMD_NOT_FOUND;
-}
-
-int	create_fork(t_command *cmd)
-{
-	cmd->pid = fork();
-	if (cmd->pid == -1)
-	{
-		cmd->error = ER_FORK;
-		return (FAILURE);
-	}
-	return (SUCCESS);
-}
-
-int	create_pipe(t_command *cmd)
-{
-	if (pipe(cmd->fds) == -1)
-	{
-		cmd->error = ER_PIPE;
-		return (FAILURE);
-	}
-	return (SUCCESS);
-}
-
+// removed close fds... normally they are already closed from redirections...
 int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 {
 	if (!create_fork(cmd))
@@ -101,10 +73,10 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 	{
 		restore_signals_for_child();
 		connect_last_child_pipe(cmd, prev);
-		handle_redirections(data, cmd, cmd->fds);
+		handle_redirections(cmd, cmd->fds);
 		check_no_or_empty_command(cmd);
-		set_command_path(data, cmd->path, cmd->av[0], cmd);
-		check_access(cmd->path, data, cmd);
+		set_cmd_path(data, cmd->path, cmd->av[0], cmd);
+		check_access(cmd->path, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		if (is_builtin(cmd->av))
 			execute_builtin(cmd->av, data, cmd);
@@ -113,7 +85,6 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 			execve(cmd->path, cmd->av, data->env_array);
 			ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		}
-		close_fds(cmd);
 		if (is_builtin(cmd->av))
 			clean_up_exit(data, data->status, NULL);
 		clean_up_exit(data, errno, NULL);
@@ -131,10 +102,10 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 	{
 		restore_signals_for_child();
 		connect_middle_child_pipe(cmd->fds, cmd, prev);
-		handle_redirections(data, cmd, cmd->fds);
+		handle_redirections(cmd, cmd->fds);
 		check_no_or_empty_command(cmd);
-		set_command_path(data, cmd->path, cmd->av[0], cmd);
-		check_access(cmd->path, data, cmd);
+		set_cmd_path(data, cmd->path, cmd->av[0], cmd);
+		check_access(cmd->path, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		if (is_builtin(cmd->av))
 			execute_builtin(cmd->av, data, cmd);
@@ -143,7 +114,6 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 			execve(cmd->path, cmd->av, data->env_array);
 			ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		}
-		close_fds(cmd);
 		if (is_builtin(cmd->av))
 			clean_up_exit(data, data->status, NULL);
 		clean_up_exit(data, errno, NULL);
@@ -161,10 +131,10 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 	{
 		restore_signals_for_child();
 		connect_first_child_pipe(cmd->fds, cmd);
-		handle_redirections(data, cmd, cmd->fds);
+		handle_redirections(cmd, cmd->fds);
 		check_no_or_empty_command(cmd);
-		set_command_path(data, cmd->path, cmd->av[0], cmd);
-		check_access(cmd->path, data, cmd);
+		set_cmd_path(data, cmd->path, cmd->av[0], cmd);
+		check_access(cmd->path, cmd);
 		print_errors_and_exit(data, cmd, CHILD);
 		if (is_builtin(cmd->av))
 			execute_builtin(cmd->av, data, cmd);
@@ -173,7 +143,6 @@ int	launch_first_child_pipe(t_data *data, t_command *cmd)
 			execve(cmd->path, cmd->av, data->env_array);
 			ft_dprintf(2, "minishell: %s: %s\n", cmd->av[0], strerror(errno));
 		}
-		close_fds(cmd);
 		if (is_builtin(cmd->av))
 			clean_up_exit(data, data->status, NULL);
 		clean_up_exit(data, errno, NULL);

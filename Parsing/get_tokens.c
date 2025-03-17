@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:30:22 by alize             #+#    #+#             */
-/*   Updated: 2025/03/06 11:55:08 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/14 16:44:25 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_token	*get_word_token(char *start)
 	char	*new_content;
 
 	ptr = start;
-	while (*ptr && !is_operator(*ptr) && *ptr != ' ')
+	while (*ptr && !is_operator(*ptr) && !ft_isspace(*ptr))
 	{
 		if (is_quote(*ptr))
 			ptr = ft_strchr(ptr + 1, *ptr) + 1;
@@ -30,10 +30,10 @@ t_token	*get_word_token(char *start)
 			ptr++;
 	}
 	len = ptr - start;
-	new_content = ft_substr(start, 0, len);   // MALLOC CHECK OK
+	new_content = ft_substr(start, 0, len);
 	if (!new_content)
 		return (NULL);
-	new_token = new_token_node(new_content);  // MALLOC CHECK OK
+	new_token = new_token_node(new_content);
 	if (!new_token)
 		return (free(new_content), NULL);
 	return (new_token);
@@ -70,9 +70,9 @@ t_token	*get_operator_token(char *start)
 		content = ft_strdup("<");
 	else
 		content = ft_strdup(">");
-	if (!content) // MALLOC CHECK OK
+	if (!content)
 		return (NULL);
-	token = new_token_node(content); // MALLOC CHECK OK
+	token = new_token_node(content);
 	if (!token)
 	{
 		free(content);
@@ -103,6 +103,7 @@ int	tokenise(char *line, t_data *data)
 				return (token_lst_clear(&data->tokens_list, free), FAILURE);
 		}
 	}
+	ft_free((void *)&data->line);
 	ft_dprintf(data->log, "--TOKENS--\n\t");
 	print_tokens_list(data->log, data->tokens_list);
 	return (SUCCESS);

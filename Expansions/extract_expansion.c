@@ -3,53 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   extract_expansion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:03:06 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/11 16:48:46 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 15:28:10 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void handle_expansion(t_data *data, char *line, int *i)
+int	handle_expansion(t_data *data, char *line, int *i)
 {
 	t_list	*new_node;
-	
+
+	if (data->expansion_status != 0)
+		return (1);
 	if (line[*i] == '$' && line[*i + 1] == '?')
-		handle_exit_extansion(data, line, i);
+		data->expansion_status = handle_exit_extansion(data, line, i);
 	else if (line[*i] == '$' && line[*i + 1])
 	{
 		new_node = convert_var_expansion(data, line, i);
 		if (new_node)
 			ft_lstadd_back(&data->cutting, new_node);
+		else
+			data->expansion_status = 1;
 	}
 	else if (line[*i] == '$' && line[*i + 1] == '\0')
-		handle_dollar_alone(data, i);
+		data->expansion_status = handle_dollar_alone(data, i);
+	return (data->expansion_status);
 }
 
 char	*expansion_line(t_data *data, char *line)
 {
-	//t_list	*cutting;
 	char	*new_line;
 	int		i;
-	
-	//cutting = data->cutting;
+	int		status;
+
 	data->cutting = NULL;
 	i = 0;
-	while (line[i])
+	status = 0;
+	while (status == 0 && line[i])
 	{
 		if (line[i] == '\'')
-			handle_simple_quotes(data, line, &i);
+			status = handle_simple_quotes(data, line, &i);
 		else if (line[i] == '\"')
-			extract_double_quotes(data, line, &i);
+			status = extract_double_quotes(data, line, &i);
 		else if (line[i] == '$')
-			handle_expansion(data, line, &i);
+			status = handle_expansion(data, line, &i);
 		else
-			handle_simple_text(data, line, &i);
+			status = handle_simple_text(data, line, &i);
 	}
-	new_line = join_list(&data->cutting);
-	if (!new_line)
+	if (status == 0)
+		new_line = join_list(&data->cutting);
+	else
 		return (ft_lstclear(&data->cutting, free), NULL);
 	ft_lstclear(&data->cutting, free);
 	return (new_line);
@@ -63,6 +69,7 @@ char	*expand_token(t_data *data, char *content)
 		return (expansion_line(data, content));
 }
 
+// Perror and clean if fail
 int	handle_expansions_in_tokens(t_data *data)
 {
 	t_token	*current;
@@ -74,13 +81,24 @@ int	handle_expansions_in_tokens(t_data *data)
 	ft_dprintf(data->log, "--EXPANSIONS--\n");
 	while (current)
 	{
+		if (current->type == RD_HEREDOC)
+		{
+			current->next->content = heredoc_delim_tkn(current->next->content);
+			current = current->next->next;
+			continue ;
+		}
 		expanded_content = expand_token(data, current->content);
-		if (expanded_content != current->content)
-			free(current->content);
+		if (!expanded_content)
+		{
+			perror("expander: malloc failure");
+			return (FAILURE);
+		}
+		free(current->content);
 		current->content = expanded_content;
 		ft_dprintf(data->log, "[%s]->", current->content);
 		current = current->next;
 	}
 	ft_dprintf(data->log, "\n");
+	print_tokens_list(g_log, data->tokens_list);
 	return (SUCCESS);
 }

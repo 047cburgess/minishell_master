@@ -16,7 +16,7 @@ void	print_str_array(char **array)
 	}
 }
 
-// ARCHIVE: This was the function to get our starting environment in the string array format
+// This was the function to get our starting environment in the string array format
 int	set_environment_old(char **start_env, t_data *data)
 {
 	ft_bzero(data, sizeof(*data));
@@ -46,8 +46,8 @@ void	free_str_array(char **array, int size)
 char	**duplicate_str_array(char **start_env)
 {
 	char	**duplicate_array;
-	int	string_count;
-	int	i;
+	int		string_count;
+	int		i;
 
 	string_count = count_strings(start_env);
 	duplicate_array = ft_calloc((string_count + 1), sizeof(char *));

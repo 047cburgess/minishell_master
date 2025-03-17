@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 10:58:48 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/12 10:58:49 by caburges         ###   ########.fr       */
+/*   Updated: 2025/03/14 16:28:17 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,26 @@ int	is_numeric(char *str)
 	return (1);
 }
 
-// to check at school -- seems to not exit sometimes and exits other times.
-// returns always between 0 and 255 -> cast to unsigned int
 int	ft_exit(char **av, t_data *data, t_command *cmd)
 {
-	int	ac;
 	int	i;
 
-	ac = count_ac(av);
-	if (cmd->pid != 0)
-		ft_dprintf(2, "exit\n"); // to only print in the parent
-	if (ac == 1)
+	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
+		ft_dprintf(2, "exit\n");
+	if (count_ac(av) == 1)
 		return (data->status);
 	i = 1;
 	while (av[i])
 	{
 		if (!is_numeric(av[i]) && i == 1)
 		{
-			ft_dprintf(2, "minishell: exit: %s: numeric argument required\n", av[1]); // and exits
+			ft_dprintf(2, ER_FT_EXIT_VAL, av[1]);
 			data->status = 2;
 			return (data->status);
 		}
 		else if (i > 1)
 		{
-			ft_dprintf(2, "minishell: exit: too many arguments\n"); // anddoesnt exit
+			ft_dprintf(2, ER_FT_EXIT_ARG);
 			cmd->error = 1;
 			return (1);
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:52:32 by alize             #+#    #+#             */
-/*   Updated: 2025/03/04 15:46:45 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 12:10:17 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,21 +94,23 @@ void	print_sorted_export_list(t_env **export_tab, int size)
 		if (export_tab[i]->no_value == 1)
 			printf("declare -x %s", export_tab[i]->key);
 		else
-			printf("declare -x %s=\"%s\"", export_tab[i]->key, export_tab[i]->value);
+			printf("declare -x %s=\"%s\"",
+				export_tab[i]->key, export_tab[i]->value);
 		printf("\n");
 		i++;
 	}
 }
 
-void	print_ascii_export(t_data *data)
+int	print_ascii_export(t_data *data)
 {
 	t_env	**export_tab;
 	int		size;
 
 	export_tab = create_sorted_export_list(data, &size);
 	if (!export_tab)
-		return ;
+		return (1);
 	print_sorted_export_list(export_tab, size);
 	free(export_tab);
+	return (0);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expansions_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:09:32 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/11 16:55:05 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 15:33:59 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,7 @@ char	*join_list(t_list **lst)
 	char	*new_line;
 	char	*temp;
 	t_list	*current;
-    //t_list	*print;
 
-    // print = lst;
-	// printf("CUTTINGS: ");
-    // while (print)
-    // {
-	//     printf("[%s]->", (char*)print->content);
-	//     print = print->next;
-    // }
-    // printf("\n");
 	if (!lst)
 		return (NULL);
 	new_line = ft_strdup("");
@@ -57,6 +48,7 @@ char	*join_list(t_list **lst)
 	while (current)
 	{
 		temp = new_line;
+		ft_dprintf(g_log, "current content = [%s]\n", current->content);
 		new_line = ft_strjoin(new_line, (char *)current->content);
 		if (!new_line)
 		{
@@ -67,4 +59,26 @@ char	*join_list(t_list **lst)
 		current = current->next;
 	}
 	return (new_line);
+}
+
+char	*heredoc_delim_tkn(char *line)
+{
+	char	*ptr;
+	char	quote;
+
+	ptr = line;
+	while (*ptr != '\0')
+	{
+		if (!is_quote(*ptr))
+			ptr++;
+		else
+		{
+			quote = *ptr;
+			ft_strcpy(ptr, ptr + 1);
+			while (*ptr != quote)
+				ptr++;
+			ft_strcpy(ptr, ptr + 1);
+		}
+	}
+	return (line);
 }

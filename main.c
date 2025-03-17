@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/02/23 23:16:03 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 18:21:29 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int ac, char **av, char **envp)
 {
 	(void)av;
 	t_data data;
-	char *line;
 	ft_bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
@@ -35,13 +34,20 @@ int	main(int ac, char **av, char **envp)
 	while(1)
 	{
 		init_interactive_signals();
-		line = readline(PROMPT);
-		if (line == NULL) // EOF / Ctl+D received
+		if (isatty(STDIN_FILENO))
+		{
+			data.line = readline(PINK PROMPT RESET);
+		}
+		else
+		{
+			data.line = get_next_line(0);
+		}
+		if (data.line == NULL) // EOF / Ctl+D received
 			break;
-		add_history(line);
+		add_history(data.line);
 		catch_signals_for_data_status(&data);
-		handle_input(line, &data);
-		free(line);
+		handle_input(data.line, &data);
+		ft_free((void *)&data.line);
 	}
 	close(data.log);	
 	shut_down_minishell(&data);

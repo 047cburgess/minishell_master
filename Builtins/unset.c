@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:23:01 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/04 15:25:14 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/14 12:12:30 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	env_remove_node(t_env **list, char *key)
 			else
 				prev->next = current->next;
 			env_delone(temp);
-			break; // added BREAK
+			break ;
 		}
 		prev = current;
 		current = current->next;

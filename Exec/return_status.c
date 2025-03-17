@@ -25,6 +25,9 @@ int	get_child_exit_status(int status)
 	else if (WIFSIGNALED(status))
 	{
 		exit_signal = WTERMSIG(status);
+		if (exit_signal == 3)
+			printf("Quit (core dumped)");
+		printf("\n");
 		return (128 + exit_signal);
 	}
 	else

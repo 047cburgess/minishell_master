@@ -1,7 +1,6 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-
 // Sets the non interactive signals for the start of the function
 // Signals get reset to interactive in the main when it's needed
 // Point of control between lexer, parser and executor
@@ -9,10 +8,8 @@ int	handle_input(char *line, t_data *data)
 {
 	new_log_timestamp(data->log, line);
 	set_noninteractive_signals();
-	
 	if (!minishell_lexer(data, line))
 		return (FAILURE);
-
 	if (!minishell_parser(data))
 	{
 		token_lst_clear(&data->tokens_list, free);
@@ -37,23 +34,24 @@ int	minishell_parser(t_data *data)
 	data->command_count = get_command_count(data->tokens_list);
 	if (handle_expansions_in_tokens(data) == FAILURE)
 	{
-		data->status = 1; // Will always be a malloc failure
-		perror("expander: malloc failure");
+		data->status = 1;
 		return (FAILURE);
 	}
-	handle_heredocs(data, data->tokens_list);
-	if (g_signal != 0)
+	if (handle_heredocs(data, data->tokens_list) == FAILURE)
 	{
-		ft_dprintf(g_log, "parser after heredoc: signal was found\n");
-		data->status = g_signal + 128;
-		g_signal = 0;
+		delete_heredocs_files(data, data->tokens_list);
+		if (g_signal != 0)
+			return (FAILURE);
+		if (catch_signals_for_data_status(data))
+			return (FAILURE);
+		perror("heredocs: fail");
+		data->status = 1;
 		return (FAILURE);
 	}
 	if (prep_command_tables(data, data->tokens_list) == FAILURE)
 	{
-		perror("prep_command_tables: malloc failure");
 		data->status = 1;
-		return(FAILURE);
+		return (FAILURE);
 	}
 	return (SUCCESS);
 }

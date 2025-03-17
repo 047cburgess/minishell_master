@@ -15,7 +15,8 @@
 int	handle_operator_token(int *i, char *start, t_token **tokens_list)
 {
 	t_token	*new_token;
-	new_token = get_operator_token(start); // MALLOC CHECK OK
+
+	new_token = get_operator_token(start);
 	if (!new_token)
 		return (FAILURE);
 	token_add_back(tokens_list, new_token);
@@ -27,7 +28,7 @@ int	handle_word_token(int *i, char *start, t_token **tokens_list)
 {
 	t_token	*new_token;
 
-	new_token = get_word_token(start); // MALLOC CHECK OK
+	new_token = get_word_token(start);
 	if (!new_token)
 		return (FAILURE);
 	token_add_back(tokens_list, new_token);
