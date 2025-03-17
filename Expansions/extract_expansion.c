@@ -82,16 +82,14 @@ int	handle_expansions_in_tokens(t_data *data)
 	{
 		if (current->type == RD_HEREDOC)
 		{
+			current->next->exp = is_exp_needed(current->next->content);
 			current->next->content = heredoc_delim_tkn(current->next->content);
 			current = current->next->next;
 			continue ;
 		}
 		expanded_content = expand_token(data, current->content);
 		if (!expanded_content)
-		{
-			perror("expander: malloc failure");
-			return (FAILURE);
-		}
+			return (perror("expander: malloc failure"), FAILURE);
 		free(current->content);
 		current->content = expanded_content;
 		current = current->next;

@@ -12,27 +12,34 @@
 
 #include "minishell.h"
 
-void	read_and_write(char **line, char *delimiter, int fd)
+void	read_and_write(char **line, t_token *delimiter, int fd, t_data *data)
 {
+	char	*expanded_line;
+
 	while (g_signal == 0)
 	{
 		*line = readline("> ");
 		if (*line == NULL)
+			break ;
+		else if (ft_strcmp(*line, delimiter->content) == 0)
+			break ;
+		if (delimiter->exp)
 		{
-			if (g_signal == 0)
-				ft_dprintf(2, ER_HEREDOC_MSG, delimiter);
-			break ;
+			expanded_line = get_hd_line(*line, data);
+			if (!expanded_line)
+				break ;
+			write(fd, expanded_line, ft_strlen(expanded_line));
+			ft_free((void *)&expanded_line);
 		}
-		else if (ft_strcmp(*line, delimiter) == 0)
-			break ;
-		write(fd, *line, ft_strlen(*line));
+		else
+			write(fd, *line, ft_strlen(*line));
 		write(fd, "\n", 1);
 		ft_free((void *)line);
 	}
 }
 
 // stop reading when line contains only delimiter OR ctld is received (null)
-int	write_into_heredoc(int fd, char *delimiter)
+int	write_into_heredoc(int fd, t_token *delimiter, t_data *data)
 {
 	char	*line;
 	int		stdin_dup;
@@ -42,12 +49,14 @@ int	write_into_heredoc(int fd, char *delimiter)
 	if (stdin_dup == -1)
 		return (signal(SIGINT, SIG_IGN), 0);
 	line = NULL;
-	read_and_write(&line, delimiter, fd);
+	read_and_write(&line, delimiter, fd, data);
+	if (g_signal == 0)
+		ft_dprintf(2, ER_HEREDOC_MSG, delimiter->content);
 	ft_free((void *)&line);
 	dup2(stdin_dup, STDIN_FILENO);
 	close(stdin_dup);
 	signal(SIGINT, SIG_IGN);
-	if (g_signal != 0)
+	if (g_signal != 0 || data->expansion_status != 0)
 		return (0);
 	return (1);
 }
@@ -70,7 +79,7 @@ int	set_file_name(char **file_name, int id)
 	return (1);
 }
 
-int	process_heredoc(t_token *delimiter, int id)
+int	process_heredoc(t_token *delimiter, int id, t_data *data)
 {
 	char	*file_name;
 	int		fd;
@@ -81,7 +90,7 @@ int	process_heredoc(t_token *delimiter, int id)
 	fd = open(file_name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd == -1)
 		return (ft_free((void *)&file_name), 0);
-	if (!write_into_heredoc(fd, delimiter->content))
+	if (!write_into_heredoc(fd, delimiter, data))
 	{
 		unlink(file_name);
 		ft_free((void *)&file_name);
@@ -108,11 +117,11 @@ int	handle_heredocs(t_data *data, t_token *tokens)
 	while (i < heredoc_count)
 	{
 		current_delimiter = get_next_heredoc_delimiter(current_delimiter);
-		if (!process_heredoc(current_delimiter, i))
+		if (!process_heredoc(current_delimiter, i, data))
 			return (0);
 		current_delimiter = current_delimiter->next;
 		i++;
 		data->heredoc_count++;
-	}	
+	}
 	return (1);
 }
