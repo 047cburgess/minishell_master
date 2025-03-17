@@ -40,8 +40,7 @@ int	main(int ac, char **av, char **envp)
 		}
 		else
 		{
-			data.line = readline(NULL);
-
+			data.line = get_next_line(0);
 		}
 		if (data.line == NULL) // EOF / Ctl+D received
 			break;

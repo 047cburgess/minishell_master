@@ -14,8 +14,6 @@
 
 // DO WE NEED TO CATCH SIGPIPE TO FREE IT BUILTIN RECEIVES?
 
-
-
 int	catch_signals_for_data_status(t_data *data)
 {
 	if (g_signal != 0)
@@ -27,6 +25,7 @@ int	catch_signals_for_data_status(t_data *data)
 	}
 	return (0);
 }
+
 
 static void signal_handler(int signal)
 {
