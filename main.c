@@ -12,53 +12,40 @@
 
 #include "minishell.h"
 
-int	g_log = -1;
 int	g_signal = 0;
 
-int	main(int ac, char **av, char **envp)
+int	init_minishell(t_data *data, int ac, char **av, char **envp)
 {
 	(void)av;
-	t_data data;
-	ft_bzero(&data, sizeof(t_data));
-
-	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
-	g_log = data.log;
-	new_log_timestamp(data.log, "Launched minishell\n");
+	ft_bzero(data, sizeof(t_data));
 	if (ac != 1)
 	{
 		ft_putendl_fd("Minishell doesn't take any arguments", 2);
-		return (1);
+		return (0);
 	}
-	if (!set_environment(envp, &data))
-		return (1);
-	while(1)
+	if (!set_environment(envp, data))
+		return (0);
+	return (1);
+}
+
+int	main(int ac, char **av, char **envp)
+{
+	t_data	data;
+
+	if (!init_minishell(&data, ac, av, envp))
+		return (EXIT_FAILURE);
+	while (1)
 	{
 		init_interactive_signals();
-		if (isatty(STDIN_FILENO))
-		{
-			data.line = readline(PINK PROMPT RESET);
-		}
-		else
-		{
-			data.line = get_next_line(0);
-		}
-		if (data.line == NULL) // EOF / Ctl+D received
-			break;
+		data.line = readline(PINK PROMPT RESET);
+		if (data.line == NULL)
+			break ;
 		add_history(data.line);
 		catch_signals_for_data_status(&data);
 		handle_input(data.line, &data);
 		ft_free((void *)&data.line);
 	}
-	close(data.log);	
+	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO))
+		ft_dprintf(2, "exit\n");
 	shut_down_minishell(&data);
 }
-
-void	new_log_timestamp(int fd, char *message)
-{
-	time_t now = time(NULL);
-	struct tm *tm_info = localtime(&now);
-	char buffer[100];
-	strftime(buffer, sizeof(buffer), "%H:%M:%S", tm_info);
-	dprintf(fd, PINK"[%s] TEST: %s\n"RESET, buffer, message);
-}
-

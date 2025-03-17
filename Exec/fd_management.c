@@ -22,9 +22,8 @@ void	close_fds(t_command *cmd)
 }
 
 // NORM OK
-int	dup_stds(t_data *data, int *std_save)
+int	dup_stds(int *std_save)
 {
-	ft_dprintf(data->log, "duping save of stdin stdout\n");
 	std_save[0] = dup(STDIN_FILENO);
 	if (std_save[0] == -1)
 	{
@@ -42,12 +41,11 @@ int	dup_stds(t_data *data, int *std_save)
 }
 
 // NORM OK
-int	restore_stds(t_data *data, int *std_save)
+int	restore_stds(int *std_save)
 {
 	int	error;
 
 	error = 1;
-	ft_dprintf(data->log, "restoring stdin stdout\n");
 	if (dup2(std_save[0], STDIN_FILENO) == -1)
 	{
 		ft_dprintf(2, "minishell: %s\n", strerror(errno));
@@ -58,7 +56,6 @@ int	restore_stds(t_data *data, int *std_save)
 		ft_dprintf(2, "minishell: %s\n", strerror(errno));
 		error = 0;
 	}
-	ft_dprintf(data->log, "closing dup of stdin stdout\n");
 	ft_close(&std_save[0]);
 	ft_close(&std_save[1]);
 	return (error);

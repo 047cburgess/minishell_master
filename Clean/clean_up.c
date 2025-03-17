@@ -30,13 +30,13 @@ void	clean_job_memory(t_data *data)
 
 void	clean_up_exit(t_data *data, int exit_status, char *msg)
 {
+	
 	if (msg)
 		printf("%s\n", msg);
 	clean_job_memory(data);
 	env_list_clear(&data->env);
 	env_list_clear(&data->export);
 	rl_clear_history();
-	close(data->log);
 	ft_bzero(data, sizeof(t_data));
 	exit(exit_status);
 }
