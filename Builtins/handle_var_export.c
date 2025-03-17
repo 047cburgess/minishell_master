@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 15:08:40 by alize             #+#    #+#             */
-/*   Updated: 2025/03/14 12:11:43 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:54:03 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int	add_var_in_env(t_data *data, char *av, char *sign_egal)
 	else
 	{
 		ft_dprintf(2, "Minishell: export: « %s » : not a valid identifier\n",
-				av);
+			av);
 		status = 1;
 	}
 	free(new_key);

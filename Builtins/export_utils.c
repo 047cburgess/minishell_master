@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:52:32 by alize             #+#    #+#             */
-/*   Updated: 2025/03/14 12:10:17 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:53:42 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_env	**create_sorted_export_list(t_data *data, int *size)
 
 	i = 0;
 	*size = env_lst_size(data->env) + env_lst_size(data->export);
-	export_tab = malloc(sizeof(t_env*) * (*size));
+	export_tab = malloc(sizeof(t_env *) * (*size));
 	if (!export_tab)
 		return (NULL);
 	current = data->env;
@@ -113,4 +113,3 @@ int	print_ascii_export(t_data *data)
 	free(export_tab);
 	return (0);
 }
-

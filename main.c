@@ -6,7 +6,7 @@
 /*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:08:41 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/14 18:21:29 by alsuchon         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:51:22 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	g_signal = 0;
 int	main(int ac, char **av, char **envp)
 {
 	(void)av;
-	t_data data;
-	char *line;
+	t_data	data;
+	char	*line;
 	ft_bzero(&data, sizeof(t_data));
 
 	data.log = open("log_file.txt", O_WRONLY | O_CREAT | O_APPEND, 0644);
@@ -38,17 +38,15 @@ int	main(int ac, char **av, char **envp)
 		if (isatty(STDIN_FILENO))
 			line = readline(PINK PROMPT RESET);
 		else
-		{
 			line = readline("");
-		}
 		if (line == NULL) // EOF / Ctl+D received
-			break;
+			break ;
 		add_history(line);
 		catch_signals_for_data_status(&data);
 		handle_input(line, &data);
 		free(line);
 	}
-	close(data.log);	
+	close(data.log);
 	shut_down_minishell(&data);
 }
 

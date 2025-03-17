@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alize <alize@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:37:13 by caburges          #+#    #+#             */
-/*   Updated: 2025/03/10 15:37:28 by alize            ###   ########.fr       */
+/*   Updated: 2025/03/17 12:18:54 by alsuchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void signal_handler(int signal)
 	if (signal == SIGINT)
 	{
 		ft_dprintf(g_log, "SIGNAL HANDLER: reputting the new prompt\n");
-		printf("\n"); // force it to starrt on a new line
+		printf("\n"); // force it to start on a new line
 		rl_on_new_line(); // tell readline a new line is starting
 		rl_replace_line("", 0); // reset cursor to the beginning
 		rl_redisplay(); // redisplay the prompt

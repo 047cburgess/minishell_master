@@ -22,6 +22,7 @@ SRCS = main.c \
 	   $(ENV_DIR)/copy_env.c \
 	   $(ENV_DIR)/set_up.c \
 	   $(ENV_DIR)/env_utils.c \
+	   $(ENV_DIR)/env_utils_2.c \
 	   $(SIGNALS_DIR)/signals.c \
 	   $(PARSE_DIR)/parsing.c \
 	   $(PARSE_DIR)/get_tokens.c \

@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_up.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 14:00:13 by alsuchon          #+#    #+#             */
+/*   Updated: 2025/03/17 14:00:34 by alsuchon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 // This function creates a copy of the starting environment strings array,
 // and saves it into the program data for minishell new env
 
 void	free_str_array(char **array, int size);
+
 void	print_str_array(char **array)
 {
 	int	i;
@@ -16,7 +29,7 @@ void	print_str_array(char **array)
 	}
 }
 
-// This was the function to get our starting environment in the string array format
+// to get our starting environment in the string array format
 int	set_environment_old(char **start_env, t_data *data)
 {
 	ft_bzero(data, sizeof(*data));
