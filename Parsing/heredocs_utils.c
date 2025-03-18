@@ -53,3 +53,51 @@ int	delete_heredocs_files(t_data *data, t_token *tokens)
 	data->heredoc_count = 0;
 	return (1);
 }
+
+int	handle_simple_hd_text(t_data *data, char *line, int *i)
+{
+	char	*new_line;
+	t_list	*new_node;
+	int		start;
+
+	start = *i;
+	while (line[*i] && line[*i] != '$')
+	{
+		(*i)++;
+	}
+	new_line = ft_substr(line, start, *i - start);
+	if (!new_line)
+		return (1);
+	new_node = ft_lstnew(new_line);
+	if (!new_node)
+	{
+		free(new_line);
+		return (1);
+	}
+	ft_lstadd_back(&data->cutting, new_node);
+	return (0);
+}
+
+char	*get_hd_line(char *line, t_data *data)
+{
+	char	*new_line;
+	int		i;
+	int		status;
+
+	data->cutting = NULL;
+	i = 0;
+	status = 0;
+	while (status == 0 && line[i])
+	{
+		if (line[i] == '$')
+			status = handle_expansion(data, line, &i);
+		else
+			status = handle_simple_hd_text(data, line, &i);
+	}
+	if (status == 0)
+		new_line = join_list(&data->cutting);
+	else
+		return (ft_lstclear(&data->cutting, free), NULL);
+	ft_lstclear(&data->cutting, free);
+	return (new_line);
+}

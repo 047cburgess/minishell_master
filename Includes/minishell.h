@@ -83,6 +83,7 @@ typedef struct s_token
 {
 	char			*content;
 	int				type;
+	int				exp;
 	struct s_token	*next;
 }					t_token;
 
@@ -222,12 +223,15 @@ int			handle_dollar_alone(t_data *data, int *i);
 int			handle_exit_extansion(t_data *data, char *line, int *i);
 int			handle_expansion(t_data *data, char *line, int *i);
 char		*heredoc_delim_tkn(char *line);
+int			is_exp_needed(char *content);
 
 // ------ HEREDOC ----- //
 int			handle_heredocs(t_data *data, t_token *tokens);
 int			delete_heredocs_files(t_data *data, t_token *tokens);
 t_token		*get_next_heredoc_delimiter(t_token *tokens);
 int			get_heredoc_count(t_token *tokens);
+int			handle_simple_hd_text(t_data *data, char *line, int *i);
+char		*get_hd_line(char *line, t_data *data);
 
 // ------ BUILT IN ----- //
 int			ft_echo(char **args);

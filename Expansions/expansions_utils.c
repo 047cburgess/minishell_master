@@ -80,3 +80,11 @@ char	*heredoc_delim_tkn(char *line)
 	}
 	return (line);
 }
+
+int	is_exp_needed(char *content)
+{
+	if (ft_strchr(content, '\'') || ft_strchr(content, '"'))
+		return (0);
+	else
+		return (1);
+}

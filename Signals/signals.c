@@ -12,8 +12,6 @@
 
 #include "minishell.h"
 
-// DO WE NEED TO CATCH SIGPIPE TO FREE IT BUILTIN RECEIVES?
-
 int	catch_signals_for_data_status(t_data *data)
 {
 	if (g_signal != 0)
@@ -30,6 +28,7 @@ static void	signal_handler(int signal)
 	g_signal = signal;
 	if (signal == SIGINT)
 	{
+		printf("\n");
 		rl_on_new_line();
 		rl_replace_line("", 0);
 		rl_redisplay();
