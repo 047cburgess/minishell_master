@@ -13,7 +13,6 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-// NORM OK
 t_token	*new_token_node(char *content)
 {
 	t_token	*new;
@@ -27,7 +26,6 @@ t_token	*new_token_node(char *content)
 	return (new);
 }
 
-// NORM OK
 void	token_add_back(t_token **tokens, t_token *new)
 {
 	t_token	*current;
@@ -47,14 +45,12 @@ void	token_add_back(t_token **tokens, t_token *new)
 	current->next = new;
 }
 
-// NORM OK
 void	token_del_node(t_token *tokens_list, void (*del)(void *))
 {
 	(*del)(tokens_list->content);
 	free(tokens_list);
 }
 
-// NORM OK
 void	token_lst_clear(t_token **tokens_list, void (*del)(void *))
 {
 	t_token	*temp;
@@ -68,7 +64,6 @@ void	token_lst_clear(t_token **tokens_list, void (*del)(void *))
 	*tokens_list = NULL;
 }
 
-// NORM OK
 t_token	*token_lst_last(t_token *head)
 {
 	if (!head)

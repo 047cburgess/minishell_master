@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   heredoc_signal.c                                   :+:      :+:    :+:   */
+/*   heredocs_utils2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alsuchon <alsuchon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caburges <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/17 14:27:26 by alsuchon          #+#    #+#             */
-/*   Updated: 2025/03/17 14:28:06 by alsuchon         ###   ########.fr       */
+/*   Created: 2025/03/18 11:37:49 by caburges          #+#    #+#             */
+/*   Updated: 2025/03/18 11:38:03 by caburges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-// Closes stdin when ctl+c is received when reading for heredoc "<<"
-void	heredoc(int signal)
+void	put_newl_and_free(int fd, char **line)
 {
-	g_signal = signal;
-	close(STDIN_FILENO);
-	printf("\n");
-}
-
-void	set_heredoc_signals(void)
-{
-	signal(SIGINT, heredoc);
+	write(fd, "\n", 1);
+	ft_free((void *)line);
 }

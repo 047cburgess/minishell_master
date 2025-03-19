@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-// NORM OK
+// safely closes a set of file of in out file descriptors
 void	close_fds(t_command *cmd)
 {
 	if (cmd->fds[0] > STDIN_FILENO)
@@ -21,7 +21,7 @@ void	close_fds(t_command *cmd)
 		ft_close(&cmd->fds[1]);
 }
 
-// NORM OK
+// creates a copy of the original stdin and stdout so they can be restored after redirection
 int	dup_stds(int *std_save)
 {
 	std_save[0] = dup(STDIN_FILENO);
@@ -40,7 +40,7 @@ int	dup_stds(int *std_save)
 	return (1);
 }
 
-// NORM OK
+// restores the original stdin and stdout
 int	restore_stds(int *std_save)
 {
 	int	error;
@@ -61,7 +61,7 @@ int	restore_stds(int *std_save)
 	return (error);
 }
 
-// NORM OK
+// closes all open fds for the whole pipeline
 void	close_all_fds(t_data *data)
 {
 	t_command	*current;
@@ -74,7 +74,6 @@ void	close_all_fds(t_data *data)
 	}
 }
 
-// NORM OK
 void	ft_close(int *fd)
 {
 	if (*fd != -1)

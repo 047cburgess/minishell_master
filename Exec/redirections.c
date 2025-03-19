@@ -17,8 +17,7 @@ int	is_redirection_out(int token_type)
 	return (token_type == RD_APPEND || token_type == RD_OUT);
 }
 
-// This function goes through the tokens and processes 
-// redirections from left to right
+// This function goes through the tokens and processes redirections from left to right
 int	handle_redirections(t_command *cmd, int *in_out)
 {
 	t_token	*token;
@@ -48,26 +47,23 @@ int	handle_redirections(t_command *cmd, int *in_out)
 // Manages input redirections
 int	handle_redirection_in(int *in_out, t_token *token)
 {
-	if (token->type == RD_IN || token->type == RD_HEREDOC)
+	in_out[0] = open(token->next->content, O_RDONLY);
+	if (in_out[0] == -1)
 	{
-		in_out[0] = open(token->next->content, O_RDONLY);
-		if (in_out[0] == -1)
-		{
-			ft_dprintf(2, ER_OPEN, token->next->content, strerror(errno));
-			return (0);
-		}
-		if (dup2(in_out[0], STDIN_FILENO) == -1)
-		{
-			ft_dprintf(2, "minishell: %s\n", strerror(errno));
-			return (0);
-		}
-		if (in_out[0] != STDIN_FILENO)
-			ft_close(&in_out[0]);
-		return (1);
+		ft_dprintf(2, ER_OPEN, token->next->content, strerror(errno));
+		return (0);
 	}
+	if (dup2(in_out[0], STDIN_FILENO) == -1)
+	{
+		ft_dprintf(2, "minishell: %s\n", strerror(errno));
+		return (0);
+	}
+	if (in_out[0] != STDIN_FILENO)
+		ft_close(&in_out[0]);
 	return (1);
 }
 
+// Gets the open flags for out redirections: > or >>
 int	get_flag(int token_type)
 {
 	if (token_type == RD_OUT)
@@ -79,10 +75,7 @@ int	get_flag(int token_type)
 // Manages output redirections
 int	handle_redirection_out(int *in_out, t_token *token)
 {
-	if (token->type == RD_OUT)
-		in_out[1] = open(token->next->content, get_flag(token->type), 0644);
-	else
-		in_out[1] = open(token->next->content, get_flag(token->type), 0644);
+	in_out[1] = open(token->next->content, get_flag(token->type), 0644);
 	if (in_out[1] == -1)
 	{
 		ft_dprintf(2, ER_OPEN, token->next->content, strerror(errno));

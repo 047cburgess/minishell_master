@@ -12,8 +12,7 @@
 
 #include "minishell.h"
 
-// Passing data as a parameter as the built in functions will need it
-// NORM OK
+// sequence for launching a builtin command
 int	launch_builtin(t_data *data, t_command *cmd)
 {
 	int	std_save[2];
@@ -32,7 +31,7 @@ int	launch_builtin(t_data *data, t_command *cmd)
 	return (data->status);
 }
 
-// NORM OK
+// executes a builtin command
 int	execute_builtin(char **av, t_data *data, t_command *cmd)
 {
 	if (cmd->error != 0)

@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-// NORM OK
+// executes the commands and frees any memory associated with them when finished
 void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 {
 	if (cmd_count == 1)
@@ -23,7 +23,9 @@ void	minishell_executor(t_data *data, int cmd_count, t_command *commands)
 	clean_job_memory(data);
 }
 
-// NORM OK
+// sequence for solo commands not in a pipeline
+// builtin is launched in the parent process
+// external commands launched in a child process
 int	launch_solo_command(t_data *data, t_command *command)
 {
 	if (is_builtin(command->av))
@@ -40,7 +42,7 @@ int	launch_solo_command(t_data *data, t_command *command)
 	return (data->status);
 }
 
-// LINES OK
+// sequence for a solo external command in a fork
 int	execute_solo_child(t_data *data, t_command *cmd)
 {
 	cmd->pid = fork();

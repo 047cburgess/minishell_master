@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 
+// Updates environment OLDPWD and PWD after a change of directory
 void	update_pwd_value(t_data *data, char *key, char *value)
 {
 	t_env	*existing_var;
@@ -29,6 +30,7 @@ void	update_pwd_value(t_data *data, char *key, char *value)
 	}
 }
 
+// changes the directory (command cd)
 int	ft_cd(char **av, t_data *data)
 {
 	char	*new_pwd;

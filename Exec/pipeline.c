@@ -12,12 +12,13 @@
 
 #include "minishell.h"
 
-// further clean into norm but already looking farly good and clean
 int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev);
 int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev);
 int	launch_first_child_pipe(t_data *data, t_command *cmd);
 
-// NORM OK
+/* Waits for all the child processes to finish, 
+   and captures the value for the last cmd in pipeline
+   to update data->status for $? */
 int	wait_all_forks(t_data *data, t_command *commands, int num_cmds)
 {
 	int	i;
@@ -36,7 +37,7 @@ int	wait_all_forks(t_data *data, t_command *commands, int num_cmds)
 	return (0);
 }
 
-// all except the last command creates a pipe (if not a solo command)
+// all except the last command creates a pipe
 int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 {
 	t_command	*current;
@@ -64,7 +65,7 @@ int	launch_pipeline(t_data *data, t_command *commands, int num_cmds)
 	return (0);
 }
 
-// removed close fds... normally they are already closed from redirections...
+// launch sequence for last command in the pipeline
 int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 {
 	if (!create_fork(cmd))
@@ -94,6 +95,7 @@ int	launch_last_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 	return (0);
 }
 
+// launch sequence for commands in the middle of pipeline
 int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 {
 	if (!create_pipe(cmd) || !create_fork(cmd))
@@ -123,6 +125,7 @@ int	launch_middle_child_pipe(t_data *data, t_command *cmd, t_command *prev)
 	return (0);
 }
 
+// launch sequence for last command in a pipeline
 int	launch_first_child_pipe(t_data *data, t_command *cmd)
 {
 	if (!create_pipe(cmd) || !create_fork(cmd))

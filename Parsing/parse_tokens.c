@@ -13,7 +13,6 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-// NORM OK
 int	type_is_redirection(int type)
 {
 	if (type == RD_APPEND)
@@ -27,7 +26,6 @@ int	type_is_redirection(int type)
 	return (0);
 }
 
-// NORM OK
 // IF 1st or last token is a pipe
 // If two pipes in a row
 int	check_pipe_syntax(t_token *tokens)
@@ -48,7 +46,6 @@ int	check_pipe_syntax(t_token *tokens)
 	return (SUCCESS);
 }
 
-// NORM OK
 // If the token after a redirection is not a word
 int	check_valid_redirections(t_token *head)
 {
@@ -67,7 +64,7 @@ int	check_valid_redirections(t_token *head)
 	return (SUCCESS);
 }
 
-// NORM OK
+// validates token syntax
 int	check_token_syntax(t_token *tokens)
 {
 	t_token	*last;

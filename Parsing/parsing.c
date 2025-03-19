@@ -28,6 +28,7 @@ int	handle_input(char *line, t_data *data)
 	return (SUCCESS);
 }
 
+// Manages parsing of the tokens, finishing with valid command tables read for execution
 int	minishell_parser(t_data *data)
 {
 	if (check_token_syntax(data->tokens_list) == FAILURE)

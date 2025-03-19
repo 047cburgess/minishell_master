@@ -232,6 +232,7 @@ t_token		*get_next_heredoc_delimiter(t_token *tokens);
 int			get_heredoc_count(t_token *tokens);
 int			handle_simple_hd_text(t_data *data, char *line, int *i);
 char		*get_hd_line(char *line, t_data *data);
+void		put_newl_and_free(int fd, char **line);
 
 // ------ BUILT IN ----- //
 int			ft_echo(char **args);

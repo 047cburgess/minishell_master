@@ -12,7 +12,9 @@
 
 #include "minishell.h"
 
-// NORM OK
+// control point in execution to catch any errors found
+// prints the correct error message, exits with right code
+// frees all memory
 int	print_errors_and_exit(t_data *data, t_command *command, int mode)
 {
 	if (!command || command->error == 0)

@@ -78,6 +78,7 @@ int	handle_simple_hd_text(t_data *data, char *line, int *i)
 	return (0);
 }
 
+// returns a line of text after expansions
 char	*get_hd_line(char *line, t_data *data)
 {
 	char	*new_line;

@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 
+// reads user input from "<<" and writes into temporary file
 void	read_and_write(char **line, t_token *delimiter, int fd, t_data *data)
 {
 	char	*expanded_line;
@@ -20,7 +21,11 @@ void	read_and_write(char **line, t_token *delimiter, int fd, t_data *data)
 	{
 		*line = readline("> ");
 		if (*line == NULL)
+		{
+			if (g_signal == 0)
+				ft_dprintf(2, ER_HEREDOC_MSG, delimiter->content);
 			break ;
+		}
 		else if (ft_strcmp(*line, delimiter->content) == 0)
 			break ;
 		if (delimiter->exp)
@@ -33,12 +38,11 @@ void	read_and_write(char **line, t_token *delimiter, int fd, t_data *data)
 		}
 		else
 			write(fd, *line, ft_strlen(*line));
-		write(fd, "\n", 1);
-		ft_free((void *)line);
+		put_newl_and_free(fd, line);
 	}
 }
 
-// stop reading when line contains only delimiter OR ctld is received (null)
+// stop reading when line contains only delimiter OR ctld / ctlc is received (null)
 int	write_into_heredoc(int fd, t_token *delimiter, t_data *data)
 {
 	char	*line;
@@ -50,8 +54,6 @@ int	write_into_heredoc(int fd, t_token *delimiter, t_data *data)
 		return (signal(SIGINT, SIG_IGN), 0);
 	line = NULL;
 	read_and_write(&line, delimiter, fd, data);
-	if (g_signal == 0)
-		ft_dprintf(2, ER_HEREDOC_MSG, delimiter->content);
 	ft_free((void *)&line);
 	dup2(stdin_dup, STDIN_FILENO);
 	close(stdin_dup);
@@ -61,6 +63,7 @@ int	write_into_heredoc(int fd, t_token *delimiter, t_data *data)
 	return (1);
 }
 
+// generates a unique filename for a heredoc
 int	set_file_name(char **file_name, int id)
 {
 	char	buffer[4097];
@@ -103,6 +106,7 @@ int	process_heredoc(t_token *delimiter, int id, t_data *data)
 	return (1);
 }
 
+// creates all heredocs identified in the lexing process
 int	handle_heredocs(t_data *data, t_token *tokens)
 {
 	int		heredoc_count;

@@ -12,6 +12,7 @@
 
 #include "minishell.h"
 
+// Ensures that the argument is numeric
 int	is_numeric(char *str)
 {
 	int	i;
@@ -28,6 +29,7 @@ int	is_numeric(char *str)
 	return (1);
 }
 
+// parses the user input to prepare exit with correct status
 int	ft_exit(char **av, t_data *data, t_command *cmd)
 {
 	int	i;

@@ -23,6 +23,7 @@ int	catch_signals_for_data_status(t_data *data)
 	return (0);
 }
 
+// Catches ctl+c signal to ensure a new prompt is printed
 static void	signal_handler(int signal)
 {
 	g_signal = signal;
@@ -35,19 +36,22 @@ static void	signal_handler(int signal)
 	}
 }
 
+// sets correct signals for when user is typing normal input
 void	init_interactive_signals(void)
 {
 	signal(SIGINT, signal_handler);
 	signal(SIGQUIT, SIG_IGN);
 }
 
-// Ignore ctl+c | already ignoring ctl + \ -
+// Ignores signals when user input was received
 void	set_noninteractive_signals(void)
 {
 	signal(SIGINT, SIG_IGN);
 	signal(SIGQUIT, SIG_IGN);
 }
 
+// resets the signals to default for child process so ctl+c and ctl+\ have the correct impact
+// (terminating the command)
 void	restore_signals_for_child(void)
 {
 	signal(SIGINT, SIG_DFL);

@@ -13,7 +13,6 @@
 #include "minishell.h"
 
 // This function builds a command table, receiving pointer to table, 
-// NORM OK
 t_command	*new_command_table(t_token *tokens)
 {
 	t_command	*node;
@@ -39,7 +38,6 @@ t_command	*new_command_table(t_token *tokens)
 	return (node);
 }
 
-// NORM OK
 void	command_add_back(t_command **head, t_command *new)
 {
 	t_command	*current;
@@ -59,7 +57,6 @@ void	command_add_back(t_command **head, t_command *new)
 	current->next = new;
 }
 
-// NORM OK
 void	command_del_node(t_command *cmd)
 {
 	free(cmd->av);
@@ -68,7 +65,6 @@ void	command_del_node(t_command *cmd)
 	free(cmd);
 }
 
-// NORM OK
 void	command_lst_clear(t_command **head)
 {
 	t_command	*temp;
@@ -82,7 +78,6 @@ void	command_lst_clear(t_command **head)
 	*head = NULL;
 }
 
-// NORM OK
 t_command	*command_lst_last(t_command *head)
 {
 	if (!head)

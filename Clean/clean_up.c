@@ -13,7 +13,6 @@
 #include "minishell.h"
 
 //Function to free everything we need to when we exit minishell
-
 void	clean_job_memory(t_data *data)
 {
 	ft_free((void *)&data->line);

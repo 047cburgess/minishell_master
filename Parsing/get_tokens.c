@@ -13,7 +13,7 @@
 #include "minishell.h"
 #include "ft_dprintf.h"
 
-// NORM OK
+// returns a token node of type WORD
 t_token	*get_word_token(char *start)
 {
 	char	*ptr;
@@ -39,7 +39,7 @@ t_token	*get_word_token(char *start)
 	return (new_token);
 }
 
-// NORM OK
+// identifies the type of a token
 int	get_token_type(char *content)
 {
 	if (ft_strcmp(content, "<<") == 0)
@@ -54,7 +54,7 @@ int	get_token_type(char *content)
 		return (RD_OUT);
 }
 
-// NORM OK
+// creates and returns an operator token
 t_token	*get_operator_token(char *start)
 {
 	char	*content;
@@ -82,7 +82,7 @@ t_token	*get_operator_token(char *start)
 	return (token);
 }
 
-// NORM OK
+// main function to split user input line into tokens -> WORD or OPERATOR
 int	tokenise(char *line, t_data *data)
 {
 	int		i;

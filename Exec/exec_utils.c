@@ -46,6 +46,7 @@ int	set_cmd_path(t_data *data, char *path, char *command, t_command *cmd)
 	return (0);
 }
 
+// Checks if the command is a directory, and if it's executable
 int	check_access(char *full_path, t_command *cmd)
 {
 	struct stat	status_buffer;
@@ -66,6 +67,7 @@ int	check_access(char *full_path, t_command *cmd)
 	return (SUCCESS);
 }
 
+// checks if the command is an empty string or no command provided at all
 void	check_no_or_empty_command(t_command *cmd)
 {
 	if (cmd->ac == 0 && cmd->error == 0)

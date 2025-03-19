@@ -12,8 +12,7 @@
 
 #include "minishell.h"
 
-// This function gets arrays of env and "PATH", 
-// ready to put into command tables for exec
+// This function gets arrays of env and "PATH", ready to put into command tables for exec
 // returns 0 on error (malloc), 1 on success
 // sets data->path_dirs to NULL if path has been "unset"
 int	set_env_and_path_dir_arrays(t_data *data)
@@ -81,6 +80,7 @@ t_token	*get_next_command_start(t_token *prev_cmd_start)
 		return (token->next);
 }
 
+// returns a linked list of command tables in a convenient format ready for execution
 t_command	*get_command_tables(t_token *tokens)
 {
 	t_command	*list;

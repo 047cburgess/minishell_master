@@ -13,12 +13,12 @@
 #include "minishell.h"
 #include <unistd.h>
 
-// NORM OK
 int	is_redirection_in(int type)
 {
 	return (type == RD_IN || type == RD_HEREDOC);
 }
 
+// redirects output for first cmd in pipeline to the write end of the pipe
 int	connect_first_child_pipe(int *fds, t_command *cmd)
 {
 	ft_close(&fds[0]);
@@ -32,6 +32,7 @@ int	connect_first_child_pipe(int *fds, t_command *cmd)
 	return (1);
 }
 
+// connects stdinput to the read end of the pipe, stdout put to the write end of the next pipe
 int	connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev)
 {
 	ft_close(&fds[0]);
@@ -53,6 +54,7 @@ int	connect_middle_child_pipe(int *fds, t_command *cmd, t_command *prev)
 	return (1);
 }
 
+// connects stdin to the read end of the pipe
 int	connect_last_child_pipe(t_command *cmd, t_command *prev)
 {
 	ft_close(&prev->fds[1]);

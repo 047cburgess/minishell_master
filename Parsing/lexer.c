@@ -14,6 +14,7 @@
 
 int	line_is_whitespace(char *line);
 
+// Manages initial user input, checks syntax errors and creates initial tokens
 int	minishell_lexer(t_data *data, char *line)
 {
 	if (line_is_whitespace(line))

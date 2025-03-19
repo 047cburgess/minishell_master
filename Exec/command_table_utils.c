@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-// NORM OK
 // This function returns the command name / program name (av[0])
 char	*get_command(t_token *list)
 {
@@ -35,7 +34,6 @@ char	*get_command(t_token *list)
 	return (NULL);
 }
 
-// NORM OK
 int	is_builtin(char **av)
 {
 	if (av == NULL || *av == NULL)
@@ -58,7 +56,6 @@ int	is_builtin(char **av)
 		return (FALSE);
 }
 
-// NORM OK
 // This function returns the number of arguments for a command (its ac)
 int	get_ac(t_token *command_list)
 {
@@ -84,8 +81,7 @@ int	get_ac(t_token *command_list)
 }
 
 // This function returns the command's argv, 
-// NULL if malloc error , empty array if no commands/args
-// NORM -> OK
+// NULL if malloc error, empty array if no commands/args
 char	**get_av(t_token *tokens, int ac)
 {
 	char	**av;
@@ -112,8 +108,7 @@ char	**get_av(t_token *tokens, int ac)
 	return (av);
 }
 
-// NORM OK -> variable declaration to do
-// This function converts minishell env list back to an array
+// This function converts minishell env list back to an array for execve
 char	**env_to_array(t_env *env_head)
 {
 	int		list_size;

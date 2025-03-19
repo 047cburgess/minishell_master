@@ -12,9 +12,9 @@
 
 #include "minishell.h"
 
-// NORM OK
 // If it exited normally, retrieve its exit code
 // If it exited by a signal, return the signal num + 128
+// Will be used to update data->status for $? expansion
 int	get_child_exit_status(int status)
 {
 	int	exit_signal;
