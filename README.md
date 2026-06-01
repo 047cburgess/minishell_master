@@ -4,9 +4,19 @@ This project has been created as part of the 42 curriculum by **caburges** and *
 
 ## Description
 
-The Minishell project is a shell implementation exercise in the 42 curriculum that introduces students to system programming, process management, and Unix shell fundamentals. The project involves creating a simple shell that can execute commands, handle redirections, pipes, and implement built-in commands.
+Create a bash-inspired shell that can execute commands, handle redirections, pipes, and implement built-in commands.
 
-The challenge is to replicate the behavior of bash while handling complex parsing scenarios, managing environment variables, implementing proper signal handling, and executing commands with pipes and redirections. This project serves as an introduction to process creation with fork(), execution with execve(), and inter-process communication with pipes.
+## ⚠️ Disclaimer
+
+This project adheres to the school's strict **Norminette** coding standards.
+The code has been left in its original submitted state as much as possible to show my development over time.
+Some example **Norminette** constraints:
+
+- **Line length**: Maximum 80 characters per line
+- **Function parameters**: Maximum 4 parameters per function
+- **Function size**: Maximum 25 lines per function
+- **Variable declaration**: Must be separated from initialization
+- **Loops**: No for or do-while loops
 
 ## Key Features
 
